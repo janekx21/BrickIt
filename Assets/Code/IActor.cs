@@ -5,6 +5,7 @@ using UnityEngine;
 public interface IActor {
 	float GetDamage();
 	Color GetColor();
+    void SetColor(Color color);
 	void ChangeDirection();
 	void FlipDirection();
 }
