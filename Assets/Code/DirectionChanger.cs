@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalBlock : Block {
+public class DirectionChanger : Block {
 	public override void Hit(IActor maker) {
 		base.Hit(maker);
-		Break();
+		maker.ChangeDirection();
 	}
 }
