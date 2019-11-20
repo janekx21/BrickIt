@@ -13,8 +13,8 @@ public class Player : Entity, IActor {
     [SerializeField]
     private Color color = Color.red;
 
-    private Rigidbody2D rig;
-    private SpriteRenderer rend;
+    private Rigidbody2D rig = null;
+    private SpriteRenderer rend = null;
     private Vector2 move = Vector2.zero;
     private Vector2 direction = Vector2.right;
 

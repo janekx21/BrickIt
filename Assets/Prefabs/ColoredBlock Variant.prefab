@@ -23,7 +23,7 @@ PrefabInstance:
     - target: {fileID: 492284279688118542, guid: 83a5420b01ede9147b57feea3ea83875,
         type: 3}
       propertyPath: m_Name
-      value: ColoredBlock
+      value: ColoredBlock Variant
       objectReference: {fileID: 0}
     - target: {fileID: 492284279688118546, guid: 83a5420b01ede9147b57feea3ea83875,
         type: 3}
