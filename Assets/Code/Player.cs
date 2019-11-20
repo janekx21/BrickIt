@@ -14,23 +14,29 @@ public class Player : Entity, IActor {
     private Color color = Color.red;
 
     private Rigidbody2D rig;
+    private SpriteRenderer rend;
     private Vector2 move = Vector2.zero;
     private Vector2 direction = Vector2.right;
 
     public override void Awake() {
         base.Awake();
 
-        rig = gameObject.GetComponent<Rigidbody2D>();
+        rig = GetComponent<Rigidbody2D>();
+        rend = GetComponent<SpriteRenderer>();
     }
 
     public override void Update() {
         base.Update();
+
         if (Input.GetKeyDown(KeyCode.Space)) {
             direction = new Vector2(direction.y, direction.x);
         }
+
         if (Input.GetKeyDown(KeyCode.P)) {
             direction *= -1;
         }
+
+        rend.color = color;
     }
 
     public override void FixedUpdate() {
