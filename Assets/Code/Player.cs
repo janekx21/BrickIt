@@ -10,6 +10,8 @@ public class Player : Entity, IActor {
     private float speed = 0f;
     [SerializeField]
     private float moveSpeed = 1f;
+    [SerializeField]
+    private Color color = Color.red;
 
     private Rigidbody2D rig;
     private Vector2 move = Vector2.zero;
@@ -57,7 +59,11 @@ public class Player : Entity, IActor {
     }
 
     public Color GetColor() {
-        throw new NotImplementedException();
+        return color;
+    }
+
+    public void SetColor(Color color) {
+        this.color = color;
     }
 
     public void ChangeDirection() {
