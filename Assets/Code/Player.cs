@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Player : Entity {
+public class Player : Entity, IActor {
 
     [SerializeField]
     private float speed = 0f;
@@ -36,6 +37,10 @@ public class Player : Entity {
         ApplyControls();
     }
 
+    private void OnCollisionEnter2D(Collision2D other) {
+        FlipDirection();
+    }
+
     private void ApplyControls() {
         move.x = Input.GetAxis("Horizontal");
         move.y = Input.GetAxis("Vertical");
@@ -45,5 +50,21 @@ public class Player : Entity {
         Vector2 adding = (Vector2.one - abs) * move;
 
         rig.velocity = direction * speed + adding * moveSpeed;
+    }
+
+    public float GetDamage() {
+        return 1;
+    }
+
+    public Color GetColor() {
+        throw new NotImplementedException();
+    }
+
+    public void ChangeDirection() {
+        direction = new Vector2(direction.y, direction.x);
+    }
+
+    public void FlipDirection() {
+        direction *= -1;
     }
 }
