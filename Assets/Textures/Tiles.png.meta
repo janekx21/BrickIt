@@ -68,6 +68,12 @@ TextureImporter:
   - first:
       213: -732908275678425507
     second: Block
+  - first:
+      213: 3752902410628473492
+    second: Bucket
+  - first:
+      213: 7229062396111083442
+    second: BlockDamaged
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -580,7 +586,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -601,7 +607,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -609,6 +615,48 @@ TextureImporter:
       bones: []
       spriteID: bfd1166d28412674e9a713793c47b972
       internalID: -732908275678425507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bucket
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9361b22ab792abd49ae0b0c17c582cd9
+      internalID: 3752902410628473492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlockDamaged
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e179099521234504c97a7ef2c3e714a3
+      internalID: 7229062396111083442
       vertices: []
       indices: 
       edges: []

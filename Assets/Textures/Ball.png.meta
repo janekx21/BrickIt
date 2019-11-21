@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: -3919779002189068522
     second: Ball_0
+  - first:
+      213: -7165607403067095034
+    second: Ball_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -513,7 +516,28 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b338357860d03ec4daa4ce48caf5a079
+      internalID: -3919779002189068522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ball_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -523,8 +547,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b338357860d03ec4daa4ce48caf5a079
-      internalID: -3919779002189068522
+      spriteID: db244c259b457f440b7bf64d51298f40
+      internalID: -7165607403067095034
       vertices: []
       indices: 
       edges: []
