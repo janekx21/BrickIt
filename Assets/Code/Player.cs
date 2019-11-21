@@ -46,7 +46,19 @@ public class Player : Entity, IActor {
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        FlipDirection();
+        tryBounce(other);
+    }
+
+    private void OnCollisionStay2D(Collision2D other) {
+        tryBounce(other);
+    }
+
+    private void tryBounce(Collision2D other) {
+        foreach (var contact in other.contacts) {
+            if (Vector2.Dot(contact.normal, direction) <= -.5f) {
+                FlipDirection();
+            }
+        }
     }
 
     private void ApplyControls() {
