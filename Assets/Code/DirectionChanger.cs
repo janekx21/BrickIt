@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DirectionChanger : Block {
-	public override void Hit(IActor maker) {
-		base.Hit(maker);
-		maker.ChangeDirection();
+	public override void Hit(IActor actor) {
+		base.Hit(actor);
+
+		actor.ChangeDirection();
 	}
 }
