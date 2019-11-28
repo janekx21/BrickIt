@@ -21,6 +21,7 @@ public class Player : Entity, IActor {
     private Vector2 move = Vector2.zero;
     private Vector2 direction = Vector2.right;
     private float speedModifier = 1;
+    private Coroutine dashRoutine = null;
 
     public override void Awake() {
         base.Awake();
@@ -98,7 +99,10 @@ public class Player : Entity, IActor {
     }
 
     public void Dash() {
-        StartCoroutine(DashRoutine());
+        if (dashRoutine != null) {
+           StopCoroutine(dashRoutine); 
+        }
+        dashRoutine = StartCoroutine(DashRoutine());
     }
 
     public void Die() {
@@ -115,5 +119,6 @@ public class Player : Entity, IActor {
         }
 
         speedModifier = 1;
+        dashRoutine = null;
     }
 }
