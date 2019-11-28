@@ -26,4 +26,5 @@ public class MultiHitBlock : Block {
 			ren.sprite = sprites[maxHp-hp];
 		}
 	}
+	protected override bool shouldBreak() => true;
 }

@@ -19,4 +19,5 @@ public class ColoredBlock : Block {
 			Break();
 		}
 	}
+	protected override bool shouldBreak() => true;
 }

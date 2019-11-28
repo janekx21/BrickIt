@@ -17,4 +17,6 @@ public class ColorChanger : Block {
 
 		actor.SetColor(color);
 	}
+
+	protected override bool shouldBreak() => false;
 }

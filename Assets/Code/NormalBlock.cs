@@ -9,4 +9,6 @@ public class NormalBlock : Block {
 
 		Break();
 	}
+
+	protected override bool shouldBreak() => true;
 }

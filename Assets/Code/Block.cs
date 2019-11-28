@@ -7,8 +7,8 @@ public abstract class Block : Entity {
 
 	protected Rigidbody2D rig = null;
 	protected SpriteRenderer ren = null;
-	
-	static List<Block> allBlocks = new List<Block>();
+
+	private static readonly List<Block> allBlocks = new List<Block>();
 
 	private void OnEnable() {
 		allBlocks.Add(this);
@@ -31,7 +31,7 @@ public abstract class Block : Entity {
 	
 
 	public virtual void Break() {
-		if (allBlocks.Count <= 1) { // i am the last Block :(
+		if (allBlocks.TrueForAll(x => !x.shouldBreak())) { // i am the last Block :(
 			// TODO win the game
 		}
 		Destroy(gameObject);
@@ -44,4 +44,6 @@ public abstract class Block : Entity {
             Hit(actor);
         }
 	}
+
+	protected abstract bool shouldBreak(); // returns if the block should break to win
 }
