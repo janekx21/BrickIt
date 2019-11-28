@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer))]
@@ -13,10 +14,13 @@ public class Player : Entity, IActor {
     [SerializeField]
     private Color color = Color.red;
 
+    [SerializeField] private AnimationCurve dashCurve = null;
+
     private Rigidbody2D rig = null;
     private SpriteRenderer rend = null;
     private Vector2 move = Vector2.zero;
     private Vector2 direction = Vector2.right;
+    private float speedModifier = 1;
 
     public override void Awake() {
         base.Awake();
@@ -69,7 +73,7 @@ public class Player : Entity, IActor {
         Vector2 abs = new Vector2(Mathf.Abs(direction.x), Mathf.Abs(direction.y));
         Vector2 adding = (Vector2.one - abs) * move;
 
-        rig.velocity = direction * speed + adding * moveSpeed;
+        rig.velocity = speedModifier * speed * direction + adding * moveSpeed;
     }
 
     public float GetDamage() {
@@ -90,5 +94,26 @@ public class Player : Entity, IActor {
 
     public void FlipDirection() {
         direction *= -1;
+        Dash();
+    }
+
+    public void Dash() {
+        StartCoroutine(DashRoutine());
+    }
+
+    public void Die() {
+        Destroy(gameObject);
+    }
+
+    IEnumerator DashRoutine() {
+        float timer = 0;
+        float length = dashCurve.keys.Last().time;
+        while (timer < 1) {
+            speedModifier = dashCurve.Evaluate(timer);
+            timer += Time.deltaTime / length;
+            yield return null;
+        }
+
+        speedModifier = 1;
     }
 }

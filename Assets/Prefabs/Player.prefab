@@ -202,6 +202,30 @@ MonoBehaviour:
   speed: 4
   moveSpeed: 2
   color: {r: 1, g: 0, b: 0, a: 1}
+  dashCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2.5
+      inSlope: -12.302632
+      outSlope: -12.302632
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.037433155
+    - serializedVersion: 3
+      time: 0.4
+      value: 1
+      inSlope: -0.1125355
+      outSlope: -0.1125355
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.097593665
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!58 &1948330738
 CircleCollider2D:
   m_ObjectHideFlags: 0
