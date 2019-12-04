@@ -22,8 +22,15 @@ public class Player : Entity, IActor {
 	private Vector2 direction = Vector2.right;
 	private float speedModifier = 1;
 	private Vector2 dash = Vector2.zero;
+   
+    private void OnDrawGizmos() {
+        Gizmos.color = color;
+        for (float i = .8f; i < 1f; i += .01f) {
+            Gizmos.DrawWireSphere(transform.position, i * 0.3f);
+        }
+    }
 
-	public override void Awake() {
+    public override void Awake() {
 		base.Awake();
 
 		rig = GetComponent<Rigidbody2D>();

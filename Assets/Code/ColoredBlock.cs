@@ -2,20 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColoredBlock : Block {
+public class ColoredBlock : BlockColor {
 
-	[SerializeField] private Color color = Color.white;
-
-	public override void Update() {
+    public override void Update() {
 		base.Update();
 
-		ren.color = color;
-	}
+        ren.color = GetColor();
+    }
 
 	public override void Hit(IActor actor) {
 		base.Hit(actor);
 
-		if (actor.GetColor() == color) {
+		if (actor.GetColor() == GetColor()) {
 			Break();
 		}
 	}
