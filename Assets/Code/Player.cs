@@ -58,6 +58,9 @@ public class Player : Entity, IActor {
 
 	private void TryBounce(Collision2D other) {
 		foreach (var contact in other.contacts) {
+			if (Vector2.Dot(contact.normal, direction) <= -.5f) {
+				FlipDirection();
+			}
 			Dash(contact.normal);
 		}
 	}
