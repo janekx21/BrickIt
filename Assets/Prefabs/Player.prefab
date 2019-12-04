@@ -207,25 +207,27 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 2.5
-      inSlope: -12.302632
-      outSlope: -12.302632
-      tangentMode: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.037433155
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.4
+      time: 1
       value: 1
-      inSlope: -0.1125355
-      outSlope: -0.1125355
-      tangentMode: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.097593665
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  offsetAcceleration: 10
+  offsetVelocityVelocity: 5
 --- !u!58 &1948330738
 CircleCollider2D:
   m_ObjectHideFlags: 0

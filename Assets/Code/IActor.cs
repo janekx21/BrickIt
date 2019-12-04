@@ -8,6 +8,6 @@ public interface IActor {
     void SetColor(Color color);
 	void ChangeDirection();
 	void FlipDirection();
-	void Dash(); // small acceleration
+	void Dash(Vector2 direction); // small acceleration
 	void Die();
 }
