@@ -151,8 +151,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1550672577
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -3919779002189068522, guid: e0e6c5ebebcd7ed45821f14e024d1e11,
     type: 3}
@@ -204,6 +204,10 @@ MonoBehaviour:
   color: {r: 1, g: 0, b: 0, a: 1}
   dashAcceleration: 10
   dashVelocity: 6
+  bounceParticle: {fileID: 823083484203336117, guid: 5e8a7eac1a722d3449ded8e6aed992be,
+    type: 3}
+  bounceParticleSmall: {fileID: 823083484203336117, guid: 9d9ae4c22470b414399e48c3005d0b0a,
+    type: 3}
 --- !u!58 &1948330738
 CircleCollider2D:
   m_ObjectHideFlags: 0

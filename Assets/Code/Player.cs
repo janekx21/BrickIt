@@ -9,9 +9,12 @@ public class Player : Entity, IActor {
 	[SerializeField] private float speed = 0f;
 	[SerializeField] private float moveSpeed = 1f;
 	[SerializeField] private Color color = Color.red;
-	
+
 	[SerializeField] private float dashAcceleration = 1;
 	[SerializeField] private float dashVelocity = 1;
+
+	[SerializeField] private GameObject bounceParticle = null;
+	[SerializeField] private GameObject bounceParticleSmall = null;
 
 	private Rigidbody2D rig = null;
 	private SpriteRenderer rend = null;
@@ -61,6 +64,19 @@ public class Player : Entity, IActor {
 			if (Vector2.Dot(contact.normal, direction) <= -.5f) {
 				FlipDirection();
 			}
+			else {
+				Instantiate(bounceParticleSmall, contact.point,
+					Quaternion.LookRotation(Vector3.forward, contact.normal));
+			}
+
+			var block = contact.collider.GetComponent<ColorChanger>();
+			var particles = Instantiate(bounceParticle, contact.point,
+				Quaternion.LookRotation(Vector3.forward, contact.normal));
+			if (block) {
+				var main = particles.GetComponent<ParticleSystem>().main;
+				main.startColor = block.GetColor();
+			}
+
 			Dash(contact.normal);
 		}
 	}
@@ -73,7 +89,7 @@ public class Player : Entity, IActor {
 		Vector2 pep = Vector2.one - abs;
 		Vector2 adding = pep * move;
 
-		rig.velocity = speedModifier * speed * direction + adding * moveSpeed + dash*dashVelocity;
+		rig.velocity = speedModifier * speed * direction + adding * moveSpeed + dash * dashVelocity;
 	}
 
 	public float GetDamage() {
