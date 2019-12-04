@@ -13,11 +13,11 @@ public abstract class BlockColor : Block {
         }
     }
 
-    protected Color GetColor() {
+    public Color GetColor() {
         return color;
     }
 
-    protected void SetColor(Color color) {
+    public void SetColor(Color color) {
         this.color = color;
     }
 }
