@@ -4,14 +4,12 @@ using UnityEngine;
 
 
 namespace Block {
-	public class Normal : Block {
+	public class Normal : Brick {
 		public override void Hit(IActor maker) {
 			base.Hit(maker);
 			if (ColorsMatch(maker)) {
 				Break();
 			}
 		}
-
-		protected override bool shouldBreak() => true;
 	}
 }
