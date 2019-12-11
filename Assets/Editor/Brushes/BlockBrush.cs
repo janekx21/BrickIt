@@ -10,7 +10,7 @@ using UnityEngine.Tilemaps;
 [System.Serializable]
 public struct TileToBlock {
 	public Tile tile;
-	public Block block;
+	public Block.Block block;
 }
 
 [CreateAssetMenu]
@@ -21,7 +21,7 @@ public class BlockBrush : GridBrush {
 	private Vector3Int prev_position = Vector3Int.zero;
 	private GameObject prev_brushTarget = null;
 
-	private Block current = null;
+	private Block.Block current = null;
 
 	public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position) {
 		if (position == prev_position) {
@@ -47,13 +47,13 @@ public class BlockBrush : GridBrush {
 				Undo.MoveGameObjectToScene(instance, brushTarget.scene, "Paint Prefabs");
 				Undo.RegisterCreatedObjectUndo(instance, "Paint Prefabs");
 				instance.transform.SetParent(brushTarget.transform);
-				instance.transform.position = grid.LocalToWorld(grid.CellToLocalInterpolated(position + (Vector3)Vector2.one*.5f));
+				instance.transform.position =
+					grid.LocalToWorld(grid.CellToLocalInterpolated(position + (Vector3) Vector2.one * .5f));
 			}
 		}
 		else {
 			Erase(grid, brushTarget, position);
 		}
-		
 	}
 
 	public override void Erase(GridLayout grid, GameObject brushTarget, Vector3Int position) {
@@ -89,7 +89,7 @@ public class BlockBrush : GridBrush {
 	public override void Pick(GridLayout gridLayout, GameObject brushTarget, BoundsInt position, Vector3Int pickStart) {
 		base.Pick(gridLayout, brushTarget, position, pickStart);
 		Tile tile = brushTarget.GetComponent<Tilemap>().GetTile(position.position) as Tile;
-		Block block = conversion.Find(ttb => ttb.tile == tile).block;
+		Block.Block block = conversion.Find(ttb => ttb.tile == tile).block;
 		current = block;
 	}
 

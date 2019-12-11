@@ -76,7 +76,7 @@ public class Player : Entity, IActor {
 					Quaternion.LookRotation(Vector3.forward, contact.normal));
 			}
 
-			var block = contact.collider.GetComponent<BlockColor>();
+			var block = contact.collider.GetComponent<Block.Block>();
 			var particles = Instantiate(bounceParticle, contact.point,
 				Quaternion.LookRotation(Vector3.forward, contact.normal));
 			if (block) {
