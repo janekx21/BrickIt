@@ -30,4 +30,4 @@ small open source game
 - ~~tutorial~~
 - timer, how long did you need for the level and score
 - ~~star system~~
-- 
+- combo counter
