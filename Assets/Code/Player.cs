@@ -22,6 +22,7 @@ public class Player : Entity, IActor {
 	private Vector2 direction = Vector2.right;
 	private float speedModifier = 1;
 	private Vector2 dash = Vector2.zero;
+    private AudioSource bounceClip = null;
    
     private void OnDrawGizmos() {
         Gizmos.color = color;
@@ -35,6 +36,7 @@ public class Player : Entity, IActor {
 
 		rig = GetComponent<Rigidbody2D>();
 		rend = GetComponent<SpriteRenderer>();
+        bounceClip = GetComponent<AudioSource>();
 	}
 
 	public override void Update() {
@@ -60,6 +62,7 @@ public class Player : Entity, IActor {
 
 	private void OnCollisionEnter2D(Collision2D other) {
 		TryBounce(other);
+        bounceClip.Play();
 	}
 
 	private void OnCollisionStay2D(Collision2D other) {
