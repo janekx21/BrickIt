@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer))]
-public class Player : Entity, IActor {
+public class Player : Entity, IActor, IPausable {
 	[SerializeField] private float speed = 0f;
 	[SerializeField] private float moveSpeed = 1f;
 	[SerializeField] private Color color = Color.red;
@@ -22,21 +22,22 @@ public class Player : Entity, IActor {
 	private Vector2 direction = Vector2.right;
 	private float speedModifier = 1;
 	private Vector2 dash = Vector2.zero;
-    private AudioSource bounceClip = null;
-   
-    private void OnDrawGizmos() {
-        Gizmos.color = color;
-        for (float i = .8f; i < 1f; i += .01f) {
-            Gizmos.DrawWireSphere(transform.position, i * 0.3f);
-        }
-    }
+	private AudioSource bounceClip = null;
+	private bool paused = false;
 
-    public override void Awake() {
+	private void OnDrawGizmos() {
+		Gizmos.color = color;
+		for (float i = .8f; i < 1f; i += .01f) {
+			Gizmos.DrawWireSphere(transform.position, i * 0.3f);
+		}
+	}
+
+	public override void Awake() {
 		base.Awake();
 
 		rig = GetComponent<Rigidbody2D>();
 		rend = GetComponent<SpriteRenderer>();
-        bounceClip = GetComponent<AudioSource>();
+		bounceClip = GetComponent<AudioSource>();
 	}
 
 	public override void Update() {
@@ -58,11 +59,15 @@ public class Player : Entity, IActor {
 
 		ApplyControls();
 		dash = Vector2.MoveTowards(dash, Vector2.zero, Time.fixedDeltaTime * dashAcceleration);
+		
+		if (paused) {
+			rig.velocity = Vector2.zero;
+		}
 	}
 
 	private void OnCollisionEnter2D(Collision2D other) {
 		TryBounce(other);
-        bounceClip.Play();
+		bounceClip.Play();
 	}
 
 	private void OnCollisionStay2D(Collision2D other) {
@@ -124,9 +129,20 @@ public class Player : Entity, IActor {
 
 	public void Die() {
 		Destroy(gameObject);
+		Level.Own.Lose();
 	}
 
 	public void Dash(Vector2 direction) {
 		dash = direction;
 	}
+
+	public void play() {
+		paused = false;
+	}
+
+	public void pause() {
+		paused = true;
+	}
+
+	public bool isPaused() => paused;
 }
