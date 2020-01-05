@@ -46,7 +46,7 @@ namespace Block {
 
 		public virtual void Break() {
 			if (allBlocks.TrueForAll(x => !x.shouldBreak())) { // i am the last Block :(
-				// TODO win the game
+				Level.Own.Win();
 			}
 
 			Destroy(gameObject);

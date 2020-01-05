@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UI;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Events;
 
 public class Level : MonoBehaviour {
 	[SerializeField] private string levelName = "";
@@ -12,6 +14,10 @@ public class Level : MonoBehaviour {
 	private static Level instance = null;
 
 	private LevelState state = LevelState.begin;
+	public LevelState State => state;
+
+	public delegate void ParameterAction<T>(T value);
+	public ParameterAction<LevelState> onStateChanged;
 
 	private void Awake() {
 		Assert.IsNull(instance);
@@ -39,30 +45,37 @@ public class Level : MonoBehaviour {
 		}
 	}
 
+	void ChangeState(LevelState newState) {
+		state = newState;
+		onStateChanged(state);
+	}
+
 	void Begin() {
-		state = LevelState.begin;
+		ChangeState(LevelState.begin);
 
 		Play(); // TODO this is debug for starting the level right away
 	}
 
 	void Play() {
-		state = LevelState.play;
+		ChangeState(LevelState.play);
 		PlayAll();
 	}
 
 	void Pause() {
-		state = LevelState.pause;
+		ChangeState(LevelState.pause);
 		PauseAll();
 	}
 
 	public void Win() {
 		Debug.Log("you won :>");
 		PauseAll();
+		ChangeState(LevelState.win);
 	}
 
 	public void Lose() {
 		Debug.Log("you lost :(");
 		PauseAll();
+		ChangeState(LevelState.lost);
 	}
 
 	void PlayAll() {
