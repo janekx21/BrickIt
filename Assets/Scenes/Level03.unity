@@ -2256,25 +2256,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 14877645553517913, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
+    - target: {fileID: 5486655110148676532, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
-      propertyPath: m_NormalizedViewPortRect.x
-      value: 0.0003465116
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 14877645553517913, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
+    - target: {fileID: 3762194498047545693, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
-      value: 0.028619528
-      objectReference: {fileID: 0}
-    - target: {fileID: 14877645553517913, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 0.999307
-      objectReference: {fileID: 0}
-    - target: {fileID: 14877645553517913, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 0.94276094
+      propertyPath: m_UiScaleMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d1f62a9ecde6b34e98f4fd25078278a, type: 3}
