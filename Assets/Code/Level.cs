@@ -56,12 +56,12 @@ public class Level : MonoBehaviour {
 		Play(); // TODO this is debug for starting the level right away
 	}
 
-	void Play() {
+	public void Play() {
 		ChangeState(LevelState.play);
 		PlayAll();
 	}
 
-	void Pause() {
+	public void Pause() {
 		ChangeState(LevelState.pause);
 		PauseAll();
 	}
