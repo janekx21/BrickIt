@@ -22,7 +22,7 @@ public class Player : Entity, IActor, IPausable {
 	private Vector2 direction = Vector2.right;
 	private float speedModifier = 1;
 	private Vector2 dash = Vector2.zero;
-	private AudioSource bounceClip = null;
+	private AudioSource bounceSource = null;
 	private bool paused = false;
 
 	private void OnDrawGizmos() {
@@ -37,7 +37,7 @@ public class Player : Entity, IActor, IPausable {
 
 		rig = GetComponent<Rigidbody2D>();
 		rend = GetComponent<SpriteRenderer>();
-		bounceClip = GetComponent<AudioSource>();
+		bounceSource = GetComponent<AudioSource>();
 	}
 
 	public override void Update() {
@@ -59,7 +59,7 @@ public class Player : Entity, IActor, IPausable {
 
 		ApplyControls();
 		dash = Vector2.MoveTowards(dash, Vector2.zero, Time.fixedDeltaTime * dashAcceleration);
-		
+
 		if (paused) {
 			rig.velocity = Vector2.zero;
 		}
@@ -67,7 +67,6 @@ public class Player : Entity, IActor, IPausable {
 
 	private void OnCollisionEnter2D(Collision2D other) {
 		TryBounce(other);
-		bounceClip.Play();
 	}
 
 	private void OnCollisionStay2D(Collision2D other) {
@@ -75,6 +74,7 @@ public class Player : Entity, IActor, IPausable {
 	}
 
 	private void TryBounce(Collision2D other) {
+		bounceSource.Play();
 		foreach (var contact in other.contacts) {
 			if (Vector2.Dot(contact.normal, direction) <= -.5f) {
 				FlipDirection();
