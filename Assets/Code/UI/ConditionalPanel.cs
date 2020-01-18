@@ -4,7 +4,7 @@ using UnityEngine;
 namespace UI {
 	public class ConditionalPanel : Panel {
 		[SerializeField] private LevelState ownState = LevelState.begin;
-
+		
 		private void Start() {
 			OnUpdateLevelState(Level.Own.State);
 			Level.Own.onStateChanged += OnUpdateLevelState;

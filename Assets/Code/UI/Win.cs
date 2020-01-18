@@ -9,6 +9,7 @@ namespace UI {
 		private void Awake() {
 			next.onClick.AddListener(() => {
 				// do shit
+				Level.Own.ToMenu();
 			});
 		}
 	}

@@ -98,4 +98,8 @@ public class Level : MonoBehaviour {
 			}
 		}
 	}
+
+	public void ToMenu() {
+		SceneManager.LoadScene("Menu");
+	}
 }
