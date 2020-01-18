@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UI;
+using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour {
 	[SerializeField] private string levelName = "";
@@ -47,7 +50,7 @@ public class Level : MonoBehaviour {
 
 	void ChangeState(LevelState newState) {
 		state = newState;
-		onStateChanged(state);
+		onStateChanged?.Invoke(state);
 	}
 
 	void Begin() {
