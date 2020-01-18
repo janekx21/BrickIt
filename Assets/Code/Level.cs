@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UI;
 using UnityEditor;
@@ -11,8 +12,6 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour {
-	[SerializeField] private string levelName = "";
-
 	public static Level Own => instance;
 	private static Level instance = null;
 
@@ -22,6 +21,24 @@ public class Level : MonoBehaviour {
 	public delegate void ParameterAction<T>(T value);
 	public ParameterAction<LevelState> onStateChanged;
 
+	[MenuItem("Custom/Make Level")]
+	public static void MakeLevel() {
+		var guid = AssetDatabase.CreateFolder("Assets/Levels", "Level01");
+		var path = AssetDatabase.GUIDToAssetPath(guid);
+		
+		var levelName = Path.GetFileName(path);
+
+		var scenePath = Path.Combine(path, $"{levelName}.unity");
+		var worked = AssetDatabase.CopyAsset("Assets/Scenes/Empty.unity", scenePath);
+		
+		Assert.IsTrue(worked);
+
+		var obj = ScriptableObject.CreateInstance<LevelObject>();
+		obj.scene = new SceneReference();
+		obj.scene.ScenePath = scenePath;
+		AssetDatabase.CreateAsset(obj, Path.Combine(path, $"{levelName}.asset"));
+	}
+	
 	private void Awake() {
 		Assert.IsNull(instance);
 		instance = this;
