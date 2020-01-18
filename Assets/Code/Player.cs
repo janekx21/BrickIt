@@ -134,6 +134,9 @@ public class Player : Entity, IActor, IPausable {
 
 	public void Dash(Vector2 direction) {
 		dash = direction;
+		// generate a small offset so that
+		// the collision is not triggered twice
+		rig.position += direction * .01f;
 	}
 
 	public void play() {
