@@ -5,6 +5,7 @@ using System.Collections;
 public class PixelCamera : MonoBehaviour {
 	public int referenceHeight = 180;
 	public int pixelsPerUnit = 32;
+	[SerializeField] private bool blit = true;
 
 	private int renderWidth;
 	private int renderHeight;
@@ -51,13 +52,18 @@ public class PixelCamera : MonoBehaviour {
 	}
 
 	void OnRenderImage(RenderTexture source, RenderTexture destination) {
-		RenderTexture buffer = RenderTexture.GetTemporary(renderWidth, renderHeight, -1);
+		if (blit) {
+			RenderTexture buffer = RenderTexture.GetTemporary(renderWidth, renderHeight, -1);
 
-		buffer.filterMode = FilterMode.Point;
-		source.filterMode = FilterMode.Point;
-		Graphics.Blit(source, buffer);
-		Graphics.Blit(buffer, destination);
+			buffer.filterMode = FilterMode.Point;
+			source.filterMode = FilterMode.Point;
+			Graphics.Blit(source, buffer);
+			Graphics.Blit(buffer, destination);
 
-		RenderTexture.ReleaseTemporary(buffer);
+			RenderTexture.ReleaseTemporary(buffer);
+		}
+		else {
+			Graphics.Blit(source, destination);
+		}
 	}
 }

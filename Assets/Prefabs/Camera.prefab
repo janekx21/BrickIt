@@ -54,10 +54,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0003465116
-    y: 0.028619528
-    width: 0.999307
-    height: 0.94276094
+    x: 0.0009241998
+    y: 0.060922056
+    width: 0.9981516
+    height: 0.8781559
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   referenceHeight: 160
   pixelsPerUnit: 16
+  blit: 1
 --- !u!1 &14877646453180771
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,6 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 14877646453180770}
   - component: {fileID: 14877646453180769}
+  - component: {fileID: 7068694550406123743}
   m_Layer: 0
   m_Name: NotPixelPerfectCamera
   m_TagString: Untagged
@@ -150,10 +152,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0017361045
-    y: 0.02702704
-    width: 0.9965278
-    height: 0.9459459
+    x: 0.0009241998
+    y: 0.060922056
+    width: 0.9981516
+    height: 0.8781559
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -174,6 +176,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &7068694550406123743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14877646453180771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953d333e01a52734ca786df566d837ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceHeight: 160
+  pixelsPerUnit: 16
+  blit: 0
 --- !u!1001 &3166702932942899167
 PrefabInstance:
   m_ObjectHideFlags: 0
