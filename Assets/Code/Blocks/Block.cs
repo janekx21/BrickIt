@@ -44,6 +44,9 @@ namespace Block {
 		public virtual void Hit(IActor actor) {
 		}
 
+		public virtual void Over(IActor actor) {
+		}
+
 		public virtual void Break() {
 			if (allBlocks.TrueForAll(x => !x.shouldBreak()) || allBlocks.Count == 1) {
 				// i am the last Block :(
@@ -58,6 +61,14 @@ namespace Block {
 
 			if (actor != null) {
 				Hit(actor);
+			}
+		}
+		
+		private void OnTriggerEnter2D(Collider2D other) {
+			var actor = other.gameObject.GetComponent<IActor>();
+
+			if (actor != null) {
+				Over(actor);
 			}
 		}
 

@@ -10,4 +10,6 @@ public interface IActor {
 	void FlipDirection();
 	void Dash(Vector2 direction); // small acceleration
 	void Die();
+	void TeleportTo(Block.Block from ,Block.Block to, Vector2 direction);
+	Vector2 GetDirection();
 }

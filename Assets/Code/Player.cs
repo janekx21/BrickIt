@@ -132,6 +132,16 @@ public class Player : Entity, IActor, IPausable {
 		Level.Own.Lose();
 	}
 
+	public Vector2 GetDirection() => direction;
+
+	public void TeleportTo(Block.Block @from, Block.Block to, Vector2 dir) {
+		var circleCollider2D = GetComponent<CircleCollider2D>();
+		transform.position = (Vector2)to.transform.position
+		+ dir * .5f
+		+ dir.normalized * (circleCollider2D.radius * 2);
+		direction = dir;
+	}
+
 	public void Dash(Vector2 direction) {
 		dash = direction;
 		// generate a small offset so that

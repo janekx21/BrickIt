@@ -10,14 +10,9 @@ small open source game
 	- claw death block
 	- one way block
 	- gate block
-	- teleporter
 	- spawn block
 - main menu
-- ingame menu
-	- pause
-	- win
-	- lose and respawn
-- level screen
+- level screen finishing touches
 - level editor (large low)
 - colored brush for coloring and recoloring
 - particle effects
@@ -25,6 +20,9 @@ small open source game
 	- player death
 	- color change
 - all the sounds
+	- player death
+	- color changer block
+	- direction change block
 - level chapters
 	- add block per chapter
 - ~~tutorial~~
