@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 
 namespace Block {
 	public class Teleporter : Block {
+		[SerializeField] private AudioSource source = null;
 
 		public override void Over(IActor actor) {
 			base.Hit(actor);
@@ -14,6 +15,7 @@ namespace Block {
 				.First();
 			
 			actor.TeleportTo(this, target, target.transform.up);
+			source.Play();
 		}
 
 		protected override bool shouldBreak() => false;

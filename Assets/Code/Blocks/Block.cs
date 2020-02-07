@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Block {
 	[RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
@@ -13,6 +14,7 @@ namespace Block {
 		private static readonly List<Block> allBlocks = new List<Block>();
 
 		public static Color defaultColor => Color.white;
+		public UnityEvent onDestroy = new UnityEvent();
 
 		private void OnEnable() {
 			allBlocks.Add(this);
@@ -53,6 +55,7 @@ namespace Block {
 				Level.Own.Win();
 			}
 
+			onDestroy.Invoke();
 			Destroy(gameObject);
 		}
 

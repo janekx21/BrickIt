@@ -26,12 +26,12 @@ public class PixelCamera : MonoBehaviour {
 		*/
 
 		renderHeight = referenceHeight;
-		cam.orthographicSize = (renderHeight / 2) / (float) pixelsPerUnit;
+		cam.orthographicSize = renderHeight * .5f / pixelsPerUnit;
 
 		int scale = Screen.height / renderHeight;
 
 		// Height is snapped to the closest whole multiple of reference height.
-		actualHeight = (int) (renderHeight * scale);
+		actualHeight = renderHeight * scale;
 
 		/*
 			Width isn't snapped like height is and will fill the entire width of 
