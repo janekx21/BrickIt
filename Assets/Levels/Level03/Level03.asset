@@ -17,3 +17,4 @@ MonoBehaviour:
     scenePath: Assets/Levels/Level03/Level03.unity
   levelName: noname
   levelAuthor: no one
+  difficulty: 10

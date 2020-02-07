@@ -1109,6 +1109,15 @@ Tilemap:
   m_GameObject: {fileID: 1617138195}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: -7, y: -5, z: 0}
+    second:
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: -6, y: -5, z: 0}
     second:
       m_TileIndex: 11
@@ -1203,6 +1212,15 @@ Tilemap:
     second:
       m_TileIndex: 11
       m_TileSpriteIndex: 11
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 5, y: -5, z: 0}
+    second:
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -1424,6 +1442,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: -7, y: 4, z: 0}
+    second:
+      m_TileIndex: 4
+      m_TileSpriteIndex: 4
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: -6, y: 4, z: 0}
     second:
       m_TileIndex: 9
@@ -1523,6 +1550,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: 5, y: 4, z: 0}
+    second:
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 0
@@ -1533,14 +1569,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 938c6c266ee6827469e3763aaf85abb0, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 642601b2d1137cb468578881d895a246, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 61856d1eb6ded3d4eacfe96bcb4104a4, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: d4b5fa4e663542543b2c93d3e4135416, type: 2}
   - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: f969d54e4b138c140830843603cbea65, type: 2}
   - m_RefCount: 11
@@ -1560,14 +1596,18 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 4099902767569298868, guid: 5713416c4704eab42a8b466fbada8b47,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -6833445872158455971, guid: 5713416c4704eab42a8b466fbada8b47,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 3930821917377472818, guid: 5713416c4704eab42a8b466fbada8b47,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 7477827516038983822, guid: 5713416c4704eab42a8b466fbada8b47,
+      type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 3825752689756085014, guid: 5713416c4704eab42a8b466fbada8b47,
       type: 3}
@@ -1583,7 +1623,7 @@ Tilemap:
   - m_RefCount: 8
     m_Data: {fileID: 857779327251732012, guid: 5713416c4704eab42a8b466fbada8b47, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 46
+  - m_RefCount: 50
     m_Data:
       e00: 1
       e01: 0
@@ -1602,7 +1642,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 46
+  - m_RefCount: 50
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1647,68 +1687,44 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1617138201}
     m_ColliderPaths:
-    - - X: 49998736
-        Y: -50000042
-      - X: 50001346
-        Y: -39999900
-      - X: 60000100
-        Y: -39998127
-      - X: 59998520
-        Y: 39999900
-      - X: 49999900
-        Y: 40000249
-      - X: 49999610
-        Y: 49999994
-      - X: -60000100
-        Y: 49999780
-      - X: -59999780
-        Y: 39999900
-      - X: -10000100
-        Y: 39999022
-      - X: -10000129
-        Y: -39999598
-      - X: -60000100
-        Y: -39999200
-      - X: -60000535
-        Y: 39999853
+    - - X: 59999954
+        Y: -50000100
+      - X: 59999983
+        Y: 50000100
       - X: -70000100
-        Y: 39999171
-      - X: -69999085
-        Y: -39999900
-      - X: -59999900
-        Y: -40000278
-      - X: -59999581
+        Y: 50000012
+      - X: -69999984
         Y: -50000041
+    - - X: -10000216
+        Y: -39999569
+      - X: -60000100
+        Y: -39999084
+      - X: -60000593
+        Y: 39999739
+      - X: -10000100
+        Y: 39998906
     - - X: 49999549
-        Y: -40000012
+        Y: -39999896
       - X: 100
-        Y: -39999643
-      - X: 332
+        Y: -39999527
+      - X: 448
         Y: 39999125
       - X: 49999871
-        Y: 39998247
+        Y: 39998131
   m_CompositePaths:
     m_Paths:
-    - - {x: 4.999871, y: -5.0000043}
-      - {x: 5.000138, y: -3.99999}
-      - {x: 6.00001, y: -3.9998097}
-      - {x: 5.9998493, y: 3.99999}
-      - {x: 4.99999, y: 4.000028}
-      - {x: 4.999958, y: 4.999999}
-      - {x: -6.00001, y: 4.999975}
-      - {x: -5.999975, y: 3.99999}
-      - {x: -1.00001, y: 3.9998991}
-      - {x: -1.0000159, y: -3.99996}
-      - {x: -6.00001, y: -3.9999173}
-      - {x: -6.0000563, y: 3.9999852}
-      - {x: -7.0000095, y: 3.9999144}
-      - {x: -6.9999056, y: -3.99999}
-      - {x: -5.99999, y: -4.000031}
-      - {x: -5.999955, y: -5.0000043}
-    - - {x: 4.9999547, y: -3.9999983}
-      - {x: 0.00001, y: -3.9999616}
-      - {x: 0.000036100002, y: 3.9999125}
-      - {x: 4.999987, y: 3.9998217}
+    - - {x: 5.9999924, y: -5.00001}
+      - {x: 5.999995, y: 5.00001}
+      - {x: -7.0000095, y: 4.9999986}
+      - {x: -6.999995, y: -5.0000043}
+    - - {x: -1.0000216, y: -3.999954}
+      - {x: -6.00001, y: -3.9999056}
+      - {x: -6.0000563, y: 3.999974}
+      - {x: -1.00001, y: 3.9998877}
+    - - {x: 4.9999547, y: -3.999987}
+      - {x: 0.00001, y: -3.9999497}
+      - {x: 0.0000477, y: 3.9999125}
+      - {x: 4.999987, y: 3.9998105}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.000005
 --- !u!50 &1617138200

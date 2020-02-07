@@ -50,7 +50,8 @@ namespace Block {
 		}
 
 		public virtual void Break() {
-			if (allBlocks.TrueForAll(x => !x.shouldBreak()) || allBlocks.Count == 1) {
+			allBlocks.Remove(this);
+			if (allBlocks.TrueForAll(x => !x.shouldBreak())) {
 				// i am the last Block :(
 				Level.Own.Win();
 			}
