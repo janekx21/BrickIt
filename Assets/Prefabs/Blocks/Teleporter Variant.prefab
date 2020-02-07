@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &6201705102628818438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2273809048258293775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 203bf078629747efa3ef282cc1556f5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
-  source: {fileID: 3130859644645839489}
 --- !u!82 &3130859644645839489
 AudioSource:
   m_ObjectHideFlags: 0
@@ -111,6 +97,64 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6201705102628818438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273809048258293775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203bf078629747efa3ef282cc1556f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+  source: {fileID: 3130859644645839489}
+  onTeleportFrom:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1664626735362468547}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTeleportTo:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1664626735362468547}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1664626735362468547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273809048258293775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c479cf45cd4ca8a2986bd148143058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 823083484203336117, guid: 0281da90dbc64174aa173ec315667b0f, type: 3}
 --- !u!1001 &1826984503744196865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182,7 +226,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4753258692078137619, guid: 5713416c4704eab42a8b466fbada8b47,
+      objectReference: {fileID: -1222424925600608484, guid: 5713416c4704eab42a8b466fbada8b47,
         type: 3}
     - target: {fileID: 3823620866787491663, guid: 83a5420b01ede9147b57feea3ea83875,
         type: 3}

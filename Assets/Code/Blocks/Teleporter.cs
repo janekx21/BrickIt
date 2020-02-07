@@ -1,11 +1,15 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Block {
 	public class Teleporter : Block {
 		[SerializeField] private AudioSource source = null;
+		[FormerlySerializedAs("onTeleport")] public UnityEvent onTeleportFrom = new UnityEvent();
+		public UnityEvent onTeleportTo = new UnityEvent();
 
 		public override void Over(IActor actor) {
 			base.Hit(actor);
@@ -15,6 +19,8 @@ namespace Block {
 				.First();
 			
 			actor.TeleportTo(this, target, target.transform.up);
+			onTeleportFrom.Invoke();
+			target.onTeleportTo.Invoke();
 			source.Play();
 		}
 

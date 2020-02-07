@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Default Brick Brush
   m_EditorClassIdentifier: 
   m_Cells:
-  - m_Tile: {fileID: 11400000, guid: c36a6d195c90d9e4ca95f9d4dca92cdf, type: 2}
+  - m_Tile: {fileID: 11400000, guid: 5971b4a54c4401b478e00990def6b606, type: 2}
     m_Matrix:
       e00: 1
       e01: 0
@@ -38,5 +38,15 @@ MonoBehaviour:
   conversion:
   - tile: {fileID: 11400000, guid: 5971b4a54c4401b478e00990def6b606, type: 2}
     block: {fileID: 1563824141435129148, guid: f665eedd6d979c641a64f0ee5e6725e6, type: 3}
-  - tile: {fileID: 11400000, guid: c36a6d195c90d9e4ca95f9d4dca92cdf, type: 2}
+  - tile: {fileID: 11400000, guid: 73ed793891e6e004d95244ffc87c8020, type: 2}
+    block: {fileID: 5224717708498027484, guid: 021378e251d89374cb2e7871a9d13de0, type: 3}
+  - tile: {fileID: 11400000, guid: 74e5959714b422d4ea96774921003574, type: 2}
     block: {fileID: 1742231168, guid: cda889d95b609c94b921496534c498a2, type: 3}
+  - tile: {fileID: 11400000, guid: 52801e8b772c81f4b93b6047ed12a013, type: 2}
+    block: {fileID: 6201705102628818438, guid: 9da2e4a238e4f3e4aaf3ecdfc6d404ef, type: 3}
+  - tile: {fileID: 11400000, guid: ca7801374fdf3ff4a9c11e87c72f59ab, type: 2}
+    block: {fileID: 7775795268369247417, guid: b472c374d58d4fd47bff8c3521b1d915, type: 3}
+  - tile: {fileID: 11400000, guid: 554f7b80b9112c14ab42535ca7528927, type: 2}
+    block: {fileID: 1742231168, guid: cda889d95b609c94b921496534c498a2, type: 3}
+  - tile: {fileID: 11400000, guid: aba5db5988816504d98e230365aedb5e, type: 2}
+    block: {fileID: 4589148182586086431, guid: 599a36ba31ac889479c8d0f068ab2093, type: 3}
