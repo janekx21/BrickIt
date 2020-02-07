@@ -29,3 +29,4 @@ small open source game
 - timer, how long did you need for the level and score
 - ~~star system~~
 - combo counter
+- Kenny Credits
