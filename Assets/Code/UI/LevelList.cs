@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace UI {
@@ -12,11 +14,17 @@ namespace UI {
 			foreach (Transform t in transform) {
 				Destroy(t.gameObject);
 			}
-			foreach (var o in levelObjects) {
+
+			List<LevelObject> list = levelObjects.ToList();
+			list.Sort(Comparison);
+			foreach (var o in list) {
 				var panel = Instantiate(prefab, transform);
 				panel.Init(o, loadAction.Invoke);
 			}
 		}
 
+		private int Comparison(LevelObject x, LevelObject y) {
+			return x.difficulty - y.difficulty;
+		}
 	}
 }
