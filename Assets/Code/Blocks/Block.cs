@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Experimental.PlayerLoop;
 
 namespace Block {
 	[RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
@@ -74,6 +75,10 @@ namespace Block {
 			if (actor != null) {
 				Over(actor);
 			}
+		}
+
+		public void Init(Color color) {
+			this.color = color;
 		}
 
 		public Color GetColor() {

@@ -20,8 +20,10 @@ public class BlockBrush : GridBrush {
 
 	private Vector3Int prev_position = Vector3Int.zero;
 	private GameObject prev_brushTarget = null;
-
+	
 	private Block.Block current = null;
+	public Block.Block Current => current;
+	public Color color = Color.white;
 
 	public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position) {
 		if (position == prev_position) {
@@ -49,6 +51,10 @@ public class BlockBrush : GridBrush {
 				instance.transform.SetParent(brushTarget.transform);
 				instance.transform.position =
 					grid.LocalToWorld(grid.CellToLocalInterpolated(position + (Vector3) Vector2.one * .5f));
+				var block = instance.GetComponent<Block.Block>();
+				if (block) {
+					block.Init(color);
+				}
 			}
 		}
 		else {
@@ -95,17 +101,17 @@ public class BlockBrush : GridBrush {
 
 	[CustomEditor(typeof(BlockBrush))]
 	public class BlockBrushEditor : GridBrushEditor {
-		private BlockBrush BlockBrush {
+		private BlockBrush blockBrush {
 			get { return target as BlockBrush; }
 		}
 
-		private SerializedProperty blockPrefabs;
+		private SerializedProperty colorProperty;
 		private SerializedObject m_SerializedObject;
 
 		protected override void OnEnable() {
 			base.OnEnable();
 			m_SerializedObject = new SerializedObject(target);
-			// blockPrefabs = m_SerializedObject.FindProperty("blockPrefabs");
+			colorProperty = m_SerializedObject.FindProperty("color");
 		}
 
 		/// <summary>
@@ -114,7 +120,10 @@ public class BlockBrush : GridBrush {
 		/// </summary>
 		public override void OnPaintInspectorGUI() {
 			m_SerializedObject.UpdateIfRequiredOrScript();
-			// EditorGUILayout.PropertyField(blockPrefabs, true);
+			EditorGUILayout.PropertyField(colorProperty, true);
+			if (GUILayout.Button("Reset Color")) {
+				colorProperty.colorValue = Block.Block.defaultColor;
+			}
 			m_SerializedObject.ApplyModifiedPropertiesWithoutUndo();
 		}
 	}
