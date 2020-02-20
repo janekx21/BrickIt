@@ -237,6 +237,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 42120637d772cf540aaec7704cab2818, type: 2}
   - {fileID: 11400000, guid: 30c1a5e4700bb1e44aa37e14c08d3b64, type: 2}
   - {fileID: 11400000, guid: 7a8f0a6c765cdc045921f802f3498301, type: 2}
+  - {fileID: 11400000, guid: 02faaabb295b0e347bedcae79b9d42ca, type: 2}
   list: {fileID: 1793093013}
 --- !u!1 &679965786
 GameObject:
@@ -486,7 +487,7 @@ PrefabInstance:
     - target: {fileID: 9173855061244435574, guid: aca49f2d690902943b886da344361f76,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 600
+      value: 527.95
       objectReference: {fileID: 0}
     - target: {fileID: 9173855061244435574, guid: aca49f2d690902943b886da344361f76,
         type: 3}
