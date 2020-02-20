@@ -73,7 +73,7 @@ TextureImporter:
     second: Bucket
   - first:
       213: 7229062396111083442
-    second: BlockDamaged
+    second: BlockDamaged00
   - first:
       213: -7956832237065629149
     second: Tiles_20
@@ -104,6 +104,12 @@ TextureImporter:
   - first:
       213: -1222424925600608484
     second: portal
+  - first:
+      213: -957263223007275780
+    second: BlockDamaged01
+  - first:
+      213: 8976018127306389262
+    second: BlockDamaged02
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -671,7 +677,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlockDamaged
+      name: BlockDamaged00
       rect:
         serializedVersion: 2
         x: 16
@@ -889,7 +895,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -897,6 +903,48 @@ TextureImporter:
       bones: []
       spriteID: cdd29c214d39af643a94c40d5de45a7f
       internalID: -1222424925600608484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlockDamaged01
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c2bfa590a2f244ebb4eee4e6f9e0b0
+      internalID: -957263223007275780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlockDamaged02
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b905e37d18afc5b4db71d6522a30a9c0
+      internalID: 8976018127306389262
       vertices: []
       indices: 
       edges: []
