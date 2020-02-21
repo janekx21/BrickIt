@@ -110,6 +110,12 @@ TextureImporter:
   - first:
       213: 8976018127306389262
     second: BlockDamaged02
+  - first:
+      213: -480250040729634322
+    second: border
+  - first:
+      213: 733746275984780134
+    second: SmallBorder
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -945,6 +951,48 @@ TextureImporter:
       bones: []
       spriteID: b905e37d18afc5b4db71d6522a30a9c0
       internalID: 8976018127306389262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: border
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 110
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba52271761863740b2126ac34c33689
+      internalID: -480250040729634322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallBorder
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c56233bcfcefdd4a80f7e399a34f201
+      internalID: 733746275984780134
       vertices: []
       indices: 
       edges: []
