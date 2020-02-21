@@ -10,6 +10,7 @@
         Tags { "RenderType"="Opaque" }
         LOD 100
         Lighting Off
+        Cull Off
 
         Pass
         {
