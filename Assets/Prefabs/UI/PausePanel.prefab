@@ -143,6 +143,9 @@ MonoBehaviour:
   unpause: {fileID: 6305608179742229286}
   toMainMenu: {fileID: 5512448696493516125}
   toDesktop: {fileID: 4487975948019235091}
+  menuScene:
+    sceneAsset: {fileID: 102900000, guid: 9a88761c89664974fac24378dd5140be, type: 3}
+    scenePath: Assets/Scenes/Menu.unity
 --- !u!1001 &3316263179707662423
 PrefabInstance:
   m_ObjectHideFlags: 0
