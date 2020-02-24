@@ -27,5 +27,5 @@ namespace Blocks {
 		}
 
 		protected override bool shouldBreak() => false;
-	}
+    }
 }

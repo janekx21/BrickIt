@@ -12,5 +12,6 @@ namespace GamePlay {
 		void Die();
 		void TeleportTo(Blocks.Block from ,Blocks.Block to, Vector2 direction);
 		Vector2 GetDirection();
-	}
+        Vector2 GetPosition();
+    }
 }

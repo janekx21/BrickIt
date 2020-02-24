@@ -103,11 +103,6 @@ namespace GamePlay {
             rig.velocity = speedModifier * speed * direction + adding * moveSpeed + dash * dashVelocity;
         }
 
-        public void Init(Vector2 direction, Color color) {
-            this.direction = direction;
-            this.color = color;
-        }
-
         public float GetDamage() {
             return 1;
         }
@@ -138,8 +133,8 @@ namespace GamePlay {
         public void TeleportTo(Block @from, Block to, Vector2 dir) {
             var circleCollider2D = GetComponent<CircleCollider2D>();
             transform.position = (Vector2) to.transform.position
-                                 + dir.normalized * .5f
-                                 + dir.normalized * (circleCollider2D.radius);
+                                 + dir * .5f
+                                 + dir.normalized * (circleCollider2D.radius * 2);
             direction = dir;
         }
 
