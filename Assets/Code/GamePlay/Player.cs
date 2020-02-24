@@ -13,6 +13,8 @@ namespace GamePlay {
         [SerializeField] private float dashVelocity = 1;
 
         [SerializeField] private GameObject bounceParticle = null;
+        [SerializeField]
+        private AudioSource smallBounceSource = null;
 
         private Rigidbody2D rig = null;
         private SpriteRenderer rend = null;
@@ -74,10 +76,13 @@ namespace GamePlay {
         }
 
         private void TryBounce(Collision2D other) {
-            bounceSource.PlayOverlapping();
             foreach (var contact in other.contacts) {
                 if (Vector2.Dot(contact.normal, direction) <= -.5f) {
                     FlipDirection();
+                    bounceSource.PlayRandomPitch(.2f);
+                }
+                else {
+                    smallBounceSource.PlayRandomPitch(.2f);
                 }
                 
                 var block = contact.collider.GetComponent<Block>();
@@ -134,7 +139,7 @@ namespace GamePlay {
             var circleCollider2D = GetComponent<CircleCollider2D>();
             transform.position = (Vector2) to.transform.position
                                  + dir * .5f
-                                 + dir.normalized * (circleCollider2D.radius * 2);
+                                 + dir.normalized * circleCollider2D.radius;
             direction = dir;
         }
 
