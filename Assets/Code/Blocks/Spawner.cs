@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Blocks {
 	public class Spawner : Block {
 
-        [SerializeField] private GameObject instanz = null;
+        [SerializeField] private GameObject prefab = null;
 
         public override void Awake() {
             base.Awake();
 
-            Instantiate(instanz, transform.position, Quaternion.identity);
+            Instantiate(prefab, transform.position, Quaternion.identity);
         }
 
         protected override bool shouldBreak() => false;

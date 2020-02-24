@@ -3,12 +3,6 @@
 namespace Blocks {
 	public class ColorChanger : Block {
 
-		public override void Update() {
-			base.Update();
-
-			ren.color = GetColor();
-		}
-	
 		public override void Hit(IActor actor) {
 			base.Hit(actor);
 

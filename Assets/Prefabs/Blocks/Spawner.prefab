@@ -16,7 +16,7 @@ MonoBehaviour:
   onDestroy:
     m_PersistentCalls:
       m_Calls: []
-  instanz: {fileID: 7071111437144697712, guid: f489839b36d913547bfc6f177e5c2b8d, type: 3}
+  prefab: {fileID: 7071111437144697712, guid: f489839b36d913547bfc6f177e5c2b8d, type: 3}
 --- !u!1001 &263753936852314476
 PrefabInstance:
   m_ObjectHideFlags: 0
