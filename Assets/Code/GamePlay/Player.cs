@@ -13,8 +13,7 @@ namespace GamePlay {
         [SerializeField] private float dashVelocity = 1;
 
         [SerializeField] private GameObject bounceParticle = null;
-        [SerializeField]
-        private AudioSource smallBounceSource = null;
+        [SerializeField] private AudioSource smallBounceSource = null;
 
         private Rigidbody2D rig = null;
         private SpriteRenderer rend = null;
@@ -84,14 +83,17 @@ namespace GamePlay {
                 else {
                     smallBounceSource.PlayRandomPitch(.2f);
                 }
-                
+
                 var block = contact.collider.GetComponent<Block>();
                 var particles = Instantiate(bounceParticle, contact.point,
                     Quaternion.LookRotation(Vector3.forward, contact.normal));
                 if (block) {
                     var main = particles.GetComponent<ParticleSystem>().main;
                     main.startColor = block.GetColor();
+                    var intractable = block.GetComponent<IIntractable>();
+                    intractable?.Interact();
                 }
+
 
                 Dash(contact.normal);
             }
