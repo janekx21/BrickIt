@@ -6,9 +6,9 @@ small open source game
 
 
 ## Sprint Board
-- cleanup
-	- namespace
-	- interface
+- ~~cleanup~~
+	- ~~namespace~~
+	- ~~interface~~
 - maico understands the code that was made recently
 - round sprite for player prototype
 - talk about projekt management
