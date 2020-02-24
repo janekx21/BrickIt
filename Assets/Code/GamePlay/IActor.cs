@@ -2,6 +2,7 @@
 
 namespace GamePlay {
 	public interface IActor {
+        void Init(Vector2 direction, Color color);
 		float GetDamage();
 		Color GetColor();
 		void SetColor(Color color);

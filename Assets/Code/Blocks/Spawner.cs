@@ -1,15 +1,17 @@
-﻿using UnityEngine;
-using UnityEngine.Serialization;
+﻿using GamePlay;
+using UnityEngine;
 
 namespace Blocks {
 	public class Spawner : Block {
 
-        [SerializeField] private GameObject prefab = null;
+        [SerializeField] private Player prefab = null;
 
         public override void Awake() {
             base.Awake();
 
-            Instantiate(prefab, transform.position, Quaternion.identity);
+            var player = Instantiate(prefab, transform.position, Quaternion.identity);
+            player.Init(transform.up, GetColor());
+            
         }
 
         protected override bool shouldBreak() => false;
