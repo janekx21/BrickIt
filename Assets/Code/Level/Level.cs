@@ -31,8 +31,7 @@ namespace Level {
 			Assert.IsTrue(worked);
 
 			var obj = ScriptableObject.CreateInstance<LevelObject>();
-			obj.scene = new SceneReference();
-			obj.scene.ScenePath = scenePath;
+			obj.scene = new SceneReference {ScenePath = scenePath};
 			AssetDatabase.CreateAsset(obj, Path.Combine(path, $"{levelName}.asset"));
 		}
 	

@@ -1,6 +1,7 @@
 using System.Linq;
 using GamePlay;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -18,6 +19,7 @@ namespace Blocks {
 				.OrderBy(teleporter => Random.Range(0f,1f))
 				.First();
 			
+			Assert.IsNotNull(target, "You need to place at least two teleporter");
 			actor.TeleportTo(this, target, target.transform.up);
 			onTeleportFrom.Invoke();
 			target.onTeleportTo.Invoke();
