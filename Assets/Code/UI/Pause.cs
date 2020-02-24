@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Util;
 
 namespace UI {
 	public class Pause : MonoBehaviour {
@@ -12,7 +13,7 @@ namespace UI {
 		[SerializeField] private SceneReference menuScene = null;
 
 		private void Awake() {
-			unpause.onClick.AddListener(() => { Level.Own.Play(); });
+			unpause.onClick.AddListener(() => { Level.Level.Own.Play(); });
 			toMainMenu.onClick.AddListener(() => {
 				SceneManager.LoadScene(menuScene);
 			});

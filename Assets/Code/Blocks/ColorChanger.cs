@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using GamePlay;
 
-
-namespace Block {
+namespace Blocks {
 	public class ColorChanger : Block {
 
 		public override void Update() {

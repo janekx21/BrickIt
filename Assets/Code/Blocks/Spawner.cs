@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-
-namespace Block {
+namespace Blocks {
 	public class Spawner : Block {
 
         [SerializeField] private GameObject instanz = null;

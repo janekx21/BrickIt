@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using GamePlay;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Experimental.PlayerLoop;
 
-namespace Block {
+namespace Blocks {
 	[RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
 	public abstract class Block : Entity {
 		[SerializeField] private Color color = Color.white;
@@ -54,7 +53,7 @@ namespace Block {
 			allBlocks.Remove(this);
 			if (allBlocks.TrueForAll(x => !x.shouldBreak())) {
 				// i am the last Block :(
-				Level.Own.Win();
+				Level.Level.Own.Win();
 			}
 
 			onDestroy.Invoke();

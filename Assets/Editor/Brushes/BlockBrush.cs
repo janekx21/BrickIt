@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Blocks;
 using UnityEditor;
 using UnityEditor.Tilemaps;
 using UnityEngine;
@@ -10,7 +11,7 @@ using UnityEngine.Tilemaps;
 [System.Serializable]
 public struct TileToBlock {
 	public Tile tile;
-	public Block.Block block;
+	public Block block;
 }
 
 [CreateAssetMenu]
@@ -21,8 +22,8 @@ public class BlockBrush : GridBrush {
 	private Vector3Int prev_position = Vector3Int.zero;
 	private GameObject prev_brushTarget = null;
 	
-	private Block.Block current = null;
-	public Block.Block Current => current;
+	private Block current = null;
+	public Block Current => current;
 	public Color color = Color.white;
 
 	public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position) {
@@ -51,7 +52,7 @@ public class BlockBrush : GridBrush {
 				instance.transform.SetParent(brushTarget.transform);
 				instance.transform.position =
 					grid.LocalToWorld(grid.CellToLocalInterpolated(position + (Vector3) Vector2.one * .5f));
-				var block = instance.GetComponent<Block.Block>();
+				var block = instance.GetComponent<Block>();
 				if (block) {
 					block.Init(color);
 				}
@@ -95,7 +96,7 @@ public class BlockBrush : GridBrush {
 	public override void Pick(GridLayout gridLayout, GameObject brushTarget, BoundsInt position, Vector3Int pickStart) {
 		base.Pick(gridLayout, brushTarget, position, pickStart);
 		Tile tile = brushTarget.GetComponent<Tilemap>().GetTile(position.position) as Tile;
-		Block.Block block = conversion.Find(ttb => ttb.tile == tile).block;
+		Block block = conversion.Find(ttb => ttb.tile == tile).block;
 		current = block;
 	}
 
@@ -122,7 +123,7 @@ public class BlockBrush : GridBrush {
 			m_SerializedObject.UpdateIfRequiredOrScript();
 			EditorGUILayout.PropertyField(colorProperty, true);
 			if (GUILayout.Button("Reset Color")) {
-				colorProperty.colorValue = Block.Block.defaultColor;
+				colorProperty.colorValue = Block.defaultColor;
 			}
 			m_SerializedObject.ApplyModifiedPropertiesWithoutUndo();
 		}

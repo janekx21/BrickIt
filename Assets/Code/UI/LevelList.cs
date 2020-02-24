@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Level;
 using UnityEngine;
 
 namespace UI {
@@ -10,7 +11,7 @@ namespace UI {
 		private void Awake() {
 		}
 
-		public void Init(LevelObject[] levelObjects, Level.ParameterAction<LevelObject> loadAction) {
+		public void Init(LevelObject[] levelObjects, Level.Level.ParameterAction<LevelObject> loadAction) {
 			foreach (Transform t in transform) {
 				Destroy(t.gameObject);
 			}

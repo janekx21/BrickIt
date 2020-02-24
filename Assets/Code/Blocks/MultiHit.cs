@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using GamePlay;
 using UnityEngine;
 
-namespace Block {
+namespace Blocks {
 	public class MultiHit : Brick {
 		[SerializeField] private int maxHp = 2;
 		private int hp = -1;

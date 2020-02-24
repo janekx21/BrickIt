@@ -1,11 +1,11 @@
-using System;
 using System.Linq;
+using GamePlay;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-namespace Block {
+namespace Blocks {
 	public class Teleporter : Block {
 		[SerializeField] private AudioSource source = null;
 		[FormerlySerializedAs("onTeleport")] public UnityEvent onTeleportFrom = new UnityEvent();

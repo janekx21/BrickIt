@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Level;
+using UnityEngine;
 
 namespace UI {
     public abstract class Panel : MonoBehaviour {

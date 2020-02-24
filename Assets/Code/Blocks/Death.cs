@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using GamePlay;
 
-namespace Block {
+namespace Blocks {
 	public class Death : Block {
 		public override void Hit(IActor maker) {
 			if (ColorsMatch(maker)) {

@@ -1,3 +1,4 @@
+using Level;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ namespace UI {
 		[SerializeField] private Text levelAuthor = null;
 		[SerializeField] private Button button = null;
 
-		public void Init(LevelObject levelObject, Level.ParameterAction<LevelObject> loadAction) {
+		public void Init(LevelObject levelObject, Level.Level.ParameterAction<LevelObject> loadAction) {
 			levelName.text = levelObject.levelName;
 			levelAuthor.text = levelObject.levelAuthor;
 			button.onClick.AddListener(() => loadAction.Invoke(levelObject));

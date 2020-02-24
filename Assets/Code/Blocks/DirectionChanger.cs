@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using GamePlay;
 
-namespace Block {
+namespace Blocks {
 	public class DirectionChanger : Block {
 		public override void Hit(IActor actor) {
 			base.Hit(actor);
