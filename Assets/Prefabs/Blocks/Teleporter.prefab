@@ -97,6 +97,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1664626735362468547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273809048258293775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c479cf45cd4ca8a2986bd148143058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 823083484203336117, guid: 0281da90dbc64174aa173ec315667b0f, type: 3}
 --- !u!114 &6201705102628818438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,19 +155,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1664626735362468547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2273809048258293775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c479cf45cd4ca8a2986bd148143058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 823083484203336117, guid: 0281da90dbc64174aa173ec315667b0f, type: 3}
 --- !u!1001 &1826984503744196865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,6 +167,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleporter Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 492284279688118544, guid: 83a5420b01ede9147b57feea3ea83875,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1222424925600608484, guid: 5713416c4704eab42a8b466fbada8b47,
+        type: 3}
     - target: {fileID: 492284279688118546, guid: 83a5420b01ede9147b57feea3ea83875,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -222,12 +228,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 492284279688118544, guid: 83a5420b01ede9147b57feea3ea83875,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1222424925600608484, guid: 5713416c4704eab42a8b466fbada8b47,
-        type: 3}
     - target: {fileID: 3823620866787491663, guid: 83a5420b01ede9147b57feea3ea83875,
         type: 3}
       propertyPath: m_IsTrigger

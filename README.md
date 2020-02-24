@@ -19,6 +19,7 @@ small open source game
 
 
 ## Sprint Backlog
+- implode sound effect from teleporter sound effect
 - ~~main menu~~
 - level screen finishing touches
 - ~~colored brush for coloring and recoloring~~
@@ -40,6 +41,7 @@ small open source game
 	- add block per chapter
 - timer, how long did you need for the level and score
 - combo counter
+- wrong color on side bump with block (bug)
 - kenny credits
 - credits screen
 - blocks
