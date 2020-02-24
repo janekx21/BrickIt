@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 2273809048258293775, guid: 9da2e4a238e4f3e4aaf3ecdfc6d404ef,
         type: 3}
       propertyPath: m_Name
-      value: Teleporter Variant
+      value: Teleporter
       objectReference: {fileID: 0}
     - target: {fileID: 2273809048258293779, guid: 9da2e4a238e4f3e4aaf3ecdfc6d404ef,
         type: 3}
@@ -628,42 +628,42 @@ PrefabInstance:
     - target: {fileID: 14877645553517913, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.00045207143
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 14877645553517913, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.062363237
+      value: 0.065217406
       objectReference: {fileID: 0}
     - target: {fileID: 14877645553517913, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.99909586
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 14877645553517913, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8752735
+      value: 0.8695652
       objectReference: {fileID: 0}
     - target: {fileID: 14877646453180769, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.00045207143
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 14877646453180769, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.99909586
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 14877646453180769, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.062363237
+      value: 0.065217406
       objectReference: {fileID: 0}
     - target: {fileID: 14877646453180769, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8752735
+      value: 0.8695652
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d1f62a9ecde6b34e98f4fd25078278a, type: 3}
@@ -1866,7 +1866,7 @@ PrefabInstance:
     - target: {fileID: 2273809048258293775, guid: 9da2e4a238e4f3e4aaf3ecdfc6d404ef,
         type: 3}
       propertyPath: m_Name
-      value: Teleporter Variant
+      value: Teleporter
       objectReference: {fileID: 0}
     - target: {fileID: 2273809048258293779, guid: 9da2e4a238e4f3e4aaf3ecdfc6d404ef,
         type: 3}
