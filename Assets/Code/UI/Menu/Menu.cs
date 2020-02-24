@@ -1,17 +1,21 @@
 ﻿using System.Collections.Generic;
 using Level;
-using UI;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-namespace Menu {
+namespace UI.Menu {
 	public class Menu : MonoBehaviour {
 		[SerializeField] private List<LevelObject> levelObjects = new List<LevelObject>();
 		[SerializeField] private LevelList list = null;
 
+        public class OnLevelAction : UnityEvent<LevelObject>{}
+        
 		private void Awake() {
-			list.Init(levelObjects.ToArray(), LoadLevel);
+            var changeEvent = new OnLevelAction();
+            changeEvent.AddListener(LoadLevel);
+			list.Init(levelObjects.ToArray(), changeEvent);
 		}
 
 		[ContextMenu("Find All Levels")]

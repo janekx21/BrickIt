@@ -8,7 +8,7 @@ namespace UI {
 		
 		private void Start() {
 			OnUpdateLevelState(Level.Level.Own.State);
-			Level.Level.Own.onStateChanged += OnUpdateLevelState;
+			Level.Level.Own.onStateChanged.AddListener(OnUpdateLevelState);
 		}
 
 		public override void OnUpdateLevelState(LevelState state) {

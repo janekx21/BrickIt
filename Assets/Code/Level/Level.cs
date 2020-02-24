@@ -4,6 +4,7 @@ using GamePlay;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Util;
 
@@ -15,8 +16,8 @@ namespace Level {
 		private LevelState state = LevelState.begin;
 		public LevelState State => state;
 
-		public delegate void ParameterAction<T>(T value);
-		public ParameterAction<LevelState> onStateChanged;
+        public class OnLevelStateChanged : UnityEvent<LevelState>{}
+		public OnLevelStateChanged onStateChanged = new OnLevelStateChanged();
 
 		[MenuItem("Custom/Make Level")]
 		public static void MakeLevel() {
