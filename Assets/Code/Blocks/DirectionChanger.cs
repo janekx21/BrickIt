@@ -13,6 +13,6 @@ namespace Blocks {
 
 		protected override bool shouldBreak() => false;
         
-        public void Interact() => onInteract.Invoke();
+        public void Interact(IActor _) => onInteract.Invoke();
     }
 }

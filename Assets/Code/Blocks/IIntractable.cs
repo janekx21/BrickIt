@@ -1,5 +1,7 @@
+using GamePlay;
+
 namespace Blocks {
     public interface IIntractable {
-        void Interact();
+        void Interact(IActor actor);
     }
 }

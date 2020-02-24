@@ -91,7 +91,7 @@ namespace GamePlay {
                     var main = particles.GetComponent<ParticleSystem>().main;
                     main.startColor = block.GetColor();
                     var intractable = block.GetComponent<IIntractable>();
-                    intractable?.Interact();
+                    intractable?.Interact(this);
                 }
 
 
@@ -136,6 +136,8 @@ namespace GamePlay {
         }
 
         public Vector2 GetDirection() => direction;
+
+        public Vector2 GetPosition() => transform.position;
 
         public void TeleportTo(Block @from, Block to, Vector2 dir) {
             var circleCollider2D = GetComponent<CircleCollider2D>();

@@ -10,5 +10,9 @@ namespace Util {
             source.pitch = 1 + Random.Range(-randomness, randomness);
             source.PlayOneShot(source.clip);
         }
+
+        public static Quaternion Rotation(this Vector2 direction) {
+            return Quaternion.AngleAxis(Vector2.SignedAngle(Vector2.up, direction), Vector3.forward);
+        }
     }
 }

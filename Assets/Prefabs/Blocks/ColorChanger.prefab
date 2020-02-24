@@ -30,6 +30,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  particleEffect: {fileID: 8787806066685997078, guid: 815df1b42728c4e40b8262689c3c1bc5,
+    type: 3}
 --- !u!82 &3649286094925391968
 AudioSource:
   m_ObjectHideFlags: 0

@@ -54,9 +54,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0018726587
+    x: 0.00032010674
     y: 0.028619528
-    width: 0.9962547
+    width: 0.9993598
     height: 0.94276094
   near clip plane: 0.3
   far clip plane: 1000
@@ -66,7 +66,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 567
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -152,9 +152,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0018726587
+    x: 0.00032010674
     y: 0.028619528
-    width: 0.9962547
+    width: 0.9993598
     height: 0.94276094
   near clip plane: 0.3
   far clip plane: 1000
