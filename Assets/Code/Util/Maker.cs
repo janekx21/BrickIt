@@ -1,13 +1,13 @@
 using UnityEngine;
 
 namespace Util {
-    public class Maker : MonoBehaviour {
+    public class Maker : MonoBehaviour, ICanMake {
         [SerializeField] private GameObject prefab = null;
 
         public void Spawn() {
-            Instantiate(prefab, transform.position, transform.rotation, null);
+            Spawn(prefab);
         }
-    
+
         public void Spawn(GameObject obj) {
             Instantiate(obj, transform.position, transform.rotation, null);
         }

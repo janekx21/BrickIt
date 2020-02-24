@@ -10,12 +10,10 @@ namespace UI {
 		[SerializeField] private Button toMainMenu = null;
 		[SerializeField] private Button toDesktop = null;
 
-		[SerializeField] private SceneReference menuScene = null;
-
 		private void Awake() {
 			unpause.onClick.AddListener(() => { Level.Level.Own.Play(); });
 			toMainMenu.onClick.AddListener(() => {
-				SceneManager.LoadScene(menuScene);
+                Level.Level.Own.ToMenu();
 			});
 			toDesktop.onClick.AddListener(() => {
 				Application.Quit(0);
