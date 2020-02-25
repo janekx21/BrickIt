@@ -17,4 +17,4 @@ MonoBehaviour:
     scenePath: Assets/Levels/Level02/Level02.unity
   levelName: Color can change
   levelAuthor: Janek
-  difficulty: 5
+  difficulty: 2

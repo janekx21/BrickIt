@@ -17,4 +17,4 @@ MonoBehaviour:
     scenePath: Assets/Levels/Level04/Level04.unity
   levelName: Teleport
   levelAuthor: Janek
-  difficulty: 2
+  difficulty: 1

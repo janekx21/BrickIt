@@ -17,3 +17,4 @@ MonoBehaviour:
     scenePath: Assets/Levels/Level01/Level01.unity
   levelName: Blocks can break
   levelAuthor: Janek
+  difficulty: 3
