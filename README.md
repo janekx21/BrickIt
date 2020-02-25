@@ -10,15 +10,22 @@ small open source game
 	- ~~namespace~~
 	- ~~interface~~
 - ~~maico understands the code that was made recently~~
-- round sprite for player prototype
+- ~~round sprite for player prototype~~
 - talk about projekt management
-- all sounds
-	- color changer block
-	- direction change block
+- ~~all sounds~~
+	- ~~color changer block~~
+	- ~~direction change block~~
 - clean code / assets removal
+- (bug) multihitblock gets destroyed by wrong color
+- (bug) directionchanger spawns coloredblock when placed with brush
+- add spawner to tile pallet
+- add animation for spawner
+- (bug) destroyed block's destroy-effect is only in white and not their own color
+- add a different win sound
 
 
 ## Sprint Backlog
+- add rotation feature for brush
 - implode sound effect from teleporter sound effect
 - ~~main menu~~
 - level screen finishing touches
