@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using Util;
 
 namespace Blocks {
-    public class ColorChanger : Block, IIntractable {
+    public class ColorChanger : Block, IInteractable {
         [SerializeField] UnityEvent onInteract = new UnityEvent();
         [SerializeField] private GameObject particleEffect = null;
 

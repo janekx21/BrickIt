@@ -1,7 +1,7 @@
 using GamePlay;
 
 namespace Blocks {
-    public interface IIntractable {
+    public interface IInteractable {
         void Interact(IActor actor);
     }
 }

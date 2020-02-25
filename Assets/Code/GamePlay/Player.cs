@@ -86,12 +86,15 @@ namespace GamePlay {
                 if (block) {
                     var main = particles.GetComponent<ParticleSystem>().main;
                     main.startColor = block.GetColor();
+                    var interactable = block.GetComponent<IInteractable>();
+                    interactable?.Interact(this);
                 }
 
                 Dash(contact.normal);
             }
         }
-
+        
+            
         private void ApplyControls() {
             move.x = Input.GetAxis("Horizontal");
             move.y = Input.GetAxis("Vertical");

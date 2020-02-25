@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace Blocks {
-	public class DirectionChanger : Block, IIntractable {
+	public class DirectionChanger : Block, IInteractable {
         [SerializeField] UnityEvent onInteract = new UnityEvent();
 		public override void Hit(IActor actor) {
 			base.Hit(actor);
