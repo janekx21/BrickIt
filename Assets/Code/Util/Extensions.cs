@@ -8,6 +8,11 @@ namespace Util {
 
         public static void PlayRandomPitch(this AudioSource source, float randomness) {
             source.pitch = 1 + Random.Range(-randomness, randomness);
+            source.Play();
+        }
+        
+        public static void PlayRandomPitchOverlapping(this AudioSource source, float randomness) {
+            source.pitch = 1 + Random.Range(-randomness, randomness);
             source.PlayOneShot(source.clip);
         }
 

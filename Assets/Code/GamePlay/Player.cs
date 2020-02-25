@@ -17,6 +17,7 @@ namespace GamePlay {
         private Rigidbody2D rig = null;
         private SpriteRenderer rend = null;
         private AudioSource bounceSource = null;
+        [SerializeField] private AudioSource smallBounceSource;
         private Vector2 move = Vector2.zero;
         private Vector2 direction = Vector2.right;
         private float speedModifier = 1;
@@ -74,12 +75,15 @@ namespace GamePlay {
         }
 
         private void TryBounce(Collision2D other) {
-            bounceSource.PlayOverlapping();
             foreach (var contact in other.contacts) {
                 if (Vector2.Dot(contact.normal, direction) <= -.5f) {
                     FlipDirection();
+                    bounceSource.PlayRandomPitch(.1f);
                 }
-                
+                else {
+                    smallBounceSource.PlayRandomPitch(.25f);
+                }
+
                 var block = contact.collider.GetComponent<Block>();
                 var particles = Instantiate(bounceParticle, contact.point,
                     Quaternion.LookRotation(Vector3.forward, contact.normal));
@@ -93,8 +97,8 @@ namespace GamePlay {
                 Dash(contact.normal);
             }
         }
-        
-            
+
+
         private void ApplyControls() {
             move.x = Input.GetAxis("Horizontal");
             move.y = Input.GetAxis("Vertical");
