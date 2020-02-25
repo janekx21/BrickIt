@@ -7,8 +7,6 @@ small open source game
 
 ## Sprint Board
 - talk about projekt management
-- ~~(bug) multihitblock gets destroyed by wrong color~~
-- (bug) directionchanger spawns coloredblock when placed with brush
 - add spawner to tile pallet
 - add animation for spawner
 - (bug) destroyed block's destroy-effect is only in white and not their own color
@@ -67,3 +65,5 @@ small open source game
 	- ~~direction change block~~
 - ~~wrong color on side bump with block (bug)~~
 - ~~implode sound effect from teleporter sound effect~~
+- ~~(bug) multihitblock gets destroyed by wrong color~~
+- ~~(bug) directionchanger spawns coloredblock when placed with brush~~

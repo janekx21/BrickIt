@@ -10,14 +10,17 @@ namespace Graphics {
 
         public void Start() {
             var ren = GetComponent<SpriteRenderer>();
-        
+
             var position = transform.position;
-            int index = Mathf.FloorToInt(position.x * 131 + position.y * 17);
-            index = Math.Abs(index);
-            ren.sprite = possibleSprites[index % possibleSprites.Length];
+            if (possibleSprites.Length > 0) {
+                int index = Mathf.FloorToInt(position.x * 131 + position.y * 17);
+                index = Math.Abs(index);
+                ren.sprite = possibleSprites[index % possibleSprites.Length];
+            }
+
             if (randomFlip) {
-                ren.flipX = Mathf.FloorToInt(position.y * 689 + position.x*7) % 2 == 0;
-                ren.flipY = Mathf.FloorToInt(position.x * 876 + position.y*897) % 2 == 0;
+                ren.flipX = Mathf.FloorToInt(position.y * 689 + position.x * 7) % 2 == 0;
+                ren.flipY = Mathf.FloorToInt(position.x * 876 + position.y * 897) % 2 == 0;
             }
 
             if (randomRotation) {
