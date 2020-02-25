@@ -21,7 +21,7 @@ small open source game
 - particle effects
 	- ~~block death~~
 	- player death
-	- color change
+	- ~~color change~~
 - animations
 	- player death pause
 	  die first then menu
