@@ -143,7 +143,7 @@ namespace GamePlay {
             var circleCollider2D = GetComponent<CircleCollider2D>();
             transform.position = (Vector2) to.transform.position
                                  + dir.normalized * .5f
-                                 + dir.normalized * (circleCollider2D.radius);
+                                 + dir.normalized * circleCollider2D.radius;
             direction = dir;
         }
 
