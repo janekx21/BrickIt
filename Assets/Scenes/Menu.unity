@@ -238,6 +238,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 30c1a5e4700bb1e44aa37e14c08d3b64, type: 2}
   - {fileID: 11400000, guid: 7a8f0a6c765cdc045921f802f3498301, type: 2}
   - {fileID: 11400000, guid: 02faaabb295b0e347bedcae79b9d42ca, type: 2}
+  - {fileID: 11400000, guid: 03e3efb8feb630e4983b419b35dc1883, type: 2}
   list: {fileID: 1793093013}
 --- !u!1 &679965786
 GameObject:
@@ -482,7 +483,7 @@ PrefabInstance:
     - target: {fileID: 9173855061244435574, guid: aca49f2d690902943b886da344361f76,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9173855061244435574, guid: aca49f2d690902943b886da344361f76,
         type: 3}
@@ -523,6 +524,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137591992686875133, guid: aca49f2d690902943b886da344361f76,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137591992686875133, guid: aca49f2d690902943b886da344361f76,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222462876639631211, guid: aca49f2d690902943b886da344361f76,
+        type: 3}
+      propertyPath: m_CellSize.x
+      value: 176
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca49f2d690902943b886da344361f76, type: 3}
