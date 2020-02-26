@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace Blocks {
 	[RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
-	public abstract class Block : Entity {
+	public abstract class Block : Entity, IColored {
 		[SerializeField] private Color color = Color.white;
 
 		protected Rigidbody2D rig = null;
@@ -84,7 +84,11 @@ namespace Blocks {
 			return color;
 		}
 
-		public bool ColorsMatch(IActor actor) {
+        public void SetColor(Color color) {
+            this.color = color;
+        }
+
+        public bool ColorsMatch(IActor actor) {
 			return GetColor() == actor.GetColor() || GetColor() == defaultColor;
 		}
 
