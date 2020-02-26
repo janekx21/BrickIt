@@ -13,6 +13,7 @@ small open source game
 - add animation for spawner
 
 ## Sprint Backlog
+- ui autofocus
 - destroyed block's destroy-effect is only in white and not their own color
 - add a different win sound
 - add rotation feature for brush
