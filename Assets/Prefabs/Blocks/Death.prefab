@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6ccc3402086714d8678deb88722ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &8406083402181189510
 PrefabInstance:
   m_ObjectHideFlags: 0

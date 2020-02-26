@@ -6,7 +6,6 @@ small open source game
 
 
 ## Sprint Board
-- show maico how to merge
 - add spawner to tile pallet
 - level chapters
 	- add block per chapter
