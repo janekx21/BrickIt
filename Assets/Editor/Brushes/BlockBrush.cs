@@ -23,8 +23,13 @@ public class BlockBrush : GridBrush {
 	private GameObject prev_brushTarget = null;
 	
 	private Block current = null;
-	public Block Current => current;
-	public Color color = Color.white;
+
+    public Color CurrentColor {
+        get => color;
+        set => color = value;
+    }
+
+    private Color color = Color.white;
 
 	public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position) {
 		if (position == prev_position) {
@@ -102,30 +107,17 @@ public class BlockBrush : GridBrush {
 
 	[CustomEditor(typeof(BlockBrush))]
 	public class BlockBrushEditor : GridBrushEditor {
-		private BlockBrush blockBrush {
-			get { return target as BlockBrush; }
-		}
+		private BlockBrush CurrentBlockBrush => target as BlockBrush;
 
-		private SerializedProperty colorProperty;
-		private SerializedObject m_SerializedObject;
-
-		protected override void OnEnable() {
-			base.OnEnable();
-			m_SerializedObject = new SerializedObject(target);
-			colorProperty = m_SerializedObject.FindProperty("color");
-		}
-
-		/// <summary>
+        /// <summary>
 		/// Callback for painting the inspector GUI for the PrefabBrush in the Tile Palette.
 		/// The PrefabBrush Editor overrides this to have a custom inspector for this Brush.
 		/// </summary>
 		public override void OnPaintInspectorGUI() {
-			m_SerializedObject.UpdateIfRequiredOrScript();
-			EditorGUILayout.PropertyField(colorProperty, true);
+            CurrentBlockBrush.CurrentColor = EditorGUILayout.ColorField(CurrentBlockBrush.CurrentColor);
 			if (GUILayout.Button("Reset Color")) {
-				colorProperty.colorValue = Block.defaultColor;
-			}
-			m_SerializedObject.ApplyModifiedPropertiesWithoutUndo();
+                CurrentBlockBrush.CurrentColor = Block.defaultColor;
+            }
 		}
 	}
 }
