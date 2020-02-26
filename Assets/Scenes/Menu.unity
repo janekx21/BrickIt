@@ -233,12 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60102850bd3a3614f8a14a3781755a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelObjects:
-  - {fileID: 11400000, guid: 42120637d772cf540aaec7704cab2818, type: 2}
-  - {fileID: 11400000, guid: 30c1a5e4700bb1e44aa37e14c08d3b64, type: 2}
-  - {fileID: 11400000, guid: 7a8f0a6c765cdc045921f802f3498301, type: 2}
-  - {fileID: 11400000, guid: 02faaabb295b0e347bedcae79b9d42ca, type: 2}
-  - {fileID: 11400000, guid: 03e3efb8feb630e4983b419b35dc1883, type: 2}
+  chapterObject: {fileID: 11400000, guid: 025443907bbd66a42aaa7e7b698c8ec5, type: 2}
   list: {fileID: 1793093013}
 --- !u!1 &679965786
 GameObject:

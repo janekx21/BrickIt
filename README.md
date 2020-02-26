@@ -6,9 +6,9 @@ small open source game
 
 
 ## Sprint Board
-- add spawner to tile pallet
 - level chapters
-	- add block per chapter
+	- ~~add chapter object~~
+	- show all chapters in menu
 - add animation for spawner
 
 ## Sprint Backlog
