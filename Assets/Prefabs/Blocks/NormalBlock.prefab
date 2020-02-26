@@ -16,18 +16,6 @@ MonoBehaviour:
   onDestroy:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 0db3c86578276164e93d89d91a213190,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 8431340612405050511}
         m_MethodName: Spawn
         m_Mode: 1
@@ -82,12 +70,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalBlock
       objectReference: {fileID: 0}
-    - target: {fileID: 492284279688118544, guid: 83a5420b01ede9147b57feea3ea83875,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7229062396111083442, guid: 5713416c4704eab42a8b466fbada8b47,
-        type: 3}
     - target: {fileID: 492284279688118546, guid: 83a5420b01ede9147b57feea3ea83875,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -143,6 +125,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 492284279688118544, guid: 83a5420b01ede9147b57feea3ea83875,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7229062396111083442, guid: 5713416c4704eab42a8b466fbada8b47,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83a5420b01ede9147b57feea3ea83875, type: 3}
 --- !u!1 &6126956321603138956 stripped

@@ -17,7 +17,7 @@ namespace GamePlay {
         private Rigidbody2D rig = null;
         private SpriteRenderer rend = null;
         private AudioSource bounceSource = null;
-        [SerializeField] private AudioSource smallBounceSource;
+        [SerializeField] private AudioSource smallBounceSource = null;
         private Vector2 move = Vector2.zero;
         private Vector2 direction = Vector2.right;
         private float speedModifier = 1;

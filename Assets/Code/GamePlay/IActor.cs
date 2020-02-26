@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 
 namespace GamePlay {
-	public interface IActor {
+	public interface IActor : IColored{
         void Init(Vector2 direction, Color color);
 		float GetDamage();
-		Color GetColor();
-		void SetColor(Color color);
 		void ChangeDirection();
 		void FlipDirection();
 		void Dash(Vector2 direction); // small acceleration
