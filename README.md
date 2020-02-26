@@ -6,14 +6,15 @@ small open source game
 
 
 ## Sprint Board
-- talk about projekt management
+- show maico how to merge
 - add spawner to tile pallet
+- level chapters
+	- add block per chapter
 - add animation for spawner
-- (bug) destroyed block's destroy-effect is only in white and not their own color
-- add a different win sound
-
 
 ## Sprint Backlog
+- destroyed block's destroy-effect is only in white and not their own color
+- add a different win sound
 - add rotation feature for brush
 - level screen finishing touches
 - particle effects
@@ -26,13 +27,13 @@ small open source game
 	- spawner block info pause
 		- should show player direction
 		  in paused play
-- level chapters
-	- add block per chapter
+    - block animations in general
 - timer, how long did you need for the level and score
 - combo counter
 - kenny credits
 - credits screen
 - blocks
+	- two hit block
 	- claw death block
 	- one way block
 	- gate block
