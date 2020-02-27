@@ -15,6 +15,6 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: c68c1c32ec89144469a131c317f42041, type: 3}
     scenePath: Assets/Levels/Chapter01/Level06/Level06.unity
-  levelName: noname
-  levelAuthor: no one
-  difficulty: 1
+  levelName: Ultimate Trial
+  levelAuthor: Maico
+  difficulty: 20
