@@ -19,23 +19,6 @@ namespace Level {
         public class OnLevelStateChanged : UnityEvent<LevelState>{}
 		public OnLevelStateChanged onStateChanged = new OnLevelStateChanged();
 
-		[MenuItem("Custom/Make Level")]
-		public static void MakeLevel() {
-			var guid = AssetDatabase.CreateFolder("Assets/Levels", "Level01");
-			var path = AssetDatabase.GUIDToAssetPath(guid);
-		
-			var levelName = Path.GetFileName(path);
-
-			var scenePath = Path.Combine(path, $"{levelName}.unity");
-			var worked = AssetDatabase.CopyAsset("Assets/Scenes/Empty.unity", scenePath);
-		
-			Assert.IsTrue(worked);
-
-			var obj = ScriptableObject.CreateInstance<LevelObject>();
-			obj.scene = new SceneReference {ScenePath = scenePath};
-			AssetDatabase.CreateAsset(obj, Path.Combine(path, $"{levelName}.asset"));
-		}
-	
 		private void Awake() {
 			Assert.IsNull(instance);
 			instance = this;

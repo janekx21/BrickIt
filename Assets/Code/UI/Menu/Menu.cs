@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Level;
-using UnityEditor;
+﻿using Level;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;

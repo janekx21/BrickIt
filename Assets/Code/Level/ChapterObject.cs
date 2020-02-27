@@ -1,16 +1,20 @@
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Util;
+
+#if UNITY_EDITOR
+    using UnityEditor;
+#endif
 
 namespace Level {
     [CreateAssetMenu(fileName = "new ChapterObject", menuName = "ChapterObject", order = 0)]
     public class ChapterObject : ScriptableObject {
         public Sprite image = null;
         public LevelObject[] levels = new LevelObject[0];
-
+        
+#if UNITY_EDITOR        
         private string directory {
             get {
                 var path = AssetDatabase.GetAssetPath(this);
@@ -52,5 +56,6 @@ namespace Level {
             
             FindAllLevelObjects();
         }
+#endif        
     }
 }
