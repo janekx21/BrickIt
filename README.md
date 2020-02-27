@@ -12,6 +12,7 @@ small open source game
 - add animation for spawner
 
 ## Sprint Backlog
+- (bug) new level is in menu while not finished building (not added to build index)
 - ui autofocus
 - destroyed block's destroy-effect is only in white and not their own color
 - add a different win sound
