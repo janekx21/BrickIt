@@ -103,7 +103,7 @@ namespace GamePlay {
             if (Input.touchCount > 0) {
                 Touch touch = Input.GetTouch(0);
 
-                if (touch.position.x > Screen.currentResolution.width >> 1) {
+                if (touch.position.x > Screen.width >> 1) {
                     move = Vector2.one;
                 }
 
