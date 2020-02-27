@@ -47,11 +47,17 @@ TagManager:
   - name: Particles
     uniqueID: 1193723939
     locked: 0
+  - name: BackgroundEffect
+    uniqueID: 1390048051
+    locked: 0
   - name: Player
     uniqueID: 2744294719
     locked: 0
   - name: Blocks
     uniqueID: 688590121
+    locked: 0
+  - name: ForgroundEffect
+    uniqueID: 3173745753
     locked: 0
   - name: UI
     uniqueID: 1797221071
