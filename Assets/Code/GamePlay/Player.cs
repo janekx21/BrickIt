@@ -100,8 +100,22 @@ namespace GamePlay {
 
 
         private void ApplyControls() {
-            move.x = Input.GetAxis("Horizontal");
-            move.y = Input.GetAxis("Vertical");
+            if (Input.touchCount > 0) {
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.position.x > Screen.currentResolution.width >> 1) {
+                    move = Vector2.one;
+                }
+
+                else {
+                    move = -Vector2.one;
+                }
+            }
+
+            else {
+                move.x = Input.GetAxis("Horizontal");
+                move.y = Input.GetAxis("Vertical");
+            }
 
             Vector2 abs = new Vector2(Mathf.Abs(direction.x), Mathf.Abs(direction.y));
             Vector2 pep = Vector2.one - abs;
