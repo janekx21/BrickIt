@@ -23,6 +23,7 @@ namespace GamePlay {
         private float speedModifier = 1;
         private Vector2 dash = Vector2.zero;
         private bool paused = false;
+        private bool directionChanged = false;
 
         private void OnDrawGizmos() {
             Gizmos.color = color;
@@ -100,7 +101,7 @@ namespace GamePlay {
 
 
         private void ApplyControls() {
-            if (Input.touchCount > 0) {
+            if (Input.touchCount > 0 && !directionChanged) {
                 Touch touch = Input.GetTouch(0);
 
                 if (touch.position.x > Screen.width >> 1) {
@@ -112,6 +113,10 @@ namespace GamePlay {
                 }
             }
 
+            else if (Input.touchCount == 0 && directionChanged) {
+                directionChanged = false;
+            }
+            
             else {
                 move.x = Input.GetAxis("Horizontal");
                 move.y = Input.GetAxis("Vertical");
@@ -143,6 +148,7 @@ namespace GamePlay {
 
         public void ChangeDirection() {
             direction = new Vector2(direction.y, direction.x);
+            directionChanged = true;
         }
 
         public void FlipDirection() {
