@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene:
     sceneAsset: {fileID: 102900000, guid: 77f8e7a36bab50540ab8dd9dc5570d6c, type: 3}
-    scenePath: Assets/Levels/Level05/Level05.unity
+    scenePath: Assets/Levels/Chapter01/Level05/Level05.unity
   levelName: Death Trap
   levelAuthor: Maico
-  difficulty: 3
+  difficulty: 5

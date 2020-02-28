@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene:
     sceneAsset: {fileID: 102900000, guid: 7d3a1edd71aa7d34bbec759eb865dc6c, type: 3}
-    scenePath: Assets/Levels/Level02/Level02.unity
+    scenePath: Assets/Levels/Chapter01/Level02/Level02.unity
   levelName: Color can change
   levelAuthor: Janek
-  difficulty: 2
+  difficulty: 3
