@@ -15,6 +15,6 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: 3039103a8fd1a8941b6e106a27fe173e, type: 3}
     scenePath: Assets/Levels/Chapter01/Level02/Level02.unity
-  levelName: noname
-  levelAuthor: no one
-  difficulty: 1
+  levelName: Turn Around
+  levelAuthor: Janek
+  difficulty: 2
