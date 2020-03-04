@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Graphics {
 	[ExecuteInEditMode]
@@ -50,7 +51,7 @@ namespace Graphics {
 
 			cam.rect = rect;
 		}
-
+		
 		void OnRenderImage(RenderTexture source, RenderTexture destination) {
 			if (blit) {
 				RenderTexture buffer = RenderTexture.GetTemporary(renderWidth, renderHeight, -1);
@@ -66,5 +67,15 @@ namespace Graphics {
 				UnityEngine.Graphics.Blit(source, destination);
 			}
 		}
-	}
+
+        private void OnDrawGizmos() {
+            var vert = cam.orthographicSize * 2;
+            var size = new Vector2(Mathf.Floor(vert * (16f/9f)), vert);
+            Gizmos.color = Color.white;
+            var position = this.transform.position;
+            Gizmos.DrawWireCube(position, size);
+            Gizmos.color = Color.gray;
+            Gizmos.DrawWireCube(position, size + Vector2.one*.1f);
+        }
+    }
 }

@@ -15,6 +15,6 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: 68fb34809b262624cb89750f3cb29ecd, type: 3}
     scenePath: Assets/Levels/Chapter01/Level03/Level03.unity
-  levelName: noname
-  levelAuthor: no one
-  difficulty: 1
+  levelName: Pipe Cleaning
+  levelAuthor: Janek
+  difficulty: 3
