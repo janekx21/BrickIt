@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7d88ba10a1fab34a9348d06675b2fa6, type: 3}
-  m_Name: Level01
+  m_Name: Level03
   m_EditorClassIdentifier: 
   scene:
-    sceneAsset: {fileID: 102900000, guid: fd604074091439f48849b5970585a44a, type: 3}
-    scenePath: Assets/Levels/Chapter02/Level01/Level01.unity
-  levelName: There's Color!
+    sceneAsset: {fileID: 102900000, guid: 8a6d2bdd58dcbc2489d6f3e6138f577b, type: 3}
+    scenePath: Assets/Levels/Chapter02/Level03/Level03.unity
+  levelName: Heart
   levelAuthor: Maico
-  difficulty: 1
+  difficulty: 3
