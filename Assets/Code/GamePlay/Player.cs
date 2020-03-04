@@ -116,7 +116,7 @@ namespace GamePlay {
             else if (Input.touchCount == 0 && directionChanged) {
                 directionChanged = false;
             }
-            
+
             else {
                 move.x = Input.GetAxis("Horizontal");
                 move.y = Input.GetAxis("Vertical");
