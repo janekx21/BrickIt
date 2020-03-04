@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level03
   m_EditorClassIdentifier: 
   scene:
-    sceneAsset: {fileID: 102900000, guid: 84ecb0cf065c41e4196ad7eab3ac48cd, type: 3}
+    sceneAsset: {fileID: 102900000, guid: 68fb34809b262624cb89750f3cb29ecd, type: 3}
     scenePath: Assets/Levels/Chapter01/Level03/Level03.unity
-  levelName: Death Blocks
-  levelAuthor: Janek
-  difficulty: 3
+  levelName: noname
+  levelAuthor: no one
+  difficulty: 1
