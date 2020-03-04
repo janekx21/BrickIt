@@ -10,13 +10,12 @@ small open source game
 	- ~~add chapter object~~
 	- show all chapters in menu
 - add animation for spawner
+- change how input is ignored after directionchanger
 
 ## Sprint Backlog
-- (bug) new level is in menu while not finished building (not added to build index)
 - ui autofocus
 - destroyed block's destroy-effect is only in white and not their own color
 - add a different win sound
-- add rotation feature for brush
 - level screen finishing touches
 - particle effects
 	- ~~block death~~
@@ -39,6 +38,7 @@ small open source game
 	- one way block
 	- gate block
 - level, more levels
+- (bug) new level is in menu while not finished building (not added to build index)
 
 ## Product Backlog
 - auto tiling
@@ -69,3 +69,4 @@ small open source game
 - ~~implode sound effect from teleporter sound effect~~
 - ~~(bug) multihitblock gets destroyed by wrong color~~
 - ~~(bug) directionchanger spawns coloredblock when placed with brush~~
+- ~~add rotation feature for brush~~
