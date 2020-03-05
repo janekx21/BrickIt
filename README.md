@@ -14,6 +14,8 @@ small open source game
 
 ## Sprint Backlog
 - ui autofocus
+- (bug) teleporter sprite is beneath shader from bricks
+- new directionchanger texture and rotation feature for right and left
 - destroyed block's destroy-effect is only in white and not their own color
 - add a different win sound
 - level screen finishing touches
