@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54ff7f2a6952475ea4e8e7509ff4fce1, type: 3}
-  m_Name: Chapter02
+  m_Name: Color
   m_EditorClassIdentifier: 
+  scene:
+    sceneAsset: {fileID: 102900000, guid: 2a914e3962d868d44a3500d4cbf887d5, type: 3}
+    scenePath: Assets/Levels/Chapter02/Color.unity
   image: {fileID: 0}
   levels:
   - {fileID: 11400000, guid: e7a18ec7c0414b34387cbf283e3ecaec, type: 2}

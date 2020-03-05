@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff7f2a6952475ea4e8e7509ff4fce1, type: 3}
   m_Name: Beginner
   m_EditorClassIdentifier: 
+  scene:
+    sceneAsset: {fileID: 102900000, guid: b9a00e3a0040c6e429b94c3203de47ca, type: 3}
+    scenePath: Assets/Levels/Chapter01/Beginner.unity
   image: {fileID: 0}
   levels:
   - {fileID: 11400000, guid: ec57b34b7e166ba4988746e041cc92d7, type: 2}

@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff7f2a6952475ea4e8e7509ff4fce1, type: 3}
   m_Name: Extra
   m_EditorClassIdentifier: 
+  scene:
+    sceneAsset: {fileID: 102900000, guid: d721fd08929f0c040bd04cfffed598a4, type: 3}
+    scenePath: Assets/Levels/Extra/Extra.unity
   image: {fileID: 0}
-  levels: []
+  levels:
+  - {fileID: 11400000, guid: 4bced7747d15d6649b1ebaaaa9c9a330, type: 2}
