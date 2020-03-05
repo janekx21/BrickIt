@@ -8,7 +8,7 @@ namespace UI.Menu {
 		[SerializeField] private Text levelAuthor = null;
 		[SerializeField] private Button button = null;
 
-		public void Init(LevelObject levelObject, Menu.OnLevelAction loadAction) {
+		public void Init(LevelObject levelObject, ChapterMenu.OnLevelAction loadAction) {
 			levelName.text = levelObject.levelName;
 			levelAuthor.text = levelObject.levelAuthor;
 			button.onClick.AddListener(() => loadAction.Invoke(levelObject));

@@ -11,7 +11,7 @@ namespace UI.Menu {
 		}
         
 
-		public void Init(LevelObject[] levelObjects, Menu.OnLevelAction loadAction) {
+		public void Init(LevelObject[] levelObjects, ChapterMenu.OnLevelAction loadAction) {
 			foreach (Transform t in transform) {
 				Destroy(t.gameObject);
 			}

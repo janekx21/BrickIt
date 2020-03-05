@@ -5,19 +5,19 @@ using UnityEngine.SceneManagement;
 
 namespace UI.Menu {
 	public class Menu : MonoBehaviour {
-		[SerializeField] private ChapterObject chapterObject = null;
-		[SerializeField] private LevelList list = null;
+		[SerializeField] private ChapterContainerObject chapterContainerObject = null;
+		[SerializeField] private ChapterList chapterList = null;
 
-        public class OnLevelAction : UnityEvent<LevelObject>{}
+        public class OnChapterAction : UnityEvent<ChapterObject>{}
         
 		private void Awake() {
-            var changeEvent = new OnLevelAction();
-            changeEvent.AddListener(LoadLevel);
-			list.Init(chapterObject.levels, changeEvent);
+            var changeEvent = new OnChapterAction();
+            changeEvent.AddListener(LoadChapter);
+			chapterList.Init(chapterContainerObject.chapters , changeEvent);
 		}
 
-		private void LoadLevel(LevelObject level) {
-			SceneManager.LoadScene(level.scene.ScenePath);
+		private void LoadChapter(ChapterObject chapter) {
+			SceneManager.LoadScene(chapter.scene.ScenePath);
 		}
 	}
 }

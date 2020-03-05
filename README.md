@@ -13,6 +13,7 @@ small open source game
 - change how input is ignored after directionchanger
 
 ## Sprint Backlog
+- automatically add scriptable obj to chaptermenu scene when created
 - ui autofocus
 - (bug) teleporter sprite is beneath shader from bricks
 - new directionchanger texture and rotation feature for right and left
