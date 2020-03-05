@@ -15,6 +15,6 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: 9c35531edb0b01c49936adacb088cec6, type: 3}
     scenePath: Assets/Levels/Chapter02/Level05/Level05.unity
-  levelName: no name
-  levelAuthor: no one
-  difficulty: 1
+  levelName: Color Trap
+  levelAuthor: Maico
+  difficulty: 5
