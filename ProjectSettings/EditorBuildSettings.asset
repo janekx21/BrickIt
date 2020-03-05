@@ -6,8 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 4079970daa8ad9649bbe9219954a8f8b
+  - enabled: 1
     path: Assets/Levels/Chapter00/Chapter 00.unity
     guid: 9a88761c89664974fac24378dd5140be
+  - enabled: 1
+    path: Assets/Levels/Chapter01/Beginner.unity
+    guid: b9a00e3a0040c6e429b94c3203de47ca
+  - enabled: 1
+    path: Assets/Levels/Chapter02/Color.unity
+    guid: 2a914e3962d868d44a3500d4cbf887d5
+  - enabled: 1
+    path: Assets/Levels/Extra/Extra.unity
+    guid: d721fd08929f0c040bd04cfffed598a4
   - enabled: 1
     path: Assets/Levels/Chapter00/Level01/Level01.unity
     guid: 4d73f12d2cf3be94fb913bfccff243c6
@@ -59,13 +71,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Chapter02/Level05/Level05.unity
     guid: 9c35531edb0b01c49936adacb088cec6
-  - enabled: 1
-    path: Assets/Levels/Chapter01/Beginner.unity
-    guid: b9a00e3a0040c6e429b94c3203de47ca
-  - enabled: 1
-    path: Assets/Levels/Chapter02/Color.unity
-    guid: 2a914e3962d868d44a3500d4cbf887d5
-  - enabled: 1
-    path: Assets/Levels/Extra/Extra.unity
-    guid: d721fd08929f0c040bd04cfffed598a4
   m_configObjects: {}
