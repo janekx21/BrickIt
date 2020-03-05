@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60102850bd3a3614f8a14a3781755a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chapterObject: {fileID: 11400000, guid: 025443907bbd66a42aaa7e7b698c8ec5, type: 2}
+  chapterObject: {fileID: 11400000, guid: 00d04d725a655604eb439ef99136f3fc, type: 2}
   list: {fileID: 1793093013}
 --- !u!1 &679965786
 GameObject:
