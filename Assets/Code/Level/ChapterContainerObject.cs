@@ -50,7 +50,6 @@ namespace Level {
             Assert.IsTrue(worked);
 
             var obj = CreateInstance<ChapterObject>();
-            obj.scene = new SceneReference {ScenePath = scenePath};
             AssetDatabase.CreateAsset(obj, Path.Combine(path, $"{chapterName}.asset"));
             
             FindAllChapterObjects();

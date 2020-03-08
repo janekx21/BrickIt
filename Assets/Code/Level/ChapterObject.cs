@@ -11,7 +11,6 @@ using Util;
 namespace Level {
     [CreateAssetMenu(fileName = "new ChapterObject", menuName = "ChapterObject", order = 0)]
     public class ChapterObject : ScriptableObject {
-        public SceneReference scene = null;
         public Sprite image = null;
         public LevelObject[] levels = new LevelObject[0];
         

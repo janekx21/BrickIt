@@ -23,6 +23,9 @@ namespace UI.Menu {
         public class OnChapterAction : UnityEvent<ChapterObject> {
         }
 
+        public class OnLevelAction : UnityEvent<LevelObject> {
+        }
+
         private void Awake() {
             var changeEvent = new OnChapterAction();
             changeEvent.AddListener(LoadChapter);
@@ -37,7 +40,7 @@ namespace UI.Menu {
         }
 
         private void LoadChapter(ChapterObject chapter) {
-            var action = new ChapterMenu.OnLevelAction();
+            var action = new OnLevelAction();
             action.AddListener(LoadLevel);
             levelList.Init(chapter.levels, action);
             animator.SetTrigger(LevelHash);
