@@ -7,9 +7,6 @@ namespace Util {
         public ChapterObject selectedChapter = null;
         public LevelObject selectedLevel = null;
 
-        private SaveData current = null;
-        public SaveData Current => current;
-
         public void Save() {
             PlayerPrefs.SetString("saveData", JsonUtility.ToJson(this));
             PlayerPrefs.Save();

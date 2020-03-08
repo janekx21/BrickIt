@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Assertions;
-using Util;
+
 #if UNITY_EDITOR
-    using UnityEditor;
+using UnityEditor;
 #endif
 
 namespace Level {
@@ -12,8 +12,8 @@ namespace Level {
     public class ChapterContainerObject : ScriptableObject {
         public Sprite image = null;
         public ChapterObject[] chapters = new ChapterObject[0];
-        
-#if UNITY_EDITOR        
+
+#if UNITY_EDITOR
         private string directory {
             get {
                 var path = AssetDatabase.GetAssetPath(this);
@@ -39,7 +39,7 @@ namespace Level {
         public void MakeChapter() {
             var guid = AssetDatabase.CreateFolder(directory, "Chapter01");
             var path = AssetDatabase.GUIDToAssetPath(guid);
-            
+
             Assert.IsNotNull(path);
 
             var chapterName = Path.GetFileName(path);
@@ -51,9 +51,9 @@ namespace Level {
 
             var obj = CreateInstance<ChapterObject>();
             AssetDatabase.CreateAsset(obj, Path.Combine(path, $"{chapterName}.asset"));
-            
+
             FindAllChapterObjects();
         }
-#endif        
+#endif
     }
 }
