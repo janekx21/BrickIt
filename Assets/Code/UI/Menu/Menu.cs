@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Util;
 
 namespace UI.Menu {
@@ -12,6 +13,7 @@ namespace UI.Menu {
         }
 
 
+        [SerializeField] private Button backButton = null;
         [SerializeField] private ChapterContainerObject chapterContainerObject = null;
         [SerializeField] private ChapterList chapterList = null;
         [SerializeField] private LevelList levelList = null;
@@ -38,12 +40,21 @@ namespace UI.Menu {
             if (saveData.selectedChapter != null) {
                 LoadChapter(saveData.selectedChapter);
             }
+            backButton.onClick.AddListener(Back);
         }
 
         private void Update() {
             if (Input.GetButtonDown("Cancel") && currentState == State.Level) {
+                Back();
+            }
+        }
+
+        void Back() {
+            if (currentState == State.Level) {
                 animator.SetTrigger(ChapterHash);
                 currentState = State.Chapter;
+                saveData.selectedChapter = null;
+                saveData.Save();
             }
         }
 
