@@ -19,6 +19,8 @@ namespace UI.Menu {
         [SerializeField] private LevelList levelList = null;
         [SerializeField] private Animator animator = null;
 
+        [SerializeField] private ScrollRect levelScrollRect = null;
+
         private State currentState = State.Chapter;
         private static readonly int ChapterHash = Animator.StringToHash("chapter");
         private static readonly int LevelHash = Animator.StringToHash("level");
@@ -35,17 +37,25 @@ namespace UI.Menu {
             var changeEvent = new OnChapterAction();
             changeEvent.AddListener(LoadChapter);
             chapterList.Init(chapterContainerObject.chapters, changeEvent);
-
-            saveData = SaveData.Load();
-            if (saveData.selectedChapter != null) {
-                LoadChapter(saveData.selectedChapter);
-            }
             backButton.onClick.AddListener(Back);
         }
 
+        private void Start() {
+            saveData = SaveData.Load();
+            if (saveData.selectedChapter != null) {
+                LoadChapter(saveData.selectedChapter);
+                Debug.Log(saveData.levelScrollPosition);
+                levelScrollRect.horizontalNormalizedPosition = saveData.levelScrollPosition;
+            }
+        }
+
         private void Update() {
-            if (Input.GetButtonDown("Cancel") && currentState == State.Level) {
-                Back();
+            if (currentState == State.Level) {
+                if (Input.GetButtonDown("Cancel")) {
+                    Back();
+                }
+
+                saveData.levelScrollPosition = levelScrollRect.horizontalNormalizedPosition;
             }
         }
 
@@ -69,6 +79,7 @@ namespace UI.Menu {
         }
 
         private void LoadLevel(LevelObject level) {
+            saveData.Save();
             SceneManager.LoadScene(level.scene);
         }
     }
