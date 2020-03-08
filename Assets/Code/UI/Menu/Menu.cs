@@ -44,7 +44,6 @@ namespace UI.Menu {
             saveData = SaveData.Load();
             if (saveData.selectedChapter != null) {
                 LoadChapter(saveData.selectedChapter);
-                Debug.Log(saveData.levelScrollPosition);
                 levelScrollRect.horizontalNormalizedPosition = saveData.levelScrollPosition;
             }
         }

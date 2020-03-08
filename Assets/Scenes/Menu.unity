@@ -242,6 +242,7 @@ MonoBehaviour:
   chapterList: {fileID: 1107829697}
   levelList: {fileID: 2065580873}
   animator: {fileID: 243860289}
+  levelScrollRect: {fileID: 1193779937}
 --- !u!95 &243860289
 Animator:
   serializedVersion: 3
@@ -341,7 +342,7 @@ PrefabInstance:
     - target: {fileID: 9173855061244435574, guid: ae2417e39acce924ea923f88849b555b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 234.6997
+      value: 299.97
       objectReference: {fileID: 0}
     - target: {fileID: 9173855061244435574, guid: ae2417e39acce924ea923f88849b555b,
         type: 3}
@@ -351,7 +352,7 @@ PrefabInstance:
     - target: {fileID: 9173855061244435574, guid: ae2417e39acce924ea923f88849b555b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 469.5
+      value: 600.05
       objectReference: {fileID: 0}
     - target: {fileID: 9173855061244435574, guid: ae2417e39acce924ea923f88849b555b,
         type: 3}
@@ -494,6 +495,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 981395144276755607, guid: ae2417e39acce924ea923f88849b555b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.9003906
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae2417e39acce924ea923f88849b555b, type: 3}
 --- !u!224 &570335562 stripped
@@ -595,6 +601,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f087cf972bbcd8843a267c227f542bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1193779937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 482956742245361333, guid: aca49f2d690902943b886da344361f76,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267940196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1267940196
@@ -798,6 +816,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195708867361375816, guid: aca49f2d690902943b886da344361f76,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.1999512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca49f2d690902943b886da344361f76, type: 3}
