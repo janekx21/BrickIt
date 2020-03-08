@@ -10,7 +10,6 @@ using UnityEditor;
 namespace Level {
     [CreateAssetMenu(fileName = "new ChapterContainerObject", menuName = "ChapterContainerObject", order = 0)]
     public class ChapterContainerObject : ScriptableObject {
-        public Sprite image = null;
         public ChapterObject[] chapters = new ChapterObject[0];
 
 #if UNITY_EDITOR

@@ -10,11 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54ff7f2a6952475ea4e8e7509ff4fce1, type: 3}
-  m_Name: Chapter 00
+  m_Name: DevChapter
   m_EditorClassIdentifier: 
-  scene:
-    sceneAsset: {fileID: 102900000, guid: 9a88761c89664974fac24378dd5140be, type: 3}
-    scenePath: Assets/Levels/Chapter00/Chapter 00.unity
   image: {fileID: -7956832237065629149, guid: 5713416c4704eab42a8b466fbada8b47, type: 3}
   levels:
   - {fileID: 11400000, guid: 42120637d772cf540aaec7704cab2818, type: 2}
