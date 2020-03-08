@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a28e1b9bcb1f6b40babb4ee913baa47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backButton: {fileID: 1724557571}
   chapterContainerObject: {fileID: 11400000, guid: 1266bd9eea1c59d46a080a7d5abd5d2b,
     type: 2}
   chapterList: {fileID: 1107829697}
@@ -812,6 +813,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1267940196}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1724557571 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2533940805628293222, guid: aca49f2d690902943b886da344361f76,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267940196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2065580873 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7013153947635156743, guid: aca49f2d690902943b886da344361f76,
