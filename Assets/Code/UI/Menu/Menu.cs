@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Util;
 
 namespace UI.Menu {
     public class Menu : MonoBehaviour {
@@ -20,6 +21,8 @@ namespace UI.Menu {
         private static readonly int ChapterHash = Animator.StringToHash("chapter");
         private static readonly int LevelHash = Animator.StringToHash("level");
 
+        private SaveData saveData = null;
+
         public class OnChapterAction : UnityEvent<ChapterObject> {
         }
 
@@ -30,6 +33,11 @@ namespace UI.Menu {
             var changeEvent = new OnChapterAction();
             changeEvent.AddListener(LoadChapter);
             chapterList.Init(chapterContainerObject.chapters, changeEvent);
+
+            saveData = SaveData.Load();
+            if (saveData.selectedChapter != null) {
+                LoadChapter(saveData.selectedChapter);
+            }
         }
 
         private void Update() {
@@ -45,6 +53,8 @@ namespace UI.Menu {
             levelList.Init(chapter.levels, action);
             animator.SetTrigger(LevelHash);
             currentState = State.Level;
+            saveData.selectedChapter = chapter;
+            saveData.Save();
         }
 
         private void LoadLevel(LevelObject level) {
