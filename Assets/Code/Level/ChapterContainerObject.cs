@@ -43,11 +43,6 @@ namespace Level {
 
             var chapterName = Path.GetFileName(path);
 
-            var scenePath = Path.Combine(path, $"{chapterName}.unity");
-            var worked = AssetDatabase.CopyAsset("Assets/Scenes/ChapterMenu.unity", scenePath);
-
-            Assert.IsTrue(worked);
-
             var obj = CreateInstance<ChapterObject>();
             AssetDatabase.CreateAsset(obj, Path.Combine(path, $"{chapterName}.asset"));
 
