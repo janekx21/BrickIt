@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff7f2a6952475ea4e8e7509ff4fce1, type: 3}
   m_Name: Color
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 3752902410628473492, guid: 5713416c4704eab42a8b466fbada8b47, type: 3}
   levels:
   - {fileID: 11400000, guid: e7a18ec7c0414b34387cbf283e3ecaec, type: 2}
   - {fileID: 11400000, guid: 2dfa5fb7ac9f4d34a89dea7bc33359ca, type: 2}
