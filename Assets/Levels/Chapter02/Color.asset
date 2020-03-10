@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff7f2a6952475ea4e8e7509ff4fce1, type: 3}
   m_Name: Color
   m_EditorClassIdentifier: 
-  scene:
-    sceneAsset: {fileID: 102900000, guid: 2a914e3962d868d44a3500d4cbf887d5, type: 3}
-    scenePath: Assets/Levels/Chapter02/Color.unity
   image: {fileID: 0}
   levels:
   - {fileID: 11400000, guid: e7a18ec7c0414b34387cbf283e3ecaec, type: 2}
@@ -23,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fdb198340f0da254e9b648ce5e6d21eb, type: 2}
   - {fileID: 11400000, guid: 02034e51d1e6dff4f9701008a1e3041b, type: 2}
   - {fileID: 11400000, guid: e3c95b8dcaf9dfc488179f2f3c847e24, type: 2}
+  - {fileID: 11400000, guid: 96d02af245de9a44dac6c431f83e39a8, type: 2}
