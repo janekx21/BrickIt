@@ -15,6 +15,6 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: c2b166222504cee41a89f1ba47abbed9, type: 3}
     scenePath: Assets/Levels/Chapter03/Level01/Level01.unity
-  levelName: no name
+  levelName: Lern
   levelAuthor: Janek
   difficulty: 1
