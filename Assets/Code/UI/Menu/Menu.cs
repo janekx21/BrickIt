@@ -75,6 +75,8 @@ namespace UI.Menu {
             currentState = State.Level;
             saveData.selectedChapter = chapter;
             saveData.Save();
+            // reset scrolling
+            levelScrollRect.horizontalNormalizedPosition = 0f;
         }
 
         private void LoadLevel(LevelObject level) {
