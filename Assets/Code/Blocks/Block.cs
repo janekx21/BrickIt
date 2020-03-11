@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GamePlay;
+using Level;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -93,5 +94,10 @@ namespace Blocks {
 		}
 
 		protected abstract bool shouldBreak(); // returns if the block should break to win
+
+        public Overview.OverviewObject ToOverviewObject() {
+            var renderer = GetComponent<SpriteRenderer>();
+            return new Overview.OverviewObject(renderer.sprite, Vector2Int.FloorToInt(transform.localPosition));
+        }
 	}
 }

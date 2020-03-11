@@ -48,6 +48,15 @@ namespace Level {
 
             FindAllChapterObjects();
         }
+
+        [ContextMenu("Generate All Overviews")]
+        public void GenerateAllOverviews() {
+            foreach (var chapter in chapters) {
+                foreach (var level in chapter.levels) {
+                    Overview.Generate(level);
+                }
+            }
+        }
 #endif
     }
 }

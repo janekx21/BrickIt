@@ -9,5 +9,12 @@ namespace Level {
         public string levelAuthor = "no one";
         [Range(1, 20)]
         public int difficulty = 1;
+
+        public Texture2D overview = null;
+
+        [ContextMenu("Generate Overview")]
+        void GenerateOverview() {
+            Overview.Generate(this);
+        }
     }
 }
