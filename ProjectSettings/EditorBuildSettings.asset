@@ -80,4 +80,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Chapter03/Level04/Level04.unity
     guid: ac3df0a90380be445b81bde2fe08718e
+  - enabled: 1
+    path: Assets/Levels/Chapter04/Level01/Level01.unity
+    guid: 1b85f484e91f693448ee0a8076702a31
+  - enabled: 1
+    path: Assets/Levels/Chapter04/Level02/Level02.unity
+    guid: 9aa57cc8a49d2fd4180e6c14aad7c6fa
   m_configObjects: {}
