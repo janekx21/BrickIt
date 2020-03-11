@@ -26,6 +26,12 @@ namespace Level {
         public static void Generate(LevelObject level) {
             var scene = EditorSceneManager.OpenScene(level.scene.ScenePath, OpenSceneMode.Additive);
             var overview = new Texture2D(272, 160);
+            overview.filterMode = FilterMode.Point;
+            var length = overview.width * overview.height;
+            var blackArray = new Color[length];
+            overview.SetPixels(blackArray);
+            overview.Apply();
+                
 
             if (scene.IsValid()) {
                 var grid = scene.GetRootGameObjects().ToList().Find(o => o.GetComponent<Grid>());
@@ -51,6 +57,7 @@ namespace Level {
             File.WriteAllBytes(path, bytes);
 
             var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+            Assert.IsNotNull(texture);
             level.overview = texture;
 
             EditorSceneManager.CloseScene(scene, true);
