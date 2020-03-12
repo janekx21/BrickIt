@@ -1,14 +1,13 @@
+#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
 using Blocks;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 namespace Level {
@@ -123,3 +122,4 @@ namespace Level {
         }
     }
 }
+#endif

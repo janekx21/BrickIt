@@ -95,9 +95,11 @@ namespace Blocks {
 
 		protected abstract bool shouldBreak(); // returns if the block should break to win
 
+        #if UNITY_EDITOR
         public Overview.OverviewObject ToOverviewObject() {
             var renderer = GetComponent<SpriteRenderer>();
             return new Overview.OverviewObject(renderer.sprite, Vector2Int.FloorToInt(transform.localPosition));
         }
+        #endif
 	}
 }

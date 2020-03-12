@@ -12,9 +12,11 @@ namespace Level {
 
         public Texture2D overview = null;
 
+        #if UNITY_EDITOR
         [ContextMenu("Generate Overview")]
         void GenerateOverview() {
             Overview.Generate(this);
         }
+        #endif
     }
 }
