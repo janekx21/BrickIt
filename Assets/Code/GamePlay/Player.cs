@@ -1,4 +1,5 @@
-﻿using Blocks;
+﻿using System;
+using Blocks;
 using UnityEngine;
 using Util;
 
@@ -24,6 +25,11 @@ namespace GamePlay {
         private Vector2 dash = Vector2.zero;
         private bool paused = false;
         private bool directionChanged = false;
+
+        
+        [SerializeField] ComboNumber comboPrefab = null;
+        private int combo = 0;
+        private float comboTimer = 0;
 
         private void OnDrawGizmos() {
             Gizmos.color = color;
@@ -52,7 +58,11 @@ namespace GamePlay {
                 direction *= -1;
             }
 #endif
+            if (comboTimer <= 0) {
+                combo = 0;
+            }
 
+            comboTimer = Mathf.Clamp01(comboTimer - Time.deltaTime);
             rend.color = color;
         }
 
@@ -176,6 +186,14 @@ namespace GamePlay {
             // generate a small offset so that
             // the collision is not triggered twice
             rig.position += direction * .01f;
+        }
+
+        public void Combo() {
+            combo++;
+            comboTimer = 1f;
+
+            var comboNumber = Instantiate(comboPrefab, transform.position, Quaternion.identity);
+            comboNumber.Init(combo);
         }
 
         public void play() {

@@ -7,6 +7,7 @@ namespace Blocks {
 			
 			if (ColorsMatch(maker)) {
 				Break();
+                maker.Combo();
 			}
 		}
 	}

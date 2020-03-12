@@ -337,6 +337,8 @@ MonoBehaviour:
   bounceParticle: {fileID: 823083484203336117, guid: 5e8a7eac1a722d3449ded8e6aed992be,
     type: 3}
   smallBounceSource: {fileID: 3402478102585997411}
+  comboPrefab: {fileID: 8404607861346659855, guid: f5501bf66c692d240b8d404695217a4e,
+    type: 3}
 --- !u!58 &1948330738
 CircleCollider2D:
   m_ObjectHideFlags: 0

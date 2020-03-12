@@ -8,6 +8,8 @@ small open source game
 ## Sprint Board
 - add animation for spawner
 - change how input is ignored after directionchanger
+- timer, how long did you need for the level and score
+- combo counter
 
 ## Sprint Backlog
 - ui autofocus
@@ -27,8 +29,6 @@ small open source game
 		- should show player direction
 		  in paused play
     - block animations in general
-- timer, how long did you need for the level and score
-- combo counter
 - kenny credits
 - credits screen
 - blocks
