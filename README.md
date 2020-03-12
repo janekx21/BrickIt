@@ -9,7 +9,12 @@ small open source game
 - add animation for spawner
 - change how input is ignored after directionchanger
 - timer, how long did you need for the level and score
+	- naive
+	- style
 - combo counter
+	- ~~naive~~
+	- connect to player
+	- style
 
 ## Sprint Backlog
 - ui autofocus
