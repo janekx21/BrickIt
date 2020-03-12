@@ -18,3 +18,4 @@ MonoBehaviour:
   levelName: Break In
   levelAuthor: Janek
   difficulty: 1
+  overview: {fileID: 2800000, guid: b9b97dad5b1ff2b4b957201ff7e9560d, type: 3}

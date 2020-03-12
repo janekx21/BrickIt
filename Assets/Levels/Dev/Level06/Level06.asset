@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene:
     sceneAsset: {fileID: 102900000, guid: c68c1c32ec89144469a131c317f42041, type: 3}
-    scenePath: Assets/Levels/Chapter01/Level06/Level06.unity
+    scenePath: Assets/Levels/Dev/Level06/Level06.unity
   levelName: Ultimate Trial
   levelAuthor: Maico
   difficulty: 20
+  overview: {fileID: 2800000, guid: d004edeefa827a145b3d8fd0888dc105, type: 3}

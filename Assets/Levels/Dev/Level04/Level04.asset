@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene:
     sceneAsset: {fileID: 102900000, guid: 414b5d2027f466e4aa9090e62c061213, type: 3}
-    scenePath: Assets/Levels/Chapter01/Level04/Level04.unity
+    scenePath: Assets/Levels/Dev/Level04/Level04.unity
   levelName: Teleport
   levelAuthor: Janek
   difficulty: 2
+  overview: {fileID: 2800000, guid: bf065e8eeac45dd499e681d985ead10c, type: 3}

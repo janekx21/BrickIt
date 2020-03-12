@@ -18,3 +18,4 @@ MonoBehaviour:
   levelName: Color Trap
   levelAuthor: Maico
   difficulty: 5
+  overview: {fileID: 2800000, guid: 35b00a7b3bba71441858d92b57373e2e, type: 3}

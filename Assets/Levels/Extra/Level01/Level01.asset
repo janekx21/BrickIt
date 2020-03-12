@@ -18,3 +18,4 @@ MonoBehaviour:
   levelName: Lucky One
   levelAuthor: Ian
   difficulty: 5
+  overview: {fileID: 2800000, guid: ee5179b37647ef040b2150225f166a03, type: 3}

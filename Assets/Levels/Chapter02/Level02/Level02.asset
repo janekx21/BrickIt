@@ -18,3 +18,4 @@ MonoBehaviour:
   levelName: Checkers Pattern
   levelAuthor: Maico
   difficulty: 2
+  overview: {fileID: 2800000, guid: d2c4c230290d7c64b9db889d94e56d9f, type: 3}

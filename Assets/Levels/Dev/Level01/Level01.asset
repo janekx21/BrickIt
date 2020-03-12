@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene:
     sceneAsset: {fileID: 102900000, guid: 4d73f12d2cf3be94fb913bfccff243c6, type: 3}
-    scenePath: Assets/Levels/Chapter01/Level01/Level01.unity
+    scenePath: Assets/Levels/Dev/Level01/Level01.unity
   levelName: Blocks can break
   levelAuthor: Janek
   difficulty: 1
+  overview: {fileID: 2800000, guid: 3374f24fc96a253459f11345742ac116, type: 3}

@@ -18,4 +18,4 @@ MonoBehaviour:
   levelName: no name
   levelAuthor: no one
   difficulty: 1
-  overview: {fileID: 0}
+  overview: {fileID: 2800000, guid: b30d60e587b6aaa4a95297799f177e55, type: 3}

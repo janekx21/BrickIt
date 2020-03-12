@@ -18,3 +18,4 @@ MonoBehaviour:
   levelName: Unzufrieden
   levelAuthor: janek
   difficulty: 2
+  overview: {fileID: 2800000, guid: 75e74fd5a9b1d60498f36f928cc523cf, type: 3}

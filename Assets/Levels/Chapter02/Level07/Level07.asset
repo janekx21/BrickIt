@@ -18,3 +18,4 @@ MonoBehaviour:
   levelName: RGB?
   levelAuthor: Maico
   difficulty: 7
+  overview: {fileID: 2800000, guid: 9a3cee583f528dc4ca40136386ef913d, type: 3}

@@ -59,6 +59,8 @@ namespace Level {
             var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
             Assert.IsNotNull(texture);
             level.overview = texture;
+            
+            EditorUtility.SetDirty(level);
 
             EditorSceneManager.CloseScene(scene, true);
         }

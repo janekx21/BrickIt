@@ -18,3 +18,4 @@ MonoBehaviour:
   levelName: There's Color!
   levelAuthor: Maico
   difficulty: 1
+  overview: {fileID: 2800000, guid: f2145cea6ab242a48927f748c3d73bf9, type: 3}

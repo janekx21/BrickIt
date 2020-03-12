@@ -18,3 +18,4 @@ MonoBehaviour:
   levelName: Lern
   levelAuthor: Janek
   difficulty: 1
+  overview: {fileID: 2800000, guid: 0c6f081f81df1f84696ddeb4f0fa3509, type: 3}
