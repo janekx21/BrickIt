@@ -31,7 +31,7 @@ namespace Level {
             var blackArray = new Color[length];
             overview.SetPixels(blackArray);
             overview.Apply();
-                
+
 
             if (scene.IsValid()) {
                 var grid = scene.GetRootGameObjects().ToList().Find(o => o.GetComponent<Grid>());
@@ -41,7 +41,10 @@ namespace Level {
                     // Debug.Log($"found {t.sprite.name} at {t.position}");
                     var tex = TextureFromSprite(t.sprite);
                     Vector2Int pos = t.position * 16;
-                    overview.SetPixels(pos.x, pos.y, 16, 16, tex.GetPixels());
+                    // well then dont draw if you cant
+                    if (pos.x + 16 < overview.width && pos.x >= 0 && pos.y + 16 < overview.height && pos.y >= 0) {
+                        overview.SetPixels(pos.x, pos.y, 16, 16, tex.GetPixels());
+                    }
                 }
             }
             else {
@@ -59,7 +62,7 @@ namespace Level {
             var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
             Assert.IsNotNull(texture);
             level.overview = texture;
-            
+
             EditorUtility.SetDirty(level);
 
             EditorSceneManager.CloseScene(scene, true);

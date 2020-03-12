@@ -18,3 +18,4 @@ MonoBehaviour:
   levelName: Five Color Puzzle
   levelAuthor: Maico
   difficulty: 8
+  overview: {fileID: 2800000, guid: 4540479c1af556f44b0f947483547d69, type: 3}
