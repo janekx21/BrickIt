@@ -15,6 +15,6 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: e6c403354bb73a0449f2cf0cb47ca3d7, type: 3}
     scenePath: Assets/Levels/Chapter02/Level08/Level08.unity
-  levelName: no name
-  levelAuthor: no one
-  difficulty: 1
+  levelName: Five Color Puzzle
+  levelAuthor: Maico
+  difficulty: 8
