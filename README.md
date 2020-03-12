@@ -6,18 +6,12 @@ small open source game
 
 
 ## Sprint Board
-- level chapters
-	- ~~add chapter object~~
-	- show all chapters in menu
 - add animation for spawner
 - change how input is ignored after directionchanger
 
 ## Sprint Backlog
-- (done? redundant?) automatically add scriptable obj to chaptermenu scene when created
 - ui autofocus
 - (bug) teleporter sprite is beneath shader from bricks
-- add retry button in pausemenu
-- move quit button to main menu
 - new directionchanger texture and rotation feature for right and left
 - destroyed block's destroy-effect is only in white and not their own color
 - add a different win sound
@@ -39,7 +33,6 @@ small open source game
 - credits screen
 - blocks
 	- two hit block
-	- pushable blocks
 	- claw death block
 	- one way block
 	- gate block
@@ -76,3 +69,7 @@ small open source game
 - ~~(bug) multihitblock gets destroyed by wrong color~~
 - ~~(bug) directionchanger spawns coloredblock when placed with brush~~
 - ~~add rotation feature for brush~~
+- ~~level chapters~~
+	- ~~add chapter object~~
+	- ~~show all chapters in menu~~
+- ~~automatically add scriptable obj to chaptermenu scene when created~~
