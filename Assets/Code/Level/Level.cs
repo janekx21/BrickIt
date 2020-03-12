@@ -19,6 +19,9 @@ namespace Level {
         public class OnLevelStateChanged : UnityEvent<LevelState>{}
 		public OnLevelStateChanged onStateChanged = new OnLevelStateChanged();
 
+        private float timeSinceStart = 0;
+        public float TimeSinceStart => timeSinceStart;
+
 		private void Awake() {
 			Assert.IsNull(instance);
 			instance = this;
@@ -43,6 +46,10 @@ namespace Level {
 
 					break;
 			}
+
+            if (state == LevelState.play) {
+                timeSinceStart += Time.deltaTime;
+            }
 		}
 
 		void ChangeState(LevelState newState) {
