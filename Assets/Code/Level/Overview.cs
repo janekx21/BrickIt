@@ -41,7 +41,7 @@ namespace Level {
                     var tex = TextureFromSprite(t.sprite);
                     Vector2Int pos = t.position * 16;
                     // well then dont draw if you cant
-                    if (pos.x + 16 < overview.width && pos.x >= 0 && pos.y + 16 < overview.height && pos.y >= 0) {
+                    if (pos.x + 16 <= overview.width && pos.x >= 0 && pos.y + 16 <= overview.height && pos.y >= 0) {
                         overview.SetPixels(pos.x, pos.y, 16, 16, tex.GetPixels());
                     }
                 }

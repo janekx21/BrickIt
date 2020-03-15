@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using Blocks;
 using GamePlay;
 using UnityEditor;
 using UnityEngine;
@@ -45,6 +46,12 @@ namespace Level {
 					}
 
 					break;
+                case LevelState.begin:
+                    if (Input.anyKey || Input.touchCount > 0) {
+                        Play();
+                        FindObjectOfType<Spawner>().Spawn();
+                    }
+                    break;
 			}
 
             if (state == LevelState.play) {
@@ -60,7 +67,8 @@ namespace Level {
 		void Begin() {
 			ChangeState(LevelState.begin);
 
-			Play(); // TODO this is debug for starting the level right away
+            // Play Animation and halt until start button is pressed
+			// Play(); // TODO this is debug for starting the level right away
 		}
 
 		public void Play() {
