@@ -17,5 +17,5 @@ MonoBehaviour:
     scenePath: Assets/Levels/Chapter01/Level06/Level06.unity
   levelName: Pick Up
   levelAuthor: Janek
-  difficulty: 1
+  difficulty: 6
   overview: {fileID: 2800000, guid: 4152512fb053e524eb55e3df8d92a188, type: 3}
