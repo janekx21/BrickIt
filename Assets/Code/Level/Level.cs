@@ -114,5 +114,9 @@ namespace Level {
 		public void ToMenu() {
 			SceneManager.LoadScene("Menu");
 		}
+
+        public void Retry() {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 	}
 }
