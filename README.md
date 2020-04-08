@@ -4,6 +4,20 @@ small open source game
 > Dieses Projekt ist von
 > Janek und Maico
 
+whats needed for a working product
+- working start screen
+	- with credits screen
+- score | star system
+- level unlock
+	- animation
+	- or msg
+- tutorial for hands | thumbs
+	- choose or skip
+	- not bound to first levels
+- options
+	- sound
+	- vibration
+
 
 ## Sprint Board
 - add animation for spawner
