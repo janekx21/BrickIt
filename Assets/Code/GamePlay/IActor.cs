@@ -4,7 +4,7 @@ namespace GamePlay {
     public interface IActor : IColored {
         void Init(Vector2 direction, Color color);
         float GetDamage();
-        void ChangeDirection();
+        void ChangeDirection(IDirectionChanger directionChanger);
         void FlipDirection();
         void Dash(Vector2 direction); // small acceleration
         void Die();

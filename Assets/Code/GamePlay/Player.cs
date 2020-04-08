@@ -156,8 +156,22 @@ namespace GamePlay {
             this.color = color;
         }
 
-        public void ChangeDirection() {
-            direction = new Vector2(direction.y, direction.x);
+        public void ChangeDirection(IDirectionChanger directionChanger) {
+            Vector2 positionVector = (Vector2) transform.position - directionChanger.GetPosition();
+            
+            float angle = Vector2.SignedAngle(positionVector, Vector2.up);
+            float roundedAngle = Mathf.Round(angle / 90f) * 90f;
+
+            float directionalAngle = Vector2.SignedAngle(-direction, positionVector);
+            float orthogonalAngle = (directionalAngle > 0 ? 1: -1) * 90f;
+
+            if (Vector2.SignedAngle(direction, Vector2.up) == roundedAngle) {
+                direction = Quaternion.AngleAxis(orthogonalAngle, Vector3.back) * direction;
+            }
+            else {
+                direction = Quaternion.AngleAxis(roundedAngle, Vector3.back) * Vector2.up;
+            }
+            
             directionChanged = true;
         }
 
