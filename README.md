@@ -9,6 +9,10 @@ whats needed for a working product
 	- ~~with credits screen~~
 	- ~~default~~
 - score | star system
+    - show
+    - save
+    - star
+    - ~~naive~~
 - level unlock
 	- animation
 	- or msg
@@ -18,7 +22,8 @@ whats needed for a working product
 	- ~~naive~~
 - options
 	- sound
-	- vibration
+	- ~~vibration~~
+	- screen itself
 
 
 ## Sprint Board
