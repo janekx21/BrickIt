@@ -15,6 +15,7 @@ whats needed for a working product
 - tutorial for hands | thumbs
 	- choose or skip
 	- not bound to first levels
+	- ~~naive~~
 - options
 	- sound
 	- vibration
