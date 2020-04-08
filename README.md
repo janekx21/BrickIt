@@ -7,6 +7,7 @@ small open source game
 whats needed for a working product
 - working start screen
 	- with credits screen
+	- ~~default~~
 - score | star system
 - level unlock
 	- animation
