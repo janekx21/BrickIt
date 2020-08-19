@@ -12,7 +12,7 @@ namespace Util {
         public void Spawn(GameObject obj) {
             Instantiate(obj, transform.position, transform.rotation, null);
         }
-        
+
         public void Spawn(GameObject obj, Color color) {
             var clone = Instantiate(obj, transform.position, transform.rotation, null);
             clone.GetComponent<IColored>().SetColor(color);

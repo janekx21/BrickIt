@@ -1,21 +1,17 @@
 using UnityEngine;
 
 namespace Util {
-    public class SceneReferenceTest : MonoBehaviour
-    {
-        private void OnGUI()
-        {
+    public class SceneReferenceTest : MonoBehaviour {
+        private void OnGUI() {
             DisplayLevel(exampleNull);
             DisplayLevel(exampleMissing);
             DisplayLevel(exampleDisabled);
             DisplayLevel(exampleEnabled);
         }
 
-        public void DisplayLevel(SceneReference scene)
-        {
+        public void DisplayLevel(SceneReference scene) {
             GUILayout.Label(new GUIContent("Scene name Path: " + scene));
-            if (GUILayout.Button("Load " + scene))
-            {
+            if (GUILayout.Button("Load " + scene)) {
                 UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
             }
         }
@@ -24,6 +20,5 @@ namespace Util {
         public SceneReference exampleMissing;
         public SceneReference exampleDisabled;
         public SceneReference exampleEnabled;
-    
     }
 }

@@ -1,14 +1,13 @@
 ﻿using GamePlay;
 
 namespace Blocks {
-	public class Death : Block {
-		public override void Hit(IActor maker) {
-			if (ColorsMatch(maker)) {
-				maker.Die();
-			}
-			
-		}
+    public class Death : Block {
+        public override void Hit(IActor maker) {
+            if (ColorsMatch(maker)) {
+                maker.Die();
+            }
+        }
 
-		protected override bool shouldBreak() => false;
-	}
+        protected override bool shouldBreak() => false;
+    }
 }

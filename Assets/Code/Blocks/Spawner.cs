@@ -3,8 +3,7 @@ using GamePlay;
 using UnityEngine;
 
 namespace Blocks {
-	public class Spawner : Block {
-
+    public class Spawner : Block {
         [SerializeField] private Player prefab = null;
         [SerializeField] private float waitingTimer = 1f;
         private bool ready = false;
@@ -23,12 +22,12 @@ namespace Blocks {
             var player = Instantiate(prefab, transform.position, Quaternion.identity);
             player.Init(transform.up, GetColor());
         }
-        
+
         IEnumerator ReadyRoutine() {
             yield return new WaitForSeconds(waitingTimer);
             ready = true;
         }
 
         protected override bool shouldBreak() => false;
-	}
+    }
 }

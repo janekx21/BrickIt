@@ -158,10 +158,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0010142028
-    y: 0.08656332
-    width: 0.9979716
-    height: 0.82687336
+    x: 0.0013522506
+    y: 0.036500573
+    width: 0.9972955
+    height: 0.92699885
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -219,40 +219,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1053016050 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7793747024466010295, guid: 8f52d2f43e5f77448b40e218114ba31d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1238720548}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1053016051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053016050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 211ed55db7e252b4288e2180d7e3de73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  letsGo: {fileID: 1053016054}
-  mainScene:
-    sceneAsset: {fileID: 102900000, guid: 4b20c92b2a54a044c871ba93ca7bb488, type: 3}
-    scenePath: Assets/Scenes/StartScreen.unity
---- !u!114 &1053016054 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7099253185782572298, guid: 8f52d2f43e5f77448b40e218114ba31d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1238720548}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053016050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1148228283
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,25 +436,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6419370553499015708, guid: 8f52d2f43e5f77448b40e218114ba31d,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6419370553499015708, guid: 8f52d2f43e5f77448b40e218114ba31d,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6419370553499015708, guid: 8f52d2f43e5f77448b40e218114ba31d,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4611408023945581023, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
       propertyPath: m_Text
-      value: Back
+      value: back
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f52d2f43e5f77448b40e218114ba31d, type: 3}

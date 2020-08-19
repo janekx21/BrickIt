@@ -4,9 +4,8 @@ using UnityEngine.EventSystems;
 using Util;
 
 namespace UI.Menu {
-    
     [RequireComponent(typeof(SoundParticle))]
-    public class ButtonSoundEvent : MonoBehaviour, IPointerEnterHandler,  ISubmitHandler, IPointerClickHandler {
+    public class ButtonSoundEvent : MonoBehaviour, IPointerEnterHandler, ISubmitHandler, IPointerClickHandler {
         [SerializeField] private AudioClip hover = null;
         [SerializeField] private AudioClip click = null;
         private SoundParticle source = null;

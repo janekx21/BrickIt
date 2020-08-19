@@ -1,6 +1,9 @@
 ﻿namespace Level {
-	public enum LevelState {
-		begin, play, pause, win, lost
-	}
+    public enum LevelState {
+        begin,
+        play,
+        pause,
+        win,
+        lost
+    }
 }
-
