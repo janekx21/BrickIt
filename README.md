@@ -8,7 +8,7 @@ whats needed for a working product
 - working start screen
 	- ~~with credits screen~~
 	- ~~default~~
-- score | star system
+- score-/star system
     - show
     - save
     - star
@@ -22,6 +22,7 @@ whats needed for a working product
 	- ~~naive~~
 - options
 	- sound
+	- music
 	- ~~vibration~~
 	- screen itself
 
@@ -36,6 +37,8 @@ whats needed for a working product
 	- ~~naive~~
 	- connect to player
 	- style
+- pixel perfect buttons and text
+- alternative controls
 
 ## Sprint Backlog
 - ui autofocus
