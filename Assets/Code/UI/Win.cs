@@ -18,7 +18,7 @@ namespace UI {
 
         private void Update() {
             time.text = $"{Level.Level.Own.TimeSinceStart:000.00}";
-            score.text = $"{999 / Level.Level.Own.TimeSinceStart:000}";
+            score.text = $"{Level.Level.Own.Score:000}";
         }
     }
 }

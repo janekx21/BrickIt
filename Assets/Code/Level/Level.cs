@@ -23,7 +23,11 @@ namespace Level {
         public OnLevelStateChanged onStateChanged = new OnLevelStateChanged();
 
         private float timeSinceStart = 0;
+        private int comboScore = 0;
+        
         public float TimeSinceStart => timeSinceStart;
+        private int TimeScore => Mathf.FloorToInt(Mathf.Max(1-Mathf.Log10(timeSinceStart * 10 / 999), 0) * 200);
+        public int Score => TimeScore + comboScore;
 
         private void Awake() {
             Assert.IsNull(instance);
@@ -120,6 +124,10 @@ namespace Level {
 
         public void Retry() {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void ApplyCombo(int combo) {
+            comboScore += Mathf.FloorToInt(Mathf.Pow(combo - 1, 2));
         }
     }
 }

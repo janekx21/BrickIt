@@ -39,6 +39,7 @@ whats needed for a working product
 	- style
 - pixel perfect buttons and text
 - alternative controls
+- (bug) sound but no action by direction changer
 
 ## Sprint Backlog
 - ui autofocus
