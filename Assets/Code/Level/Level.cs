@@ -24,9 +24,10 @@ namespace Level {
 
         private float timeSinceStart = 0;
         private int comboScore = 0;
-        
+        private LevelObject ownLevelObject = null;
+
         public float TimeSinceStart => timeSinceStart;
-        private int TimeScore => Mathf.FloorToInt(Mathf.Max(1-Mathf.Log10(timeSinceStart * 10 / 999), 0) * 200);
+        private int TimeScore => Mathf.FloorToInt(Mathf.Max(1 - Mathf.Log10(timeSinceStart * 10 / 999), 0) * 200);
         public int Score => TimeScore + comboScore;
 
         private void Awake() {
@@ -66,6 +67,10 @@ namespace Level {
             }
         }
 
+        public void Init(LevelObject levelObject) {
+            ownLevelObject = levelObject;
+        }
+
         void ChangeState(LevelState newState) {
             state = newState;
             onStateChanged?.Invoke(state);
@@ -92,6 +97,10 @@ namespace Level {
             Debug.Log("you won :>");
             PauseAll();
             ChangeState(LevelState.win);
+
+            using (var data = SaveData.Load()) {
+                data.done.Add(ownLevelObject);
+            }
         }
 
         public void Lose() {

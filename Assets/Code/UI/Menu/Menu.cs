@@ -79,9 +79,13 @@ namespace UI.Menu {
             levelScrollRect.horizontalNormalizedPosition = 0f;
         }
 
-        private void LoadLevel(LevelObject level) {
+        private void LoadLevel(LevelObject levelObject) {
             saveData.Save();
-            SceneManager.LoadScene(level.scene);
+            var routine = SceneManager.LoadSceneAsync(levelObject.scene);
+            routine.completed += operation => {
+                var level = FindObjectOfType<Level.Level>();
+                level.Init(levelObject);
+            };
         }
     }
 }
