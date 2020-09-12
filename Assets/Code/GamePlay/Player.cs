@@ -204,7 +204,7 @@ namespace GamePlay {
             // generate a small offset so that
             // the collision is not triggered twice
             rig.position += direction * .01f;
-            Handheld.Vibrate();
+            //Handheld.Vibrate(); <-- this is fucking annoying xD
         }
 
         /**

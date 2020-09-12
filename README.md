@@ -7,7 +7,10 @@ small open source game
 whats needed for a working product
 - working start screen
 	- ~~with credits screen~~
+	- (bug) back button doesn't work
 	- ~~default~~
+- gameplay
+	- rework directionchanger
 - score-/star system
     - show
     - save
@@ -18,13 +21,15 @@ whats needed for a working product
 	- or msg
 - tutorial for hands | thumbs
 	- choose or skip
-	- not bound to first levels
+	- not bound to first levels // or bound to?
 	- ~~naive~~
 - options
 	- sound
 	- music
 	- ~~vibration~~
 	- screen itself
+- navigation
+	- ability to focus on buttons in menu (like with controller)
 
 
 ## Sprint Board

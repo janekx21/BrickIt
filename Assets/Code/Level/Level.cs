@@ -16,6 +16,7 @@ namespace Level {
 
         private LevelState state = LevelState.begin;
         public LevelState State => state;
+        private bool cancelIsDown = false;
 
         public class OnLevelStateChanged : UnityEvent<LevelState> {
         }
@@ -42,17 +43,33 @@ namespace Level {
         void Update() {
             switch (state) {
                 case LevelState.play:
-                    if (Input.GetKeyDown(KeyCode.Escape)) {
-                        Pause();
+                    if (Input.GetAxisRaw("Cancel") != 0) {
+                        if (!cancelIsDown) {
+                            Pause();
+
+                            cancelIsDown = true;
+                        }
+                    }
+                    else {
+                        cancelIsDown = false;
                     }
 
                     break;
+
                 case LevelState.pause:
-                    if (Input.GetKeyDown(KeyCode.Escape)) {
-                        Play();
+                    if (Input.GetAxisRaw("Cancel") != 0) {
+                        if (!cancelIsDown) {
+                            Play();
+
+                            cancelIsDown = true;
+                        }
+                    }
+                    else {
+                        cancelIsDown = false;
                     }
 
                     break;
+
                 case LevelState.begin:
                     if (Input.anyKey || Input.touchCount > 0) {
                         Play();
