@@ -65,7 +65,7 @@ namespace GamePlay {
             rend.color = color;
         }
 
-        private void ComboEnds() {
+        public void ComboEnds() {
             Level.Level.Own.ApplyCombo(combo);
             combo = 0;
         }
@@ -166,10 +166,13 @@ namespace GamePlay {
             float angle = Vector2.SignedAngle(positionVector, Vector2.up);
             float roundedAngle = Mathf.Round(angle / 90f) * 90f;
 
-            float directionalAngle = Vector2.SignedAngle(-direction, positionVector);
-            float orthogonalAngle = (directionalAngle > 0 ? 1 : -1) * 90f;
+            //older solution for only one DirectionChanger
+            // float directionalAngle = Vector2.SignedAngle(-direction, positionVector);
+            // float orthogonalAngle = (directionalAngle > 0 ? 1 : -1) * 90f;
 
-            if (Vector2.SignedAngle(direction, Vector2.up) == roundedAngle) {
+            float orthogonalAngle = (directionChanger.GetDirection() == Direction.Right ? 1 : -1) * 90f;
+
+            if (Vector2.SignedAngle(direction, Vector2.up) % 180f == roundedAngle % 180f) {
                 direction = Quaternion.AngleAxis(orthogonalAngle, Vector3.back) * direction;
             }
             else {

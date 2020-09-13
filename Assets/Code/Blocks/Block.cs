@@ -54,7 +54,7 @@ namespace Blocks {
             allBlocks.Remove(this);
             if (allBlocks.TrueForAll(x => !x.shouldBreak())) {
                 // i am the last Block :(
-                Level.Level.Own.Win();
+                Level.Level.Own.Win(); 
             }
 
             onDestroy.Invoke();
