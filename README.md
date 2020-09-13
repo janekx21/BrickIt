@@ -9,13 +9,12 @@ whats needed for a working product
 	- ~~with credits screen~~
 	- (bug) back button doesn't work
 	- ~~default~~
-- gameplay
-	- rework directionchanger
 - score-/star system
     - show
     - save
     - star
     - ~~naive~~
+	- (bug) combo does not end immediately after winning
 - level unlock
 	- animation
 	- or msg
