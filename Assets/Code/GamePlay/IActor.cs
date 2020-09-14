@@ -12,5 +12,6 @@ namespace GamePlay {
         Vector2 GetDirection();
         Vector2 GetPosition();
         void Combo();
+        void ComboEnds();
     }
 }

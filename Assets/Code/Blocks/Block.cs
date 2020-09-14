@@ -50,11 +50,12 @@ namespace Blocks {
         public virtual void Over(IActor actor) {
         }
 
-        public virtual void Break() {
+        public virtual void Break(IActor maker) {
             allBlocks.Remove(this);
             if (allBlocks.TrueForAll(x => !x.shouldBreak())) {
                 // i am the last Block :(
-                Level.Level.Own.Win(); 
+                Level.Level.Own.Win();
+                maker.ComboEnds();
             }
 
             onDestroy.Invoke();

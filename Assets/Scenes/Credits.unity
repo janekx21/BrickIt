@@ -158,10 +158,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0013522506
-    y: 0.036500573
-    width: 0.9972955
-    height: 0.92699885
+    x: 0.0003556311
+    y: 0.0037220716
+    width: 0.99928874
+    height: 0.99255586
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -449,6 +449,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1238720548}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1238720550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7793747024466010295, guid: 8f52d2f43e5f77448b40e218114ba31d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1238720548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1259648043
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1238720550}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1259648046

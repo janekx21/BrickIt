@@ -20,7 +20,7 @@ namespace Blocks {
             if (ColorsMatch(maker)) {
                 hp--;
                 if (hp <= 0) {
-                    Break();
+                    Break(maker);
                 }
                 else {
                     ren.sprite = sprites[maxHp - hp];

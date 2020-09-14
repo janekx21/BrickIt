@@ -29,6 +29,7 @@ whats needed for a working product
 	- screen itself
 - navigation
 	- ability to focus on buttons in menu (like with controller)
+	- save chapter selection position like with levels
 
 
 ## Sprint Board
