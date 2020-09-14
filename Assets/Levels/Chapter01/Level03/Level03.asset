@@ -17,5 +17,5 @@ MonoBehaviour:
     scenePath: Assets/Levels/Chapter01/Level03/Level03.unity
   levelName: Pipe Cleaning
   levelAuthor: Janek
-  difficulty: 3
+  difficulty: 2
   overview: {fileID: 2800000, guid: 0e12c175d00d78346a6ed24daf22e3b6, type: 3}

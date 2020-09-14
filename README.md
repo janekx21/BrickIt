@@ -18,6 +18,8 @@ whats needed for a working product
 - level unlock
 	- animation
 	- or msg
+- gameplay
+	- change multihitblock, so that you can adjust hitnumber and show hits left on block in number (max 9 or F)
 - tutorial for hands | thumbs
 	- choose or skip
 	- not bound to first levels // or bound to?

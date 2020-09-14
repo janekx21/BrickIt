@@ -8,7 +8,7 @@ namespace GamePlay {
     public class Player : Entity, IActor, IPausable {
         [SerializeField] private float speed = 0f;
         [SerializeField] private float moveSpeed = 1f;
-        [SerializeField] private Color color = Color.red;
+        [SerializeField] private Color color = Color.black;
 
         [SerializeField] private float dashAcceleration = 1;
         [SerializeField] private float dashVelocity = 1;
@@ -145,7 +145,7 @@ namespace GamePlay {
 
         public void Init(Vector2 direction, Color color) {
             this.direction = direction;
-            this.color = color;
+            SetColor(color);
         }
 
         public float GetDamage() {
@@ -157,7 +157,7 @@ namespace GamePlay {
         }
 
         public void SetColor(Color color) {
-            this.color = color;
+            this.color = color == Color.white ? Color.black : color;
         }
 
         public void ChangeDirection(IDirectionChanger directionChanger) {
