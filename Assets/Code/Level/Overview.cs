@@ -23,8 +23,10 @@ namespace Level {
         }
 
         public static void Generate(LevelObject level) {
+            // offset to paint blocks at the edge - x offset is a bit weird
+            var edgeOffset = new Vector2Int(0, 8);
             var scene = EditorSceneManager.OpenScene(level.scene.ScenePath, OpenSceneMode.Additive);
-            var overview = new Texture2D(272, 160);
+            var overview = new Texture2D(272 + 2 * edgeOffset.y, 160 + 2 * edgeOffset.y);
             overview.filterMode = FilterMode.Point;
             var length = overview.width * overview.height;
             var blackArray = new Color[length];
@@ -39,7 +41,7 @@ namespace Level {
                     Assert.IsNotNull(t.sprite);
                     // Debug.Log($"found {t.sprite.name} at {t.position}");
                     var tex = TextureFromSprite(t.sprite);
-                    Vector2Int pos = t.position * 16;
+                    Vector2Int pos = t.position * 16 + Vector2Int.RoundToInt(grid.transform.position * 2) * 8 + edgeOffset;
                     // well then dont draw if you cant
                     if (pos.x + 16 <= overview.width && pos.x >= 0 && pos.y + 16 <= overview.height && pos.y >= 0) {
                         overview.SetPixels(pos.x, pos.y, 16, 16, tex.GetPixels());
