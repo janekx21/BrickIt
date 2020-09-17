@@ -14,12 +14,13 @@ whats needed for a working product
     - save
     - star
     - ~~naive~~
-	- (bug) combo does not end immediately after winning
+	- ~~(bug) combo does not end immediately after winning~~
 - level unlock
 	- animation
 	- or msg
 - gameplay
 	- ~~change multihitblock, so that you can adjust hitnumber and show hits left on block in number (max 9 or F)~~
+	- make directionchanger to one prefab?
 - tutorial for hands | thumbs
 	- choose or skip
 	- not bound to first levels // or bound to?
@@ -30,14 +31,14 @@ whats needed for a working product
 	- ~~vibration~~
 	- screen itself
 - navigation
-	- ability to focus on buttons in menu (like with controller)
+	- ability to focus on buttons in menu (like with controller) (ui autofocus)
 	- save chapter selection position like with levels
 - editor
 	- combine default and brick brush, so you can draw normally with brick brush
 
 
 ## Sprint Board
-- add animation for spawner
+- revisit animation for spawner
 - change how input is ignored after directionchanger
 - timer, how long did you need for the level and score
 	- ~~naive~~
@@ -46,14 +47,14 @@ whats needed for a working product
 	- ~~naive~~
 	- connect to player
 	- style
-- pixel perfect buttons and text
+- pixel perfect buttons and text, or change to style as in menu
 - alternative controls
-- (bug) sound but no action by direction changer
+- ~~(bug) sound but no action by direction changer~~
 
 ## Sprint Backlog
 - ui autofocus
 - (bug) teleporter sprite is beneath shader from bricks
-- new directionchanger texture and rotation feature for right and left
+- ~~new directionchanger texture and rotation feature for right and left~~
 - destroyed block's destroy-effect is only in white and not their own color
 - add a different win sound
 - level screen finishing touches
@@ -76,7 +77,7 @@ whats needed for a working product
 	- one way block
 	- gate block
 - level, more levels
-- (bug) new level is in menu while not finished building (not added to build index)
+- ~~(bug) new level is in menu while not finished building (not added to build index)~~
 
 ## Product Backlog
 - auto tiling
