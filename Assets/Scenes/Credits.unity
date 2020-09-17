@@ -158,9 +158,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0003556311
+    x: 0.00039494038
     y: 0.0037220716
-    width: 0.99928874
+    width: 0.9992101
     height: 0.99255586
   near clip plane: 0.3
   far clip plane: 1000
@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 1148228286}
   - component: {fileID: 1148228285}
   - component: {fileID: 1148228284}
+  - component: {fileID: 1148228288}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -319,6 +320,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1148228288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148228283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca93fe1e829572245911e42798638109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backButton: {fileID: 1238720551}
+  startScene:
+    sceneAsset: {fileID: 102900000, guid: 4b20c92b2a54a044c871ba93ca7bb488, type: 3}
+    scenePath: Assets/Scenes/StartScreen.unity
 --- !u!1001 &1238720548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -455,6 +472,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1238720548}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1238720551 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7099253185782572298, guid: 8f52d2f43e5f77448b40e218114ba31d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1238720548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238720550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1259648043
 GameObject:
   m_ObjectHideFlags: 0

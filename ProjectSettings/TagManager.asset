@@ -41,14 +41,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackgroundEffect
+    uniqueID: 1390048051
+    locked: 0
   - name: Ground
     uniqueID: 2749067197
     locked: 0
   - name: Particles
     uniqueID: 1193723939
-    locked: 0
-  - name: BackgroundEffect
-    uniqueID: 1390048051
     locked: 0
   - name: Player
     uniqueID: 2744294719

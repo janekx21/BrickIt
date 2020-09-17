@@ -22,8 +22,6 @@ public class BlockBrush : GridBrush {
 
     private Block current = null;
 
-    private static SerializedProperty maxHp;
-
     public Color CurrentColor {
         get => color;
         set => color = value;
