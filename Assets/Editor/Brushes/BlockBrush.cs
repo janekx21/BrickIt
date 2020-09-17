@@ -22,6 +22,8 @@ public class BlockBrush : GridBrush {
 
     private Block current = null;
 
+    private static SerializedProperty maxHp;
+
     public Color CurrentColor {
         get => color;
         set => color = value;
@@ -57,7 +59,7 @@ public class BlockBrush : GridBrush {
                     grid.LocalToWorld(grid.CellToLocalInterpolated(position + (Vector3) Vector2.one * .5f));
                 var block = instance.GetComponent<Block>();
                 if (block) {
-                    block.Init(color);
+                    block.SetColor(color);
                 }
 
                 Selection.activeTransform = instance.transform;
@@ -143,13 +145,23 @@ public class BlockBrush : GridBrush {
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("Rotate Left \u21ba")) {
                 foreach (var t in Selection.transforms) {
-                    rot(90, t);
+                    if (t.TryGetComponent(out MultiHit multiHit) && multiHit.GetMaxHp() > 2) {
+                        multiHit.SetMaxHp(multiHit.GetMaxHp() - 1);
+                    }
+                    else {
+                        rot(90, t);
+                    }
                 }
             }
 
             if (GUILayout.Button("Rotate Right \u21bb")) {
                 foreach (var t in Selection.transforms) {
-                    rot(-90, t);
+                    if (t.TryGetComponent(out MultiHit multiHit) && multiHit.GetMaxHp() < 9) {
+                        multiHit.SetMaxHp(multiHit.GetMaxHp() + 1);
+                    }
+                    else {
+                        rot(-90, t);
+                    }
                 }
             }
 

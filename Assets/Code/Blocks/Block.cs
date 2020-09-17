@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using GamePlay;
 using Level;
 using UnityEngine;
@@ -29,6 +30,10 @@ namespace Blocks {
             base.Awake();
 
             rig = GetComponent<Rigidbody2D>();
+            ren = GetComponent<SpriteRenderer>();
+        }
+
+        public virtual void OnValidate() {
             ren = GetComponent<SpriteRenderer>();
         }
 
@@ -76,10 +81,6 @@ namespace Blocks {
             if (actor != null) {
                 Over(actor);
             }
-        }
-
-        public void Init(Color color) {
-            this.color = color;
         }
 
         public Color GetColor() {

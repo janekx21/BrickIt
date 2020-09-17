@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Brick Brush
   m_EditorClassIdentifier: 
   m_Cells:
-  - m_Tile: {fileID: 11400000, guid: cc1f485213c7a38419c42f2bcefbcb64, type: 2}
+  - m_Tile: {fileID: 11400000, guid: ca7801374fdf3ff4a9c11e87c72f59ab, type: 2}
     m_Matrix:
       e00: 1
       e01: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
     block: {fileID: 7775795268369247417, guid: b472c374d58d4fd47bff8c3521b1d915, type: 3}
   - tile: {fileID: 11400000, guid: 554f7b80b9112c14ab42535ca7528927, type: 2}
     block: {fileID: 1742231168, guid: cda889d95b609c94b921496534c498a2, type: 3}
-  - tile: {fileID: 11400000, guid: aba5db5988816504d98e230365aedb5e, type: 2}
+  - tile: {fileID: 11400000, guid: 778ebffb20e24c54f87cbdb9a364cd63, type: 2}
     block: {fileID: 4589148182586086431, guid: 599a36ba31ac889479c8d0f068ab2093, type: 3}
   - tile: {fileID: 11400000, guid: 30381bfd6f015de4484ffd07c9b005ac, type: 2}
     block: {fileID: 988795870, guid: 975e788f053369845ba15c7f0183fd79, type: 3}

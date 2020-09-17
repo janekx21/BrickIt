@@ -1,9 +1,10 @@
-﻿using GamePlay;
+﻿using System;
+using GamePlay;
 using UnityEngine;
 
 namespace Blocks {
     public class MultiHit : Brick {
-        [SerializeField] private int maxHp = 2;
+        [SerializeField] [Range(2, 9)] private int maxHp = 2;
         private int hp = -1;
 
         [SerializeField] private Sprite[] sprites = null;
@@ -11,10 +12,23 @@ namespace Blocks {
         public override void Awake() {
             base.Awake();
             hp = maxHp;
-            Debug.Assert(sprites.Length == maxHp);
-            ren.sprite = sprites[0];
+            ren.sprite = sprites[hp - 1];
         }
 
+        public override void OnValidate() {
+            base.OnValidate();
+            ren.sprite = sprites[maxHp - 1];
+        }
+
+        public int GetMaxHp() {
+            return maxHp;
+        }
+
+        public void SetMaxHp(int maxHp) {
+            this.maxHp = maxHp;
+            OnValidate();
+        }
+        
         public override void Hit(IActor maker) {
             base.Hit(maker);
             if (ColorsMatch(maker)) {
@@ -23,9 +37,10 @@ namespace Blocks {
                     Break(maker);
                 }
                 else {
-                    ren.sprite = sprites[maxHp - hp];
+                    ren.sprite = sprites[hp - 1];
                 }
             }
         }
+
     }
 }
