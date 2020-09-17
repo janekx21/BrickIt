@@ -19,7 +19,7 @@ whats needed for a working product
 	- animation
 	- or msg
 - gameplay
-	- change multihitblock, so that you can adjust hitnumber and show hits left on block in number (max 9 or F)
+	- ~~change multihitblock, so that you can adjust hitnumber and show hits left on block in number (max 9 or F)~~
 - tutorial for hands | thumbs
 	- choose or skip
 	- not bound to first levels // or bound to?
@@ -32,6 +32,8 @@ whats needed for a working product
 - navigation
 	- ability to focus on buttons in menu (like with controller)
 	- save chapter selection position like with levels
+- editor
+	- combine default and brick brush, so you can draw normally with brick brush
 
 
 ## Sprint Board

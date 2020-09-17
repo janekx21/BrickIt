@@ -32,9 +32,9 @@ public class BlockBrush : GridBrush {
     private Color color = Color.white;
 
     public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position) {
-        if (position == prev_position) {
-            return;
-        }
+        // if (position == prev_position) {
+        //     return;
+        // }
 
         prev_position = position;
         if (brushTarget) {

@@ -1,5 +1,6 @@
 ﻿using System;
 using GamePlay;
+using UnityEditor;
 using UnityEngine;
 
 namespace Blocks {
@@ -26,7 +27,10 @@ namespace Blocks {
 
         public void SetMaxHp(int maxHp) {
             this.maxHp = maxHp;
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(gameObject.GetComponent<MultiHit>());
             OnValidate();
+#endif
         }
         
         public override void Hit(IActor maker) {
