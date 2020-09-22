@@ -30,6 +30,12 @@ namespace Blocks {
 
         protected override bool shouldBreak() => false;
 
-        public void Interact(IActor _) => onInteract.Invoke();
+        public void Interact(IActor actor) {
+            
+            // this is a redundant call, which could be handled in Hit
+            if (ColorsMatch(actor)) {
+                onInteract.Invoke();
+            }
+        }
     }
 }

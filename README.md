@@ -20,7 +20,6 @@ whats needed for a working product
 	- or msg
 - gameplay
 	- ~~change multihitblock, so that you can adjust hitnumber and show hits left on block in number (max 9 or F)~~
-	- make directionchanger to one prefab?
 - tutorial for hands | thumbs
 	- choose or skip
 	- not bound to first levels // or bound to?
