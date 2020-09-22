@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7d88ba10a1fab34a9348d06675b2fa6, type: 3}
-  m_Name: Level03
+  m_Name: Level05
   m_EditorClassIdentifier: 
   scene:
-    sceneAsset: {fileID: 102900000, guid: 92e36b6c1eb757b48b9912d1c0693b00, type: 3}
-    scenePath: Assets/Levels/Chapter03/Level03/Level03.unity
-  levelName: Back and Forth
-  levelAuthor: Janek
-  difficulty: 3
-  overview: {fileID: 2800000, guid: e510603a0ea3f824ba992c213f243ca4, type: 3}
+    sceneAsset: {fileID: 102900000, guid: 4be94e9566c8ae941ac302620ba8c79b, type: 3}
+    scenePath: Assets/Levels/Chapter03/Level05/Level05.unity
+  levelName: Green Is Faster
+  levelAuthor: Maico
+  difficulty: 5
+  overview: {fileID: 0}

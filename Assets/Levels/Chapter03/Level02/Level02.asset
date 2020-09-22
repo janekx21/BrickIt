@@ -15,7 +15,7 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: cd2187081e8c37e459ece40545a25814, type: 3}
     scenePath: Assets/Levels/Chapter03/Level02/Level02.unity
-  levelName: Unzufrieden
-  levelAuthor: janek
+  levelName: Turn to Avoid
+  levelAuthor: Janek
   difficulty: 2
   overview: {fileID: 2800000, guid: 75e74fd5a9b1d60498f36f928cc523cf, type: 3}
