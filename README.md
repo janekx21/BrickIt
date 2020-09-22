@@ -7,7 +7,7 @@ small open source game
 whats needed for a working product
 - working start screen
 	- ~~with credits screen~~
-	- (bug) back button doesn't work
+	- ~~(bug) back button doesn't work~~
 	- ~~default~~
 - score-/star system
     - show
@@ -52,7 +52,7 @@ whats needed for a working product
 
 ## Sprint Backlog
 - ui autofocus
-- (bug) teleporter sprite is beneath shader from bricks
+- ~~(bug) teleporter sprite is beneath shader from bricks~~
 - ~~new directionchanger texture and rotation feature for right and left~~
 - destroyed block's destroy-effect is only in white and not their own color
 - add a different win sound
@@ -71,7 +71,7 @@ whats needed for a working product
 - kenny credits
 - credits screen
 - blocks
-	- two hit block
+	- ~~two hit block~~
 	- claw death block
 	- one way block
 	- gate block

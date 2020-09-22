@@ -345,11 +345,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1868204737604428574, guid: bb79202744148d145957a024e96c4523,
         type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1868204737604428574, guid: bb79202744148d145957a024e96c4523,
-        type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -383,6 +378,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1868204737604428574, guid: bb79202744148d145957a024e96c4523,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7530629340100550408, guid: bb79202744148d145957a024e96c4523,
         type: 3}
       propertyPath: m_Camera
@@ -397,6 +397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayerID
       value: 1797221071
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530629340100550408, guid: bb79202744148d145957a024e96c4523,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb79202744148d145957a024e96c4523, type: 3}
