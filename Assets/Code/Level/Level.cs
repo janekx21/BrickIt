@@ -16,7 +16,7 @@ namespace Level {
 
         private LevelState state = LevelState.begin;
         public LevelState State => state;
-        private bool cancelIsDown = false;
+        private bool cancelIsDown = true;
 
         public class OnLevelStateChanged : UnityEvent<LevelState> {
         }

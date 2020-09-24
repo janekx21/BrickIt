@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 439220591}
   - component: {fileID: 439220588}
   - component: {fileID: 439220590}
-  - component: {fileID: 439220589}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -158,9 +157,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.00039494038
+    x: 0.0007739961
     y: 0.0037220716
-    width: 0.9992101
+    width: 0.998452
     height: 0.99255586
   near clip plane: 0.3
   far clip plane: 1000
@@ -182,21 +181,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &439220589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439220587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 953d333e01a52734ca786df566d837ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  referenceHeight: 160
-  pixelsPerUnit: 16
-  blit: 1
 --- !u!81 &439220590
 AudioListener:
   m_ObjectHideFlags: 0
@@ -416,7 +400,7 @@ PrefabInstance:
     - target: {fileID: 6419370553499015708, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 270.86
+      value: 243.68
       objectReference: {fileID: 0}
     - target: {fileID: 6419370553499015708, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
@@ -585,7 +569,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.015003, y: 30.88}
-  m_SizeDelta: {x: 271.03, y: 48.65}
+  m_SizeDelta: {x: 243.68, y: 48.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1617649547
 MonoBehaviour:
@@ -612,7 +596,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

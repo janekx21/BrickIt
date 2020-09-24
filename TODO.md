@@ -8,8 +8,6 @@ small open source game
 
 - level store system in editor
     - change how levels are stored and created, to allow for a more flexible setup
-- style
-    - pixel perfect buttons and text, or change to style as in menu
 - score system
     - show
     - save

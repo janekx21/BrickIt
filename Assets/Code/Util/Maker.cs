@@ -10,7 +10,9 @@ namespace Util {
         }
 
         public void Spawn(GameObject obj) {
-            Instantiate(obj, transform.position, transform.rotation, null);
+            var particles = Instantiate(obj, transform.position, transform.rotation, null);
+            var main = particles.GetComponent<ParticleSystem>().main;
+            main.startColor = GetComponent<IColored>().GetColor();
         }
 
         public void Spawn(GameObject obj, Color color) {
