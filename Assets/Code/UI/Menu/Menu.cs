@@ -22,6 +22,8 @@ namespace UI.Menu {
         [SerializeField] private ScrollRect levelScrollRect = null;
 
         private State currentState = State.Chapter;
+        private bool cancelIsDown = false;
+        
         private static readonly int ChapterHash = Animator.StringToHash("chapter");
         private static readonly int LevelHash = Animator.StringToHash("level");
 
@@ -50,8 +52,15 @@ namespace UI.Menu {
 
         private void Update() {
             if (currentState == State.Level) {
-                if (Input.GetButtonDown("Cancel")) {
-                    Back();
+                if (Input.GetAxisRaw("Cancel") != 0) {
+                    if (!cancelIsDown) {
+                        Back();
+
+                        cancelIsDown = true;
+                    }
+                }
+                else {
+                    cancelIsDown = false;
                 }
 
                 saveData.levelScrollPosition = levelScrollRect.horizontalNormalizedPosition;

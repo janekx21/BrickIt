@@ -11,13 +11,22 @@ namespace UI.Intro {
         [SerializeField] private Button backButton = null;
         [SerializeField] private SceneReference startScene = null;
 
+        private bool cancelIsDown = false;
+        
         private void Awake() {
             backButton.onClick.AddListener(Back);
         }
 
         private void Update() {
-            if (Input.GetButtonDown("Cancel")) {
-                Back();
+            if (Input.GetAxisRaw("Cancel") != 0) {
+                if (!cancelIsDown) {
+                    Back();
+
+                    cancelIsDown = true;
+                }
+            }
+            else {
+                cancelIsDown = false;
             }
         }
 

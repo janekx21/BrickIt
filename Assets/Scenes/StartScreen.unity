@@ -628,9 +628,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.00039494038
+    x: 0.0007739961
     y: 0.0037220716
-    width: 0.9992101
+    width: 0.998452
     height: 0.99255586
   near clip plane: 0.3
   far clip plane: 1000
@@ -1238,7 +1238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1089959150}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1944767098
@@ -1307,9 +1307,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.00039494038
+    x: 0.0007739961
     y: 0.0037220716
-    width: 0.9992101
+    width: 0.998452
     height: 0.99255586
   near clip plane: 0.3
   far clip plane: 1000
