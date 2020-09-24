@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Tilemaps;
 
-namespace Level {
+namespace LevelContext {
     public class Overview {
         public struct OverviewObject {
             public Sprite sprite;

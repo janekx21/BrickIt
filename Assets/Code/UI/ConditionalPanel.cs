@@ -1,5 +1,5 @@
 ﻿using System;
-using Level;
+using LevelContext;
 using UnityEngine;
 
 namespace UI {
@@ -7,8 +7,8 @@ namespace UI {
         [SerializeField] private LevelState ownState = LevelState.begin;
 
         private void Start() {
-            OnUpdateLevelState(Level.Level.Own.State);
-            Level.Level.Own.onStateChanged.AddListener(OnUpdateLevelState);
+            OnUpdateLevelState(LevelContext.Level.Own.State);
+            LevelContext.Level.Own.onStateChanged.AddListener(OnUpdateLevelState);
         }
 
         public override void OnUpdateLevelState(LevelState state) {

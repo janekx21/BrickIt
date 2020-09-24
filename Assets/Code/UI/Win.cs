@@ -12,13 +12,13 @@ namespace UI {
         private void Awake() {
             next.onClick.AddListener(() => {
                 // do shit
-                Level.Level.Own.ToMenu();
+                LevelContext.Level.Own.ToMenu();
             });
         }
 
         private void Update() {
-            time.text = $"{Level.Level.Own.TimeSinceStart:000.00}";
-            score.text = $"{Level.Level.Own.Score:000}";
+            time.text = $"{LevelContext.Level.Own.TimeSinceStart:000.00}";
+            score.text = $"{LevelContext.Level.Own.Score:000}";
         }
     }
 }

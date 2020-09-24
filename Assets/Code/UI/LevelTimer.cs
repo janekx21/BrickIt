@@ -7,7 +7,7 @@ namespace UI {
         [SerializeField] private Text text = null;
 
         private void Update() {
-            text.text = $"{Level.Level.Own.TimeSinceStart:000}";
+            text.text = $"{LevelContext.Level.Own.TimeSinceStart:000}";
         }
     }
 }

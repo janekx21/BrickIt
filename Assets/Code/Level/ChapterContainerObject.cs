@@ -7,7 +7,7 @@ using UnityEditor;
 
 #endif
 
-namespace Level {
+namespace LevelContext {
     [CreateAssetMenu(fileName = "new ChapterContainerObject", menuName = "ChapterContainerObject", order = 0)]
     public class ChapterContainerObject : ScriptableObject {
         public ChapterObject[] chapters = new ChapterObject[0];

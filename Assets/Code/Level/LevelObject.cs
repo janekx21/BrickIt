@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Util;
 
-namespace Level {
+namespace LevelContext {
     [CreateAssetMenu]
     public class LevelObject : ScriptableObject {
         public SceneReference scene = null;

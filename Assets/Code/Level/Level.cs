@@ -9,7 +9,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Util;
 
-namespace Level {
+namespace LevelContext {
     public class Level : MonoBehaviour {
         public static Level Own => instance;
         private static Level instance = null;

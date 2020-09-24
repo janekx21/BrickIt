@@ -1,5 +1,5 @@
 ﻿using System;
-using Level;
+using LevelContext;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,9 +12,9 @@ namespace UI {
         [SerializeField] private Button retry = null;
 
         private void Awake() {
-            unpause.onClick.AddListener(() => { Level.Level.Own.Play(); });
-            toMainMenu.onClick.AddListener(() => { Level.Level.Own.ToMenu(); });
-            retry.onClick.AddListener(() => { Level.Level.Own.Retry(); });
+            unpause.onClick.AddListener(() => { LevelContext.Level.Own.Play(); });
+            toMainMenu.onClick.AddListener(() => { LevelContext.Level.Own.ToMenu(); });
+            retry.onClick.AddListener(() => { LevelContext.Level.Own.Retry(); });
         }
     }
 }

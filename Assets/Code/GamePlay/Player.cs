@@ -66,7 +66,7 @@ namespace GamePlay {
         }
 
         public void ComboEnds() {
-            Level.Level.Own.ApplyCombo(combo);
+            LevelContext.Level.Own.ApplyCombo(combo);
             combo = 0;
         }
 
@@ -188,7 +188,7 @@ namespace GamePlay {
 
         public void Die() {
             Destroy(gameObject);
-            Level.Level.Own.Lose();
+            LevelContext.Level.Own.Lose();
         }
 
         public Vector2 GetDirection() => direction;

@@ -5,10 +5,9 @@ using UnityEngine.Assertions;
 using Util;
 #if UNITY_EDITOR
 using UnityEditor;
-
 #endif
 
-namespace Level {
+namespace LevelContext {
     [CreateAssetMenu(fileName = "new ChapterObject", menuName = "ChapterObject", order = 0)]
     public class ChapterObject : ScriptableObject {
         public Sprite image = null;

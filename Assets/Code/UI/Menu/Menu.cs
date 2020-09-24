@@ -1,4 +1,4 @@
-﻿using Level;
+﻿using LevelContext;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -92,7 +92,7 @@ namespace UI.Menu {
             saveData.Save();
             var routine = SceneManager.LoadSceneAsync(levelObject.scene);
             routine.completed += operation => {
-                var level = FindObjectOfType<Level.Level>();
+                var level = FindObjectOfType<LevelContext.Level>();
                 level.Init(levelObject);
             };
         }

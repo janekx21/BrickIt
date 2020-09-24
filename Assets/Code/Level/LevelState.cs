@@ -1,4 +1,4 @@
-﻿namespace Level {
+﻿namespace LevelContext {
     public enum LevelState {
         begin,
         play,
