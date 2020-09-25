@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3296410590132323823}
   - component: {fileID: 1769324820668238598}
   - component: {fileID: 5857096820888992644}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,6 +178,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 5034010008638907776, guid: 8e6ee6c0f639cc24daa42af38e1f730a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7186856695039977890, guid: 8e6ee6c0f639cc24daa42af38e1f730a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -236,7 +241,7 @@ PrefabInstance:
     - target: {fileID: 7186856695039977890, guid: 8e6ee6c0f639cc24daa42af38e1f730a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0018615723
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7186856695039977890, guid: 8e6ee6c0f639cc24daa42af38e1f730a,
         type: 3}
@@ -282,6 +287,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947560415656876085, guid: 8e6ee6c0f639cc24daa42af38e1f730a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265419840692193021, guid: 8e6ee6c0f639cc24daa42af38e1f730a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422039571113633405, guid: 8e6ee6c0f639cc24daa42af38e1f730a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047768992673362171, guid: 8e6ee6c0f639cc24daa42af38e1f730a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e6ee6c0f639cc24daa42af38e1f730a, type: 3}

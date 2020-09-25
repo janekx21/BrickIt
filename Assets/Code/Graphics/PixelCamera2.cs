@@ -1,15 +1,20 @@
 ﻿using System;
+using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Graphics {
+    
     [ExecuteInEditMode]
-    public class PixelCamera : MonoBehaviour {
-        public int referenceHeight = 180;
-        public int pixelsPerUnit = 32;
+    [DisallowMultipleComponent]
+    [RequireComponent(typeof(Camera))]
+    public class PixelCamera2 : MonoBehaviour {
+        [SerializeField] private int referenceHeight = 180;
+        [SerializeField] private bool useAutomaticWidth = false;
+        [SerializeField] private int referenceWidth = 320;
+        [SerializeField] private int pixelsPerUnit = 32;
         [SerializeField] private bool blit = true;
 
-        private int renderWidth;
-        private int renderHeight;
         private int actualWidth;
         private int actualHeight;
 
@@ -25,21 +30,31 @@ namespace Graphics {
             Orthographic size is half of reference resolution since it is measured
             from center to the top of the screen.
         */
+            cam.orthographicSize = referenceHeight * 0.5f / pixelsPerUnit;
 
-            renderHeight = referenceHeight;
-            cam.orthographicSize = renderHeight * .5f / pixelsPerUnit;
+            if (useAutomaticWidth) {
+                int scale = Screen.height / referenceHeight;
 
-            int scale = Screen.height / renderHeight;
+                // Height is snapped to the closest whole multiple of reference height.
+                actualHeight = referenceHeight * scale;
+                    
+                /*
+                    Width isn't snapped like height is and will fill the entire width of 
+                    the monitor using the scale determined by the height.
+                */
+                referenceWidth = Screen.width / scale;
+                actualWidth = referenceWidth * scale;
+            }
+            else {
+                // zoom level (PPU scale)
+                int verticalZoom = Screen.height / referenceHeight;
+                int horizontalZoom = Screen.width / referenceWidth;
+                int scale = Math.Max(1, Math.Min(verticalZoom, horizontalZoom));
 
-            // Height is snapped to the closest whole multiple of reference height.
-            actualHeight = renderHeight * scale;
-
-            /*
-            Width isn't snapped like height is and will fill the entire width of 
-            the monitor using the scale determined by the height.
-        */
-            renderWidth = Screen.width / scale;
-            actualWidth = renderWidth * scale;
+                // Height and Width is snapped to the closest whole multiple of reference value.
+                actualWidth = referenceWidth * scale;
+                actualHeight = referenceHeight * scale;
+            }
 
             Rect rect = cam.rect;
 
@@ -54,7 +69,7 @@ namespace Graphics {
 
         void OnRenderImage(RenderTexture source, RenderTexture destination) {
             if (blit) {
-                RenderTexture buffer = RenderTexture.GetTemporary(renderWidth, renderHeight, -1);
+                RenderTexture buffer = RenderTexture.GetTemporary(referenceWidth, referenceHeight, -1);
 
                 buffer.filterMode = FilterMode.Point;
                 source.filterMode = FilterMode.Point;

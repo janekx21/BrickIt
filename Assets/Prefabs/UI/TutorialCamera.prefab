@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8738791170253269721}
   - component: {fileID: 4495927135863668964}
   - component: {fileID: 1684332286348169626}
-  - component: {fileID: 4616590935796937401}
+  - component: {fileID: 2560110514442693567}
   m_Layer: 10
   m_Name: TutorialCamera
   m_TagString: Untagged
@@ -43,7 +43,7 @@ Camera:
   m_GameObject: {fileID: 3475787016557620300}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -62,7 +62,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -85,7 +85,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3475787016557620300}
   m_Enabled: 1
---- !u!114 &4616590935796937401
+--- !u!114 &2560110514442693567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,14 +94,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3475787016557620300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 953d333e01a52734ca786df566d837ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceHeight: 160
-  useAutomaticWidth: 1
-  referenceWidth: 311
-  pixelsPerUnit: 16
-  blit: 1
+  m_AssetsPPU: 16
+  m_RefResolutionX: 272
+  m_RefResolutionY: 160
+  m_UpscaleRT: 1
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1001 &2334341448809698796
 PrefabInstance:
   m_ObjectHideFlags: 0

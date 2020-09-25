@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 769085007}
   - component: {fileID: 769085009}
   - component: {fileID: 769085008}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ PrefabInstance:
     - target: {fileID: 7793747024466010295, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6419370553499015708, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
@@ -548,7 +548,7 @@ PrefabInstance:
     - target: {fileID: 7460623202631195523, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4611408023945581023, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
@@ -628,10 +628,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0010438561
-    y: 0.060439557
-    width: 0.9979123
-    height: 0.8791209
+    x: 0
+    y: 0.078947365
+    width: 1
+    height: 0.84210527
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -640,7 +640,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 535
+    m_Bits: 513
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -675,14 +675,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1078986891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 953d333e01a52734ca786df566d837ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceHeight: 160
-  useAutomaticWidth: 1
-  referenceWidth: 239
-  pixelsPerUnit: 16
-  blit: 1
+  m_AssetsPPU: 32
+  m_RefResolutionX: 272
+  m_RefResolutionY: 160
+  m_UpscaleRT: 1
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &1089959150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7793747024466010295, guid: 8f52d2f43e5f77448b40e218114ba31d,
@@ -771,7 +774,7 @@ Camera:
   m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 32
+    m_Bits: 288
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -847,7 +850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1423235160}
   - component: {fileID: 1423235161}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +907,7 @@ GameObject:
   - component: {fileID: 1688812599}
   - component: {fileID: 1688812601}
   - component: {fileID: 1688812600}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -977,7 +980,7 @@ GameObject:
   - component: {fileID: 1746126987}
   - component: {fileID: 1746126989}
   - component: {fileID: 1746126988}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1049,7 +1052,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877357814}
   - component: {fileID: 1877357815}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1119,7 @@ PrefabInstance:
     - target: {fileID: 7793747024466010295, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6419370553499015708, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
@@ -1251,7 +1254,7 @@ PrefabInstance:
     - target: {fileID: 7460623202631195523, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4611408023945581023, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
