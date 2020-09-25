@@ -597,7 +597,7 @@ PrefabInstance:
     - target: {fileID: 14877645553517913, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.00039184093
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 14877645553517913, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
@@ -607,7 +607,7 @@ PrefabInstance:
     - target: {fileID: 14877645553517913, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9992163
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 14877645553517913, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
         type: 3}
@@ -633,6 +633,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
       value: 0.99255586
+      objectReference: {fileID: 0}
+    - target: {fileID: 413973504248066183, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413973504248066183, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -209.99998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d1f62a9ecde6b34e98f4fd25078278a, type: 3}
@@ -812,6 +822,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DirectionChangerLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 5592654109604873286, guid: 3d79a6209dbc1c146a8242389cd21d98,
+        type: 3}
+      propertyPath: color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592654109604873286, guid: 3d79a6209dbc1c146a8242389cd21d98,
+        type: 3}
+      propertyPath: color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 109903661979761642, guid: 3d79a6209dbc1c146a8242389cd21d98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -865,16 +885,6 @@ PrefabInstance:
     - target: {fileID: 109903661979761642, guid: 3d79a6209dbc1c146a8242389cd21d98,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592654109604873286, guid: 3d79a6209dbc1c146a8242389cd21d98,
-        type: 3}
-      propertyPath: color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592654109604873286, guid: 3d79a6209dbc1c146a8242389cd21d98,
-        type: 3}
-      propertyPath: color.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

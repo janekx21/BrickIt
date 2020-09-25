@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4234969392289992297}
   - component: {fileID: 5584486874694109155}
   - component: {fileID: 3480901657329998500}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InGameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3859981872126397706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 11}
   m_LocalScale: {x: 0.016666668, y: 0.016666668, z: 0.016666668}
   m_Children:
   - {fileID: 2864943521981520719}

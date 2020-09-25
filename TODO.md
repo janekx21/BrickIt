@@ -6,14 +6,9 @@ small open source game
 
 ##TODO:
 
-- level store system in editor
-    - change how levels are stored and created, to allow for a more flexible setup
 - score system
     - show
     - save
-- tutorial for hands | thumbs
-	- choose or skip
-	- bound to first levels
 - level unlock
 	- animation
 - navigation
@@ -40,5 +35,7 @@ small open source game
 	- claw death block
 	- one way block
 	- gate block
+- level store system in editor
+    - change how levels are stored and created, to allow for a more flexible setup
 - level, more levels
 
