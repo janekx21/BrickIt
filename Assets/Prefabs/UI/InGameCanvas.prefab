@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 4864933831500686097}
   - component: {fileID: 8552727053906669048}
   - component: {fileID: 4572300390412115322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,6 +177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InGamePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821670983185354811, guid: 929b7421941f0004c930a2f9bd2d2875,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 39854986756978757, guid: 929b7421941f0004c930a2f9bd2d2875,
         type: 3}
@@ -282,6 +287,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425407644650615612, guid: 929b7421941f0004c930a2f9bd2d2875,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 929b7421941f0004c930a2f9bd2d2875, type: 3}

@@ -69,7 +69,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 513
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -101,8 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953d333e01a52734ca786df566d837ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceWidth: 272
   referenceHeight: 160
+  useAutomaticWidth: 0
+  referenceWidth: 272
   pixelsPerUnit: 16
   blit: 1
 --- !u!1 &14877646453180771
@@ -116,7 +117,7 @@ GameObject:
   - component: {fileID: 14877646453180770}
   - component: {fileID: 14877646453180769}
   - component: {fileID: 9150304605296960776}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NotPixelPerfectCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,8 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953d333e01a52734ca786df566d837ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceWidth: 272
   referenceHeight: 160
+  useAutomaticWidth: 0
+  referenceWidth: 272
   pixelsPerUnit: 16
   blit: 0
 --- !u!1 &1138844561027087697
@@ -280,7 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4629015141183638991}
   - component: {fileID: 3345640561339630222}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MenuCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

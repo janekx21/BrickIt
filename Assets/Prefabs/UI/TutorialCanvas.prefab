@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 6122967247638259863}
   - component: {fileID: 2575092815209292061}
   - component: {fileID: 6805539239308409946}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TutorialCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1797221071
+  m_SortingLayerID: -1121221543
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &2575092815209292061
