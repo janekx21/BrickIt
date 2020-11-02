@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 14877646453180770}
   - component: {fileID: 14877646453180769}
-  - component: {fileID: 860733010771742435}
+  - component: {fileID: 559549500327738481}
   m_Layer: 8
   m_Name: NotPixelPerfectCamera
   m_TagString: Untagged
@@ -182,7 +182,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &860733010771742435
+--- !u!114 &559549500327738481
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,17 +191,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 14877646453180771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Script: {fileID: 11500000, guid: a896bdc40ff904145b7af5381710bbbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 16
-  m_RefResolutionX: 272
-  m_RefResolutionY: 160
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
+  parentCamera: {fileID: 14877645553517915}
 --- !u!1001 &3166702932942899167
 PrefabInstance:
   m_ObjectHideFlags: 0
