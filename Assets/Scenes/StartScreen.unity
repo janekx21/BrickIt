@@ -628,15 +628,15 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.078947365
-    width: 1
-    height: 0.84210527
+    x: 0.00078740716
+    y: 0.019519508
+    width: 0.9984252
+    height: 0.960961
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -675,17 +675,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1078986891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 953d333e01a52734ca786df566d837ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 32
-  m_RefResolutionX: 272
-  m_RefResolutionY: 160
-  m_UpscaleRT: 1
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
+  referenceHeight: 160
+  pixelsPerUnit: 32
+  blit: 1
 --- !u!1 &1089959150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7793747024466010295, guid: 8f52d2f43e5f77448b40e218114ba31d,
@@ -736,6 +731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1133442128}
   - component: {fileID: 1133442127}
+  - component: {fileID: 1133442129}
   m_Layer: 0
   m_Name: MenuCamera
   m_TagString: Untagged
@@ -762,15 +758,15 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+    x: 0.00078740716
+    y: 0.019519508
+    width: 0.9984252
+    height: 0.960961
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2.5
   m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
@@ -800,6 +796,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1133442129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133442126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953d333e01a52734ca786df566d837ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceHeight: 160
+  pixelsPerUnit: 32
+  blit: 0
 --- !u!1 &1359404000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7793747024466010295, guid: 8f52d2f43e5f77448b40e218114ba31d,
