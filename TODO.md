@@ -11,9 +11,6 @@ small open source game
     - save
 - level unlock
 	- animation
-- navigation
-	- ability to focus on buttons in menu (like with controller) (ui autofocus)
-	- save chapter selection position like with levels
 - options
 	- sound
 	- music
@@ -35,6 +32,9 @@ small open source game
 	- claw death block
 	- one way block
 	- gate block
+- navigation
+	- ability to focus on buttons in menu (like with controller) (ui autofocus)
+	- save chapter selection position like with levels
 - level store system in editor
     - change how levels are stored and created, to allow for a more flexible setup
 - level, more levels
