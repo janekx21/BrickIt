@@ -14,14 +14,14 @@ namespace LevelContext {
         public static Level Own => instance;
         private static Level instance = null;
 
-        private LevelState state = LevelState.begin;
+        private LevelState state = LevelState.Begin;
         public LevelState State => state;
         private bool cancelIsDown = true;
 
         public class OnLevelStateChanged : UnityEvent<LevelState> {
         }
 
-        public OnLevelStateChanged onStateChanged = new OnLevelStateChanged();
+        public readonly OnLevelStateChanged onStateChanged = new OnLevelStateChanged();
 
         private float timeSinceStart = 0;
         private int comboScore = 0;
@@ -42,7 +42,7 @@ namespace LevelContext {
 
         void Update() {
             switch (state) {
-                case LevelState.play:
+                case LevelState.Play:
                     if (Input.GetAxisRaw("Cancel") != 0) {
                         if (!cancelIsDown) {
                             Pause();
@@ -56,7 +56,7 @@ namespace LevelContext {
 
                     break;
 
-                case LevelState.pause:
+                case LevelState.Pause:
                     if (Input.GetAxisRaw("Cancel") != 0) {
                         if (!cancelIsDown) {
                             Play();
@@ -70,7 +70,7 @@ namespace LevelContext {
 
                     break;
 
-                case LevelState.begin:
+                case LevelState.Begin:
                     if (Input.anyKey || Input.touchCount > 0) {
                         Play();
                         FindObjectOfType<Spawner>().Spawn();
@@ -79,7 +79,7 @@ namespace LevelContext {
                     break;
             }
 
-            if (state == LevelState.play) {
+            if (state == LevelState.Play) {
                 timeSinceStart += Time.deltaTime;
             }
         }
@@ -88,32 +88,32 @@ namespace LevelContext {
             ownLevelObject = levelObject;
         }
 
-        void ChangeState(LevelState newState) {
+        public void ChangeState(LevelState newState) {
             state = newState;
             onStateChanged?.Invoke(state);
         }
 
         void Begin() {
-            ChangeState(LevelState.begin);
+            ChangeState(LevelState.Begin);
 
             // Play Animation and halt until start button is pressed
             // Play(); // TODO this is debug for starting the level right away
         }
 
         public void Play() {
-            ChangeState(LevelState.play);
+            ChangeState(LevelState.Play);
             PlayAll();
         }
 
         public void Pause() {
-            ChangeState(LevelState.pause);
+            ChangeState(LevelState.Pause);
             PauseAll();
         }
 
         public void Win() {
             Debug.Log("you won :>");
             PauseAll();
-            ChangeState(LevelState.win);
+            ChangeState(LevelState.Win);
 
             using (var data = SaveData.Load()) {
                 data.done.Add(ownLevelObject);
@@ -123,7 +123,7 @@ namespace LevelContext {
         public void Lose() {
             Debug.Log("you lost :(");
             PauseAll();
-            ChangeState(LevelState.lost);
+            ChangeState(LevelState.Lost);
         }
 
         void PlayAll() {

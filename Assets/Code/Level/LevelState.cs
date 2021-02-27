@@ -1,9 +1,10 @@
 ﻿namespace LevelContext {
     public enum LevelState {
-        begin,
-        play,
-        pause,
-        win,
-        lost
+        Begin,
+        Play,
+        Pause,
+        Win,
+        Lost,
+        Highscores
     }
 }
