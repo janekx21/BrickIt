@@ -17,13 +17,11 @@ small open source game
     - alternative controls
 - appearance
     - revisit animation for spawner
-    - destroyed block's destroy-effect is only in white and not their own color
-    - add a different win sound
 - particle effects
 	- player death
 - animations
 	- player death pause
-	  die first then menu
+	  die first, then menu
 	- spawner block info pause
 		- should show player direction
 		  in paused play

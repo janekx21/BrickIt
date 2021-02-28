@@ -468,6 +468,21 @@ PrefabInstance:
       propertyPath: m_NormalizedViewPortRect.height
       value: 0.99255586
       objectReference: {fileID: 0}
+    - target: {fileID: 413973504248066183, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -149.99998
+      objectReference: {fileID: 0}
+    - target: {fileID: 413973504248066183, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 149.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611695335604413633, guid: 4d1f62a9ecde6b34e98f4fd25078278a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d1f62a9ecde6b34e98f4fd25078278a, type: 3}
 --- !u!1001 &1063676084

@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace UI {
     public class ConditionalPanel : Panel {
-        [SerializeField] private LevelState ownState = LevelState.begin;
+        [SerializeField] private LevelState ownState = LevelState.Begin;
 
         private void Start() {
-            OnUpdateLevelState(LevelContext.Level.Own.State);
-            LevelContext.Level.Own.onStateChanged.AddListener(OnUpdateLevelState);
+            OnUpdateLevelState(Level.Own.State);
+            Level.Own.onStateChanged.AddListener(OnUpdateLevelState);
         }
 
         public override void OnUpdateLevelState(LevelState state) {

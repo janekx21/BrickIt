@@ -1,4 +1,6 @@
 ﻿using System;
+using GamePlay;
+using LevelContext;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,11 +10,16 @@ namespace UI {
         [SerializeField] private Button next = null;
         [SerializeField] private Text time = null;
         [SerializeField] private Text score = null;
+        [SerializeField] private InputField inputName = null;
+        private string playername = "PLAYER";
 
         private void Awake() {
             next.onClick.AddListener(() => {
-                // do shit
-                LevelContext.Level.Own.ToMenu();
+                Level.Own.ChangeState(LevelState.Highscores);
+            });
+            inputName.onEndEdit.AddListener(text => {
+                playername = text.ToUpper();
+                Debug.Log(playername);
             });
         }
 
