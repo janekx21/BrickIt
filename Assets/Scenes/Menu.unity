@@ -687,6 +687,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scroll View Level
       objectReference: {fileID: 0}
+    - target: {fileID: 2533940805628293222, guid: aca49f2d690902943b886da344361f76,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7013153947635156743, guid: aca49f2d690902943b886da344361f76,
         type: 3}
       propertyPath: eventSystem
@@ -706,6 +711,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195708867361375816, guid: aca49f2d690902943b886da344361f76,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.2998047
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca49f2d690902943b886da344361f76, type: 3}

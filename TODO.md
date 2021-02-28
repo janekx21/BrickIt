@@ -31,7 +31,7 @@ small open source game
 	- one way block
 	- gate block
 - navigation
-	- ability to focus on buttons in menu (like with controller) (ui autofocus)
+	- scroll automatically with navigation
 	- save chapter selection position like with levels
 - level store system in editor
     - change how levels are stored and created, to allow for a more flexible setup
