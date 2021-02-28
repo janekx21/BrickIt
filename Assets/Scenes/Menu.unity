@@ -406,10 +406,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 475946807434405835, guid: ae2417e39acce924ea923f88849b555b,
         type: 3}
-      propertyPath: prefab
+      propertyPath: eventSystem
       value: 
-      objectReference: {fileID: 3541829527923255030, guid: 8580e6ee76707c944b8b00e513764a05,
+      objectReference: {fileID: 5262302067516933775}
+    - target: {fileID: 475946807434405835, guid: ae2417e39acce924ea923f88849b555b,
         type: 3}
+      propertyPath: BackButton
+      value: 
+      objectReference: {fileID: 601306946}
+    - target: {fileID: 475946807434405835, guid: ae2417e39acce924ea923f88849b555b,
+        type: 3}
+      propertyPath: HorizontalScrollbar
+      value: 
+      objectReference: {fileID: 1701890814}
     - target: {fileID: 2271931351480454538, guid: ae2417e39acce924ea923f88849b555b,
         type: 3}
       propertyPath: m_IsActive
@@ -437,6 +446,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9173855061244435574, guid: ae2417e39acce924ea923f88849b555b,
     type: 3}
   m_PrefabInstance: {fileID: 570335561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &601306946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3280647153520473563, guid: aca49f2d690902943b886da344361f76,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267940196}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &679965786
 GameObject:
@@ -672,8 +687,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scroll View Level
       objectReference: {fileID: 0}
+    - target: {fileID: 7013153947635156743, guid: aca49f2d690902943b886da344361f76,
+        type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 5262302067516933775}
+    - target: {fileID: 7013153947635156743, guid: aca49f2d690902943b886da344361f76,
+        type: 3}
+      propertyPath: BackButton
+      value: 
+      objectReference: {fileID: 601306946}
+    - target: {fileID: 7013153947635156743, guid: aca49f2d690902943b886da344361f76,
+        type: 3}
+      propertyPath: HorizontalScrollbar
+      value: 
+      objectReference: {fileID: 1383697320}
+    - target: {fileID: 1853529693816574019, guid: aca49f2d690902943b886da344361f76,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca49f2d690902943b886da344361f76, type: 3}
+--- !u!1 &1383697320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 847290258973721634, guid: aca49f2d690902943b886da344361f76,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267940196}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1485519746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5262302066049400076, guid: a5da7454ffbc22c4db90f98593b2abcf,
@@ -686,13 +727,19 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1267940196}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1701890814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 847290258973721634, guid: ae2417e39acce924ea923f88849b555b,
+    type: 3}
+  m_PrefabInstance: {fileID: 570335561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1724557571 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2533940805628293222, guid: aca49f2d690902943b886da344361f76,
     type: 3}
   m_PrefabInstance: {fileID: 1267940196}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 601306946}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -779,3 +826,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5da7454ffbc22c4db90f98593b2abcf, type: 3}
+--- !u!114 &5262302067516933775 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5262302066049400079, guid: a5da7454ffbc22c4db90f98593b2abcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 5262302067516933774}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,4 +1,6 @@
-﻿using LevelContext;
+﻿using System.Collections.Generic;
+using System.Linq;
+using LevelContext;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -73,6 +75,7 @@ namespace UI.Menu {
                 currentState = State.Chapter;
                 saveData.selectedChapter = null;
                 saveData.Save();
+                chapterList.MarkFirstChapter();
             }
         }
 
