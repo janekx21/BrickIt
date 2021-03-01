@@ -17,6 +17,7 @@ namespace LevelContext {
         private LevelState state = LevelState.Begin;
         public LevelState State => state;
         private bool cancelIsDown = true;
+        private bool ready = false;
 
         public class OnLevelStateChanged : UnityEvent<LevelState> {
         }
@@ -25,11 +26,18 @@ namespace LevelContext {
 
         private float timeSinceStart = 0;
         private int comboScore = 0;
+        private int maxCombo = 0;
         private LevelObject ownLevelObject = null;
 
         public float TimeSinceStart => timeSinceStart;
         private int TimeScore => Mathf.FloorToInt(Mathf.Max(1 - Mathf.Log10(timeSinceStart * 10 / 999), 0) * 200);
         public int Score => TimeScore + comboScore;
+        public int MaxCombo => maxCombo;
+
+        public bool Ready {
+            get => ready;
+            set => ready = value;
+        }
 
         private void Awake() {
             Assert.IsNull(instance);
@@ -71,7 +79,7 @@ namespace LevelContext {
                     break;
 
                 case LevelState.Begin:
-                    if (Input.anyKey || Input.touchCount > 0) {
+                    if (ready && (Input.anyKey || Input.touchCount > 0)) {
                         Play();
                         FindObjectOfType<Spawner>().Spawn();
                     }
@@ -112,8 +120,8 @@ namespace LevelContext {
 
         public void Win() {
             Debug.Log("you won :>");
-            PauseAll();
             ChangeState(LevelState.Win);
+            PauseAll();
 
             using (var data = SaveData.Load()) {
                 data.done.Add(ownLevelObject);
@@ -122,8 +130,8 @@ namespace LevelContext {
 
         public void Lose() {
             Debug.Log("you lost :(");
-            PauseAll();
             ChangeState(LevelState.Lost);
+            PauseAll();
         }
 
         void PlayAll() {
@@ -153,6 +161,9 @@ namespace LevelContext {
         }
 
         public void ApplyCombo(int combo) {
+            if (combo > maxCombo) {
+                maxCombo = combo;
+            }
             comboScore += Mathf.FloorToInt(Mathf.Pow(combo - 1, 2));
         }
     }

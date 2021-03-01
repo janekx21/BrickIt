@@ -10,22 +10,47 @@ namespace UI {
         [SerializeField] private Button next = null;
         [SerializeField] private Text time = null;
         [SerializeField] private Text score = null;
+        [SerializeField] private Text maxCombo = null;
         [SerializeField] private InputField inputName = null;
-        private string playername = "PLAYER";
+        [SerializeField] private Highscore highscore = null;
+        private string playerName = "";
+        private string lastPlayerName = "PLAYER";
+        private int playerScore = 0;
 
         private void Awake() {
             next.onClick.AddListener(() => {
                 Level.Own.ChangeState(LevelState.Highscores);
+                highscore.AddHighscoreEntry(playerScore, playerName);
+                highscore.ShowHighscores();
+                
+                // save lastPlayerName
+                PlayerPrefs.SetString("lastPlayerName", playerName);
+                PlayerPrefs.Save();
             });
             inputName.onEndEdit.AddListener(text => {
-                playername = text.ToUpper();
-                Debug.Log(playername);
+                playerName = text.ToUpper();
+                if (playerName == "") {
+                    playerName = lastPlayerName;
+                }
+                Debug.Log(playerName);
             });
+            
+            // initialize lastPlayerName save
+            if (!PlayerPrefs.HasKey("lastPlayerName")) {
+                PlayerPrefs.SetString("lastPlayerName", "PLAYER");
+                PlayerPrefs.Save();   
+            }
+
+            // load saved lastPlayerName
+            lastPlayerName = PlayerPrefs.GetString("lastPlayerName");
+            inputName.placeholder.GetComponent<Text>().text = lastPlayerName;
         }
 
         private void Update() {
-            time.text = $"{LevelContext.Level.Own.TimeSinceStart:000.00}";
-            score.text = $"{LevelContext.Level.Own.Score:000}";
+            time.text = $"{Level.Own.TimeSinceStart:000.00}";
+            maxCombo.text = $"{Level.Own.MaxCombo:00}";
+            playerScore = Level.Own.Score;
+            score.text = $"{playerScore:000}";
         }
     }
 }

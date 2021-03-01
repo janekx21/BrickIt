@@ -454,6 +454,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1232631662753742485}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2303258866235636941 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1075795485143040600, guid: a98161e1eb9ea114880f731fbd2e25fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1232631662753742485}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e05c6980edf93641bc9edb25b45383e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1721664895739858902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -756,6 +768,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6213610263328528645, guid: 2e03e12a700968242895bc27025c49d2,
+        type: 3}
+      propertyPath: highscores
+      value: 
+      objectReference: {fileID: 2303258866235636941}
+    - target: {fileID: 6213610263328528645, guid: 2e03e12a700968242895bc27025c49d2,
+        type: 3}
+      propertyPath: highscore
+      value: 
+      objectReference: {fileID: 2303258866235636941}
     - target: {fileID: 2904132645416188161, guid: 2e03e12a700968242895bc27025c49d2,
         type: 3}
       propertyPath: m_Layer

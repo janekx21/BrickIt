@@ -11,7 +11,6 @@ namespace UI.Menu {
         [SerializeField] private ChapterPanel prefab = null;
 
         [Header("Navigation")]
-        [SerializeField] private EventSystem eventSystem = null;
         [SerializeField] private GameObject HorizontalScrollbar = null;
         private Selectable lastPanelButton = null;
         private Selectable beforeLastPanelButton = null;

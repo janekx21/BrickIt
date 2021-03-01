@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using GamePlay;
+using LevelContext;
 using UnityEngine;
 
 namespace Blocks {
@@ -25,6 +26,7 @@ namespace Blocks {
 
         IEnumerator ReadyRoutine() {
             yield return new WaitForSeconds(waitingTimer);
+            Level.Own.Ready = true;
             ready = true;
         }
 

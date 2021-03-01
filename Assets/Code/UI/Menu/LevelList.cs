@@ -10,7 +10,6 @@ namespace UI.Menu {
         [SerializeField] private LevelPanel prefab = null;
 
         [Header("Navigation")]
-        [SerializeField] private EventSystem eventSystem = null;
         [SerializeField] private GameObject BackButton = null;
         [SerializeField] private GameObject HorizontalScrollbar = null;
         private Selectable lastPanelButton = null;
