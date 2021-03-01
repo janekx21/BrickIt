@@ -1,5 +1,6 @@
 ﻿using System;
 using Blocks;
+using LevelContext;
 using UnityEngine;
 using Util;
 
@@ -26,9 +27,9 @@ namespace GamePlay {
         private bool paused = false;
         private bool directionChanged = false;
 
-
         private int combo = 0;
         private float comboTimer = 0;
+        [SerializeField] private float comboTime = 1f; 
 
         private void OnDrawGizmos() {
             Gizmos.color = color;
@@ -57,16 +58,11 @@ namespace GamePlay {
                 direction *= -1;
             }
 #endif
-            if (comboTimer <= 0 && combo > 0) {
-                ComboEnds();
-            }
-
-            comboTimer = Mathf.Clamp01(comboTimer - Time.deltaTime);
             rend.color = color;
         }
 
         public void ComboEnds() {
-            LevelContext.Level.Own.ApplyCombo(combo);
+            Level.Own.ApplyCombo(combo);
             combo = 0;
         }
 
@@ -79,6 +75,12 @@ namespace GamePlay {
             if (paused) {
                 rig.velocity = Vector2.zero;
             }
+            
+            if (comboTimer <= 0 && combo > 0) {
+                ComboEnds();
+            }
+            
+            comboTimer = Mathf.Clamp01(comboTimer - Time.fixedDeltaTime);
         }
 
         private void OnCollisionEnter2D(Collision2D other) {
@@ -213,7 +215,11 @@ namespace GamePlay {
          */
         public void Combo() {
             combo++;
-            comboTimer = 1f;
+            comboTimer = comboTime;
+
+            if (Level.Own.State == LevelState.Win) {
+                ComboEnds();
+            }
         }
 
         public void play() {

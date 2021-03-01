@@ -36,7 +36,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   prefab: {fileID: 7071111437144697677, guid: f489839b36d913547bfc6f177e5c2b8d, type: 3}
-  waitingTimer: 0
+  waitingTimer: 1
 --- !u!1001 &263753936852314476
 PrefabInstance:
   m_ObjectHideFlags: 0

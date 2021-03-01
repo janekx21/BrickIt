@@ -10,6 +10,7 @@ namespace UI {
         [SerializeField] private Button next = null;
         [SerializeField] private Text time = null;
         [SerializeField] private Text score = null;
+        [SerializeField] private Text maxCombo = null;
         [SerializeField] private InputField inputName = null;
         [SerializeField] private Highscore highscore = null;
         private string playerName = "";
@@ -47,6 +48,7 @@ namespace UI {
 
         private void Update() {
             time.text = $"{Level.Own.TimeSinceStart:000.00}";
+            maxCombo.text = $"{Level.Own.MaxCombo:00}";
             playerScore = Level.Own.Score;
             score.text = $"{playerScore:000}";
         }
