@@ -6,9 +6,6 @@ small open source game
 
 ##TODO:
 
-- score system
-    - show
-    - save
 - level unlock
 	- animation
 - options
@@ -36,4 +33,11 @@ small open source game
 - level store system in editor
     - change how levels are stored and created, to allow for a more flexible setup
 - level, more levels
+
+
+#done
+
+- score system
+    - show
+    - save
 

@@ -413,6 +413,7 @@ MonoBehaviour:
   entryContainer: {fileID: 4930964257607048967}
   entryTemplate: {fileID: 7650154488608042597, guid: 9fb5daf5773e77d44b92065424fcfe02,
     type: 3}
+  templateHeight: 21
 --- !u!82 &1328560983618600261
 AudioSource:
   m_ObjectHideFlags: 0
@@ -857,6 +858,16 @@ PrefabInstance:
       propertyPath: m_Text
       value: retry
       objectReference: {fileID: 0}
+    - target: {fileID: 7099253185782572298, guid: 8f52d2f43e5f77448b40e218114ba31d,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099253185782572298, guid: 8f52d2f43e5f77448b40e218114ba31d,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 1409526084312101781}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f52d2f43e5f77448b40e218114ba31d, type: 3}
 --- !u!1 &3789455944675157509 stripped
@@ -1012,8 +1023,13 @@ PrefabInstance:
     - target: {fileID: 7099253185782572298, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
       propertyPath: m_Navigation.m_Mode
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7099253185782572298, guid: 8f52d2f43e5f77448b40e218114ba31d,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 4196146017687987128}
     - target: {fileID: 774984513612335837, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
       propertyPath: m_LocalPosition.z
