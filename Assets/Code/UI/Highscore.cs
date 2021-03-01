@@ -22,12 +22,13 @@ namespace UI {
             menu.onClick.AddListener(() => { LevelContext.Level.Own.ToMenu(); });
 
             key = "highscoreTable" + SceneManager.GetActiveScene().buildIndex;
+
             if (!PlayerPrefs.HasKey(key)) {
                 highscores = new Highscores { highscoreEntryList = new List<HighscoreEntry>() };
                 
                 string json = JsonUtility.ToJson(highscores);
                 PlayerPrefs.SetString(key, json);
-                PlayerPrefs.Save();   
+                PlayerPrefs.Save();
             }
             // PlayerPrefs.DeleteKey("highscoreTable");
             // PlayerPrefs.DeleteAll();
@@ -63,7 +64,7 @@ namespace UI {
             entryTransform.Find("positionVar").GetComponent<Text>().text = pos + ".";
 
             int score = highscoreEntry.score;
-            entryTransform.Find("scoreVar").GetComponent<Text>().text = score.ToString();
+            entryTransform.Find("scoreVar").GetComponent<Text>().text = $"{score:0 000 000}";
 
             string name = highscoreEntry.name;
             entryTransform.Find("nameVar").GetComponent<Text>().text = name;
