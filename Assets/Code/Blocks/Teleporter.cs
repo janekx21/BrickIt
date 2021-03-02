@@ -14,6 +14,8 @@ namespace Blocks {
         private BoxCollider2D collider = null;
 
         private void Awake() {
+            base.Awake();
+            
             collider = GetComponent<BoxCollider2D>();
         }
         
