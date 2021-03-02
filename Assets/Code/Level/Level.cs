@@ -29,13 +29,12 @@ namespace LevelContext {
         private int maxCombo = 0;
         private LevelObject ownLevelObject = null;
 
-        private float timeScoreBase = 9999999f;
-        private float multiplier = 1.02f;
+        private float timeScoreBase = 1000000f;
+        private float factor = 1.02f;
 
         public float TimeSinceStart => timeSinceStart;
         // private int TimeScore => Mathf.FloorToInt(Mathf.Max(1 - Mathf.Log10(timeSinceStart * 10 / 999), 0) * 200);
-        private int TimeScore => Mathf.FloorToInt(timeScoreBase * Mathf.Pow(multiplier, -timeSinceStart));
-        public int Score => TimeScore + comboScore;
+        public int Score => Mathf.FloorToInt((timeScoreBase + comboScore) * Mathf.Pow(factor, -timeSinceStart));
         public int MaxCombo => maxCombo;
 
         public bool Ready {
@@ -46,6 +45,7 @@ namespace LevelContext {
         private void Awake() {
             Assert.IsNull(instance);
             instance = this;
+            // PlayerPrefs.DeleteAll();
         }
 
         void Start() {
@@ -168,7 +168,7 @@ namespace LevelContext {
             if (combo > maxCombo) {
                 maxCombo = combo;
             }
-            comboScore += Mathf.FloorToInt(Mathf.Pow((combo - 1) * 10, 3));
+            comboScore += Mathf.FloorToInt(Mathf.Pow(combo * 10, 3));
         }
     }
 }

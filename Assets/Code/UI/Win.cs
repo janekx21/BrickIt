@@ -50,7 +50,7 @@ namespace UI {
             time.text = $"{Level.Own.TimeSinceStart:000.00}";
             maxCombo.text = $"{Level.Own.MaxCombo:00}";
             playerScore = Level.Own.Score;
-            score.text = $"{playerScore:0 000 000}";
+            score.text = $"{playerScore:### ### ###}";
         }
     }
 }

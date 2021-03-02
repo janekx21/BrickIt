@@ -64,7 +64,7 @@ namespace UI {
             entryTransform.Find("positionVar").GetComponent<Text>().text = pos + ".";
 
             int score = highscoreEntry.score;
-            entryTransform.Find("scoreVar").GetComponent<Text>().text = $"{score:0 000 000}";
+            entryTransform.Find("scoreVar").GetComponent<Text>().text = $"{score:### ### ###}";
 
             string name = highscoreEntry.name;
             entryTransform.Find("nameVar").GetComponent<Text>().text = name;
