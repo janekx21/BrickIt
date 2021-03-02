@@ -34,7 +34,8 @@ namespace LevelContext {
 
         public float TimeSinceStart => timeSinceStart;
         // private int TimeScore => Mathf.FloorToInt(Mathf.Max(1 - Mathf.Log10(timeSinceStart * 10 / 999), 0) * 200);
-        public int Score => Mathf.FloorToInt((timeScoreBase + comboScore) * Mathf.Pow(factor, -timeSinceStart));
+        public int TimeScore => Mathf.FloorToInt(timeScoreBase * Mathf.Pow(factor, -timeSinceStart));
+        public int Score => TimeScore + comboScore;
         public int MaxCombo => maxCombo;
 
         public bool Ready {
@@ -170,7 +171,7 @@ namespace LevelContext {
             if (combo > maxCombo) {
                 maxCombo = combo;
             }
-            comboScore += Mathf.FloorToInt(Mathf.Pow(combo * 10, 3));
+            comboScore += Mathf.FloorToInt(Mathf.Pow((combo - 1) * 100, 2));
         }
     }
 }
