@@ -60,7 +60,6 @@ namespace Blocks {
             if (allBlocks.TrueForAll(x => !x.shouldBreak())) {
                 // i am the last Block :(
                 Level.Own.Win();
-                maker.ComboEnds();
             }
 
             onDestroy.Invoke();
