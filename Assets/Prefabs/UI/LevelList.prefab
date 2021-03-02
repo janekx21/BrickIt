@@ -27,9 +27,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4419115106595778424, guid: 1213050b002713340a8cc6150322c3b5, type: 3}
-  eventSystem: {fileID: 0}
-  BackButton: {fileID: 0}
-  HorizontalScrollbar: {fileID: 0}
+  BackButton: {fileID: 3280647153520473563}
+  horizontalScrollbar: {fileID: 847290258973721634}
 --- !u!114 &9143151177188949944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1104,6 +1103,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f52d2f43e5f77448b40e218114ba31d, type: 3}
+--- !u!1 &3280647153520473563 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7793747024466010295, guid: 8f52d2f43e5f77448b40e218114ba31d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4733213477231269228}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1781718003870551920 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6419370553499015708, guid: 8f52d2f43e5f77448b40e218114ba31d,

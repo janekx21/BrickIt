@@ -414,11 +414,6 @@ PrefabInstance:
       propertyPath: BackButton
       value: 
       objectReference: {fileID: 601306946}
-    - target: {fileID: 475946807434405835, guid: ae2417e39acce924ea923f88849b555b,
-        type: 3}
-      propertyPath: HorizontalScrollbar
-      value: 
-      objectReference: {fileID: 1701890814}
     - target: {fileID: 2271931351480454538, guid: ae2417e39acce924ea923f88849b555b,
         type: 3}
       propertyPath: m_IsActive
@@ -697,16 +692,6 @@ PrefabInstance:
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 5262302067516933775}
-    - target: {fileID: 7013153947635156743, guid: aca49f2d690902943b886da344361f76,
-        type: 3}
-      propertyPath: BackButton
-      value: 
-      objectReference: {fileID: 601306946}
-    - target: {fileID: 7013153947635156743, guid: aca49f2d690902943b886da344361f76,
-        type: 3}
-      propertyPath: HorizontalScrollbar
-      value: 
-      objectReference: {fileID: 1383697320}
     - target: {fileID: 1853529693816574019, guid: aca49f2d690902943b886da344361f76,
         type: 3}
       propertyPath: m_Enabled
@@ -719,12 +704,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca49f2d690902943b886da344361f76, type: 3}
---- !u!1 &1383697320 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 847290258973721634, guid: aca49f2d690902943b886da344361f76,
-    type: 3}
-  m_PrefabInstance: {fileID: 1267940196}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1485519746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5262302066049400076, guid: a5da7454ffbc22c4db90f98593b2abcf,
@@ -736,12 +715,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9173855061244435574, guid: aca49f2d690902943b886da344361f76,
     type: 3}
   m_PrefabInstance: {fileID: 1267940196}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1701890814 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 847290258973721634, guid: ae2417e39acce924ea923f88849b555b,
-    type: 3}
-  m_PrefabInstance: {fileID: 570335561}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1724557571 stripped
 MonoBehaviour:

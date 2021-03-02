@@ -59,7 +59,7 @@ namespace Blocks {
             allBlocks.Remove(this);
             if (allBlocks.TrueForAll(x => !x.shouldBreak())) {
                 // i am the last Block :(
-                LevelContext.Level.Own.Win();
+                Level.Own.Win();
                 maker.ComboEnds();
             }
 

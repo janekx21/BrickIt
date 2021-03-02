@@ -11,7 +11,7 @@ namespace UI.Menu {
 
         [Header("Navigation")]
         [SerializeField] private GameObject BackButton = null;
-        [SerializeField] private GameObject HorizontalScrollbar = null;
+        [SerializeField] private GameObject horizontalScrollbar = null;
         private Selectable lastPanelButton = null;
         private Selectable beforeLastPanelButton = null;
         
@@ -44,7 +44,7 @@ namespace UI.Menu {
                     Navigation navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
                         selectOnUp = BackButton.GetComponent<Button>(),
-                        selectOnDown = HorizontalScrollbar.GetComponent<Scrollbar>(),
+                        selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
                         selectOnRight = panel.GetComponent<Button>()
                     };
                     lastPanelButton.navigation = navigation;
@@ -56,7 +56,7 @@ namespace UI.Menu {
                     Navigation navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
                         selectOnUp = BackButton.GetComponent<Button>(),
-                        selectOnDown = HorizontalScrollbar.GetComponent<Scrollbar>(),
+                        selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
                         selectOnLeft = beforeLastPanelButton,
                         selectOnRight = panel.GetComponent<Button>()
                     };
@@ -70,7 +70,7 @@ namespace UI.Menu {
                     Navigation navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
                         selectOnUp = BackButton.GetComponent<Button>(),
-                        selectOnDown = HorizontalScrollbar.GetComponent<Scrollbar>(),
+                        selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
                         selectOnLeft = beforeLastPanelButton
                     };
                     panel.GetComponent<Button>().navigation = navigation;

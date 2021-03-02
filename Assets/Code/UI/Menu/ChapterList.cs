@@ -11,7 +11,7 @@ namespace UI.Menu {
         [SerializeField] private ChapterPanel prefab = null;
 
         [Header("Navigation")]
-        [SerializeField] private GameObject HorizontalScrollbar = null;
+        [SerializeField] private GameObject horizontalScrollbar = null;
         private Selectable lastPanelButton = null;
         private Selectable beforeLastPanelButton = null;
 
@@ -43,7 +43,7 @@ namespace UI.Menu {
                 else if (o == list[1]) {
                     Navigation navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
-                        selectOnDown = HorizontalScrollbar.GetComponent<Scrollbar>(),
+                        selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
                         selectOnRight = panel.GetComponent<Button>()
                     };
                     lastPanelButton.navigation = navigation;
@@ -54,7 +54,7 @@ namespace UI.Menu {
                 else {
                     Navigation navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
-                        selectOnDown = HorizontalScrollbar.GetComponent<Scrollbar>(),
+                        selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
                         selectOnLeft = beforeLastPanelButton,
                         selectOnRight = panel.GetComponent<Button>()
                     };
@@ -67,7 +67,7 @@ namespace UI.Menu {
                 if (o == list.Last()) {
                     Navigation navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
-                        selectOnDown = HorizontalScrollbar.GetComponent<Scrollbar>(),
+                        selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
                         selectOnLeft = beforeLastPanelButton
                     };
                     panel.GetComponent<Button>().navigation = navigation;

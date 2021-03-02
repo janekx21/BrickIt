@@ -161,7 +161,9 @@ namespace LevelContext {
         }
 
         public void Retry() {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            int buildIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(buildIndex);
+            Debug.Log(buildIndex);
         }
 
         public void ApplyCombo(int combo) {
