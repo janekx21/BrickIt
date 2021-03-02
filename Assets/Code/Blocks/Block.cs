@@ -12,6 +12,7 @@ namespace Blocks {
 
         protected Rigidbody2D rig = null;
         protected SpriteRenderer ren = null;
+        protected BoxCollider2D boxCollider = null;
 
         private static readonly List<Block> allBlocks = new List<Block>();
 
@@ -31,6 +32,7 @@ namespace Blocks {
 
             rig = GetComponent<Rigidbody2D>();
             ren = GetComponent<SpriteRenderer>();
+            boxCollider = GetComponent<BoxCollider2D>();
         }
 
         public virtual void OnValidate() {

@@ -11,13 +11,6 @@ namespace Blocks {
         [SerializeField] private AudioSource source = null;
         [FormerlySerializedAs("onTeleport")] public UnityEvent onTeleportFrom = new UnityEvent();
         public UnityEvent onTeleportTo = new UnityEvent();
-        private BoxCollider2D collider = null;
-
-        private void Awake() {
-            base.Awake();
-            
-            collider = GetComponent<BoxCollider2D>();
-        }
         
         public override void Over(IActor actor) {
             base.Over(actor);
@@ -35,14 +28,14 @@ namespace Blocks {
                 source.Play();
             }
             else {
-                collider.isTrigger = false;
+                boxCollider.isTrigger = false;
             }
         }
 
         protected override bool shouldBreak() => false;
         
         public void Interact(IActor actor) {
-            collider.isTrigger = true;
+            boxCollider.isTrigger = true;
         }
     }
 }
