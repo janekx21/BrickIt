@@ -44,6 +44,7 @@ namespace UI {
             // load saved lastPlayerName
             lastPlayerName = PlayerPrefs.GetString("lastPlayerName");
             inputName.placeholder.GetComponent<Text>().text = lastPlayerName;
+            playerName = lastPlayerName;
         }
 
         private void Update() {

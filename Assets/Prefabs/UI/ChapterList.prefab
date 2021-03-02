@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 3541829527923255030, guid: 8580e6ee76707c944b8b00e513764a05, type: 3}
-  eventSystem: {fileID: 0}
-  HorizontalScrollbar: {fileID: 0}
+  horizontalScrollbar: {fileID: 847290258973721634}
 --- !u!114 &1905835509533397630
 MonoBehaviour:
   m_ObjectHideFlags: 0
