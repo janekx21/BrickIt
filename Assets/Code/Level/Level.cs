@@ -14,6 +14,9 @@ namespace LevelContext {
         public static Level Own => instance;
         private static Level instance = null;
 
+        [SerializeField] private int levelWidth = 17;
+        [SerializeField] private int levelHight = 10;
+     
         private LevelState state = LevelState.Begin;
         public LevelState State => state;
         private bool cancelIsDown = true;
@@ -46,14 +49,23 @@ namespace LevelContext {
         private void Awake() {
             Assert.IsNull(instance);
             instance = this;
-            // PlayerPrefs.DeleteAll();
         }
 
         void Start() {
             Begin();
         }
+        
+        private void OnDrawGizmos() {
+            Gizmos.DrawWireCube(transform.position, new Vector3(levelWidth, levelHight, 0));
+        }
 
         void Update() {
+#if DEBUG
+            if (Input.GetKey(KeyCode.O) && Input.GetKeyDown(KeyCode.Delete)) {
+                PlayerPrefs.DeleteAll();
+            }
+#endif
+            
             switch (state) {
                 case LevelState.Play:
                     if (Input.GetAxisRaw("Cancel") != 0) {

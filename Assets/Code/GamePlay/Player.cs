@@ -185,7 +185,6 @@ namespace GamePlay {
         public void FlipDirection() {
             direction *= -1;
         }
-
         public void Die() {
             Destroy(gameObject);
             LevelContext.Level.Own.Lose();
