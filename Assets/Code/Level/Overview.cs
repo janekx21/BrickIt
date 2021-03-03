@@ -26,8 +26,13 @@ namespace LevelContext {
             // offset to paint blocks at the edge - x offset is a bit weird
             var edgeOffset = new Vector2Int(0, 8);
             var scene = EditorSceneManager.OpenScene(level.scene.ScenePath, OpenSceneMode.Additive);
-            var overview = new Texture2D(272 + 2 * edgeOffset.y, 160 + 2 * edgeOffset.y);
-            overview.filterMode = FilterMode.Point;
+            var levelScript = scene.GetRootGameObjects().ToList().Find(o => o.GetComponent<Level>()).GetComponent<Level>();
+            var levelSize = new Vector2Int(16 * levelScript.LevelWidth, 16 * levelScript.LevelHeight);
+
+            var overview =
+                new Texture2D(levelSize.x + 2 * edgeOffset.y, levelSize.y + 2 * edgeOffset.y) {
+                    filterMode = FilterMode.Point
+                };
             var length = overview.width * overview.height;
             var blackArray = new Color[length];
             overview.SetPixels(blackArray);

@@ -17,7 +17,10 @@ namespace LevelContext {
 
         [SerializeField] private Camera levelCamera = null;
         [SerializeField] private int levelWidth = 17;
-        [SerializeField] private int levelHight = 10;
+        [SerializeField] private int levelHeight = 10;
+        
+        public int LevelWidth => levelWidth;
+        public int LevelHeight => levelHeight;
      
         private LevelState state = LevelState.Begin;
         public LevelState State => state;
@@ -54,7 +57,7 @@ namespace LevelContext {
 
             PixelPerfectCamera pixelPerfectCamera = levelCamera.GetComponent<PixelPerfectCamera>();
             pixelPerfectCamera.refResolutionX = levelWidth * 16;
-            pixelPerfectCamera.refResolutionY = levelHight * 16;
+            pixelPerfectCamera.refResolutionY = levelHeight * 16;
         }
 
         void Start() {
@@ -62,7 +65,7 @@ namespace LevelContext {
         }
         
         private void OnDrawGizmos() {
-            Gizmos.DrawWireCube(transform.position, new Vector3(levelWidth, levelHight, 0));
+            Gizmos.DrawWireCube(transform.position, new Vector3(levelWidth, levelHeight, 0));
         }
 
         void Update() {
