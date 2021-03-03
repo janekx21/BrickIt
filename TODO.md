@@ -8,7 +8,6 @@ small open source game
 
 ###Priority 1:
 
-- make tutorial in chapter 1 more clear for beginners
 - level unlock
 	- unlock chapter if chapter before is 50% completed
 	- show highscore on completed levels
@@ -46,4 +45,5 @@ small open source game
 - score system
     - show
     - save
+- make tutorial in chapter 1 more clear for beginners
 
