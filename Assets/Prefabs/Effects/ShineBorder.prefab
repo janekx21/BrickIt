@@ -110,4 +110,3 @@ MonoBehaviour:
   highest: 0.3
   renderers:
   - {fileID: 1460676561210778459}
-  - {fileID: 0}
