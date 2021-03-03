@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D;
 using Util;
 
 namespace LevelContext {
@@ -14,6 +15,7 @@ namespace LevelContext {
         public static Level Own => instance;
         private static Level instance = null;
 
+        [SerializeField] private Camera levelCamera = null;
         [SerializeField] private int levelWidth = 17;
         [SerializeField] private int levelHight = 10;
      
@@ -49,6 +51,10 @@ namespace LevelContext {
         private void Awake() {
             Assert.IsNull(instance);
             instance = this;
+
+            PixelPerfectCamera pixelPerfectCamera = levelCamera.GetComponent<PixelPerfectCamera>();
+            pixelPerfectCamera.refResolutionX = levelWidth * 16;
+            pixelPerfectCamera.refResolutionY = levelHight * 16;
         }
 
         void Start() {
