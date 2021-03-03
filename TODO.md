@@ -19,6 +19,7 @@ small open source game
 	- claw death block
 	- one way block
 	- gate block
+	- fly through block
 - level, more levels
 
 ###Priority 2:
