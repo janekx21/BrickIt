@@ -31,7 +31,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed294fa8dccd7e4093fb7c4ce844a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
   colorType: 0
   onDestroy:
     m_PersistentCalls:
