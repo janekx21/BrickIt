@@ -72,6 +72,7 @@ namespace LevelContext {
             EditorUtility.SetDirty(level);
 
             EditorSceneManager.CloseScene(scene, true);
+            AssetDatabase.Refresh();
         }
 
         static List<OverviewObject> Search(Transform transform) {

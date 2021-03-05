@@ -31,7 +31,7 @@ public class BlockBrush : GridBrush {
         set => colorType = value;
     }
 
-    private ColorType colorType = ColorType.Default;
+    private ColorType colorType = ColorType.DefaultColor;
 
     public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position) {
         // if (position == prev_position) {
@@ -139,8 +139,6 @@ public class BlockBrush : GridBrush {
                 if (GUILayout.Button(ObjectNames.NicifyVariableName(colorType.ToString()))) {
                     CurrentBlockBrush.CurrentColorType = colorType;
                 }
-                
-                
             }
             // CurrentBlockBrush.CurrentColorType = EditorGUILayout.ColorField(CurrentBlockBrush.CurrentColorType);
             // if (GUILayout.Button("Reset Color")) {

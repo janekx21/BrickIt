@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GamePlay {
     public enum ColorType {
-        Default,
+        DefaultColor,
         Red,
         Blue,
         Green,

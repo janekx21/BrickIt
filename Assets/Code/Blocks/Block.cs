@@ -9,7 +9,7 @@ namespace Blocks {
     [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
     public abstract class Block : Entity, IColored {
         // [SerializeField] Color color = Color.white;
-        [SerializeField] private ColorType colorType = ColorType.Default;
+        [SerializeField] private ColorType colorType = ColorType.DefaultColor;
 
         protected Rigidbody2D rig = null;
         protected SpriteRenderer ren = null;
@@ -96,7 +96,7 @@ namespace Blocks {
         }
 
         public bool ColorsMatch(IActor actor) {
-            return GetColorType() == actor.GetColorType() || GetColorType() == ColorType.Default;
+            return GetColorType() == actor.GetColorType() || GetColorType() == ColorType.DefaultColor;
         }
 
         protected abstract bool shouldBreak(); // returns if the block should break to win

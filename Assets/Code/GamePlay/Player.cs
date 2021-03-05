@@ -9,7 +9,7 @@ namespace GamePlay {
     public class Player : Entity, IActor, IPausable {
         [SerializeField] private float speed = 0f;
         [SerializeField] private float moveSpeed = 1f;
-        [SerializeField] private ColorType colorType = ColorType.Default;
+        [SerializeField] private ColorType colorType = ColorType.DefaultColor;
 
         [SerializeField] private float dashAcceleration = 1;
         [SerializeField] private float dashVelocity = 1;
@@ -40,7 +40,7 @@ namespace GamePlay {
 
         private void OnValidate() {
             rend = GetComponent<SpriteRenderer>();
-            rend.color = colorType == ColorType.Default ? Color.black : ColorConversion.GetColorFromType(colorType);
+            rend.color = colorType == ColorType.DefaultColor ? Color.black : ColorConversion.GetColorFromType(colorType);
         }
 
         public override void Awake() {
