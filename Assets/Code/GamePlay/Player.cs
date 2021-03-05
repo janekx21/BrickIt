@@ -63,7 +63,7 @@ namespace GamePlay {
                 direction *= -1;
             }
 #endif
-            rend.color = ColorConversion.GetColorFromType(colorType);
+            rend.color = colorType == ColorType.DefaultColor ? Color.black : ColorConversion.GetColorFromType(colorType);
         }
 
         public void ComboEnds() {
@@ -192,7 +192,7 @@ namespace GamePlay {
         }
         public void Die() {
             Destroy(gameObject);
-            LevelContext.Level.Own.Lose();
+            Level.Own.Lose();
         }
 
         public Vector2 GetDirection() => direction;
