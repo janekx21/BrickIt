@@ -40,7 +40,13 @@ namespace GamePlay {
 
         private void OnValidate() {
             rend = GetComponent<SpriteRenderer>();
-            rend.color = colorType == ColorType.DefaultColor ? Color.black : ColorConversion.GetColorFromType(colorType);
+            rend.color = PlayerCircleColor(colorType);
+        }
+
+        private Color PlayerCircleColor(ColorType colorType) {
+            return colorType == ColorType.DefaultColor
+                ? new Color(-1, 0, 0, 0)
+                : ColorConversion.GetColorFromType(colorType);
         }
 
         public override void Awake() {
@@ -63,7 +69,7 @@ namespace GamePlay {
                 direction *= -1;
             }
 #endif
-            rend.color = colorType == ColorType.DefaultColor ? Color.black : ColorConversion.GetColorFromType(colorType);
+            rend.color = PlayerCircleColor(colorType);
         }
 
         public void ComboEnds() {
