@@ -67,7 +67,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1550672577
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -7165607403067095034, guid: e0e6c5ebebcd7ed45821f14e024d1e11,
     type: 3}
@@ -282,11 +282,11 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1550672577
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -3919779002189068522, guid: e0e6c5ebebcd7ed45821f14e024d1e11,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -331,12 +331,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.6
   moveSpeed: 2
-  color: {r: 1, g: 1, b: 1, a: 1}
+  colorType: 0
   dashAcceleration: 10
   dashVelocity: 6
   bounceParticle: {fileID: 823083484203336117, guid: 5e8a7eac1a722d3449ded8e6aed992be,
     type: 3}
   smallBounceSource: {fileID: 3402478102585997411}
+  comboTime: 1
 --- !u!58 &1948330738
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using Blocks;
+using GamePlay;
 using UnityEditor;
 using UnityEditor.Tilemaps;
 using UnityEngine;
@@ -22,12 +26,12 @@ public class BlockBrush : GridBrush {
 
     private Block current = null;
 
-    public Color CurrentColor {
-        get => color;
-        set => color = value;
+    public ColorType CurrentColorType {
+        get => colorType;
+        set => colorType = value;
     }
 
-    private Color color = Color.white;
+    private ColorType colorType = ColorType.Default;
 
     public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position) {
         // if (position == prev_position) {
@@ -55,10 +59,7 @@ public class BlockBrush : GridBrush {
                 instance.transform.SetParent(brushTarget.transform);
                 instance.transform.position =
                     grid.LocalToWorld(grid.CellToLocalInterpolated(position + (Vector3) Vector2.one * .5f));
-                var block = instance.GetComponent<Block>();
-                if (block) {
-                    block.SetColor(color);
-                }
+                instance.GetComponent<Block>()?.SetColorType(colorType);
 
                 Selection.activeTransform = instance.transform;
             }
@@ -133,13 +134,23 @@ public class BlockBrush : GridBrush {
         /// </summary>
         public override void OnPaintInspectorGUI() {
             GUILayout.BeginHorizontal();
-            CurrentBlockBrush.CurrentColor = EditorGUILayout.ColorField(CurrentBlockBrush.CurrentColor);
-            if (GUILayout.Button("Reset Color")) {
-                CurrentBlockBrush.CurrentColor = Block.defaultColor;
+            foreach (ColorType colorType in Enum.GetValues(typeof(ColorType)) as ColorType[]) {
+                GUI.backgroundColor = ColorConversion.GetColorFromType(colorType);
+                if (GUILayout.Button(ObjectNames.NicifyVariableName(colorType.ToString()))) {
+                    CurrentBlockBrush.CurrentColorType = colorType;
+                }
+                
+                
             }
+            // CurrentBlockBrush.CurrentColorType = EditorGUILayout.ColorField(CurrentBlockBrush.CurrentColorType);
+            // if (GUILayout.Button("Reset Color")) {
+            //     CurrentBlockBrush.CurrentColorType = ColorType.defaultColorType;
+            // }
 
             GUILayout.EndHorizontal();
 
+            GUI.backgroundColor = Color.white;
+            
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("Rotate Left \u21ba")) {
                 foreach (var t in Selection.transforms) {

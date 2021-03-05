@@ -17,7 +17,7 @@ namespace Blocks {
 
             if (ColorsMatch(actor)) {
                 var target = FindObjectsOfType<Teleporter>()
-                    .Where(teleporter => teleporter.GetColor() == GetColor() && teleporter != this)
+                    .Where(teleporter => teleporter.GetColorType() == GetColorType() && teleporter != this)
                     .OrderBy(teleporter => Random.Range(0f, 1f))
                     .First();
 

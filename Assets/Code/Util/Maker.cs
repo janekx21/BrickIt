@@ -12,12 +12,12 @@ namespace Util {
         public void Spawn(GameObject obj) {
             var particles = Instantiate(obj, transform.position, transform.rotation, null);
             var main = particles.GetComponent<ParticleSystem>().main;
-            main.startColor = GetComponent<IColored>().GetColor();
+            main.startColor = ColorConversion.GetColorFromType(GetComponent<IColored>().GetColorType());
         }
 
-        public void Spawn(GameObject obj, Color color) {
+        public void Spawn(GameObject obj, ColorType colorType) {
             var clone = Instantiate(obj, transform.position, transform.rotation, null);
-            clone.GetComponent<IColored>().SetColor(color);
+            clone.GetComponent<IColored>().SetColorType(colorType);
         }
     }
 }
