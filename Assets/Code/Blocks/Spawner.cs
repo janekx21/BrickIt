@@ -21,7 +21,7 @@ namespace Blocks {
         IEnumerator SpawnRoutine() {
             yield return new WaitUntil(() => ready);
             var player = Instantiate(prefab, transform.position, Quaternion.identity);
-            player.Init(transform.up, GetColor());
+            player.Init(transform.up, GetColorType());
         }
 
         IEnumerator ReadyRoutine() {

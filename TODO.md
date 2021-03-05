@@ -8,13 +8,12 @@ small open source game
 
 ###Priority 1:
 
+- level store system overhaul in editor
+    - change how levels are stored and created, to allow for a more flexible setup
 - level unlock
 	- unlock chapter if chapter before is 50% completed
 	- show highscore on completed levels
 	- animation
-- level store system overhaul in editor
-    - change how levels are stored and created, to allow for a more flexible setup
-- create unified colorpalatte
 - blocks
 	- claw death block
 	- one way/color block
@@ -47,4 +46,5 @@ small open source game
     - show
     - save
 - make tutorial in chapter 1 more clear for beginners
+- create unified colorpalatte
 

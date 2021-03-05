@@ -9,7 +9,7 @@ namespace GamePlay {
     public class Player : Entity, IActor, IPausable {
         [SerializeField] private float speed = 0f;
         [SerializeField] private float moveSpeed = 1f;
-        [SerializeField] private Color color = Color.black;
+        [SerializeField] private ColorType colorType = ColorType.Default;
 
         [SerializeField] private float dashAcceleration = 1;
         [SerializeField] private float dashVelocity = 1;
@@ -31,11 +31,16 @@ namespace GamePlay {
         private float comboTimer = 0;
         [SerializeField] private float comboTime = 1f; 
 
-        private void OnDrawGizmos() {
-            Gizmos.color = color;
-            for (float i = .8f; i < 1f; i += .01f) {
-                Gizmos.DrawWireSphere(transform.position, i * 0.3f);
-            }
+        // private void OnDrawGizmos() {
+        //     Gizmos.color = color;
+        //     for (float i = .8f; i < 1f; i += .01f) {
+        //         Gizmos.DrawWireSphere(transform.position, i * 0.3f);
+        //     }
+        // }
+
+        private void OnValidate() {
+            rend = GetComponent<SpriteRenderer>();
+            rend.color = colorType == ColorType.Default ? Color.black : ColorConversion.GetColorFromType(colorType);
         }
 
         public override void Awake() {
@@ -58,7 +63,7 @@ namespace GamePlay {
                 direction *= -1;
             }
 #endif
-            rend.color = color;
+            rend.color = ColorConversion.GetColorFromType(colorType);
         }
 
         public void ComboEnds() {
@@ -106,7 +111,7 @@ namespace GamePlay {
                     Quaternion.LookRotation(Vector3.forward, contact.normal));
                 if (block) {
                     var main = particles.GetComponent<ParticleSystem>().main;
-                    main.startColor = block.GetColor();
+                    main.startColor = ColorConversion.GetColorFromType(block.GetColorType());
                     var interactable = block.GetComponent<IInteractable>();
                     interactable?.Interact(this);
                 }
@@ -143,21 +148,21 @@ namespace GamePlay {
             rig.velocity = speedModifier * speed * direction + adding * moveSpeed + dash * dashVelocity;
         }
 
-        public void Init(Vector2 direction, Color color) {
+        public void Init(Vector2 direction, ColorType colorType) {
             this.direction = direction;
-            SetColor(color);
+            SetColorType(colorType);
         }
 
         public float GetDamage() {
             return 1;
         }
 
-        public Color GetColor() {
-            return color;
+        public ColorType GetColorType() {
+            return colorType;
         }
 
-        public void SetColor(Color color) {
-            this.color = color == Color.white ? Color.black : color;
+        public void SetColorType(ColorType colorType) {
+            this.colorType = colorType;
         }
 
         public void ChangeDirection(IDirectionChanger directionChanger) {

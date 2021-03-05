@@ -11,13 +11,13 @@ namespace Blocks {
         public override void Hit(IActor actor) {
             base.Hit(actor);
 
-            actor.SetColor(GetColor());
+            actor.SetColorType(GetColorType());
         }
 
         protected override bool shouldBreak() => false;
 
         public void Interact(IActor actor) {
-            if (actor.GetColor() != GetColor()) {
+            if (actor.GetColorType() != GetColorType()) {
                 onInteract.Invoke();
                 var dir = actor.GetPosition() - (Vector2) transform.position;
                 var effectPosition = dir.Rotation() * particleEffect.transform.localPosition;
@@ -25,7 +25,7 @@ namespace Blocks {
                     dir.Rotation());
                 var system = clone.GetComponent<ParticleSystem>();
                 var systemMain = system.main;
-                systemMain.startColor = GetColor();
+                systemMain.startColor = ColorConversion.GetColorFromType(GetColorType());
             }
         }
     }

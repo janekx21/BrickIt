@@ -8,7 +8,8 @@ using UnityEngine.Events;
 namespace Blocks {
     [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
     public abstract class Block : Entity, IColored {
-        [SerializeField] private Color color = Color.white;
+        // [SerializeField] Color color = Color.white;
+        [SerializeField] private ColorType colorType = ColorType.Default;
 
         protected Rigidbody2D rig = null;
         protected SpriteRenderer ren = null;
@@ -16,7 +17,6 @@ namespace Blocks {
 
         private static readonly List<Block> allBlocks = new List<Block>();
 
-        public static Color defaultColor => Color.white;
         public UnityEvent onDestroy = new UnityEvent();
 
         private void OnEnable() {
@@ -32,24 +32,26 @@ namespace Blocks {
 
             rig = GetComponent<Rigidbody2D>();
             ren = GetComponent<SpriteRenderer>();
+            // ren.color = colorType.Color;
             boxCollider = GetComponent<BoxCollider2D>();
         }
 
         public virtual void OnValidate() {
             ren = GetComponent<SpriteRenderer>();
+            ren.color = ColorConversion.GetColorFromType(colorType);
         }
 
         public override void Update() {
             base.Update();
-            ren.color = color;
+            // ren.color = colorType.Color;
         }
 
-        private void OnDrawGizmos() {
-            Gizmos.color = color;
-            for (float i = .8f; i < 1f; i += .01f) {
-                Gizmos.DrawWireCube(transform.position, new Vector3(1, 1, 0) * i);
-            }
-        }
+        // private void OnDrawGizmos() {
+        //     Gizmos.color = color;
+        //     for (float i = .8f; i < 1f; i += .01f) {
+        //         Gizmos.DrawWireCube(transform.position, new Vector3(1, 1, 0) * i);
+        //     }
+        // }
 
         public virtual void Hit(IActor actor) {
         }
@@ -84,16 +86,17 @@ namespace Blocks {
             }
         }
 
-        public Color GetColor() {
-            return color;
+        public ColorType GetColorType() {
+            return colorType;
         }
 
-        public void SetColor(Color color) {
-            this.color = color;
+        public void SetColorType(ColorType colorType) {
+            this.colorType = colorType;
+            OnValidate();
         }
 
         public bool ColorsMatch(IActor actor) {
-            return GetColor() == actor.GetColor() || GetColor() == defaultColor;
+            return GetColorType() == actor.GetColorType() || GetColorType() == ColorType.Default;
         }
 
         protected abstract bool shouldBreak(); // returns if the block should break to win
