@@ -17,9 +17,9 @@ small open source game
 - create unified colorpalatte
 - blocks
 	- claw death block
-	- one way block
+	- one way/color block
 	- gate block
-	- fly through block
+	- fly-through block
 - level, more levels
 
 ###Priority 2:
