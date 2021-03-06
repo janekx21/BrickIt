@@ -13,7 +13,7 @@ namespace UI {
         [SerializeField] private Text score = null;
         [SerializeField] private Text maxCombo = null;
         [SerializeField] private InputField inputName = null;
-        [SerializeField] private Highscore highscore = null;
+        
         private string playerName = "";
         private string lastPlayerName = "PLAYER";
         private int playerScore = 0;
@@ -21,7 +21,7 @@ namespace UI {
         private void Awake() {
             next.onClick.AddListener(() => {
                 Level.Own.ChangeState(LevelState.Highscores);
-                highscore.AddHighscoreEntry(playerScore, playerName);
+                Highscore.Own.AddHighscoreEntry(playerScore, playerName);
                 
                 // save lastPlayerName
                 PlayerPrefs.SetString("lastPlayerName", playerName);

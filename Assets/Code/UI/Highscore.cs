@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using GamePlay;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,10 +19,16 @@ namespace UI {
         private Highscores highscores;
         private List<Transform> highscoreEntryTransformList = null;
         private string key = "highscoreTable";
-        
+
+        public static Highscore Own => instance;
+        private static Highscore instance = null;
+
         public UnityEvent onScoreAdded = new UnityEvent();
 
         private void Awake() {
+            Assert.IsNull(instance);
+            instance = this;
+            
             retry.onClick.AddListener(() => { LevelContext.Level.Own.Retry(); });
             menu.onClick.AddListener(() => { LevelContext.Level.Own.ToMenu(); });
             onScoreAdded.AddListener(ShowHighscores);
