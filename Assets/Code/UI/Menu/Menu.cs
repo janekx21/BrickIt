@@ -95,7 +95,7 @@ namespace UI.Menu {
             saveData.Save();
             var routine = SceneManager.LoadSceneAsync(levelObject.scene);
             routine.completed += operation => {
-                var level = FindObjectOfType<LevelContext.Level>();
+                var level = FindObjectOfType<Level>();
                 level.Init(levelObject);
             };
         }

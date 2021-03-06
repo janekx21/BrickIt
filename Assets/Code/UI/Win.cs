@@ -2,6 +2,7 @@
 using GamePlay;
 using LevelContext;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -21,7 +22,6 @@ namespace UI {
             next.onClick.AddListener(() => {
                 Level.Own.ChangeState(LevelState.Highscores);
                 highscore.AddHighscoreEntry(playerScore, playerName);
-                highscore.ShowHighscores();
                 
                 // save lastPlayerName
                 PlayerPrefs.SetString("lastPlayerName", playerName);

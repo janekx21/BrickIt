@@ -71,7 +71,10 @@ namespace LevelContext {
 
             EditorUtility.SetDirty(level);
 
-            EditorSceneManager.CloseScene(scene, true);
+            if (EditorSceneManager.sceneCount > 1) {
+                EditorSceneManager.CloseScene(scene, true);
+            }
+
             AssetDatabase.Refresh();
         }
 
