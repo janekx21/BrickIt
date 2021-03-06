@@ -49,6 +49,15 @@ namespace LevelContext {
             FindAllChapterObjects();
         }
 
+        [ContextMenu("Rename All Levels")]
+        public void RenameAllLevels() {
+            foreach (var chapter in chapters) {
+                foreach (var level in chapter.levels) {
+                    level.RenameLevel();
+                }
+            }
+        }
+
         [ContextMenu("Generate All Overviews")]
         public void GenerateAllOverviews() {
             foreach (var chapter in chapters) {

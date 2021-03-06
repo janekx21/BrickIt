@@ -62,7 +62,7 @@ namespace LevelContext {
 
             var dir = Path.GetDirectoryName(level.scene.ScenePath);
             Assert.IsNotNull(dir);
-            var path = Path.Combine(dir, "overview.png");
+            var path = Path.Combine(dir, level.levelName + ".png");
             File.WriteAllBytes(path, bytes);
 
             var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(path);

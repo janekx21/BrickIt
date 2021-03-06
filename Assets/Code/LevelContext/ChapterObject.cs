@@ -11,6 +11,7 @@ namespace LevelContext {
     [CreateAssetMenu(fileName = "new ChapterObject", menuName = "ChapterObject", order = 0)]
     public class ChapterObject : ScriptableObject {
         public Sprite image = null;
+        public string chapterName = "no name";
         public LevelObject[] levels = new LevelObject[0];
 
 #if UNITY_EDITOR
@@ -54,6 +55,19 @@ namespace LevelContext {
             AssetDatabase.CreateAsset(obj, Path.Combine(path, $"{levelName}.asset"));
 
             FindAllLevelObjects();
+        }
+        
+        [ContextMenu("Rename Chapter")]
+        public void RenameChapter() {
+            string newName = chapterName.Replace('?', '-');
+            
+            var levelObjectPath = AssetDatabase.GetAssetPath(this);
+            AssetDatabase.RenameAsset(levelObjectPath, newName);
+
+            var oldPath = Path.GetDirectoryName(levelObjectPath);
+            var parentPath = Directory.GetParent(oldPath).ToString();
+            var newPath = parentPath + "\\" + newName;
+            AssetDatabase.MoveAsset(oldPath, newPath);
         }
 #endif
     }

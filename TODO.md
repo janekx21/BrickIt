@@ -10,6 +10,7 @@ small open source game
 
 - level store system overhaul in editor
     - change how levels are stored and created, to allow for a more flexible setup
+	- make levels and chapters reorderable with reorderable list
 - level unlock
 	- unlock chapter if chapter before is 50% completed
 	- show highscore on completed levels

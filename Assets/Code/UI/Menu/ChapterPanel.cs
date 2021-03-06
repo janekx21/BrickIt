@@ -9,7 +9,7 @@ namespace UI.Menu {
         [SerializeField] private Button button = null;
 
         public void Init(ChapterObject chapterObject, Menu.OnChapterAction loadAction) {
-            chapterName.text = chapterObject.name;
+            chapterName.text = chapterObject.chapterName;
             image.sprite = chapterObject.image;
             button.onClick.AddListener(() => loadAction.Invoke(chapterObject));
         }
