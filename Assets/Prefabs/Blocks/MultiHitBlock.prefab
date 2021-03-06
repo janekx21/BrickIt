@@ -132,6 +132,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MultiHitBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 492284279688118544, guid: 83a5420b01ede9147b57feea3ea83875,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8332107772842246419, guid: 5713416c4704eab42a8b466fbada8b47,
+        type: 3}
     - target: {fileID: 492284279688118546, guid: 83a5420b01ede9147b57feea3ea83875,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -187,12 +193,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 492284279688118544, guid: 83a5420b01ede9147b57feea3ea83875,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -8332107772842246419, guid: 5713416c4704eab42a8b466fbada8b47,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83a5420b01ede9147b57feea3ea83875, type: 3}
 --- !u!1 &8218162066073409510 stripped

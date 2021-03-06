@@ -141,6 +141,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ColorChanger
       objectReference: {fileID: 0}
+    - target: {fileID: 492284279688118544, guid: 83a5420b01ede9147b57feea3ea83875,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3752902410628473492, guid: 5713416c4704eab42a8b466fbada8b47,
+        type: 3}
     - target: {fileID: 492284279688118546, guid: 83a5420b01ede9147b57feea3ea83875,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -196,12 +202,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 492284279688118544, guid: 83a5420b01ede9147b57feea3ea83875,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 3752902410628473492, guid: 5713416c4704eab42a8b466fbada8b47,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83a5420b01ede9147b57feea3ea83875, type: 3}
 --- !u!1 &2099258498169584641 stripped
