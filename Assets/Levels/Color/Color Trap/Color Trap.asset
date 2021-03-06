@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d88ba10a1fab34a9348d06675b2fa6, type: 3}
+  m_Name: Color Trap
+  m_EditorClassIdentifier: 
+  scene:
+    sceneAsset: {fileID: 102900000, guid: 9c35531edb0b01c49936adacb088cec6, type: 3}
+    scenePath: Assets/Levels/Color/Color Trap/Color Trap.unity
+  levelName: Color Trap
+  levelAuthor: Maico
+  difficulty: 5
+  overview: {fileID: 2800000, guid: 35b00a7b3bba71441858d92b57373e2e, type: 3}

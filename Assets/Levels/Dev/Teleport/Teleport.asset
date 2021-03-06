@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d88ba10a1fab34a9348d06675b2fa6, type: 3}
+  m_Name: Teleport
+  m_EditorClassIdentifier: 
+  scene:
+    sceneAsset: {fileID: 102900000, guid: 414b5d2027f466e4aa9090e62c061213, type: 3}
+    scenePath: Assets/Levels/Dev/Teleport/Teleport.unity
+  levelName: Teleport
+  levelAuthor: Janek
+  difficulty: 2
+  overview: {fileID: 2800000, guid: bf065e8eeac45dd499e681d985ead10c, type: 3}

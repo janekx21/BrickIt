@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Dev
   m_EditorClassIdentifier: 
   image: {fileID: -7326330765846486680, guid: 5713416c4704eab42a8b466fbada8b47, type: 3}
+  chapterName: Dev
   levels:
   - {fileID: 11400000, guid: 42120637d772cf540aaec7704cab2818, type: 2}
   - {fileID: 11400000, guid: 30c1a5e4700bb1e44aa37e14c08d3b64, type: 2}

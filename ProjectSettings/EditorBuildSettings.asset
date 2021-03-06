@@ -12,102 +12,102 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 4079970daa8ad9649bbe9219954a8f8b
   - enabled: 1
-    path: Assets/Levels/Dev/Level01/Level01.unity
+    path: Assets/Levels/Dev/Blocks can break/Blocks can break.unity
     guid: 4d73f12d2cf3be94fb913bfccff243c6
   - enabled: 1
-    path: Assets/Levels/Dev/Level02/Level02.unity
+    path: Assets/Levels/Dev/Color can change/Color can change.unity
     guid: 7d3a1edd71aa7d34bbec759eb865dc6c
   - enabled: 1
-    path: Assets/Levels/Dev/Level03/Level03.unity
+    path: Assets/Levels/Dev/Death Blocks/Death Blocks.unity
     guid: 84ecb0cf065c41e4196ad7eab3ac48cd
   - enabled: 1
-    path: Assets/Levels/Dev/Level04/Level04.unity
+    path: Assets/Levels/Dev/Teleport/Teleport.unity
     guid: 414b5d2027f466e4aa9090e62c061213
   - enabled: 1
-    path: Assets/Levels/Dev/Level05/Level05.unity
+    path: Assets/Levels/Dev/Death Trap/Death Trap.unity
     guid: 77f8e7a36bab50540ab8dd9dc5570d6c
   - enabled: 1
-    path: Assets/Levels/Dev/Level06/Level06.unity
+    path: Assets/Levels/Dev/Ultimate Trial/Ultimate Trial.unity
     guid: c68c1c32ec89144469a131c317f42041
   - enabled: 1
-    path: Assets/Levels/Chapter01/Level01/Level01.unity
+    path: Assets/Levels/Introduction/A Good Start/A Good Start.unity
     guid: df79e51e8be941147869b163b4f9b7db
   - enabled: 1
-    path: Assets/Levels/Chapter01/Level02/Level02.unity
+    path: Assets/Levels/Introduction/Turn Around/Turn Around.unity
     guid: 3039103a8fd1a8941b6e106a27fe173e
   - enabled: 1
-    path: Assets/Levels/Chapter01/Level03/Level03.unity
+    path: Assets/Levels/Introduction/Pipe Cleaning/Pipe Cleaning.unity
     guid: 68fb34809b262624cb89750f3cb29ecd
   - enabled: 1
-    path: Assets/Levels/Chapter01/Level04/Level04.unity
+    path: Assets/Levels/Introduction/Going Down/Going Down.unity
     guid: 3c402f11e39dcc942bbffca04465ed0e
   - enabled: 1
-    path: Assets/Levels/Chapter01/Level05/Level05.unity
+    path: Assets/Levels/Introduction/Railway/Railway.unity
     guid: a6e5e598fbc606e4ca318874916ae6b4
   - enabled: 1
-    path: Assets/Levels/Chapter01/Level06/Level06.unity
+    path: Assets/Levels/Introduction/Pick Up/Pick Up.unity
     guid: aadccc1886bae5d46b52961e22cfeb49
   - enabled: 1
-    path: Assets/Levels/Chapter02/Level01/Level01.unity
+    path: Assets/Levels/Color/There's Color!/There's Color!.unity
     guid: fd604074091439f48849b5970585a44a
   - enabled: 1
-    path: Assets/Levels/Chapter02/Level02/Level02.unity
+    path: Assets/Levels/Color/Checkers Pattern/Checkers Pattern.unity
     guid: 934a2552e1512c749a5c1de71eb1ef22
   - enabled: 1
-    path: Assets/Levels/Chapter02/Level03/Level03.unity
+    path: Assets/Levels/Color/Heart/Heart.unity
     guid: 8a6d2bdd58dcbc2489d6f3e6138f577b
   - enabled: 1
-    path: Assets/Levels/Chapter02/Level04/Level04.unity
+    path: Assets/Levels/Color/Color Square/Color Square.unity
     guid: c6603b84eee8e21449a671b77ae74145
   - enabled: 1
-    path: Assets/Levels/Chapter02/Level05/Level05.unity
+    path: Assets/Levels/Color/Color Trap/Color Trap.unity
     guid: 9c35531edb0b01c49936adacb088cec6
   - enabled: 1
-    path: Assets/Levels/Extra/Level01/Level01.unity
+    path: Assets/Levels/Extra/Lucky One/Lucky One.unity
     guid: 5239ba1439b39ca4a841e1b2821a871a
   - enabled: 1
-    path: Assets/Levels/Chapter03/Level01/Level01.unity
+    path: Assets/Levels/Rotation/Rotation/Rotation.unity
     guid: c2b166222504cee41a89f1ba47abbed9
   - enabled: 1
-    path: Assets/Levels/Chapter03/Level02/Level02.unity
+    path: Assets/Levels/Rotation/Turn to Avoid/Turn to Avoid.unity
     guid: cd2187081e8c37e459ece40545a25814
   - enabled: 1
-    path: Assets/Levels/Chapter02/Level06/Level06.unity
+    path: Assets/Levels/Color/When to Change-/When to Change-.unity
     guid: 49bc301be50ec3741a06f73ded1e2f2e
   - enabled: 1
-    path: Assets/Levels/Chapter02/Level07/Level07.unity
+    path: Assets/Levels/Color/RGB-/RGB-.unity
     guid: 847c8f282521fb94d939a74846c6c2aa
   - enabled: 1
-    path: Assets/Levels/Chapter03/Level03/Level03.unity
+    path: Assets/Levels/Rotation/Back and Forth/Back and Forth.unity
     guid: 92e36b6c1eb757b48b9912d1c0693b00
   - enabled: 1
-    path: Assets/Levels/Chapter04/Level01/Level01.unity
+    path: Assets/Levels/Death/Dodge It!/Dodge It!.unity
     guid: 1b85f484e91f693448ee0a8076702a31
   - enabled: 1
-    path: Assets/Levels/Chapter04/Level02/Level02.unity
+    path: Assets/Levels/Death/Chaos/Chaos.unity
     guid: 9aa57cc8a49d2fd4180e6c14aad7c6fa
   - enabled: 1
-    path: Assets/Levels/Chapter02/Level08/Level08.unity
+    path: Assets/Levels/Color/Five Color Puzzle/Five Color Puzzle.unity
     guid: e6c403354bb73a0449f2cf0cb47ca3d7
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 547b6f17e0868454a9e5e31446af5b9e
   - enabled: 1
-    path: Assets/Levels/Chapter03/Level04/Level04.unity
+    path: Assets/Levels/Rotation/Color Gate/Color Gate.unity
     guid: d9f7fb4bdc2613545808b5af2e10f3cc
   - enabled: 1
-    path: Assets/Levels/Chapter03/Level05/Level05.unity
+    path: Assets/Levels/Rotation/Green Is Faster/Green Is Faster.unity
     guid: 4be94e9566c8ae941ac302620ba8c79b
   - enabled: 1
-    path: Assets/Levels/Chapter03/Level06/Level06.unity
+    path: Assets/Levels/Rotation/Color Stripes/Color Stripes.unity
     guid: 6eb66714d7019074ea40398400bf274b
   - enabled: 1
-    path: Assets/Levels/Extra/Level02/Level02.unity
+    path: Assets/Levels/Extra/Crazy Mind/Crazy Mind.unity
     guid: 8644c02d608b2f544be280a3a5def2eb
   - enabled: 1
-    path: Assets/Levels/Extra/Level03/Level03.unity
+    path: Assets/Levels/Extra/Learn the Mechanics/Learn the Mechanics.unity
     guid: 2f944d66cbd73334aaa55857dad0bc32
   - enabled: 1
-    path: Assets/Levels/Extra/Level04/Level04.unity
+    path: Assets/Levels/Extra/Way of Bricks/Way of Bricks.unity
     guid: 6fac883b540718140ba1a0c9a3cb8c11
   m_configObjects: {}

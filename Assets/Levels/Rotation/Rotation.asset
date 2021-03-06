@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ff7f2a6952475ea4e8e7509ff4fce1, type: 3}
+  m_Name: Rotation
+  m_EditorClassIdentifier: 
+  image: {fileID: -7691200463741539933, guid: 5713416c4704eab42a8b466fbada8b47, type: 3}
+  chapterName: Rotation
+  levels:
+  - {fileID: 11400000, guid: ca6fb73c9a412204087385dc52fa45db, type: 2}
+  - {fileID: 11400000, guid: c33268941fa47f340a076e1157b6f011, type: 2}
+  - {fileID: 11400000, guid: 1e57f085f444da0438258e069bdf6b5b, type: 2}
+  - {fileID: 11400000, guid: 247ea45f20a9d934dbe2a1ffbd96f952, type: 2}
+  - {fileID: 11400000, guid: 96bb2e0c642948742b6f1f467ef5743e, type: 2}
+  - {fileID: 11400000, guid: a21f808adc1c85447b8c5943f5feffec, type: 2}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Extra
   m_EditorClassIdentifier: 
   image: {fileID: 5011224870521691093, guid: 5713416c4704eab42a8b466fbada8b47, type: 3}
+  chapterName: Extra
   levels:
   - {fileID: 11400000, guid: 4bced7747d15d6649b1ebaaaa9c9a330, type: 2}
   - {fileID: 11400000, guid: d94f5d293bb5ba64799c737a45bc0200, type: 2}
