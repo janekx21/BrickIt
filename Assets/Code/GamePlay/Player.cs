@@ -1,6 +1,8 @@
 ﻿using System;
 using Blocks;
 using LevelContext;
+using UnityEditor;
+using UnityEditor.Experimental.SceneManagement;
 using UnityEngine;
 using Util;
 
@@ -39,13 +41,25 @@ namespace GamePlay {
         // }
 
         private void OnValidate() {
+            // checks if editor is in scene or on prefab stage
+            PrefabStage prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
+            bool isValidPrefabState = prefabStage != null && prefabStage.stageHandle.IsValid();
+            bool prefabConnected = PrefabUtility.GetPrefabInstanceStatus(gameObject) ==
+                                   PrefabInstanceStatus.Connected;
+            if (!isValidPrefabState && prefabConnected) {
+                SetSpriteColor();
+            }
+        }
+        
+        private void SetSpriteColor() {
             rend = GetComponent<SpriteRenderer>();
             rend.color = PlayerCircleColor(colorType);
         }
 
         private Color PlayerCircleColor(ColorType colorType) {
+            // if Player is white, his color is displayed transparent instead
             return colorType == ColorType.DefaultColor
-                ? new Color(-1, 0, 0, 0)
+                ? new Color(1, 1, 1, 0)
                 : ColorConversion.GetColorFromType(colorType);
         }
 

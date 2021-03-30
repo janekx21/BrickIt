@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using GamePlay;
 using LevelContext;
+using UnityEditor;
+using UnityEditor.Experimental.SceneManagement;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -32,13 +34,19 @@ namespace Blocks {
 
             rig = GetComponent<Rigidbody2D>();
             ren = GetComponent<SpriteRenderer>();
-            // ren.color = colorType.Color;
+            ren.color = ColorConversion.GetColorFromType(colorType);
             boxCollider = GetComponent<BoxCollider2D>();
         }
 
         public virtual void OnValidate() {
-            ren = GetComponent<SpriteRenderer>();
-            ren.color = ColorConversion.GetColorFromType(colorType);
+            // checks if editor is in scene or on prefab stage
+            PrefabStage prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
+            bool isValidPrefabState = prefabStage != null && prefabStage.stageHandle.IsValid();
+            bool prefabConnected = PrefabUtility.GetPrefabInstanceStatus(gameObject) ==
+                                   PrefabInstanceStatus.Connected;
+            if (!isValidPrefabState && prefabConnected) {
+                SetSpriteColor();
+            }
         }
 
         public override void Update() {
@@ -92,7 +100,12 @@ namespace Blocks {
 
         public void SetColorType(ColorType colorType) {
             this.colorType = colorType;
-            OnValidate();
+            SetSpriteColor();
+        }
+
+        private void SetSpriteColor() {
+            ren = GetComponent<SpriteRenderer>();
+            ren.color = ColorConversion.GetColorFromType(colorType);
         }
 
         public bool ColorsMatch(IActor actor) {
