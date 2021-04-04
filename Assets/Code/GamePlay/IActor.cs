@@ -13,5 +13,6 @@ namespace GamePlay {
         Vector2 GetPosition();
         void Combo();
         void ComboEnds();
+        void ChangeSpeed(ISpeedChanger speedChanger);
     }
 }

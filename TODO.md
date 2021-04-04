@@ -9,7 +9,6 @@ small open source game
 ###Priority 1:
 
 - level store system overhaul in editor
-    - change how levels are stored and created, to allow for a more flexible setup
 	- make levels and chapters reorderable with reorderable list
 - level unlock
 	- unlock chapter if chapter before is 50% completed
@@ -19,7 +18,6 @@ small open source game
 	- claw death block
 	- one way/color block
 	- gate block
-	- fly-through block
 - level, more levels
 
 ###Priority 2:
@@ -48,4 +46,7 @@ small open source game
     - save
 - make tutorial in chapter 1 more clear for beginners
 - create unified colorpalatte
-
+- blocks
+	- fly-through block
+- level store system overhaul in editor
+    - change how levels are stored and created, to allow for a more flexible setup

@@ -16,6 +16,8 @@ namespace GamePlay {
         [SerializeField] private float dashAcceleration = 1;
         [SerializeField] private float dashVelocity = 1;
 
+        [SerializeField] private float speedup = 1.5f;
+
         [SerializeField] private GameObject bounceParticle = null;
 
         private Rigidbody2D rig = null;
@@ -186,10 +188,10 @@ namespace GamePlay {
         }
 
         public void ChangeDirection(IDirectionChanger directionChanger) {
-            Vector2 positionVector = (Vector2) transform.position - directionChanger.GetPosition();
-
-            float angle = Vector2.SignedAngle(positionVector, Vector2.up);
-            float roundedAngle = Mathf.Round(angle / 90f) * 90f;
+            Vector2 directionVector = (Vector2) transform.position - directionChanger.GetPosition();
+            
+            float angle = Vector2.SignedAngle(directionVector, Vector2.up);
+            float roundedAngle = Mathf.Round(angle / 90f) * 90f; 
 
             //older solution for only one DirectionChanger
             // float directionalAngle = Vector2.SignedAngle(-direction, positionVector);
@@ -210,6 +212,16 @@ namespace GamePlay {
         public void FlipDirection() {
             direction *= -1;
         }
+
+        public void ChangeSpeed(ISpeedChanger speedChanger) {
+            if (direction == speedChanger.GetDirection()) {
+                speed *= speedup;
+            }
+            else if (direction == -speedChanger.GetDirection()) {
+                speed /= speedup;
+            }
+        }
+        
         public void Die() {
             Destroy(gameObject);
             Level.Own.Lose();

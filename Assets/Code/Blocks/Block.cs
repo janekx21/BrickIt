@@ -64,7 +64,10 @@ namespace Blocks {
         public virtual void Hit(IActor actor) {
         }
 
-        public virtual void Over(IActor actor) {
+        public virtual void Enter(IActor actor) {
+        }
+
+        public virtual void Exit(IActor actor) {
         }
 
         public virtual void Break(IActor maker) {
@@ -90,7 +93,15 @@ namespace Blocks {
             var actor = other.gameObject.GetComponent<IActor>();
 
             if (actor != null) {
-                Over(actor);
+                Enter(actor);
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other) {
+            var actor = other.gameObject.GetComponent<IActor>();
+
+            if (actor != null) {
+                Exit(actor);
             }
         }
 

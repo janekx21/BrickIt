@@ -2,8 +2,8 @@
 
 namespace Blocks {
     public class FlyThrough : Brick, IInteractable {
-        public override void Over(IActor actor) {
-            base.Over(actor);
+        public override void Enter(IActor actor) {
+            base.Enter(actor);
 
             if (ColorsMatch(actor)) {
                 Break(actor);
