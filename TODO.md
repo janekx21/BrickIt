@@ -18,6 +18,8 @@ small open source game
 	- claw death block
 	- one way/color block
 	- gate block
+- sounds
+	- speedup block sound
 - level, more levels
 
 ###Priority 2:
