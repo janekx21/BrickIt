@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Util;
@@ -24,13 +25,15 @@ namespace LevelContext {
 
         [ContextMenu("Find All Levels")]
         private void FindAllLevelObjects() {
-            List<LevelObject> levelList = new List<LevelObject>();
+            List<LevelObject> levelList = levels.ToList();
 
             var allLevelPaths = AssetDatabase.FindAssets("t:LevelObject", new[] {directory});
             foreach (var guid in allLevelPaths) {
                 var levelPath = AssetDatabase.GUIDToAssetPath(guid);
                 var lo = AssetDatabase.LoadAssetAtPath<LevelObject>(levelPath);
-                levelList.Add(lo);
+                if (!levelList.Contains(lo)) {
+                    levelList.Add(lo);
+                }
             }
 
             levels = levelList.ToArray();
