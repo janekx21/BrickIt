@@ -8,18 +8,15 @@ small open source game
 
 ###Priority 1:
 
-- level store system overhaul in editor
-	- make levels and chapters reorderable with reorderable list
 - level unlock
 	- unlock chapter if chapter before is 50% completed
 	- show highscore on completed levels
 	- animation
 - blocks
+	- speedup block sound and animation
 	- claw death block
 	- one way/color block
 	- gate block
-- sounds
-	- speedup block sound
 - level, more levels
 
 ###Priority 2:
@@ -52,3 +49,4 @@ small open source game
 	- fly-through block
 - level store system overhaul in editor
     - change how levels are stored and created, to allow for a more flexible setup
+	- make levels and chapters reorderable with reorderable list

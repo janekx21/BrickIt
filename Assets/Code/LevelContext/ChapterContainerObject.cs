@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 #if UNITY_EDITOR
@@ -22,13 +23,15 @@ namespace LevelContext {
 
         [ContextMenu("Find All Chapter")]
         private void FindAllChapterObjects() {
-            List<ChapterObject> chapterList = new List<ChapterObject>();
+            List<ChapterObject> chapterList = chapters.ToList();
 
             var allChapterPaths = AssetDatabase.FindAssets("t:ChapterObject", new[] {directory});
             foreach (var guid in allChapterPaths) {
                 var chapterPath = AssetDatabase.GUIDToAssetPath(guid);
                 var lo = AssetDatabase.LoadAssetAtPath<ChapterObject>(chapterPath);
-                chapterList.Add(lo);
+                if (!chapterList.Contains(lo)) {
+                    chapterList.Add(lo);
+                }
             }
 
             chapters = chapterList.ToArray();
