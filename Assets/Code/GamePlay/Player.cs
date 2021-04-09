@@ -12,6 +12,7 @@ namespace GamePlay {
         [SerializeField] private float speed = 0f;
         [SerializeField] private float moveSpeed = 1f;
         [SerializeField] private ColorType colorType = ColorType.DefaultColor;
+        [SerializeField] private Color defaultColor = Color.black;
 
         [SerializeField] private float dashAcceleration = 1;
         [SerializeField] private float dashVelocity = 1;
@@ -61,7 +62,7 @@ namespace GamePlay {
         private Color PlayerCircleColor(ColorType colorType) {
             // if Player is white, his color is displayed transparent instead
             return colorType == ColorType.DefaultColor
-                ? new Color(1, 1, 1, 0)
+                ? defaultColor
                 : ColorConversion.GetColorFromType(colorType);
         }
 

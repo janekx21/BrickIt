@@ -110,4 +110,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Extra/Way of Bricks/Way of Bricks.unity
     guid: 6fac883b540718140ba1a0c9a3cb8c11
+  - enabled: 1
+    path: Assets/Levels/Extra/SpeedStar/SpeedStar.unity
+    guid: f601113a74438e442b27246bf922f2c6
   m_configObjects: {}
