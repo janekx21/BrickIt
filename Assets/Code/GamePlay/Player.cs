@@ -9,6 +9,7 @@ using Util;
 namespace GamePlay {
     [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer), typeof(AudioSource))]
     public class Player : Entity, IActor, IPausable {
+        [SerializeField] private float defaultSpeed = 3.6f;
         [SerializeField] private float speed = 0f;
         [SerializeField] private float moveSpeed = 1f;
         [SerializeField] private ColorType colorType = ColorType.DefaultColor;
@@ -68,6 +69,7 @@ namespace GamePlay {
 
         public override void Awake() {
             base.Awake();
+            speed = defaultSpeed;
 
             rig = GetComponent<Rigidbody2D>();
             rend = GetComponent<SpriteRenderer>();
@@ -222,7 +224,12 @@ namespace GamePlay {
                 speed /= speedup;
             }
         }
-        
+
+        /// <inheritdoc />
+        public float GetNormalizedSpeed() {
+            return speed / defaultSpeed;
+        }
+
         public void Die() {
             Destroy(gameObject);
             Level.Own.Lose();

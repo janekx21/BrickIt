@@ -6,8 +6,8 @@ namespace Util {
             source.PlayOneShot(source.clip);
         }
 
-        public static void PlayRandomPitch(this AudioSource source, float randomness) {
-            source.pitch = 1 + Random.Range(-randomness, randomness);
+        public static void PlayRandomPitch(this AudioSource source, float randomness, float offset = 1f) {
+            source.pitch = offset + Random.Range(-randomness, randomness);
             source.Play();
         }
 

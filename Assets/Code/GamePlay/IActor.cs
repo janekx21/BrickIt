@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
 namespace GamePlay {
+    /**
+     * Actor that moves around the Level on its own
+     */
     public interface IActor : IColored {
         void Init(Vector2 direction, ColorType colorType);
         float GetDamage();
@@ -14,5 +17,9 @@ namespace GamePlay {
         void Combo();
         void ComboEnds();
         void ChangeSpeed(ISpeedChanger speedChanger);
+        /**
+         * Returns the current speed normalized to default speed = 1
+         */
+        float GetNormalizedSpeed();
     }
 }
