@@ -15,11 +15,12 @@ namespace Blocks {
             hp = maxHp;
             ren.sprite = sprites[hp - 1];
         }
-
+#if UNITY_EDITOR
         public override void OnValidate() {
             base.OnValidate();
             ren.sprite = sprites[maxHp - 1];
         }
+#endif
 
         public int GetMaxHp() {
             return maxHp;
@@ -45,6 +46,5 @@ namespace Blocks {
                 }
             }
         }
-
     }
 }

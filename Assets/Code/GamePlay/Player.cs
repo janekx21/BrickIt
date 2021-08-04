@@ -2,7 +2,9 @@
 using Blocks;
 using LevelContext;
 using UnityEditor;
+#if UNITY_EDITOR
 using UnityEditor.Experimental.SceneManagement;
+#endif
 using UnityEngine;
 using Util;
 
@@ -44,6 +46,7 @@ namespace GamePlay {
         //     }
         // }
 
+#if UNITY_EDITOR
         private void OnValidate() {
             // checks if editor is in scene or on prefab stage
             PrefabStage prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
@@ -54,6 +57,7 @@ namespace GamePlay {
                 SetSpriteColor();
             }
         }
+#endif
         
         private void SetSpriteColor() {
             rend = GetComponent<SpriteRenderer>();
