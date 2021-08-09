@@ -18,7 +18,9 @@ namespace Blocks {
 #if UNITY_EDITOR
         public override void OnValidate() {
             base.OnValidate();
-            ren.sprite = sprites[maxHp - 1];
+            if (ren != null) {
+                ren.sprite = sprites[maxHp - 1];
+            }
         }
 #endif
 
@@ -33,7 +35,7 @@ namespace Blocks {
             OnValidate();
 #endif
         }
-        
+
         public override void Hit(IActor maker) {
             base.Hit(maker);
             if (ColorsMatch(maker)) {
