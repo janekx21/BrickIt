@@ -55,7 +55,7 @@ namespace LevelContext {
             Assert.IsNull(instance);
             instance = this;
 
-            PixelPerfectCamera pixelPerfectCamera = levelCamera.GetComponent<PixelPerfectCamera>();
+            var pixelPerfectCamera = levelCamera.GetComponent<PixelPerfectCamera>();
             pixelPerfectCamera.refResolutionX = levelWidth * 16;
             pixelPerfectCamera.refResolutionY = levelHeight * 16;
         }
@@ -183,7 +183,7 @@ namespace LevelContext {
         }
 
         public void Retry() {
-            int buildIndex = SceneManager.GetActiveScene().buildIndex;
+            var buildIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(buildIndex);
             Debug.Log(buildIndex);
         }

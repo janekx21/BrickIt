@@ -29,7 +29,7 @@ namespace Graphics {
             renderHeight = referenceHeight;
             cam.orthographicSize = renderHeight * .5f / pixelsPerUnit;
 
-            int scale = Screen.height / renderHeight;
+            var scale = Screen.height / renderHeight;
 
             // Height is snapped to the closest whole multiple of reference height.
             actualHeight = renderHeight * scale;
@@ -41,7 +41,7 @@ namespace Graphics {
             renderWidth = Screen.width / scale;
             actualWidth = renderWidth * scale;
 
-            Rect rect = cam.rect;
+            var rect = cam.rect;
 
             rect.width = (float) actualWidth / Screen.width;
             rect.height = (float) actualHeight / Screen.height;
@@ -54,7 +54,7 @@ namespace Graphics {
 
         void OnRenderImage(RenderTexture source, RenderTexture destination) {
             if (blit) {
-                RenderTexture buffer = RenderTexture.GetTemporary(renderWidth, renderHeight, -1);
+                var buffer = RenderTexture.GetTemporary(renderWidth, renderHeight, -1);
 
                 buffer.filterMode = FilterMode.Point;
                 source.filterMode = FilterMode.Point;

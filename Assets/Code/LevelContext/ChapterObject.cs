@@ -25,7 +25,7 @@ namespace LevelContext {
 
         [ContextMenu("Find All Levels")]
         private void FindAllLevelObjects() {
-            List<LevelObject> levelList = levels.ToList();
+            var levelList = levels.ToList();
 
             var allLevelPaths = AssetDatabase.FindAssets("t:LevelObject", new[] {directory});
             foreach (var guid in allLevelPaths) {
@@ -62,7 +62,7 @@ namespace LevelContext {
         
         [ContextMenu("Rename Chapter")]
         public void RenameChapter() {
-            string newName = chapterName.Replace('?', '-');
+            var newName = chapterName.Replace('?', '-');
             
             var levelObjectPath = AssetDatabase.GetAssetPath(this);
             AssetDatabase.RenameAsset(levelObjectPath, newName);

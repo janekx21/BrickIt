@@ -46,7 +46,7 @@ namespace LevelContext {
                     Assert.IsNotNull(t.sprite);
                     // Debug.Log($"found {t.sprite.name} at {t.position}");
                     var tex = TextureFromSprite(t.sprite);
-                    Vector2Int pos = t.position * 16 + Vector2Int.RoundToInt(grid.transform.position * 2) * 8 + edgeOffset;
+                    var pos = t.position * 16 + Vector2Int.RoundToInt(grid.transform.position * 2) * 8 + edgeOffset;
                     // well then dont draw if you cant
                     if (pos.x + 16 <= overview.width && pos.x >= 0 && pos.y + 16 <= overview.height && pos.y >= 0) {
                         overview.SetPixels(pos.x, pos.y, 16, 16, tex.GetPixels());
@@ -81,8 +81,8 @@ namespace LevelContext {
         static List<OverviewObject> Search(Transform transform) {
             var list = new List<OverviewObject>();
 
-            int orthographicSize = Mathf.FloorToInt(Camera.main.orthographicSize);
-            Vector2Int offset = new Vector2Int(Mathf.RoundToInt(orthographicSize * (16f / 9f)), orthographicSize);
+            var orthographicSize = Mathf.FloorToInt(Camera.main.orthographicSize);
+            var offset = new Vector2Int(Mathf.RoundToInt(orthographicSize * (16f / 9f)), orthographicSize);
 
             // pnew Vector2Int(9, 5);
             foreach (Transform t in transform) {
@@ -103,7 +103,7 @@ namespace LevelContext {
                         // var size = new Vector2(-orthographicSize * cam.aspect, orthographicSize);
                         // var topLeftCorner = (Vector2) cam.transform.position + size;
                         // Vector2Int.FloorToInt(worldPos - topLeftCorner)
-                        Vector2Int p = (Vector2Int) pos + offset;
+                        var p = (Vector2Int) pos + offset;
                         if (sprite) {
                             list.Add(new OverviewObject(sprite, p));
                         }
@@ -118,8 +118,8 @@ namespace LevelContext {
 
         public static Texture2D TextureFromSprite(Sprite sprite) {
             if (Math.Abs(sprite.rect.width - sprite.texture.width) > .00001f) {
-                Texture2D newText = new Texture2D((int) sprite.rect.width, (int) sprite.rect.height);
-                Color[] newColors = sprite.texture.GetPixels(
+                var newText = new Texture2D((int) sprite.rect.width, (int) sprite.rect.height);
+                var newColors = sprite.texture.GetPixels(
                     (int) sprite.textureRect.x,
                     (int) sprite.textureRect.y,
                     (int) sprite.textureRect.width,

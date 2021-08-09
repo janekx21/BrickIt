@@ -27,7 +27,7 @@ namespace UI.Menu {
                 Destroy(t.gameObject);
             }
 
-            List<LevelObject> list = levelObjects.ToList();
+            var list = levelObjects.ToList();
             list.Sort(Comparison);
             foreach (var o in list) {
                 var panel = Instantiate(prefab, transform);
@@ -41,7 +41,7 @@ namespace UI.Menu {
                     lastPanelButton = panel.GetComponent<Button>();
                 }
                 else if (o == list[1]) {
-                    Navigation navigation = new Navigation {
+                    var navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
                         selectOnUp = BackButton.GetComponent<Button>(),
                         selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
@@ -53,7 +53,7 @@ namespace UI.Menu {
                     lastPanelButton = panel.GetComponent<Button>();
                 }
                 else {
-                    Navigation navigation = new Navigation {
+                    var navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
                         selectOnUp = BackButton.GetComponent<Button>(),
                         selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
@@ -67,7 +67,7 @@ namespace UI.Menu {
                 }
 
                 if (o == list.Last()) {
-                    Navigation navigation = new Navigation {
+                    var navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
                         selectOnUp = BackButton.GetComponent<Button>(),
                         selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),

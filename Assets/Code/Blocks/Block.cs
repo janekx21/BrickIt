@@ -10,9 +10,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace Blocks {
+    /**
+     * A Block is a grid based static interaction partner for the IActor.
+     */
     [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
     public abstract class Block : Entity, IColored {
-        // [SerializeField] Color color = Color.white;
         [SerializeField] private ColorType colorType = ColorType.DefaultColor;
 
         protected Rigidbody2D rig = null;
@@ -43,36 +45,21 @@ namespace Blocks {
 #if UNITY_EDITOR
         public virtual void OnValidate() {
             // checks if editor is in scene or on prefab stage
-            PrefabStage prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
-            bool isValidPrefabState = prefabStage != null && prefabStage.stageHandle.IsValid();
-            bool prefabConnected = PrefabUtility.GetPrefabInstanceStatus(gameObject) ==
-                                   PrefabInstanceStatus.Connected;
+            var prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
+            var isValidPrefabState = prefabStage != null && prefabStage.stageHandle.IsValid();
+            var prefabConnected = PrefabUtility.GetPrefabInstanceStatus(gameObject) ==
+                                  PrefabInstanceStatus.Connected;
             if (!isValidPrefabState && prefabConnected) {
                 SetSpriteColor();
             }
         }
 #endif
 
-        public override void Update() {
-            base.Update();
-            // ren.color = colorType.Color;
-        }
+        public virtual void Hit(IActor actor) { }
 
-        // private void OnDrawGizmos() {
-        //     Gizmos.color = color;
-        //     for (float i = .8f; i < 1f; i += .01f) {
-        //         Gizmos.DrawWireCube(transform.position, new Vector3(1, 1, 0) * i);
-        //     }
-        // }
+        public virtual void Enter(IActor actor) { }
 
-        public virtual void Hit(IActor actor) {
-        }
-
-        public virtual void Enter(IActor actor) {
-        }
-
-        public virtual void Exit(IActor actor) {
-        }
+        public virtual void Exit(IActor actor) { }
 
         public virtual void Break(IActor maker) {
             allBlocks.Remove(this);
@@ -127,7 +114,10 @@ namespace Blocks {
             return GetColorType() == actor.GetColorType() || GetColorType() == ColorType.DefaultColor;
         }
 
-        protected abstract bool shouldBreak(); // returns if the block should break to win
+        /**
+         * returns if the block should break to win
+         */
+        protected abstract bool shouldBreak();
 
 #if UNITY_EDITOR
         public Overview.OverviewObject ToOverviewObject() {

@@ -49,10 +49,10 @@ namespace GamePlay {
 #if UNITY_EDITOR
         private void OnValidate() {
             // checks if editor is in scene or on prefab stage
-            PrefabStage prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
-            bool isValidPrefabState = prefabStage != null && prefabStage.stageHandle.IsValid();
-            bool prefabConnected = PrefabUtility.GetPrefabInstanceStatus(gameObject) ==
-                                   PrefabInstanceStatus.Connected;
+            var prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
+            var isValidPrefabState = prefabStage != null && prefabStage.stageHandle.IsValid();
+            var prefabConnected = PrefabUtility.GetPrefabInstanceStatus(gameObject) ==
+                                  PrefabInstanceStatus.Connected;
             if (!isValidPrefabState && prefabConnected) {
                 SetSpriteColor();
             }
@@ -152,7 +152,7 @@ namespace GamePlay {
 
         private void ApplyControls() {
             if (Input.touchCount > 0 && !directionChanged) {
-                Touch touch = Input.GetTouch(0);
+                var touch = Input.GetTouch(0);
 
                 if (touch.position.x > Screen.width >> 1) {
                     move = Vector2.one;
@@ -170,9 +170,9 @@ namespace GamePlay {
                 move.y = Input.GetAxis("Vertical");
             }
 
-            Vector2 abs = new Vector2(Mathf.Abs(direction.x), Mathf.Abs(direction.y));
-            Vector2 pep = Vector2.one - abs;
-            Vector2 adding = pep * move;
+            var abs = new Vector2(Mathf.Abs(direction.x), Mathf.Abs(direction.y));
+            var pep = Vector2.one - abs;
+            var adding = pep * move;
 
             rig.velocity = speedModifier * speed * direction + adding * moveSpeed + dash * dashVelocity;
         }
@@ -195,16 +195,16 @@ namespace GamePlay {
         }
 
         public void ChangeDirection(IDirectionChanger directionChanger) {
-            Vector2 directionVector = (Vector2) transform.position - directionChanger.GetPosition();
+            var directionVector = (Vector2) transform.position - directionChanger.GetPosition();
             
-            float angle = Vector2.SignedAngle(directionVector, Vector2.up);
-            float roundedAngle = Mathf.Round(angle / 90f) * 90f; 
+            var angle = Vector2.SignedAngle(directionVector, Vector2.up);
+            var roundedAngle = Mathf.Round(angle / 90f) * 90f; 
 
             //older solution for only one DirectionChanger
             // float directionalAngle = Vector2.SignedAngle(-direction, positionVector);
             // float orthogonalAngle = (directionalAngle > 0 ? 1 : -1) * 90f;
 
-            float orthogonalAngle = (directionChanger.GetDirection() == Direction.Right ? 1 : -1) * 90f;
+            var orthogonalAngle = (directionChanger.GetDirection() == Direction.Right ? 1 : -1) * 90f;
 
             if (Vector2.SignedAngle(direction, Vector2.up) % 180f == roundedAngle % 180f) {
                 direction = Quaternion.AngleAxis(orthogonalAngle, Vector3.back) * direction;

@@ -16,7 +16,7 @@ namespace UI.Menu {
         private Selectable beforeLastPanelButton = null;
 
         private Selectable firstPanel = null;
-        
+
         public void MarkFirstChapter() {
             firstPanel.Select();
             firstPanel.OnSelect(null);
@@ -27,7 +27,7 @@ namespace UI.Menu {
                 Destroy(t.gameObject);
             }
 
-            List<ChapterObject> list = chapterObjects.ToList();
+            var list = chapterObjects.ToList();
 //			list.Sort(Comparison);
             foreach (var o in list) {
                 var panel = Instantiate(prefab, transform);
@@ -41,7 +41,7 @@ namespace UI.Menu {
                     lastPanelButton = panel.GetComponent<Button>();
                 }
                 else if (o == list[1]) {
-                    Navigation navigation = new Navigation {
+                    var navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
                         selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
                         selectOnRight = panel.GetComponent<Button>()
@@ -52,7 +52,7 @@ namespace UI.Menu {
                     lastPanelButton = panel.GetComponent<Button>();
                 }
                 else {
-                    Navigation navigation = new Navigation {
+                    var navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
                         selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
                         selectOnLeft = beforeLastPanelButton,
@@ -63,9 +63,9 @@ namespace UI.Menu {
                     beforeLastPanelButton = lastPanelButton;
                     lastPanelButton = panel.GetComponent<Button>();
                 }
-                
+
                 if (o == list.Last()) {
-                    Navigation navigation = new Navigation {
+                    var navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
                         selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
                         selectOnLeft = beforeLastPanelButton

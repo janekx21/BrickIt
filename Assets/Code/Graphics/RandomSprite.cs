@@ -13,7 +13,7 @@ namespace Graphics {
 
             var position = transform.position;
             if (possibleSprites.Length > 0) {
-                int index = Mathf.FloorToInt(position.x * 131 + position.y * 17);
+                var index = Mathf.FloorToInt(position.x * 131 + position.y * 17);
                 index = Math.Abs(index);
                 ren.sprite = possibleSprites[index % possibleSprites.Length];
             }
@@ -24,7 +24,7 @@ namespace Graphics {
             }
 
             if (randomRotation) {
-                int angle = Mathf.FloorToInt(position.x * 981 + position.y * 119) % 4;
+                var angle = Mathf.FloorToInt(position.x * 981 + position.y * 119) % 4;
                 transform.localRotation = Quaternion.AngleAxis(angle * 90, Vector3.forward);
             }
         }

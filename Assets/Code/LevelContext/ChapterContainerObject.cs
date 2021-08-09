@@ -23,7 +23,7 @@ namespace LevelContext {
 
         [ContextMenu("Find All Chapter")]
         private void FindAllChapterObjects() {
-            List<ChapterObject> chapterList = chapters.ToList();
+            var chapterList = chapters.ToList();
 
             var allChapterPaths = AssetDatabase.FindAssets("t:ChapterObject", new[] {directory});
             foreach (var guid in allChapterPaths) {

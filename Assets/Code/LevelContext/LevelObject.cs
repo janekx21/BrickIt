@@ -19,7 +19,7 @@ namespace LevelContext {
 #if UNITY_EDITOR
         [ContextMenu("Rename Level")]
         public void RenameLevel() {
-            string newName = levelName.Replace('?', '-');
+            var newName = levelName.Replace('?', '-');
             
             var levelObjectPath = AssetDatabase.GetAssetPath(this);
             var overviewPath = AssetDatabase.GetAssetPath(overview);

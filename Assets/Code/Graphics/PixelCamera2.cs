@@ -33,7 +33,7 @@ namespace Graphics {
             cam.orthographicSize = referenceHeight * 0.5f / pixelsPerUnit;
 
             if (useAutomaticWidth) {
-                int scale = Screen.height / referenceHeight;
+                var scale = Screen.height / referenceHeight;
 
                 // Height is snapped to the closest whole multiple of reference height.
                 actualHeight = referenceHeight * scale;
@@ -47,16 +47,16 @@ namespace Graphics {
             }
             else {
                 // zoom level (PPU scale)
-                int verticalZoom = Screen.height / referenceHeight;
-                int horizontalZoom = Screen.width / referenceWidth;
-                int scale = Math.Max(1, Math.Min(verticalZoom, horizontalZoom));
+                var verticalZoom = Screen.height / referenceHeight;
+                var horizontalZoom = Screen.width / referenceWidth;
+                var scale = Math.Max(1, Math.Min(verticalZoom, horizontalZoom));
 
                 // Height and Width is snapped to the closest whole multiple of reference value.
                 actualWidth = referenceWidth * scale;
                 actualHeight = referenceHeight * scale;
             }
 
-            Rect rect = cam.rect;
+            var rect = cam.rect;
 
             rect.width = (float) actualWidth / Screen.width;
             rect.height = (float) actualHeight / Screen.height;
@@ -69,7 +69,7 @@ namespace Graphics {
 
         void OnRenderImage(RenderTexture source, RenderTexture destination) {
             if (blit) {
-                RenderTexture buffer = RenderTexture.GetTemporary(referenceWidth, referenceHeight, -1);
+                var buffer = RenderTexture.GetTemporary(referenceWidth, referenceHeight, -1);
 
                 buffer.filterMode = FilterMode.Point;
                 source.filterMode = FilterMode.Point;

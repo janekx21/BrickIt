@@ -11,7 +11,7 @@ namespace Graphics {
         [SerializeField] SpriteRenderer[] renderers = new SpriteRenderer[0];
 
         private void Start() {
-            float offset = Random.Range(lowest, highest);
+            var offset = Random.Range(lowest, highest);
             foreach (var ren in renderers) {
                 ren.material.SetFloat(Property, offset);
             }
