@@ -25,17 +25,15 @@ namespace UI.Menu {
 
         private State currentState = State.Chapter;
         private bool cancelIsDown = false;
-        
+
         private static readonly int ChapterHash = Animator.StringToHash("chapter");
         private static readonly int LevelHash = Animator.StringToHash("level");
 
         private SaveData saveData = null;
 
-        public class OnChapterAction : UnityEvent<ChapterObject> {
-        }
+        public class OnChapterAction : UnityEvent<ChapterObject> { }
 
-        public class OnLevelAction : UnityEvent<LevelObject> {
-        }
+        public class OnLevelAction : UnityEvent<LevelObject> { }
 
         private void Awake() {
             var changeEvent = new OnChapterAction();
@@ -53,18 +51,18 @@ namespace UI.Menu {
         }
 
         private void Update() {
+            if (Input.GetAxisRaw("Cancel") != 0) {
+                if (!cancelIsDown) {
+                    Back();
+
+                    cancelIsDown = true;
+                }
+            }
+            else {
+                cancelIsDown = false;
+            }
+
             if (currentState == State.Level) {
-                if (Input.GetAxisRaw("Cancel") != 0) {
-                    if (!cancelIsDown) {
-                        Back();
-
-                        cancelIsDown = true;
-                    }
-                }
-                else {
-                    cancelIsDown = false;
-                }
-
                 saveData.levelScrollPosition = levelScrollRect.horizontalNormalizedPosition;
             }
         }
@@ -77,6 +75,11 @@ namespace UI.Menu {
                 saveData.Save();
                 chapterList.MarkFirstChapter();
             }
+            else if (currentState == State.Chapter) {
+                SceneManager.LoadScene("Scenes/StartScreen");
+            }
+
+            Debug.Log(currentState);
         }
 
         private void LoadChapter(ChapterObject chapter) {

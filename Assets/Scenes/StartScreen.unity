@@ -615,10 +615,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.09798995
-    width: 1
-    height: 0.8040201
+    x: 0.0009267926
+    y: 0.10461286
+    width: 0.9981464
+    height: 0.7907743
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -745,10 +745,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.09798995
-    width: 1
-    height: 0.8040201
+    x: 0.0009267926
+    y: 0.10461286
+    width: 0.9981464
+    height: 0.7907743
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1115,6 +1115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877357814}
   - component: {fileID: 1877357815}
+  - component: {fileID: 1877357816}
   m_Layer: 5
   m_Name: Intro
   m_TagString: Untagged
@@ -1162,6 +1163,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1877357816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877357813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44c8b201b1ab3d4193684a32cad4124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1902158659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1179,6 +1192,27 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4611408023945581023, guid: 8f52d2f43e5f77448b40e218114ba31d,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.13438945
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611408023945581023, guid: 8f52d2f43e5f77448b40e218114ba31d,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.1749042
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611408023945581023, guid: 8f52d2f43e5f77448b40e218114ba31d,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.18867922
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899980238338726595, guid: 8f52d2f43e5f77448b40e218114ba31d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff03e48feb8a8a649a5f47ca0d96b381,
+        type: 3}
     - target: {fileID: 4899980238338726595, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
       propertyPath: m_Color.a
