@@ -4,13 +4,13 @@ using LevelContext;
 using UnityEngine;
 
 namespace Util {
-    [System.Serializable]
+    [Serializable]
     public class SaveData : IDisposable {
         public ChapterObject selectedChapter = null;
         public float levelScrollPosition = 0;
         public LevelObject selectedLevel = null;
-        public List<LevelObject> done = new List<LevelObject>();
-        
+        public Dictionary<LevelObject, bool> done = new Dictionary<LevelObject, bool>();
+
         private const string saveDataKey = "save_data";
 
         public void Save() {
