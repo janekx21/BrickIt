@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,8 +14,25 @@ namespace LevelContext {
     public class ChapterObject : ScriptableObject {
         public Sprite image = null;
         public string chapterName = "no name";
+        [Range(0, 1)] private float unlockPercentage = 0.8f;
         public LevelObject[] levels = new LevelObject[0];
-
+        
+        public bool IsChapterUnlocked() {
+            var chapterContainerObject = FindObjectOfType<ChapterContainerObject>();
+            int i = Array.IndexOf(chapterContainerObject.chapters, this);
+            
+            if (i == 0) {
+                return true;
+            }
+            
+            i--;
+            var previousChapter = chapterContainerObject.chapters[i];
+            using SaveData data = SaveData.Load();
+            int numberOfDoneLevels = previousChapter.levels.Count(levelObject => data.done[levelObject]);
+            
+            return numberOfDoneLevels / (float) previousChapter.levels.Length >= unlockPercentage;
+        }
+        
 #if UNITY_EDITOR
         private string directory {
             get {
