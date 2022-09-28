@@ -174,7 +174,7 @@ TextureImporter:
       213: 2845302552105548080
     second: SpeedArrow
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -194,6 +194,8 @@ TextureImporter:
   isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -203,8 +205,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -225,9 +227,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -267,6 +274,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -905,7 +936,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: efed4dcd9eece044abc04445078de661
-      internalID: 5264979163374914166
+      internalID: -3663786886302842771
       vertices: []
       indices: 
       edges: []
@@ -1445,6 +1476,62 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BlockDamaged00: 7229062396111083442
+      Tiles_1: -8377130690987618698
+      BlockDamaged01: -957263223007275780
+      MultiHit_9: -4467427624820296063
+      Tiles_0: 7223950226953391895
+      spawnerOverlay01: 3064114165388507879
+      Tiles_5: -6833445872158455971
+      DirChangeRight: -7691200463741539933
+      Bucket: 3752902410628473492
+      Tiles_6: -537749870668139058
+      Tiles_17: -8955812619259062215
+      Tiles_25: -8644279775636323431
+      spawnerOverlay03: -2342965946086737780
+      spawnerOverlay02: 4616107660616017684
+      spawnerOverlay04: -481168862868786879
+      Tiles_16: 8933607801220796041
+      Tiles_23: -7326330765846486680
+      MultiHit_6: -631933111752653799
+      Tiles_26: 3841374895227053369
+      spawner02: 1756678435039368057
+      death: 5264979163374914166
+      MultiHit_7: -520954260777040137
+      Tiles_20: -7956832237065629149
+      Tiles_11: 3930821917377472818
+      MultiHit_5: 4258088220731842279
+      Tiles_22: -7369953315678303813
+      Tiles_15: -8637159173488095169
+      Block: -732908275678425507
+      Tiles_27: 2398694386035660818
+      spawner: 5011224870521691093
+      Tiles_2: -4684333735789482159
+      BlockDamaged02: 8976018127306389262
+      Tiles_21: -6100061461012067082
+      Tiles_24: -3663786886302842771
+      MultiHit_8: 5480255190728546688
+      portal: -1222424925600608484
+      Tiles_14: -6765242926017629268
+      spawner03: -693249524927083605
+      MultiHit_4: -191013633485960229
+      MultiHit_3: 2994112589635436413
+      Tiles_18: 4680653795402065389
+      Tiles_9: 3825752689756085014
+      Tiles_7: 1561205615984820651
+      Tiles_4: 4099902767569298868
+      MultiHit_1: 177830658894647873
+      Tiles_13: 9045646400296435942
+      spawner01: -4542574665899724165
+      DirChangeLeft: 5508094868453387618
+      Tiles_19: 4753258692078137619
+      Tiles_12: -47299315171432025
+      SpeedArrow: 2845302552105548080
+      MultiHit_2: -8332107772842246419
+      Tiles_3: -5062486230716756072
+      Tiles_8: 857779327251732012
+      Tiles_10: 7477827516038983822
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

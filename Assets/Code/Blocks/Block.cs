@@ -4,7 +4,7 @@ using GamePlay;
 using LevelContext;
 using UnityEditor;
 #if UNITY_EDITOR
-using UnityEditor.Experimental.SceneManagement;
+
 #endif
 using UnityEngine;
 using UnityEngine.Events;
@@ -45,7 +45,7 @@ namespace Blocks {
 #if UNITY_EDITOR
         public virtual void OnValidate() {
             // checks if editor is in scene or on prefab stage
-            var prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
+            var prefabStage = UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage();
             var isValidPrefabState = prefabStage != null && prefabStage.stageHandle.IsValid();
             var prefabConnected = PrefabUtility.GetPrefabInstanceStatus(gameObject) ==
                                   PrefabInstanceStatus.Connected;
