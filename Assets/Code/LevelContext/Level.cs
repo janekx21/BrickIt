@@ -149,9 +149,8 @@ namespace LevelContext {
             ChangeState(LevelState.Win);
             PauseAll();
 
-            using (var data = SaveData.Load()) {
-                data.done.Add(ownLevelObject);
-            }
+            using var data = SaveData.Load();
+            data.done[ownLevelObject] = true;
         }
 
         public void Lose() {
