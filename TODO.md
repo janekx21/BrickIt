@@ -12,6 +12,8 @@ small open source game
 	- unlock chapter if chapter before is 50% completed
 	- show highscore on completed levels
 	- animation
+- level finish
+	- level continues for half a second while being immortal
 - blocks
 	- speedup block sound and animation
 	- claw death block
@@ -21,6 +23,8 @@ small open source game
 
 ###Priority 2:
 
+- feedback
+	- tell player on death how many blocks he hit / that he was better than before
 - options
 	- sound
 	- music
