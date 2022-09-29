@@ -150,7 +150,7 @@ namespace LevelContext {
             PauseAll();
 
             using var data = SaveData.Load();
-            data.done[ownLevelObject] = true;
+            data.done.Add(ownLevelObject);
         }
 
         public void Lose() {

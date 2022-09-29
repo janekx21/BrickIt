@@ -9,12 +9,13 @@ namespace Util {
         public ChapterObject selectedChapter = null;
         public float levelScrollPosition = 0;
         public LevelObject selectedLevel = null;
-        public Dictionary<LevelObject, bool> done = new Dictionary<LevelObject, bool>();
+        public List<LevelObject> done = new(); // todo this is not working :< LevelObject cant be serialized
 
         private const string saveDataKey = "save_data";
 
         public void Save() {
             var json = JsonUtility.ToJson(this, true);
+            Debug.Log($"saved the following: {json}");
             PlayerPrefs.SetString(saveDataKey, json);
             PlayerPrefs.Save();
         }

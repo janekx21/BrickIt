@@ -4,23 +4,27 @@ small open source game
 > This Project is made by
 > Janek and Maico
 
-##TODO:
+## TODO:
 
-###Priority 1:
+### Priority 1:
 
 - level unlock
 	- unlock chapter if chapter before is 50% completed
 	- show highscore on completed levels
 	- animation
+- level finish @janek
+	- level continues for half a second while being immortal
 - blocks
 	- speedup block sound and animation
 	- claw death block
 	- one way/color block
 	- gate block
-- level, more levels
+- level, more levels @maico
 
-###Priority 2:
+### Priority 2:
 
+- feedback
+	- tell player on death how many blocks he hit / that he was better than before
 - options
 	- sound
 	- music
@@ -38,7 +42,7 @@ small open source game
 	- save chapter selection position like with levels
 
 
-##Done
+## Done
 
 - score system
     - show
