@@ -8,8 +8,7 @@ namespace Util {
     public class SaveData : IDisposable {
         public ChapterObject selectedChapter = null;
         public float levelScrollPosition = 0;
-        public LevelObject selectedLevel = null;
-        public List<LevelObject> done = new(); // todo this is not working :< LevelObject cant be serialized
+        public List<string> done = new(); // list of done level id's (guid)
 
         private const string saveDataKey = "save_data";
 

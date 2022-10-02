@@ -1,20 +1,41 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Util;
 
 namespace LevelContext {
     [CreateAssetMenu]
     public class LevelObject : ScriptableObject {
+        public string id;
         public SceneReference scene = null;
         public string levelName = "no name";
         public string levelAuthor = "no one";
         [Range(1, 20)] public int difficulty = 1;
 
         public Texture2D overview = null;
+
+        private void OnValidate() {
+            if (string.IsNullOrEmpty(id) ||!GUID.TryParse(id, out _)) {
+                id = GUID.Generate().ToString();
+            }
+        }
+
+        protected bool Equals(LevelObject other) {
+            return base.Equals(other) && id == other.id;
+        }
+        public override bool Equals(object obj) {
+            if (ReferenceEquals(null, obj))
+                return false;
+            if (ReferenceEquals(this, obj))
+                return true;
+            if (obj.GetType() != this.GetType())
+                return false;
+            return Equals((LevelObject) obj);
+        }
+        public override int GetHashCode() {
+            return HashCode.Combine(base.GetHashCode(), id);
+        }
 
 #if UNITY_EDITOR
         [ContextMenu("Rename Level")]

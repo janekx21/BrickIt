@@ -1,9 +1,8 @@
-using System.Collections.Generic;
 using System.Linq;
 using LevelContext;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Util;
 
 namespace UI.Menu {
     public class LevelList : MonoBehaviour {
@@ -28,10 +27,18 @@ namespace UI.Menu {
             }
 
             var list = levelObjects.ToList();
-            list.Sort(Comparison);
-            foreach (var o in list) {
+            list.Sort(CompareOnDifficulty);
+            foreach (var (o,i) in list.Select((v,i) => (v, i))) {
                 var panel = Instantiate(prefab, transform);
-                panel.Init(o, loadAction);
+
+                using var saveData = SaveData.Load();
+                var done = saveData.done.Contains(o.id);
+                var doneCount = list.Count(x => saveData.done.Contains(x.id));
+
+                // add one for buffer
+                var locked = !(doneCount + 1 >= i);
+                
+                panel.Init(o, locked, done, loadAction);
 
                 // Navigation
                 if (o == list.First()) {
@@ -78,7 +85,7 @@ namespace UI.Menu {
             }
         }
 
-        private int Comparison(LevelObject x, LevelObject y) {
+        private static int CompareOnDifficulty(LevelObject x, LevelObject y) {
             return x.difficulty - y.difficulty;
         }
     }
