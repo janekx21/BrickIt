@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d88ba10a1fab34a9348d06675b2fa6, type: 3}
   m_Name: Way of Bricks
   m_EditorClassIdentifier: 
+  id: 1aef384c01e431e4795c0fcdb9f29caa
   scene:
     sceneAsset: {fileID: 102900000, guid: 6fac883b540718140ba1a0c9a3cb8c11, type: 3}
     scenePath: Assets/Levels/Extra/Way of Bricks/Way of Bricks.unity
   levelName: Way of Bricks
   levelAuthor: Marvin
-  difficulty: 7
+  difficulty: 4
   overview: {fileID: 2800000, guid: 042f0ed3fb36b5c4781437dcdd6c9a5e, type: 3}

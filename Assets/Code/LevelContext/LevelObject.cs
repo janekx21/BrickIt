@@ -16,9 +16,11 @@ namespace LevelContext {
         public Texture2D overview = null;
 
         private void OnValidate() {
-            if (string.IsNullOrEmpty(id) ||!GUID.TryParse(id, out _)) {
+#if UNITY_EDITOR
+            if (string.IsNullOrEmpty(id) || !GUID.TryParse(id, out _)) {
                 id = GUID.Generate().ToString();
             }
+#endif
         }
 
         protected bool Equals(LevelObject other) {
@@ -41,7 +43,7 @@ namespace LevelContext {
         [ContextMenu("Rename Level")]
         public void RenameLevel() {
             var newName = levelName.Replace('?', '-');
-            
+
             var levelObjectPath = AssetDatabase.GetAssetPath(this);
             var overviewPath = AssetDatabase.GetAssetPath(overview);
             AssetDatabase.RenameAsset(levelObjectPath, newName);

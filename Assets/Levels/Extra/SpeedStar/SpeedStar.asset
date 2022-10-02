@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d88ba10a1fab34a9348d06675b2fa6, type: 3}
   m_Name: SpeedStar
   m_EditorClassIdentifier: 
+  id: 3a4ae3f170e14bd40a8659063ccc3a86
   scene:
     sceneAsset: {fileID: 102900000, guid: f601113a74438e442b27246bf922f2c6, type: 3}
     scenePath: Assets/Levels/Extra/SpeedStar/SpeedStar.unity
   levelName: SpeedStar
   levelAuthor: Marvin & Maico
-  difficulty: 1
+  difficulty: 3
   overview: {fileID: 2800000, guid: 5dabad6e8ee922e4fba1598b503a3d8b, type: 3}

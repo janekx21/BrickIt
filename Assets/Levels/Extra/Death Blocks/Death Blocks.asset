@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d88ba10a1fab34a9348d06675b2fa6, type: 3}
   m_Name: Death Blocks
   m_EditorClassIdentifier: 
+  id: e679611adcc61b64393103b00c750b02
   scene:
     sceneAsset: {fileID: 102900000, guid: 84ecb0cf065c41e4196ad7eab3ac48cd, type: 3}
-    scenePath: Assets/Levels/Dev/Death Blocks/Death Blocks.unity
+    scenePath: Assets/Levels/Extra/Death Blocks/Death Blocks.unity
   levelName: Death Blocks
   levelAuthor: Janek
-  difficulty: 3
+  difficulty: 4
   overview: {fileID: 2800000, guid: 54a5d9efde913de4f87159fe75160e8d, type: 3}
