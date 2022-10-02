@@ -114,6 +114,15 @@ EditorBuildSettings:
     path: Assets/Levels/Extra/SpeedStar/SpeedStar.unity
     guid: f601113a74438e442b27246bf922f2c6
   - enabled: 1
-    path: Assets/Levels/Portal/Split/Level01.unity
+    path: Assets/Levels/Portal/Split/Split.unity
     guid: b5d463f527119074a9756246a8819fdc
+  - enabled: 1
+    path: Assets/Levels/Death/Turn around/Turn around.unity
+    guid: 119f3c267ccc8c24298e05c44d235d01
+  - enabled: 1
+    path: Assets/Levels/Death/Middle sprung/Middle Sprung.unity
+    guid: 75688130398514844814f04455efbe99
+  - enabled: 1
+    path: Assets/Levels/Death/Portal/Portal.unity
+    guid: d61022c3d509a66428e65123c45673fe
   m_configObjects: {}

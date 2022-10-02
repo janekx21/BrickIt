@@ -60,11 +60,19 @@ namespace LevelContext {
             byte[] bytes;
             bytes = overview.EncodeToPNG();
 
+            // write overview
             var dir = Path.GetDirectoryName(level.scene.ScenePath);
             Assert.IsNotNull(dir);
             var path = Path.Combine(dir, level.levelName + ".png");
-            File.WriteAllBytes(path, bytes);
+            Assert.IsNotNull(path);
+            var file = File.Create(path);
+            file.Write(bytes);
+            file.Flush(true);
+            file.Close();
+            Assert.IsTrue(File.Exists(path));
 
+            // read overview
+            AssetDatabase.ImportAsset(path);
             var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
             Assert.IsNotNull(texture);
             level.overview = texture;

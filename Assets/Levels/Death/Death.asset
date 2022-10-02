@@ -15,5 +15,8 @@ MonoBehaviour:
   image: {fileID: 5264979163374914166, guid: 5713416c4704eab42a8b466fbada8b47, type: 3}
   chapterName: Death
   levels:
-  - {fileID: 11400000, guid: 7e4976a0b51ad3a498e1c668e570b214, type: 2}
   - {fileID: 11400000, guid: f45f5ef0b95a57f4ea0464d1c7479bf6, type: 2}
+  - {fileID: 11400000, guid: 7e4976a0b51ad3a498e1c668e570b214, type: 2}
+  - {fileID: 11400000, guid: 328afe4106a1b7146b52fb488a6c248f, type: 2}
+  - {fileID: 11400000, guid: ffe879fcd1cf71746a4c7a621f3e28fd, type: 2}
+  - {fileID: 11400000, guid: 3f6d482bd710bd44ba01fe279823925b, type: 2}
