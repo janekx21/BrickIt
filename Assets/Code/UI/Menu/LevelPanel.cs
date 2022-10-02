@@ -23,7 +23,7 @@ namespace UI.Menu {
 
             @lock.SetActive(locked);
             group.interactable = !locked;
-            // todo show done
+            image.color = done ? Color.white : image.color;
         }
     }
 }
