@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using GamePlay;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
@@ -29,8 +27,8 @@ namespace UI {
             Assert.IsNull(instance);
             instance = this;
             
-            retry.onClick.AddListener(() => { LevelContext.Level.Own.Retry(); });
-            menu.onClick.AddListener(() => { LevelContext.Level.Own.ToMenu(); });
+            retry.onClick.AddListener(() => { LevelContext.Level.own.Retry(); });
+            menu.onClick.AddListener(() => { LevelContext.Level.own.ToMenu(); });
             onScoreAdded.AddListener(ShowHighscores);
 
             key = "highscoreTable" + SceneManager.GetActiveScene().buildIndex;

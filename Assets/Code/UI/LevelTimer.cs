@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +6,7 @@ namespace UI {
         [SerializeField] private Text text;
 
         private void Update() {
-            text.text = $"{LevelContext.Level.Own.TimeSinceStart:000}";
+            text.text = $"{LevelContext.Level.own.TimeSinceStart:000}";
         }
     }
 }

@@ -1,8 +1,6 @@
-﻿using System.IO;
-using System.Linq;
+﻿using System.Linq;
 using Blocks;
 using GamePlay;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
@@ -12,7 +10,7 @@ using Util;
 
 namespace LevelContext {
     public class Level : MonoBehaviour {
-        public static Level Own => instance;
+        public static Level own => instance;
         private static Level instance;
 
         [SerializeField] private Camera levelCamera;
@@ -22,7 +20,7 @@ namespace LevelContext {
         public int LevelWidth => levelWidth;
         public int LevelHeight => levelHeight;
      
-        private LevelState state = LevelState.Begin;
+        private LevelState state = LevelState.begin;
         public LevelState State => state;
         private bool cancelIsDown = true;
         private bool ready;
@@ -76,7 +74,7 @@ namespace LevelContext {
 #endif
             
             switch (state) {
-                case LevelState.Play:
+                case LevelState.play:
                     if (Input.GetAxisRaw("Cancel") != 0) {
                         if (!cancelIsDown) {
                             Pause();
@@ -90,7 +88,7 @@ namespace LevelContext {
 
                     break;
 
-                case LevelState.Pause:
+                case LevelState.pause:
                     if (Input.GetAxisRaw("Cancel") != 0) {
                         if (!cancelIsDown) {
                             Play();
@@ -104,7 +102,7 @@ namespace LevelContext {
 
                     break;
 
-                case LevelState.Begin:
+                case LevelState.begin:
                     if (ready && (Input.anyKey || Input.touchCount > 0)) {
                         Play();
                         FindObjectOfType<Spawner>().Spawn();
@@ -113,7 +111,7 @@ namespace LevelContext {
                     break;
             }
 
-            if (state == LevelState.Play) {
+            if (state == LevelState.play) {
                 timeSinceStart += Time.deltaTime;
             }
         }
@@ -128,25 +126,25 @@ namespace LevelContext {
         }
 
         private void Begin() {
-            ChangeState(LevelState.Begin);
+            ChangeState(LevelState.begin);
 
             // Play Animation and halt until start button is pressed
             // Play(); // TODO this is debug for starting the level right away
         }
 
         public void Play() {
-            ChangeState(LevelState.Play);
+            ChangeState(LevelState.play);
             PlayAll();
         }
 
         public void Pause() {
-            ChangeState(LevelState.Pause);
+            ChangeState(LevelState.pause);
             PauseAll();
         }
 
         public void Win() {
             Debug.Log("you won :>");
-            ChangeState(LevelState.Win);
+            ChangeState(LevelState.win);
             PauseAll();
 
             using var data = SaveData.Load();
@@ -155,7 +153,7 @@ namespace LevelContext {
 
         public void Lose() {
             Debug.Log("you lost :(");
-            ChangeState(LevelState.Lost);
+            ChangeState(LevelState.lost);
             PauseAll();
         }
 

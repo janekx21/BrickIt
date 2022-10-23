@@ -1,9 +1,5 @@
-﻿using System;
-using LevelContext;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using Util;
 
 namespace UI {
     public class Pause : MonoBehaviour {
@@ -12,9 +8,9 @@ namespace UI {
         [SerializeField] private Button retry;
 
         private void Awake() {
-            unpause.onClick.AddListener(() => { LevelContext.Level.Own.Play(); });
-            toMainMenu.onClick.AddListener(() => { LevelContext.Level.Own.ToMenu(); });
-            retry.onClick.AddListener(() => { LevelContext.Level.Own.Retry(); });
+            unpause.onClick.AddListener(() => { LevelContext.Level.own.Play(); });
+            toMainMenu.onClick.AddListener(() => { LevelContext.Level.own.ToMenu(); });
+            retry.onClick.AddListener(() => { LevelContext.Level.own.Retry(); });
         }
     }
 }

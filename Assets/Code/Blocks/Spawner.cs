@@ -26,7 +26,7 @@ namespace Blocks {
 
         private IEnumerator ReadyRoutine() {
             yield return new WaitForSeconds(waitingTimer);
-            Level.Own.Ready = true;
+            Level.own.Ready = true;
             ready = true;
         }
 

@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Linq;
 using LevelContext;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace UI {
     [RequireComponent(typeof(CanvasGroup))]
     public class ConditionalPanel : Panel {
-        [SerializeField] private LevelState ownState = LevelState.Begin;
+        [SerializeField] private LevelState ownState = LevelState.begin;
         [SerializeField] private bool useAnimation;
         [SerializeField] private AnimationCurve alphaCurve = new();
         [SerializeField] private AnimationCurve scaleCurve = new();
@@ -16,8 +14,8 @@ namespace UI {
         private CanvasGroup group;
 
         private void Start() {
-            OnUpdateLevelState(Level.Own.State);
-            Level.Own.onStateChanged.AddListener(OnUpdateLevelState);
+            OnUpdateLevelState(Level.own.State);
+            Level.own.onStateChanged.AddListener(OnUpdateLevelState);
             group = GetComponent<CanvasGroup>();
         }
 

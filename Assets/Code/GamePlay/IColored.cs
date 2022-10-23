@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace GamePlay {
     public interface IColored {
         ColorType GetColorType();

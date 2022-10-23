@@ -1,5 +1,4 @@
-﻿using System;
-using Blocks;
+﻿using Blocks;
 using LevelContext;
 using UnityEditor;
 #if UNITY_EDITOR
@@ -14,7 +13,7 @@ namespace GamePlay {
         [SerializeField] private float defaultSpeed = 3.6f;
         [SerializeField] private float speed;
         [SerializeField] private float moveSpeed = 1f;
-        [SerializeField] private ColorType colorType = ColorType.Default;
+        [SerializeField] private ColorType colorType = ColorType.@default;
         [SerializeField] private Color defaultColor = Color.black;
 
         [SerializeField] private float dashAcceleration = 1;
@@ -66,7 +65,7 @@ namespace GamePlay {
 
         private Color PlayerCircleColor(ColorType colorType) {
             // if Player is white, his color is displayed transparent instead
-            return colorType == ColorType.Default
+            return colorType == ColorType.@default
                 ? defaultColor
                 : ColorConversion.Convert(colorType);
         }
@@ -96,7 +95,7 @@ namespace GamePlay {
         }
 
         public void ComboEnds() {
-            Level.Own.ApplyCombo(combo);
+            Level.own.ApplyCombo(combo);
             combo = 0;
         }
 
@@ -237,7 +236,7 @@ namespace GamePlay {
 
         public void Die() {
             Destroy(gameObject);
-            Level.Own.Lose();
+            Level.own.Lose();
         }
 
         public Vector2 GetDirection() => direction;
@@ -266,7 +265,7 @@ namespace GamePlay {
             combo++;
             comboTimer = comboTime;
 
-            if (Level.Own.State == LevelState.Win) {
+            if (Level.own.State == LevelState.win) {
                 ComboEnds();
             }
         }

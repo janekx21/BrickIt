@@ -1,9 +1,5 @@
-﻿using System;
-using GamePlay;
-using LevelContext;
+﻿using LevelContext;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI {
@@ -20,7 +16,7 @@ namespace UI {
 
         private void Awake() {
             next.onClick.AddListener(() => {
-                Level.Own.ChangeState(LevelState.Highscores);
+                Level.own.ChangeState(LevelState.highscores);
                 Highscore.Own.AddHighscoreEntry(playerScore, playerName);
                 
                 // save lastPlayerName
@@ -48,9 +44,9 @@ namespace UI {
         }
 
         private void Update() {
-            time.text = $"{Level.Own.TimeSinceStart:000.00}";
-            maxCombo.text = $"{Level.Own.MaxCombo:00}";
-            playerScore = Level.Own.Score;
+            time.text = $"{Level.own.TimeSinceStart:000.00}";
+            maxCombo.text = $"{Level.own.MaxCombo:00}";
+            playerScore = Level.own.Score;
             score.text = $"{playerScore:### ### ###}";
         }
     }

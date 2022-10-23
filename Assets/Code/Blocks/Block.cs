@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GamePlay;
 using LevelContext;
 using UnityEditor;
@@ -15,7 +14,7 @@ namespace Blocks {
      */
     [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
     public abstract class Block : Entity, IColored {
-        [SerializeField] private ColorType colorType = ColorType.Default;
+        [SerializeField] private ColorType colorType = ColorType.@default;
 
         protected Rigidbody2D rig;
         protected SpriteRenderer ren;
@@ -65,7 +64,7 @@ namespace Blocks {
             allBlocks.Remove(this);
             if (allBlocks.TrueForAll(x => !x.shouldBreak())) {
                 // i am the last Block :(
-                Level.Own.Win();
+                Level.own.Win();
             }
 
             onDestroy.Invoke();
@@ -111,7 +110,7 @@ namespace Blocks {
         }
 
         public bool ColorsMatch(IActor actor) {
-            return GetColorType() == actor.GetColorType() || GetColorType() == ColorType.Default;
+            return GetColorType() == actor.GetColorType() || GetColorType() == ColorType.@default;
         }
 
         /**

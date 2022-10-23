@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace LevelContext {
         [Range(1, 20)] public int difficulty = 1;
 
         public Texture2D overview;
+        public List<Model.Tile> levelData = new();
 
         private void OnValidate() {
 #if UNITY_EDITOR
