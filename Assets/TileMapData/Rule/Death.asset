@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
+  m_Name: Death
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: 5264979163374914166, guid: 5713416c4704eab42a8b466fbada8b47,
+    type: 3}
+  m_DefaultGameObject: {fileID: 8249637532325699208, guid: 021378e251d89374cb2e7871a9d13de0,
+    type: 3}
+  m_DefaultColliderType: 0
+  m_TilingRules: []

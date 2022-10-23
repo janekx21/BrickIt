@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
+  m_Name: MulitHit
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: -8332107772842246419, guid: 5713416c4704eab42a8b466fbada8b47,
+    type: 3}
+  m_DefaultGameObject: {fileID: 8218162066073409510, guid: 599a36ba31ac889479c8d0f068ab2093,
+    type: 3}
+  m_DefaultColliderType: 0
+  m_TilingRules: []
