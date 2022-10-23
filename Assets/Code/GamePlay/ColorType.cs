@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GamePlay {
     public enum ColorType {
-        DefaultColor,
+        Default, // white in most cases
         Red,
         Blue,
         Green,
@@ -15,8 +15,10 @@ namespace GamePlay {
         Magenta
     }
 
+    // todo
+    // make a scriptable object named "Theme" and put this into it
     public class ColorConversion {
-        public static Color GetColorFromType(ColorType colorType) {
+        public static Color Convert(ColorType colorType) {
             switch (colorType) {
                 case ColorType.Red:
                     return Color.red;
@@ -36,5 +38,12 @@ namespace GamePlay {
                     return Color.white;
             }
         }
+
+
+        // todo move to better place
+        public static List<ColorType> allColors = new() {
+            ColorType.Default, ColorType.Red, ColorType.Blue, ColorType.Green, ColorType.Yellow, ColorType.Orange,
+            ColorType.Cyan, ColorType.Magenta
+        };
     }
 }

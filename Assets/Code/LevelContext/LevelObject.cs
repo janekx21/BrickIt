@@ -8,12 +8,12 @@ namespace LevelContext {
     [CreateAssetMenu]
     public class LevelObject : ScriptableObject {
         public string id;
-        public SceneReference scene = null;
+        public SceneReference scene;
         public string levelName = "no name";
         public string levelAuthor = "no one";
         [Range(1, 20)] public int difficulty = 1;
 
-        public Texture2D overview = null;
+        public Texture2D overview;
 
         private void OnValidate() {
 #if UNITY_EDITOR
@@ -57,7 +57,7 @@ namespace LevelContext {
         }
 
         [ContextMenu("Generate Overview")]
-        void GenerateOverview() {
+        private void GenerateOverview() {
             Overview.Generate(this);
         }
 #endif

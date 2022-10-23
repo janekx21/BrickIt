@@ -11,7 +11,7 @@ using UnityEditor;
 namespace LevelContext {
     [CreateAssetMenu(fileName = "new ChapterObject", menuName = "ChapterObject", order = 0)]
     public class ChapterObject : ScriptableObject {
-        public Sprite image = null;
+        public Sprite image;
         public string chapterName = "no name";
         public LevelObject[] levels = new LevelObject[0];
 

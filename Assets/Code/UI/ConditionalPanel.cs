@@ -28,7 +28,7 @@ namespace UI {
             }
         }
 
-        IEnumerator FadeRoutine() {
+        private IEnumerator FadeRoutine() {
             for (float t = 0; t < alphaCurve.keys.Last().time; t+=Time.deltaTime) {
                 group.alpha = alphaCurve.Evaluate(t);
                 transform.localScale = scaleCurve.Evaluate(t) * Vector3.one;

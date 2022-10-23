@@ -8,10 +8,10 @@ using Util;
 namespace UI.Intro {
     public class Credits : MonoBehaviour {
 
-        [SerializeField] private Button backButton = null;
-        [SerializeField] private SceneReference startScene = null;
+        [SerializeField] private Button backButton;
+        [SerializeField] private SceneReference startScene;
 
-        private bool cancelIsDown = false;
+        private bool cancelIsDown;
         
         private void Awake() {
             backButton.onClick.AddListener(Back);
@@ -30,7 +30,7 @@ namespace UI.Intro {
             }
         }
 
-        void Back() {
+        private void Back() {
             SceneManager.LoadScene(startScene); 
         }
     }

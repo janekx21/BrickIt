@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 namespace Util {
     public class SoundParticle : MonoBehaviour {
         private static readonly float epsilon = .1f;
-        [SerializeField] private AudioMixerGroup mixerGroup = null;
+        [SerializeField] private AudioMixerGroup mixerGroup;
 
         public void OneShot(AudioClip clip) {
             var go = new GameObject("SoundParticle");

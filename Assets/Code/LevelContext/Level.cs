@@ -13,9 +13,9 @@ using Util;
 namespace LevelContext {
     public class Level : MonoBehaviour {
         public static Level Own => instance;
-        private static Level instance = null;
+        private static Level instance;
 
-        [SerializeField] private Camera levelCamera = null;
+        [SerializeField] private Camera levelCamera;
         [SerializeField] private int levelWidth = 17;
         [SerializeField] private int levelHeight = 10;
         
@@ -25,17 +25,17 @@ namespace LevelContext {
         private LevelState state = LevelState.Begin;
         public LevelState State => state;
         private bool cancelIsDown = true;
-        private bool ready = false;
+        private bool ready;
 
         public class OnLevelStateChanged : UnityEvent<LevelState> {
         }
 
-        public readonly OnLevelStateChanged onStateChanged = new OnLevelStateChanged();
+        public readonly OnLevelStateChanged onStateChanged = new();
 
-        private float timeSinceStart = 0;
-        private int comboScore = 0;
-        private int maxCombo = 0;
-        private LevelObject ownLevelObject = null;
+        private float timeSinceStart;
+        private int comboScore;
+        private int maxCombo;
+        private LevelObject ownLevelObject;
 
         private float timeScoreBase = 1000000f;
         private float factor = 1.02f;
@@ -60,7 +60,7 @@ namespace LevelContext {
             pixelPerfectCamera.refResolutionY = levelHeight * 16;
         }
 
-        void Start() {
+        private void Start() {
             Begin();
         }
         
@@ -68,7 +68,7 @@ namespace LevelContext {
             Gizmos.DrawWireCube(transform.position, new Vector3(levelWidth, levelHeight, 0));
         }
 
-        void Update() {
+        private void Update() {
 #if DEBUG
             if (Input.GetKey(KeyCode.O) && Input.GetKeyDown(KeyCode.Delete)) {
                 PlayerPrefs.DeleteAll();
@@ -127,7 +127,7 @@ namespace LevelContext {
             onStateChanged?.Invoke(state);
         }
 
-        void Begin() {
+        private void Begin() {
             ChangeState(LevelState.Begin);
 
             // Play Animation and halt until start button is pressed
@@ -159,7 +159,7 @@ namespace LevelContext {
             PauseAll();
         }
 
-        void PlayAll() {
+        private void PlayAll() {
             var objs = FindObjectsOfType<Entity>().OfType<IPausable>();
             foreach (var obj in objs) {
                 if (obj.isPaused()) {
@@ -168,7 +168,7 @@ namespace LevelContext {
             }
         }
 
-        void PauseAll() {
+        private void PauseAll() {
             var objs = FindObjectsOfType<Entity>().OfType<IPausable>();
             foreach (var obj in objs) {
                 if (!obj.isPaused()) {

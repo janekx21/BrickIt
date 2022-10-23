@@ -10,7 +10,8 @@ namespace Blocks {
     }
     
     public class DirectionChanger : Block, IDirectionChanger, IInteractable {
-        [SerializeField] UnityEvent onInteract = new UnityEvent();
+        [SerializeField]
+        private UnityEvent onInteract = new();
         [SerializeField] private Direction direction = Direction.Right;
 
         public override void Hit(IActor actor) {

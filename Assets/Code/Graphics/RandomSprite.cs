@@ -4,7 +4,8 @@ using UnityEngine;
 namespace Graphics {
     [RequireComponent(typeof(SpriteRenderer))]
     public class RandomSprite : MonoBehaviour {
-        [SerializeField] Sprite[] possibleSprites = new Sprite[0];
+        [SerializeField]
+        private Sprite[] possibleSprites = new Sprite[0];
         [SerializeField] private bool randomFlip = true;
         [SerializeField] private bool randomRotation = true;
 

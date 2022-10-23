@@ -8,7 +8,7 @@ namespace Blocks {
         [SerializeField] [Range(2, 9)] private int maxHp = 2;
         private int hp = -1;
 
-        [SerializeField] private Sprite[] sprites = null;
+        [SerializeField] private Sprite[] sprites;
 
         public override void Awake() {
             base.Awake();

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace UI {
     public class LevelTimer : MonoBehaviour {
-        [SerializeField] private Text text = null;
+        [SerializeField] private Text text;
 
         private void Update() {
             text.text = $"{LevelContext.Level.Own.TimeSinceStart:000}";

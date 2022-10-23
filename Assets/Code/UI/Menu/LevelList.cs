@@ -6,15 +6,15 @@ using Util;
 
 namespace UI.Menu {
     public class LevelList : MonoBehaviour {
-        [SerializeField] private LevelPanel prefab = null;
+        [SerializeField] private LevelPanel prefab;
 
         [Header("Navigation")]
-        [SerializeField] private GameObject BackButton = null;
-        [SerializeField] private GameObject horizontalScrollbar = null;
-        private Selectable lastPanelButton = null;
-        private Selectable beforeLastPanelButton = null;
+        [SerializeField] private GameObject BackButton;
+        [SerializeField] private GameObject horizontalScrollbar;
+        private Selectable lastPanelButton;
+        private Selectable beforeLastPanelButton;
         
-        private Selectable firstPanel = null;
+        private Selectable firstPanel;
         
         public void MarkFirstLevel() {
             firstPanel.Select();

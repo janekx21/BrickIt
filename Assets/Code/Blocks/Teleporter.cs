@@ -8,9 +8,9 @@ using Random = UnityEngine.Random;
 
 namespace Blocks {
     public class Teleporter : Block, IInteractable {
-        [SerializeField] private AudioSource source = null;
-        [FormerlySerializedAs("onTeleport")] public UnityEvent onTeleportFrom = new UnityEvent();
-        public UnityEvent onTeleportTo = new UnityEvent();
+        [SerializeField] private AudioSource source;
+        [FormerlySerializedAs("onTeleport")] public UnityEvent onTeleportFrom = new();
+        public UnityEvent onTeleportTo = new();
         
         public override void Enter(IActor actor) {
             base.Enter(actor);

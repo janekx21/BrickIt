@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 namespace UI.Menu {
     public class LevelPanel : MonoBehaviour {
-        [SerializeField] private Text levelName = null;
-        [SerializeField] private Text levelAuthor = null;
-        [SerializeField] private Button button = null;
-        [SerializeField] private Image image = null;
-        [SerializeField] private GameObject @lock = null;
-        [SerializeField] private CanvasGroup group = null;
+        [SerializeField] private Text levelName;
+        [SerializeField] private Text levelAuthor;
+        [SerializeField] private Button button;
+        [SerializeField] private Image image;
+        [SerializeField] private GameObject @lock;
+        [SerializeField] private CanvasGroup group;
 
         public void Init(LevelObject levelObject, bool locked, bool done, Menu.OnLevelAction loadAction) {
             levelName.text = levelObject.levelName;

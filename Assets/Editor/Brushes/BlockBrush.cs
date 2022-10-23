@@ -31,7 +31,7 @@ public class BlockBrush : GridBrush {
         set => colorType = value;
     }
 
-    private ColorType colorType = ColorType.DefaultColor;
+    private ColorType colorType = ColorType.Default;
 
     public override void Paint(GridLayout grid, GameObject brushTarget, Vector3Int position) {
         // if (position == prev_position) {
@@ -135,7 +135,7 @@ public class BlockBrush : GridBrush {
         public override void OnPaintInspectorGUI() {
             GUILayout.BeginHorizontal();
             foreach (ColorType colorType in Enum.GetValues(typeof(ColorType)) as ColorType[]) {
-                GUI.backgroundColor = ColorConversion.GetColorFromType(colorType);
+                GUI.backgroundColor = ColorConversion.Convert(colorType);
                 if (GUILayout.Button(ObjectNames.NicifyVariableName(colorType.ToString()))) {
                     CurrentBlockBrush.CurrentColorType = colorType;
                 }

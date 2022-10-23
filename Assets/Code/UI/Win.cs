@@ -8,15 +8,15 @@ using UnityEngine.UI;
 
 namespace UI {
     public class Win : MonoBehaviour {
-        [SerializeField] private Button next = null;
-        [SerializeField] private Text time = null;
-        [SerializeField] private Text score = null;
-        [SerializeField] private Text maxCombo = null;
-        [SerializeField] private InputField inputName = null;
+        [SerializeField] private Button next;
+        [SerializeField] private Text time;
+        [SerializeField] private Text score;
+        [SerializeField] private Text maxCombo;
+        [SerializeField] private InputField inputName;
         
         private string playerName = "";
         private string lastPlayerName = "PLAYER";
-        private int playerScore = 0;
+        private int playerScore;
 
         private void Awake() {
             next.onClick.AddListener(() => {

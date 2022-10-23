@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 namespace UI.Menu {
     public class ChapterPanel : MonoBehaviour {
-        [SerializeField] private Text chapterName = null;
-        [SerializeField] private Image image = null;
-        [SerializeField] private Button button = null;
+        [SerializeField] private Text chapterName;
+        [SerializeField] private Image image;
+        [SerializeField] private Button button;
 
         public void Init(ChapterObject chapterObject, Menu.OnChapterAction loadAction) {
             chapterName.text = chapterObject.chapterName;

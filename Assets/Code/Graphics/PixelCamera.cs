@@ -15,12 +15,12 @@ namespace Graphics {
 
         private Camera cam;
 
-        void Awake() {
+        private void Awake() {
             cam = GetComponent<Camera>();
             Update();
         }
 
-        void Update() {
+        private void Update() {
             /*
             Orthographic size is half of reference resolution since it is measured
             from center to the top of the screen.
@@ -52,7 +52,7 @@ namespace Graphics {
             cam.rect = rect;
         }
 
-        void OnRenderImage(RenderTexture source, RenderTexture destination) {
+        private void OnRenderImage(RenderTexture source, RenderTexture destination) {
             if (blit) {
                 var buffer = RenderTexture.GetTemporary(renderWidth, renderHeight, -1);
 

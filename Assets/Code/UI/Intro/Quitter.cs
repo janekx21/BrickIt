@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Quitter : MonoBehaviour
 {
-    void Update()
+    private void Update()
     {
         if (Input.GetButton("Cancel")) {
             Application.Quit();

@@ -12,9 +12,9 @@ namespace GamePlay {
     [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer), typeof(AudioSource))]
     public class Player : Entity, IActor, IPausable {
         [SerializeField] private float defaultSpeed = 3.6f;
-        [SerializeField] private float speed = 0f;
+        [SerializeField] private float speed;
         [SerializeField] private float moveSpeed = 1f;
-        [SerializeField] private ColorType colorType = ColorType.DefaultColor;
+        [SerializeField] private ColorType colorType = ColorType.Default;
         [SerializeField] private Color defaultColor = Color.black;
 
         [SerializeField] private float dashAcceleration = 1;
@@ -22,21 +22,21 @@ namespace GamePlay {
 
         [SerializeField] private float speedup = 1.5f;
 
-        [SerializeField] private GameObject bounceParticle = null;
+        [SerializeField] private GameObject bounceParticle;
 
-        private Rigidbody2D rig = null;
-        private SpriteRenderer rend = null;
-        private AudioSource bounceSource = null;
-        [SerializeField] private AudioSource smallBounceSource = null;
+        private Rigidbody2D rig;
+        private SpriteRenderer rend;
+        private AudioSource bounceSource;
+        [SerializeField] private AudioSource smallBounceSource;
         private Vector2 move = Vector2.zero;
         private Vector2 direction = Vector2.right;
         private float speedModifier = 1;
         private Vector2 dash = Vector2.zero;
-        private bool paused = false;
-        private bool directionChanged = false;
+        private bool paused;
+        private bool directionChanged;
 
-        private int combo = 0;
-        private float comboTimer = 0;
+        private int combo;
+        private float comboTimer;
         [SerializeField] private float comboTime = 1f; 
 
         // private void OnDrawGizmos() {
@@ -66,9 +66,9 @@ namespace GamePlay {
 
         private Color PlayerCircleColor(ColorType colorType) {
             // if Player is white, his color is displayed transparent instead
-            return colorType == ColorType.DefaultColor
+            return colorType == ColorType.Default
                 ? defaultColor
-                : ColorConversion.GetColorFromType(colorType);
+                : ColorConversion.Convert(colorType);
         }
 
         public override void Awake() {
@@ -135,17 +135,18 @@ namespace GamePlay {
                     smallBounceSource.PlayRandomPitch(.25f);
                 }
 
-                var block = contact.collider.GetComponent<Block>();
                 var particles = Instantiate(bounceParticle, contact.point,
                     Quaternion.LookRotation(Vector3.forward, contact.normal));
-                if (block) {
-                    var main = particles.GetComponent<ParticleSystem>().main;
-                    main.startColor = ColorConversion.GetColorFromType(block.GetColorType());
-                    var interactable = block.GetComponent<IInteractable>();
-                    interactable?.Interact(this);
-                }
-
                 Dash(contact.normal);
+
+                // interact when possible
+                contact.collider.GetComponent<IInteractable>() ?.Interact(this);
+
+                // color the particles when possible
+                var colored = contact.collider.GetComponent<IColored>();
+                if (colored is null) continue;
+                var particleModule = particles.GetComponent<ParticleSystem>().main;
+                particleModule.startColor = ColorConversion.Convert(colored.GetColorType());
             }
         }
 

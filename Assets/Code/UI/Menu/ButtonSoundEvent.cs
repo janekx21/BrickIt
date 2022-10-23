@@ -6,9 +6,9 @@ using Util;
 namespace UI.Menu {
     [RequireComponent(typeof(SoundParticle))]
     public class ButtonSoundEvent : MonoBehaviour, ISelectHandler, IPointerEnterHandler, ISubmitHandler, IPointerClickHandler {
-        [SerializeField] private AudioClip hover = null;
-        [SerializeField] private AudioClip click = null;
-        private SoundParticle source = null;
+        [SerializeField] private AudioClip hover;
+        [SerializeField] private AudioClip click;
+        private SoundParticle source;
 
         private void Awake() {
             source = GetComponent<SoundParticle>();

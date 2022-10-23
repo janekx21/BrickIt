@@ -7,7 +7,7 @@ using Util;
 
 namespace Blocks {
     public class SpeedChanger : Block, ISpeedChanger {
-        [SerializeField] private AudioSource sourceSpeedUp = null;
+        [SerializeField] private AudioSource sourceSpeedUp;
         private Vector2 enterDirection;
             
         public override void Enter(IActor actor) {

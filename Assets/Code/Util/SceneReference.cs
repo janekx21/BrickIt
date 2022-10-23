@@ -33,8 +33,8 @@ namespace Util {
     public class SceneReference : ISerializationCallbackReceiver {
 #if UNITY_EDITOR
         // What we use in editor to select the scene
-        [SerializeField] private Object sceneAsset = null;
-        bool IsValidSceneAsset {
+        [SerializeField] private Object sceneAsset;
+        private bool IsValidSceneAsset {
             get {
                 if (sceneAsset == null)
                     return false;
@@ -143,16 +143,16 @@ namespace Util {
     [CustomPropertyDrawer(typeof(SceneReference))]
     public class SceneReferencePropertyDrawer : PropertyDrawer {
         // The exact name of the asset Object variable in the SceneReference object
-        const string sceneAssetPropertyString = "sceneAsset";
+        private const string sceneAssetPropertyString = "sceneAsset";
 
         // The exact name of  the scene Path variable in the SceneReference object
-        const string scenePathPropertyString = "scenePath";
+        private const string scenePathPropertyString = "scenePath";
 
-        static readonly RectOffset boxPadding = EditorStyles.helpBox.padding;
-        static readonly float padSize = 2f;
-        static readonly float lineHeight = EditorGUIUtility.singleLineHeight;
-        static readonly float paddedLine = lineHeight + padSize;
-        static readonly float footerHeight = 10f;
+        private static readonly RectOffset boxPadding = EditorStyles.helpBox.padding;
+        private static readonly float padSize = 2f;
+        private static readonly float lineHeight = EditorGUIUtility.singleLineHeight;
+        private static readonly float paddedLine = lineHeight + padSize;
+        private static readonly float footerHeight = 10f;
 
         /// <summary>
         /// Drawing the 'SceneReference' property
@@ -301,11 +301,11 @@ namespace Util {
             }
         }
 
-        static SerializedProperty GetSceneAssetProperty(SerializedProperty property) {
+        private static SerializedProperty GetSceneAssetProperty(SerializedProperty property) {
             return property.FindPropertyRelative(sceneAssetPropertyString);
         }
 
-        static SerializedProperty GetScenePathProperty(SerializedProperty property) {
+        private static SerializedProperty GetScenePathProperty(SerializedProperty property) {
             return property.FindPropertyRelative(scenePathPropertyString);
         }
 
@@ -350,8 +350,8 @@ namespace Util {
             // time in seconds that we have to wait before we query again when IsReadOnly() is called.
             public static float minCheckWait = 3;
 
-            static float lastTimeChecked = 0;
-            static bool cachedReadonlyVal = true;
+            private static float lastTimeChecked;
+            private static bool cachedReadonlyVal = true;
 
             /// <summary>
             /// A small container for tracking scene data BuildSettings

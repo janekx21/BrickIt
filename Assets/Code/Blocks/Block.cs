@@ -15,15 +15,15 @@ namespace Blocks {
      */
     [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
     public abstract class Block : Entity, IColored {
-        [SerializeField] private ColorType colorType = ColorType.DefaultColor;
+        [SerializeField] private ColorType colorType = ColorType.Default;
 
-        protected Rigidbody2D rig = null;
-        protected SpriteRenderer ren = null;
-        protected BoxCollider2D boxCollider = null;
+        protected Rigidbody2D rig;
+        protected SpriteRenderer ren;
+        protected BoxCollider2D boxCollider;
 
-        private static readonly List<Block> allBlocks = new List<Block>();
+        private static readonly List<Block> allBlocks = new();
 
-        public UnityEvent onDestroy = new UnityEvent();
+        public UnityEvent onDestroy = new();
 
         private void OnEnable() {
             allBlocks.Add(this);
@@ -38,7 +38,7 @@ namespace Blocks {
 
             rig = GetComponent<Rigidbody2D>();
             ren = GetComponent<SpriteRenderer>();
-            ren.color = ColorConversion.GetColorFromType(colorType);
+            ren.color = ColorConversion.Convert(colorType);
             boxCollider = GetComponent<BoxCollider2D>();
         }
 
@@ -107,11 +107,11 @@ namespace Blocks {
 
         private void SetSpriteColor() {
             ren = GetComponent<SpriteRenderer>();
-            ren.color = ColorConversion.GetColorFromType(colorType);
+            ren.color = ColorConversion.Convert(colorType);
         }
 
         public bool ColorsMatch(IActor actor) {
-            return GetColorType() == actor.GetColorType() || GetColorType() == ColorType.DefaultColor;
+            return GetColorType() == actor.GetColorType() || GetColorType() == ColorType.Default;
         }
 
         /**

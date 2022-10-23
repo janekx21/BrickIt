@@ -86,7 +86,7 @@ namespace LevelContext {
             AssetDatabase.Refresh();
         }
 
-        static List<OverviewObject> Search(Transform transform) {
+        private static List<OverviewObject> Search(Transform transform) {
             var list = new List<OverviewObject>();
 
             var orthographicSize = Mathf.FloorToInt(Camera.main.orthographicSize);

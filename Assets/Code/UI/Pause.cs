@@ -7,9 +7,9 @@ using Util;
 
 namespace UI {
     public class Pause : MonoBehaviour {
-        [SerializeField] private Button unpause = null;
-        [SerializeField] private Button toMainMenu = null;
-        [SerializeField] private Button retry = null;
+        [SerializeField] private Button unpause;
+        [SerializeField] private Button toMainMenu;
+        [SerializeField] private Button retry;
 
         private void Awake() {
             unpause.onClick.AddListener(() => { LevelContext.Level.Own.Play(); });

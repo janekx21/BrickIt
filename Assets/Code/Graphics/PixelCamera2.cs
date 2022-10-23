@@ -10,7 +10,7 @@ namespace Graphics {
     [RequireComponent(typeof(Camera))]
     public class PixelCamera2 : MonoBehaviour {
         [SerializeField] private int referenceHeight = 180;
-        [SerializeField] private bool useAutomaticWidth = false;
+        [SerializeField] private bool useAutomaticWidth;
         [SerializeField] private int referenceWidth = 320;
         [SerializeField] private int pixelsPerUnit = 32;
         [SerializeField] private bool blit = true;
@@ -20,12 +20,12 @@ namespace Graphics {
 
         private Camera cam;
 
-        void Awake() {
+        private void Awake() {
             cam = GetComponent<Camera>();
             Update();
         }
 
-        void Update() {
+        private void Update() {
             /*
             Orthographic size is half of reference resolution since it is measured
             from center to the top of the screen.
@@ -67,7 +67,7 @@ namespace Graphics {
             cam.rect = rect;
         }
 
-        void OnRenderImage(RenderTexture source, RenderTexture destination) {
+        private void OnRenderImage(RenderTexture source, RenderTexture destination) {
             if (blit) {
                 var buffer = RenderTexture.GetTemporary(referenceWidth, referenceHeight, -1);
 

@@ -8,14 +8,14 @@ using UnityEngine.UI;
 
 namespace UI.Menu {
     public class ChapterList : MonoBehaviour {
-        [SerializeField] private ChapterPanel prefab = null;
+        [SerializeField] private ChapterPanel prefab;
 
         [Header("Navigation")]
-        [SerializeField] private GameObject horizontalScrollbar = null;
-        private Selectable lastPanelButton = null;
-        private Selectable beforeLastPanelButton = null;
+        [SerializeField] private GameObject horizontalScrollbar;
+        private Selectable lastPanelButton;
+        private Selectable beforeLastPanelButton;
 
-        private Selectable firstPanel = null;
+        private Selectable firstPanel;
 
         public void MarkFirstChapter() {
             firstPanel.Select();

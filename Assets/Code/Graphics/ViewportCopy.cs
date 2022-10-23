@@ -8,18 +8,18 @@ namespace Graphics {
     [ExecuteInEditMode]
     [RequireComponent(typeof(Camera))]
     public class ViewportCopy : MonoBehaviour {
-        [SerializeField] private GameObject parentCamera = null;
+        [SerializeField] private GameObject parentCamera;
 
         private Camera parentCam;
         private Camera cam;
 
-        void Awake() {
+        private void Awake() {
             cam = GetComponent<Camera>();
             parentCam = parentCamera.GetComponent<Camera>();
             LateUpdate();
         }
 
-        void LateUpdate() {
+        private void LateUpdate() {
             cam.orthographicSize = parentCam.orthographicSize;
             cam.rect = parentCam.rect;
         }

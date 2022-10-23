@@ -6,8 +6,8 @@ using UnityEngine;
 namespace Util {
     [Serializable]
     public class SaveData : IDisposable {
-        public ChapterObject selectedChapter = null;
-        public float levelScrollPosition = 0;
+        public ChapterObject selectedChapter;
+        public float levelScrollPosition;
         public List<string> done = new(); // list of done level id's (guid)
 
         private const string saveDataKey = "save_data";

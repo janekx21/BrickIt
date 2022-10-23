@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7099266833644734766}
   - component: {fileID: 2655639690555653787}
   - component: {fileID: 7099266833644734761}
+  - component: {fileID: 2764181866734022858}
+  - component: {fileID: -5695990422846208479}
   m_Layer: 0
   m_Name: BlockButton
   m_TagString: Untagged
@@ -122,3 +124,60 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2764181866734022858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7099266833644734763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f04fd7edf9846479bde60cc5a53411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 1.8079332
+      outSlope: 1.8079332
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.108013935
+    - serializedVersion: 3
+      time: 0.25
+      value: 1.3
+      inSlope: 0.017744044
+      outSlope: 0.017744044
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13065545
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  preferredWidth: 20
+--- !u!114 &-5695990422846208479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7099266833644734763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 0
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1

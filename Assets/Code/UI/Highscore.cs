@@ -10,20 +10,20 @@ using UnityEngine.UI;
 
 namespace UI {
     public class Highscore : MonoBehaviour {
-        [SerializeField] private Button retry = null;
-        [SerializeField] private Button menu = null;
-        [SerializeField] private GameObject entryContainer = null;
-        [SerializeField] private GameObject entryTemplate = null;
+        [SerializeField] private Button retry;
+        [SerializeField] private Button menu;
+        [SerializeField] private GameObject entryContainer;
+        [SerializeField] private GameObject entryTemplate;
         [SerializeField] private float templateHeight = 21f;
 
         private Highscores highscores;
-        private List<Transform> highscoreEntryTransformList = null;
+        private List<Transform> highscoreEntryTransformList;
         private string key = "highscoreTable";
 
         public static Highscore Own => instance;
-        private static Highscore instance = null;
+        private static Highscore instance;
 
-        public UnityEvent onScoreAdded = new UnityEvent();
+        public UnityEvent onScoreAdded = new();
 
         private void Awake() {
             Assert.IsNull(instance);

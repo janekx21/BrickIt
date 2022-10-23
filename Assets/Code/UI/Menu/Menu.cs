@@ -9,27 +9,27 @@ using Util;
 
 namespace UI.Menu {
     public class Menu : MonoBehaviour {
-        enum State {
+        private enum State {
             Chapter,
             Level
         }
 
 
-        [SerializeField] private Button backButton = null;
-        [SerializeField] private ChapterContainerObject chapterContainerObject = null;
-        [SerializeField] private ChapterList chapterList = null;
-        [SerializeField] private LevelList levelList = null;
-        [SerializeField] private Animator animator = null;
+        [SerializeField] private Button backButton;
+        [SerializeField] private ChapterContainerObject chapterContainerObject;
+        [SerializeField] private ChapterList chapterList;
+        [SerializeField] private LevelList levelList;
+        [SerializeField] private Animator animator;
 
-        [SerializeField] private ScrollRect levelScrollRect = null;
+        [SerializeField] private ScrollRect levelScrollRect;
 
         private State currentState = State.Chapter;
-        private bool cancelIsDown = false;
+        private bool cancelIsDown;
 
         private static readonly int ChapterHash = Animator.StringToHash("chapter");
         private static readonly int LevelHash = Animator.StringToHash("level");
 
-        private SaveData saveData = null;
+        private SaveData saveData;
 
         public class OnChapterAction : UnityEvent<ChapterObject> { }
 
@@ -67,7 +67,7 @@ namespace UI.Menu {
             }
         }
 
-        void Back() {
+        private void Back() {
             if (currentState == State.Level) {
                 animator.SetTrigger(ChapterHash);
                 currentState = State.Chapter;

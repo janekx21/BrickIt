@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using GamePlay;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
@@ -12,25 +13,34 @@ namespace MapEditor {
         public Transform cursor;
         public Button rotateLeft;
         public Button rotateRight;
+        public RectTransform panel;
+        public RectTransform colorPanel;
 
         public List<TileBase> placeableTiles = new();
-        public RectTransform panel;
         public Button blockButtonPrefab;
+        public Button colorButtonPrefab;
 
         public GameObject spawnEffect;
 
         private TileBase currentTile;
         private Quaternion currentRotation = Quaternion.identity;
+        private ColorType currentColor = ColorType.Default;
 
-        void Start() {
+        private void Start() {
             foreach (var placeableTile in placeableTiles) {
                 var button = Instantiate(blockButtonPrefab, panel);
                 button.onClick.AddListener(() => {
                     currentTile = placeableTile;
-                    cursor.GetComponentInChildren<SpriteRenderer>().sprite = GetSprite(placeableTile);
+                    cursor.GetComponent<SpriteRenderer>().sprite = GetSprite(placeableTile);
                 });
 
                 button.GetComponent<Image>().sprite = GetSprite(placeableTile);
+            }
+
+            foreach (var color in ColorConversion.allColors) {
+                var button = Instantiate(colorButtonPrefab, colorPanel);
+                button.onClick.AddListener(() => currentColor = color);
+                button.GetComponent<Image>().color = ColorConversion.Convert(color);
             }
 
             rotateLeft.onClick.AddListener(() => currentRotation *= Quaternion.AngleAxis(-90f, Vector3.back));
@@ -48,12 +58,14 @@ namespace MapEditor {
             return tileMDefaultSprite;
         }
 
-        void Update() {
+        private void Update() {
             cursor.position = (Vector2) targetPosition + Vector2.one*.5f;
             cursor.rotation = currentRotation;
+            cursor.GetComponent<SpriteRenderer>().color = ColorConversion.Convert(currentColor);
 
             foreach (Transform blockButton in panel) {
                 blockButton.rotation = currentRotation;
+                blockButton.GetComponent<Image>().color = ColorConversion.Convert(currentColor);
             }
 
             var pointerEvent = new PointerEventData(EventSystem.current) { position = Input.mousePosition };
@@ -62,21 +74,27 @@ namespace MapEditor {
             if (result.Any()) return;
             
             if (Input.GetMouseButton(0)) {
-                SetBlock(targetPosition, currentRotation, currentTile);
+                SetBlock(targetPosition, currentRotation, currentTile, currentColor);
             }
             else if (Input.GetMouseButton(1)) {
-                SetBlock(targetPosition, Quaternion.identity, null);
+                SetBlock(targetPosition, Quaternion.identity, null, ColorType.Default);
             }
         }
 
         private static Vector2Int targetPosition =>
             Vector2Int.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition) * Vector2.one);
 
-        private void SetBlock(Vector2Int position, Quaternion rotation, TileBase block) {
+        private void SetBlock(Vector2Int position, Quaternion rotation, TileBase block, ColorType color) {
             if (tilemap.GetTile((Vector3Int) position) == block) return;
             tilemap.SetTile((Vector3Int) position, block);
-            // todo normal tiles tilemap.SetTransformMatrix((Vector3Int) position, Matrix4x4.Rotate(rotation));
-            tilemap.GetInstantiatedObject((Vector3Int) position).transform.rotation = rotation;
+            var go = tilemap.GetInstantiatedObject((Vector3Int) position);
+            if (go) {
+                go.transform.rotation = rotation;
+                go.GetComponent<IColored>()?.SetColorType(color);
+            }
+            else {
+                tilemap.SetTransformMatrix((Vector3Int) position, Matrix4x4.Rotate(rotation));
+            }
             
             // todo serialize and save
             // tiles = tilemap.GetTilesBlock(tilemap.cellBounds).Select(x => x?.name ?? "empty").ToList();

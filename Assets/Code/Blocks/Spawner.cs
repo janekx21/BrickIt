@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace Blocks {
     public class Spawner : Block {
-        [SerializeField] private Player prefab = null;
+        [SerializeField] private Player prefab;
         [SerializeField] private float waitingTimer = 1f;
-        private bool ready = false;
+        private bool ready;
 
         public override void Start() {
             base.Start();
@@ -18,13 +18,13 @@ namespace Blocks {
             StartCoroutine(SpawnRoutine());
         }
 
-        IEnumerator SpawnRoutine() {
+        private IEnumerator SpawnRoutine() {
             yield return new WaitUntil(() => ready);
             var player = Instantiate(prefab, transform.position, Quaternion.identity);
             player.Init(transform.up, GetColorType());
         }
 
-        IEnumerator ReadyRoutine() {
+        private IEnumerator ReadyRoutine() {
             yield return new WaitForSeconds(waitingTimer);
             Level.Own.Ready = true;
             ready = true;
