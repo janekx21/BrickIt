@@ -1,5 +1,5 @@
 ﻿using System;
-using GamePlay;
+using UnityEngine;
 
 namespace Model {
     [Serializable]
@@ -7,5 +7,6 @@ namespace Model {
         public string type;
         public float rotation;
         public ColorType color;
+        public Vector2Int position;
     }
 }

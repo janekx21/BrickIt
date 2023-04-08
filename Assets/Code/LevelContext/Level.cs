@@ -10,7 +10,7 @@ using Util;
 
 namespace LevelContext {
     public class Level : MonoBehaviour {
-        public static Level own { get; private set; }
+        public static Level? own { get; private set; }
 
         [SerializeField] private Camera levelCamera;
         [SerializeField] private int levelWidth = 17;

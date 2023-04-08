@@ -26,7 +26,7 @@ namespace Blocks {
 
         private IEnumerator ReadyRoutine() {
             yield return new WaitForSeconds(waitingTimer);
-            Level.own.ready = true;
+            if (Level.own != null) Level.own.ready = true; // todo level editor ready
             ready = true;
         }
 

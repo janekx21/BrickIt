@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Util {
     public static class Extensions {
@@ -18,6 +19,12 @@ namespace Util {
 
         public static Quaternion Rotation(this Vector2 direction) {
             return Quaternion.AngleAxis(Vector2.SignedAngle(Vector2.up, direction), Vector3.forward);
+        }
+
+        public static IEnumerable<Vector3Int> AllPositions(this BoundsInt bounds) {
+            foreach (var position in bounds.allPositionsWithin) {
+                yield return position;
+            }
         }
     }
 }
