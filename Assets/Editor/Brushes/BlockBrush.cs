@@ -4,10 +4,12 @@ using System.Linq;
 using System.Reflection;
 using Blocks;
 using GamePlay;
+using Model;
 using UnityEditor;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Tile = UnityEngine.Tilemaps.Tile;
 
 
 [System.Serializable]

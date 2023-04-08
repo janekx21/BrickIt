@@ -14,17 +14,13 @@ namespace Util {
 
         public void Save() {
             var json = JsonUtility.ToJson(this, true);
-            Debug.Log($"saved the following: {json}");
             PlayerPrefs.SetString(saveDataKey, json);
             PlayerPrefs.Save();
         }
 
         public static SaveData Load() {
             var json = PlayerPrefs.GetString(saveDataKey, String.Empty);
-            if (json == String.Empty) {
-                return new SaveData();
-            }
-            return JsonUtility.FromJson<SaveData>(json);
+            return json == string.Empty ? new SaveData() : JsonUtility.FromJson<SaveData>(json);
         }
 
         public void Dispose() {

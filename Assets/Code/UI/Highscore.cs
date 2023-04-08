@@ -18,14 +18,13 @@ namespace UI {
         private List<Transform> highscoreEntryTransformList;
         private string key = "highscoreTable";
 
-        public static Highscore Own => instance;
-        private static Highscore instance;
+        public static Highscore own { get; private set; }
 
         public UnityEvent onScoreAdded = new();
 
         private void Awake() {
-            Assert.IsNull(instance);
-            instance = this;
+            Assert.IsNull(own);
+            own = this;
             
             retry.onClick.AddListener(() => { LevelContext.Level.own.Retry(); });
             menu.onClick.AddListener(() => { LevelContext.Level.own.ToMenu(); });
@@ -49,8 +48,8 @@ namespace UI {
         }
 
         private void ShowHighscores() {
-            foreach (Transform transform in entryContainer.transform) {
-                Destroy(transform);
+            foreach (Transform t in entryContainer.transform) {
+                Destroy(t);
             }
             
             highscores.highscoreEntryList.Sort((entry1, entry2) => entry2.score - entry1.score);
@@ -80,8 +79,7 @@ namespace UI {
             var score = highscoreEntry.score;
             entryTransform.Find("scoreVar").GetComponent<Text>().text = $"{score:### ### ###}";
 
-            var name = highscoreEntry.name;
-            entryTransform.Find("nameVar").GetComponent<Text>().text = name;
+            entryTransform.Find("nameVar").GetComponent<Text>().text = highscoreEntry.name;
             
             transformList.Add(entryTransform);
         }

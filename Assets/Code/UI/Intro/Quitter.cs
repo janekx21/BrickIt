@@ -1,11 +1,13 @@
 using UnityEngine;
 
-public class Quitter : MonoBehaviour
-{
-    private void Update()
+namespace UI.Intro {
+    public class Quitter : MonoBehaviour
     {
-        if (Input.GetButton("Cancel")) {
-            Application.Quit();
+        private void Update()
+        {
+            if (Input.GetButton("Cancel")) {
+                Application.Quit();
+            }
         }
     }
 }

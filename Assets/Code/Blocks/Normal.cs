@@ -5,10 +5,10 @@ namespace Blocks {
         public override void Hit(IActor maker) {
             base.Hit(maker);
 
-            if (ColorsMatch(maker)) {
-                Break(maker);
-                maker.Combo();
-            }
+            if (!ColorsMatch(maker)) return;
+            
+            Break(maker);
+            maker.Combo();
         }
     }
 }

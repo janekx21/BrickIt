@@ -8,8 +8,8 @@ using Util;
 namespace UI.Menu {
     public class Menu : MonoBehaviour {
         private enum State {
-            Chapter,
-            Level
+            chapter,
+            level
         }
 
 
@@ -21,7 +21,7 @@ namespace UI.Menu {
 
         [SerializeField] private ScrollRect levelScrollRect;
 
-        private State currentState = State.Chapter;
+        private State currentState = State.chapter;
         private bool cancelIsDown;
 
         private static readonly int ChapterHash = Animator.StringToHash("chapter");
@@ -60,24 +60,22 @@ namespace UI.Menu {
                 cancelIsDown = false;
             }
 
-            if (currentState == State.Level) {
+            if (currentState == State.level) {
                 saveData.levelScrollPosition = levelScrollRect.horizontalNormalizedPosition;
             }
         }
 
         private void Back() {
-            if (currentState == State.Level) {
+            if (currentState == State.level) {
                 animator.SetTrigger(ChapterHash);
-                currentState = State.Chapter;
+                currentState = State.chapter;
                 saveData.selectedChapter = null;
                 saveData.Save();
                 chapterList.MarkFirstChapter();
             }
-            else if (currentState == State.Chapter) {
+            else if (currentState == State.chapter) {
                 SceneManager.LoadScene("Scenes/StartScreen");
             }
-
-            Debug.Log(currentState);
         }
 
         private void LoadChapter(ChapterObject chapter) {
@@ -85,7 +83,7 @@ namespace UI.Menu {
             action.AddListener(LoadLevel);
             levelList.Init(chapter.levels, action);
             animator.SetTrigger(LevelHash);
-            currentState = State.Level;
+            currentState = State.level;
             saveData.selectedChapter = chapter;
             saveData.Save();
             // reset scrolling
@@ -95,7 +93,7 @@ namespace UI.Menu {
         private void LoadLevel(LevelObject levelObject) {
             saveData.Save();
             var routine = SceneManager.LoadSceneAsync(levelObject.scene);
-            routine.completed += operation => {
+            routine.completed += _ => {
                 var level = FindObjectOfType<Level>();
                 level.Init(levelObject);
             };

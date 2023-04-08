@@ -14,14 +14,14 @@ namespace UI {
         private CanvasGroup group;
 
         private void Start() {
-            OnUpdateLevelState(Level.own.State);
+            OnUpdateLevelState(Level.own.state);
             Level.own.onStateChanged.AddListener(OnUpdateLevelState);
             group = GetComponent<CanvasGroup>();
         }
 
         public override void OnUpdateLevelState(LevelState state) {
             gameObject.SetActive(state == ownState);
-            if (useAnimation) {
+            if (useAnimation && isActiveAndEnabled) {
                 StartCoroutine(FadeRoutine());
             }
         }

@@ -5,7 +5,7 @@ namespace Graphics {
     [RequireComponent(typeof(SpriteRenderer))]
     public class RandomSprite : MonoBehaviour {
         [SerializeField]
-        private Sprite[] possibleSprites = new Sprite[0];
+        private Sprite[] possibleSprites = Array.Empty<Sprite>();
         [SerializeField] private bool randomFlip = true;
         [SerializeField] private bool randomRotation = true;
 

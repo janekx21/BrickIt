@@ -18,7 +18,7 @@ namespace Blocks {
             if (ColorsMatch(actor)) {
                 var target = FindObjectsOfType<Teleporter>()
                     .Where(teleporter => teleporter.GetColorType() == GetColorType() && teleporter != this)
-                    .OrderBy(teleporter => Random.Range(0f, 1f))
+                    .OrderBy(_ => Random.Range(0f, 1f))
                     .First();
 
                 Assert.IsNotNull(target, "You need to place at least two teleporter");
@@ -32,7 +32,7 @@ namespace Blocks {
             }
         }
 
-        protected override bool shouldBreak() => false;
+        protected override bool ShouldBreak() => false;
         
         public void Interact(IActor actor) {
             boxCollider.isTrigger = true;

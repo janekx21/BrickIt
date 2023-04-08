@@ -17,7 +17,7 @@ namespace UI {
         private void Awake() {
             next.onClick.AddListener(() => {
                 Level.own.ChangeState(LevelState.highscores);
-                Highscore.Own.AddHighscoreEntry(playerScore, playerName);
+                Highscore.own.AddHighscoreEntry(playerScore, playerName);
                 
                 // save lastPlayerName
                 PlayerPrefs.SetString("lastPlayerName", playerName);
@@ -44,9 +44,9 @@ namespace UI {
         }
 
         private void Update() {
-            time.text = $"{Level.own.TimeSinceStart:000.00}";
-            maxCombo.text = $"{Level.own.MaxCombo:00}";
-            playerScore = Level.own.Score;
+            time.text = $"{Level.own.timeSinceStart:000.00}";
+            maxCombo.text = $"{Level.own.maxCombo:00}";
+            playerScore = Level.own.score;
             score.text = $"{playerScore:### ### ###}";
         }
     }

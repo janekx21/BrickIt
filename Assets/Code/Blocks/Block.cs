@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
 using GamePlay;
 using LevelContext;
+using Model;
 using UnityEditor;
 #if UNITY_EDITOR
 
 #endif
 using UnityEngine;
 using UnityEngine.Events;
+using Level = LevelContext.Level;
 
 namespace Blocks {
     /**
@@ -16,26 +18,24 @@ namespace Blocks {
     public abstract class Block : Entity, IColored {
         [SerializeField] private ColorType colorType = ColorType.@default;
 
-        protected Rigidbody2D rig;
         protected SpriteRenderer ren;
         protected BoxCollider2D boxCollider;
 
-        private static readonly List<Block> allBlocks = new();
+        private static readonly List<Block> AllBlocks = new();
 
         public UnityEvent onDestroy = new();
 
         private void OnEnable() {
-            allBlocks.Add(this);
+            AllBlocks.Add(this);
         }
 
         private void OnDisable() {
-            allBlocks.Remove(this);
+            AllBlocks.Remove(this);
         }
 
         public override void Awake() {
             base.Awake();
 
-            rig = GetComponent<Rigidbody2D>();
             ren = GetComponent<SpriteRenderer>();
             ren.color = ColorConversion.Convert(colorType);
             boxCollider = GetComponent<BoxCollider2D>();
@@ -61,8 +61,8 @@ namespace Blocks {
         public virtual void Exit(IActor actor) { }
 
         public virtual void Break(IActor maker) {
-            allBlocks.Remove(this);
-            if (allBlocks.TrueForAll(x => !x.shouldBreak())) {
+            AllBlocks.Remove(this);
+            if (AllBlocks.TrueForAll(x => !x.ShouldBreak())) {
                 // i am the last Block :(
                 Level.own.Win();
             }
@@ -99,8 +99,8 @@ namespace Blocks {
             return colorType;
         }
 
-        public void SetColorType(ColorType colorType) {
-            this.colorType = colorType;
+        public void SetColorType(ColorType type) {
+            colorType = type;
             SetSpriteColor();
         }
 
@@ -109,19 +109,19 @@ namespace Blocks {
             ren.color = ColorConversion.Convert(colorType);
         }
 
-        public bool ColorsMatch(IActor actor) {
+        protected bool ColorsMatch(IActor actor) {
             return GetColorType() == actor.GetColorType() || GetColorType() == ColorType.@default;
         }
 
         /**
          * returns if the block should break to win
          */
-        protected abstract bool shouldBreak();
+        protected abstract bool ShouldBreak();
 
 #if UNITY_EDITOR
         public Overview.OverviewObject ToOverviewObject() {
-            var renderer = GetComponent<SpriteRenderer>();
-            return new Overview.OverviewObject(renderer.sprite, Vector2Int.FloorToInt(transform.localPosition));
+            var spriteRenderer = GetComponent<SpriteRenderer>();
+            return new Overview.OverviewObject(spriteRenderer.sprite, Vector2Int.FloorToInt(transform.localPosition));
         }
 #endif
     }

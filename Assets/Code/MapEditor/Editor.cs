@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using GamePlay;
+using Model;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using Util;
+using Tile = UnityEngine.Tilemaps.Tile;
 
 namespace MapEditor {
     public class Editor : MonoBehaviour {
@@ -21,6 +24,8 @@ namespace MapEditor {
         public Button colorButtonPrefab;
 
         public GameObject spawnEffect;
+
+        public string lastSave = "not saved yet";
 
         private TileBase currentTile;
         private Quaternion currentRotation = Quaternion.identity;
@@ -59,7 +64,7 @@ namespace MapEditor {
         }
 
         private void Update() {
-            cursor.position = (Vector2) targetPosition + Vector2.one * .5f;
+            cursor.position = targetPosition + Vector2.one * .5f;
             cursor.rotation = currentRotation;
             cursor.GetComponent<SpriteRenderer>().color = ColorConversion.Convert(currentColor);
 
@@ -68,7 +73,7 @@ namespace MapEditor {
                 blockButton.GetComponent<Image>().color = ColorConversion.Convert(currentColor);
             }
 
-            var pointerEvent = new PointerEventData(EventSystem.current) {position = Input.mousePosition};
+            var pointerEvent = new PointerEventData(EventSystem.current) { position = Input.mousePosition };
             var result = new List<RaycastResult>();
             EventSystem.current.RaycastAll(pointerEvent, result);
             if (result.Any()) return;
@@ -79,58 +84,79 @@ namespace MapEditor {
             else if (Input.GetMouseButton(1)) {
                 SetBlock(targetPosition, Quaternion.identity, null, ColorType.@default);
             }
+
+            if (Input.GetKeyDown(KeyCode.L)) {
+                Load(lastSave);
+            }
+
+            if (Input.GetKeyDown(KeyCode.K)) {
+                lastSave = Save();
+            }
         }
 
         private static Vector2Int targetPosition =>
-            Vector2Int.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition) * Vector2.one);
+            Vector2Int.FloorToInt(Camera.main!.ScreenToWorldPoint(Input.mousePosition) * Vector2.one);
 
         private void SetBlock(Vector2Int position, Quaternion rotation, TileBase block, ColorType color) {
-            if (tilemap.GetTile((Vector3Int) position) == block) return;
-            tilemap.SetTile((Vector3Int) position, block);
-            var go = tilemap.GetInstantiatedObject((Vector3Int) position);
+            if (tilemap.GetTile((Vector3Int)position) == block) return;
+            tilemap.SetTile((Vector3Int)position, block);
+            var go = tilemap.GetInstantiatedObject((Vector3Int)position);
             if (go) {
                 go.transform.rotation = rotation;
                 go.GetComponent<IColored>()?.SetColorType(color);
             }
             else {
-                tilemap.SetTransformMatrix((Vector3Int) position, Matrix4x4.Rotate(rotation));
+                tilemap.SetTransformMatrix((Vector3Int)position, Matrix4x4.Rotate(rotation));
             }
 
-
-            Save();
-            // todo serialize and save
-            // tiles = 
             if (spawnEffect) Instantiate(spawnEffect, position + Vector2.one * .5f, Quaternion.identity);
         }
 
-        private void Save() {
+        private string Save() {
             tilemap.CompressBounds();
             var tiles = GetTiles(tilemap).ToList();
-            var level = new Model.Level {name = "foobar", data = tiles};
-            Debug.Log(JsonUtility.ToJson(level));
+            var level = new Level { name = "foobar", data = tiles };
+            return JsonUtility.ToJson(level);
         }
 
-        private IEnumerable<Model.Tile> GetTiles(Tilemap tilemap) {
-            foreach (var position in tilemap.cellBounds.allPositionsWithin) {
+        private void Load(string data) {
+            var level = JsonUtility.FromJson<Level>(data);
+            SetTiles(level.data);
+        }
+
+        private static IEnumerable<Model.Tile> GetTiles(Tilemap tilemap) {
+            foreach (var position in tilemap.cellBounds.AllPositions()) {
                 if (tilemap.HasTile(position)) {
                     var go = tilemap.GetInstantiatedObject(position);
                     if (go) {
                         yield return new Model.Tile {
-                            type = go.name, color = go.GetComponent<IColored>().GetColorType(),
-                            rotation = go.transform.rotation.eulerAngles.z
+                            type = tilemap.GetTile(position).name,
+                            color = go.GetComponent<IColored>().GetColorType(),
+                            rotation = go.transform.rotation.eulerAngles.z,
+                            position = (Vector2Int)position
                         };
                     }
                     else {
                         yield return new Model.Tile {
                             type = tilemap.GetTile(position).name,
-                            rotation = tilemap.GetTransformMatrix(position).rotation.eulerAngles.z
+                            rotation = tilemap.GetTransformMatrix(position).rotation.eulerAngles.z,
+                            position = (Vector2Int)position
                         };
                     }
                 }
                 else {
-                    yield return new Model.Tile {type = "empty"};
+                    yield return new Model.Tile { type = "empty", position = (Vector2Int)position };
                 }
             }
+        }
+
+
+        private void SetTiles(IEnumerable<Model.Tile> data) {
+            foreach (var t in data) {
+                var tileBase = placeableTiles.Find(x => x.name == t.type);
+                SetBlock(t.position, Quaternion.Euler(0, 0, t.rotation), tileBase, t.color);
+            }
+            tilemap.CompressBounds();
         }
     }
 }

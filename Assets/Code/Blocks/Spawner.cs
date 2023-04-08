@@ -26,10 +26,10 @@ namespace Blocks {
 
         private IEnumerator ReadyRoutine() {
             yield return new WaitForSeconds(waitingTimer);
-            Level.own.Ready = true;
+            if (Level.own != null) Level.own.ready = true; // todo level editor ready
             ready = true;
         }
 
-        protected override bool shouldBreak() => false;
+        protected override bool ShouldBreak() => false;
     }
 }

@@ -8,6 +8,6 @@ namespace Blocks {
             }
         }
 
-        protected override bool shouldBreak() => false;
+        protected override bool ShouldBreak() => false;
     }
 }

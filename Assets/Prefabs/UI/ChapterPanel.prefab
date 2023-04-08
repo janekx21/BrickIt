@@ -28,6 +28,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1110760465409200669}
   m_RootOrder: 0
@@ -92,8 +93,8 @@ GameObject:
   - component: {fileID: 1110760465409200659}
   - component: {fileID: 1110760465409200668}
   - component: {fileID: 3541829527923255030}
-  - component: {fileID: 4815520843734034064}
   - component: {fileID: 7015189993685510907}
+  - component: {fileID: 8542249672663893980}
   m_Layer: 5
   m_Name: ChapterPanel
   m_TagString: Untagged
@@ -111,6 +112,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1110760465250264399}
   - {fileID: 1929489524428820978}
@@ -219,20 +221,6 @@ MonoBehaviour:
   chapterName: {fileID: 1110760465250264398}
   image: {fileID: 1849910715825689720}
   button: {fileID: 1110760465409200668}
---- !u!114 &4815520843734034064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1110760465409200670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fd8335ca1994fc193d8b73e3967a2e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixerGroup: {fileID: -3055280217126468389, guid: a9293258749dbff4c942072be883dacc,
-    type: 2}
 --- !u!114 &7015189993685510907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +235,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hover: {fileID: 8300000, guid: 5d68dfabd2589614da739fe6b3b825f2, type: 3}
   click: {fileID: 8300000, guid: c62f98699a661714fa83c6fdfe6ff2db, type: 3}
+--- !u!114 &8542249672663893980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110760465409200670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c54cfafbd853cee982fc5641857f005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
 --- !u!1 &1981647931661675304
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +276,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1110760465409200669}
   m_RootOrder: 1

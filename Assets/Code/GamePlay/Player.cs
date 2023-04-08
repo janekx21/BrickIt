@@ -1,11 +1,13 @@
 ﻿using Blocks;
 using LevelContext;
+using Model;
 using UnityEditor;
 #if UNITY_EDITOR
 
 #endif
 using UnityEngine;
 using Util;
+using Level = LevelContext.Level;
 
 namespace GamePlay {
     [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer), typeof(AudioSource))]
@@ -63,11 +65,11 @@ namespace GamePlay {
             rend.color = PlayerCircleColor(colorType);
         }
 
-        private Color PlayerCircleColor(ColorType colorType) {
+        private Color PlayerCircleColor(ColorType type) {
             // if Player is white, his color is displayed transparent instead
-            return colorType == ColorType.@default
+            return type == ColorType.@default
                 ? defaultColor
-                : ColorConversion.Convert(colorType);
+                : ColorConversion.Convert(type);
         }
 
         public override void Awake() {
@@ -177,9 +179,9 @@ namespace GamePlay {
             rig.velocity = speedModifier * speed * direction + adding * moveSpeed + dash * dashVelocity;
         }
 
-        public void Init(Vector2 direction, ColorType colorType) {
-            this.direction = direction;
-            SetColorType(colorType);
+        public void Init(Vector2 playerDirection, ColorType type) {
+            this.direction = playerDirection;
+            SetColorType(type);
         }
 
         public float GetDamage() {
@@ -190,8 +192,8 @@ namespace GamePlay {
             return colorType;
         }
 
-        public void SetColorType(ColorType colorType) {
-            this.colorType = colorType;
+        public void SetColorType(ColorType type) {
+            this.colorType = type;
         }
 
         public void ChangeDirection(IDirectionChanger directionChanger) {
@@ -204,8 +206,9 @@ namespace GamePlay {
             // float directionalAngle = Vector2.SignedAngle(-direction, positionVector);
             // float orthogonalAngle = (directionalAngle > 0 ? 1 : -1) * 90f;
 
-            var orthogonalAngle = (directionChanger.GetDirection() == Direction.Right ? 1 : -1) * 90f;
+            var orthogonalAngle = (directionChanger.GetDirection() == Direction.right ? 1 : -1) * 90f;
 
+            // todo angle
             if (Vector2.SignedAngle(direction, Vector2.up) % 180f == roundedAngle % 180f) {
                 direction = Quaternion.AngleAxis(orthogonalAngle, Vector3.back) * direction;
             }
@@ -250,11 +253,11 @@ namespace GamePlay {
             direction = dir;
         }
 
-        public void Dash(Vector2 direction) {
-            dash = direction.normalized;
+        public void Dash(Vector2 dir) {
+            dash = dir.normalized;
             // generate a small offset so that
             // the collision is not triggered twice
-            rig.position += direction * .01f;
+            rig.position += dir * .01f;
             //Handheld.Vibrate(); <-- this is fucking annoying xD
         }
 
@@ -265,7 +268,7 @@ namespace GamePlay {
             combo++;
             comboTimer = comboTime;
 
-            if (Level.own.State == LevelState.win) {
+            if (Level.own.state == LevelState.win) {
                 ComboEnds();
             }
         }
