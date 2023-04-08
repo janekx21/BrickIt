@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using GamePlay;
+using Model;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using Tile = UnityEngine.Tilemaps.Tile;
 
 namespace MapEditor {
     public class Editor : MonoBehaviour {
@@ -59,7 +61,7 @@ namespace MapEditor {
         }
 
         private void Update() {
-            cursor.position = (Vector2) targetPosition + Vector2.one * .5f;
+            cursor.position = targetPosition + Vector2.one * .5f;
             cursor.rotation = currentRotation;
             cursor.GetComponent<SpriteRenderer>().color = ColorConversion.Convert(currentColor);
 
@@ -82,7 +84,7 @@ namespace MapEditor {
         }
 
         private static Vector2Int targetPosition =>
-            Vector2Int.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition) * Vector2.one);
+            Vector2Int.FloorToInt(Camera.main!.ScreenToWorldPoint(Input.mousePosition) * Vector2.one);
 
         private void SetBlock(Vector2Int position, Quaternion rotation, TileBase block, ColorType color) {
             if (tilemap.GetTile((Vector3Int) position) == block) return;
@@ -110,7 +112,7 @@ namespace MapEditor {
             Debug.Log(JsonUtility.ToJson(level));
         }
 
-        private IEnumerable<Model.Tile> GetTiles(Tilemap tilemap) {
+        private static IEnumerable<Model.Tile> GetTiles(Tilemap tilemap) {
             foreach (var position in tilemap.cellBounds.allPositionsWithin) {
                 if (tilemap.HasTile(position)) {
                     var go = tilemap.GetInstantiatedObject(position);

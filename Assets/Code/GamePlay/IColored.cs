@@ -1,6 +1,8 @@
+using Model;
+
 namespace GamePlay {
     public interface IColored {
         ColorType GetColorType();
-        void SetColorType(ColorType colorType);
+        void SetColorType(ColorType type);
     }
 }

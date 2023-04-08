@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Linq;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace LevelContext {
     public class ChapterObject : ScriptableObject {
         public Sprite image;
         public string chapterName = "no name";
-        public LevelObject[] levels = new LevelObject[0];
+        public LevelObject[] levels = Array.Empty<LevelObject>();
 
 #if UNITY_EDITOR
         private string directory {
@@ -67,7 +68,10 @@ namespace LevelContext {
             AssetDatabase.RenameAsset(levelObjectPath, newName);
 
             var oldPath = Path.GetDirectoryName(levelObjectPath);
-            var parentPath = Directory.GetParent(oldPath).ToString();
+            
+            if (oldPath == null) throw new Exception("Path was null");
+            
+            var parentPath = Directory.GetParent(oldPath)?.ToString();
             var newPath = parentPath + "\\" + newName;
             AssetDatabase.MoveAsset(oldPath, newPath);
         }

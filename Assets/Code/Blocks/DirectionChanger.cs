@@ -5,13 +5,13 @@ using UnityEngine.Events;
 namespace Blocks {
     
     public enum Direction {
-        Left, Right
+        left, right
     }
     
     public class DirectionChanger : Block, IDirectionChanger, IInteractable {
         [SerializeField]
         private UnityEvent onInteract = new();
-        [SerializeField] private Direction direction = Direction.Right;
+        [SerializeField] private Direction direction = Direction.right;
 
         public override void Hit(IActor actor) {
             base.Hit(actor);
@@ -28,7 +28,7 @@ namespace Blocks {
             return direction;
         }
 
-        protected override bool shouldBreak() => false;
+        protected override bool ShouldBreak() => false;
 
         public void Interact(IActor actor) {
             

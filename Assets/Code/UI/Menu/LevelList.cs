@@ -1,6 +1,7 @@
 using System.Linq;
 using LevelContext;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Util;
 
@@ -8,15 +9,16 @@ namespace UI.Menu {
     public class LevelList : MonoBehaviour {
         [SerializeField] private LevelPanel prefab;
 
+        [FormerlySerializedAs("BackButton")]
         [Header("Navigation")]
-        [SerializeField] private GameObject BackButton;
+        [SerializeField] private GameObject backButton;
         [SerializeField] private GameObject horizontalScrollbar;
         private Selectable lastPanelButton;
         private Selectable beforeLastPanelButton;
         
         private Selectable firstPanel;
-        
-        public void MarkFirstLevel() {
+
+        private void MarkFirstLevel() {
             firstPanel.Select();
             firstPanel.OnSelect(null);
         }
@@ -50,7 +52,7 @@ namespace UI.Menu {
                 else if (o == list[1]) {
                     var navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
-                        selectOnUp = BackButton.GetComponent<Button>(),
+                        selectOnUp = backButton.GetComponent<Button>(),
                         selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
                         selectOnRight = panel.GetComponent<Button>()
                     };
@@ -62,7 +64,7 @@ namespace UI.Menu {
                 else {
                     var navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
-                        selectOnUp = BackButton.GetComponent<Button>(),
+                        selectOnUp = backButton.GetComponent<Button>(),
                         selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
                         selectOnLeft = beforeLastPanelButton,
                         selectOnRight = panel.GetComponent<Button>()
@@ -76,7 +78,7 @@ namespace UI.Menu {
                 if (o == list.Last()) {
                     var navigation = new Navigation {
                         mode = Navigation.Mode.Explicit,
-                        selectOnUp = BackButton.GetComponent<Button>(),
+                        selectOnUp = backButton.GetComponent<Button>(),
                         selectOnDown = horizontalScrollbar.GetComponent<Scrollbar>(),
                         selectOnLeft = beforeLastPanelButton
                     };

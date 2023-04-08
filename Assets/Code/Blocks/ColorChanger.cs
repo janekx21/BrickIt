@@ -8,12 +8,7 @@ namespace Blocks {
         [SerializeField] private UnityEvent onInteract = new();
         [SerializeField] private GameObject particleEffect;
 
-        public override void Hit(IActor actor) {
-            base.Hit(actor);
-
-        }
-
-        protected override bool shouldBreak() => false;
+        protected override bool ShouldBreak() => false;
 
         public void Interact(IActor actor) {
             if (actor.GetColorType() == GetColorType()) return; // has the color already

@@ -53,7 +53,8 @@ namespace LevelContext {
             AssetDatabase.RenameAsset(overviewPath, newName);
 
             var oldPath = Path.GetDirectoryName(levelObjectPath);
-            var parentPath = Directory.GetParent(oldPath).ToString();
+            if (oldPath == null) throw new Exception("Path was null");
+            var parentPath = Directory.GetParent(oldPath)?.ToString();
             var newPath = parentPath + "\\" + newName;
             AssetDatabase.MoveAsset(oldPath, newPath);
         }

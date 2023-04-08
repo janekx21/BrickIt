@@ -17,11 +17,9 @@ namespace UI.Intro {
 
         private void Update() {
             if (Input.GetAxisRaw("Cancel") != 0) {
-                if (!cancelIsDown) {
-                    Back();
-
-                    cancelIsDown = true;
-                }
+                if (cancelIsDown) return;
+                Back();
+                cancelIsDown = true;
             }
             else {
                 cancelIsDown = false;

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,7 +10,7 @@ namespace Graphics {
         [Range(0, 10)] [SerializeField] private float highest = 1;
 
         [SerializeField]
-        private SpriteRenderer[] renderers = new SpriteRenderer[0];
+        private SpriteRenderer[] renderers = Array.Empty<SpriteRenderer>();
 
         private void Start() {
             var offset = Random.Range(lowest, highest);

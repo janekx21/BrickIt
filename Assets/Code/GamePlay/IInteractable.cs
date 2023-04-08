@@ -1,6 +1,6 @@
-using GamePlay;
+using UnityEngine;
 
-namespace Blocks {
+namespace GamePlay {
     public interface IInteractable {
         void Interact(IActor actor);
     }

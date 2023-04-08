@@ -8,12 +8,13 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 namespace LevelContext {
-    public class Overview {
+    public static class Overview {
         public struct OverviewObject {
-            public Sprite sprite;
+            public readonly Sprite sprite;
             public Vector2Int position;
 
             public OverviewObject(Sprite sprite, Vector2Int position) {
@@ -57,8 +58,7 @@ namespace LevelContext {
                 Debug.LogWarning($"Scene not valid?\n{level.scene.ScenePath}");
             }
 
-            byte[] bytes;
-            bytes = overview.EncodeToPNG();
+            var bytes = overview.EncodeToPNG();
 
             // write overview
             var dir = Path.GetDirectoryName(level.scene.ScenePath);
@@ -79,7 +79,7 @@ namespace LevelContext {
 
             EditorUtility.SetDirty(level);
 
-            if (EditorSceneManager.sceneCount > 1) {
+            if (SceneManager.sceneCount > 1) {
                 EditorSceneManager.CloseScene(scene, true);
             }
 
@@ -89,10 +89,10 @@ namespace LevelContext {
         private static List<OverviewObject> Search(Transform transform) {
             var list = new List<OverviewObject>();
 
+            if (Camera.main == null) return list;
             var orthographicSize = Mathf.FloorToInt(Camera.main.orthographicSize);
             var offset = new Vector2Int(Mathf.RoundToInt(orthographicSize * (16f / 9f)), orthographicSize);
 
-            // pnew Vector2Int(9, 5);
             foreach (Transform t in transform) {
                 var block = t.GetComponent<Block>();
                 if (block) {
@@ -124,7 +124,7 @@ namespace LevelContext {
             return list;
         }
 
-        public static Texture2D TextureFromSprite(Sprite sprite) {
+        private static Texture2D TextureFromSprite(Sprite sprite) {
             if (Math.Abs(sprite.rect.width - sprite.texture.width) > .00001f) {
                 var newText = new Texture2D((int) sprite.rect.width, (int) sprite.rect.height);
                 var newColors = sprite.texture.GetPixels(

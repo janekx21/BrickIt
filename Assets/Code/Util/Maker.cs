@@ -1,4 +1,5 @@
 using GamePlay;
+using Model;
 using UnityEngine;
 
 namespace Util {

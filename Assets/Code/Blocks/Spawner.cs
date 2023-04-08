@@ -26,10 +26,10 @@ namespace Blocks {
 
         private IEnumerator ReadyRoutine() {
             yield return new WaitForSeconds(waitingTimer);
-            Level.own.Ready = true;
+            Level.own.ready = true;
             ready = true;
         }
 
-        protected override bool shouldBreak() => false;
+        protected override bool ShouldBreak() => false;
     }
 }

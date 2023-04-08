@@ -10,8 +10,7 @@ using Util;
 
 namespace LevelContext {
     public class Level : MonoBehaviour {
-        public static Level own => instance;
-        private static Level instance;
+        public static Level own { get; private set; }
 
         [SerializeField] private Camera levelCamera;
         [SerializeField] private int levelWidth = 17;
@@ -19,39 +18,34 @@ namespace LevelContext {
         
         public int LevelWidth => levelWidth;
         public int LevelHeight => levelHeight;
-     
-        private LevelState state = LevelState.begin;
-        public LevelState State => state;
+
+        public LevelState state { get; private set; } = LevelState.begin;
+
         private bool cancelIsDown = true;
-        private bool ready;
 
         public class OnLevelStateChanged : UnityEvent<LevelState> {
         }
 
         public readonly OnLevelStateChanged onStateChanged = new();
 
-        private float timeSinceStart;
         private int comboScore;
-        private int maxCombo;
         private LevelObject ownLevelObject;
 
-        private float timeScoreBase = 1000000f;
-        private float factor = 1.02f;
+        private const float timeScoreBase = 1000000f;
+        private const float factor = 1.02f;
 
-        public float TimeSinceStart => timeSinceStart;
+        public float timeSinceStart { get; private set; }
+
         // private int TimeScore => Mathf.FloorToInt(Mathf.Max(1 - Mathf.Log10(timeSinceStart * 10 / 999), 0) * 200);
-        public int TimeScore => Mathf.FloorToInt(timeScoreBase * Mathf.Pow(factor, -timeSinceStart));
-        public int Score => TimeScore + comboScore;
-        public int MaxCombo => maxCombo;
+        public int timeScore => Mathf.FloorToInt(timeScoreBase * Mathf.Pow(factor, -timeSinceStart));
+        public int score => timeScore + comboScore;
+        public int maxCombo { get; private set; }
 
-        public bool Ready {
-            get => ready;
-            set => ready = value;
-        }
+        public bool ready { get; set; }
 
         private void Awake() {
-            Assert.IsNull(instance);
-            instance = this;
+            Assert.IsNull(own);
+            own = this;
 
             var pixelPerfectCamera = levelCamera.GetComponent<PixelPerfectCamera>();
             pixelPerfectCamera.refResolutionX = levelWidth * 16;

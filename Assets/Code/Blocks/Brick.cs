@@ -1,5 +1,5 @@
 namespace Blocks {
     public abstract class Brick : Block {
-        protected override bool shouldBreak() => true;
+        protected override bool ShouldBreak() => true;
     }
 }
