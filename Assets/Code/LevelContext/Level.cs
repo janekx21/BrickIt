@@ -142,7 +142,7 @@ namespace LevelContext {
             PauseAll();
 
             using var data = SaveData.Load();
-            data.done.Add(ownLevelObject.id);
+            data.done.Add(ownLevelObject);
         }
 
         public void Lose() {

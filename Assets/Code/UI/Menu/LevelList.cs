@@ -1,6 +1,7 @@
 using System.Linq;
 using LevelContext;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Util;
@@ -23,24 +24,23 @@ namespace UI.Menu {
             firstPanel.OnSelect(null);
         }
         
-        public void Init(LevelObject[] levelObjects, Menu.OnLevelAction loadAction) {
+        public void Init(LevelObject[] levelObjects, UnityAction<LevelObject> onLoad) {
             foreach (Transform t in transform) {
                 Destroy(t.gameObject);
             }
 
             var list = levelObjects.ToList();
             list.Sort(CompareOnDifficulty);
+            var saveData = SaveData.Load();
             foreach (var (o,i) in list.Select((v,i) => (v, i))) {
-                var panel = Instantiate(prefab, transform);
-
-                using var saveData = SaveData.Load();
-                var done = saveData.done.Contains(o.id);
-                var doneCount = list.Count(x => saveData.done.Contains(x.id));
+                var done = saveData.done.Contains(o);
+                var doneCount = list.Count(x => saveData.done.Contains(x));
 
                 // add one for buffer
                 var locked = !(doneCount + 1 >= i);
                 
-                panel.Init(o, locked, done, loadAction);
+                var panel = Instantiate(prefab, transform);
+                panel.Init(o, locked, done, onLoad);
 
                 // Navigation
                 if (o == list.First()) {

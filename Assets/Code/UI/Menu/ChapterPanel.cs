@@ -1,5 +1,6 @@
 using LevelContext;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace UI.Menu {
@@ -8,10 +9,10 @@ namespace UI.Menu {
         [SerializeField] private Image image;
         [SerializeField] private Button button;
 
-        public void Init(ChapterObject chapterObject, Menu.OnChapterAction loadAction) {
+        public void Init(ChapterObject chapterObject, UnityAction<ChapterObject> onLoad) {
             chapterName.text = chapterObject.chapterName;
             image.sprite = chapterObject.image;
-            button.onClick.AddListener(() => loadAction.Invoke(chapterObject));
+            button.onClick.AddListener(() => onLoad.Invoke(chapterObject));
         }
     }
 }

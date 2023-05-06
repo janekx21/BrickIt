@@ -1,6 +1,7 @@
 using System.Linq;
 using LevelContext;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace UI.Menu {
@@ -19,7 +20,7 @@ namespace UI.Menu {
             firstPanel.OnSelect(null);
         }
 
-        public void Init(ChapterObject[] chapterObjects, Menu.OnChapterAction loadAction) {
+        public void Init(ChapterObject[] chapterObjects, UnityAction<ChapterObject> onLoad) {
             foreach (Transform t in transform) {
                 Destroy(t.gameObject);
             }
@@ -28,7 +29,7 @@ namespace UI.Menu {
 //			list.Sort(Comparison);
             foreach (var o in list) {
                 var panel = Instantiate(prefab, transform);
-                panel.Init(o, loadAction);
+                panel.Init(o, onLoad);
 
                 // Navigation
                 if (o == list.First()) {

@@ -121,7 +121,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2967892773825255227}
   m_HandleRect: {fileID: 9213299920125937482}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -535,6 +535,7 @@ GameObject:
   - component: {fileID: 3583126410647785594}
   - component: {fileID: 3724160775689263611}
   - component: {fileID: 482956742245361333}
+  - component: {fileID: 7920275770161436229}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -633,6 +634,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7920275770161436229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6880473416167417021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed73c39e030d6638918e8ddea487060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7170750086725843900
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +850,7 @@ GameObject:
   - component: {fileID: 9173855061244435574}
   - component: {fileID: 9173855061244435572}
   - component: {fileID: 7472203402069221059}
+  - component: {fileID: 8441171637900000291}
   m_Layer: 5
   m_Name: LevelList
   m_TagString: Untagged
@@ -900,6 +914,23 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &8441171637900000291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9173855061244435575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92391b483b34924ab3e2ced787ba8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  backButton: {fileID: 2533940805628293222}
+  chapterView: {fileID: 0}
+  levelList: {fileID: 7013153947635156743}
+  scroll: {fileID: 7920275770161436229}
 --- !u!1001 &2482679284162827839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1063,7 +1094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4419115106595778424, guid: 1213050b002713340a8cc6150322c3b5, type: 3}
-  BackButton: {fileID: 3280647153520473563}
+  backButton: {fileID: 3280647153520473563}
   horizontalScrollbar: {fileID: 847290258973721634}
 --- !u!114 &9143151177188949944
 MonoBehaviour:
@@ -1227,6 +1258,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4733213477231269228}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2533940805628293222 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7099253185782572298, guid: 8f52d2f43e5f77448b40e218114ba31d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4733213477231269228}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3280647153520473563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3280647153520473563 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7793747024466010295, guid: 8f52d2f43e5f77448b40e218114ba31d,
