@@ -1,45 +1,36 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Linq;
-using LevelContext;
+using UI.Views;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using Util;
 
 namespace UI.Menu {
     public class Menu : MonoBehaviour {
-        [Serializable]
-        public struct Views {
-            public GameObject Main;
-            public GameObject Chaper;
-            public GameObject Level;
-            public GameObject Online;
-        }
-
-        [SerializeField] private Views views;
         [SerializeField] private AnimationCurve cameraCurve;
-
-        private GameObject currentView;
+        [SerializeField] private View defaultView;
 
         private void Start() {
-            currentView = views.Main;
+            var data = SaveData.Load();
+            var initialView = Id.FindById(data.lastMenuView);
+            print(initialView.name);
+            ChangeState(initialView == null ? defaultView : initialView.GetComponent<View>());
             // This is already done i think: StartCoroutine(ChangeStateRoutine(views.Main));
         }
 
         private void Update() {
             if (Input.GetButtonDown("Cancel")) {
-                Back();
+                Application.Quit();
             }
         }
 
-        public void ChangeState(GameObject next) {
+        public void ChangeState(View next) {
+            using var saveData = SaveData.Load();
+            saveData.lastMenuView = next.GetComponent<Id>().id;
             StartCoroutine(ChangeStateRoutine(next));
         }
 
-        public IEnumerator ChangeStateRoutine(GameObject nextState) {
+        public IEnumerator ChangeStateRoutine(View nextState) {
             var trans = Camera.main.transform;
             var start = trans.position;
             var target = nextState.transform.position;
@@ -51,12 +42,6 @@ namespace UI.Menu {
             }
 
             trans.position = target;
-        }
-
-        private void Back() {
-            if (currentView == views.Main) {
-                SceneManager.LoadScene("Scenes/StartScreen");
-            }
         }
     }
 }

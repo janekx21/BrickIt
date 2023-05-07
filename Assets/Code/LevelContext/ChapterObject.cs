@@ -11,9 +11,18 @@ using UnityEditor;
 namespace LevelContext {
     [CreateAssetMenu(fileName = "new ChapterObject", menuName = "ChapterObject", order = 0)]
     public class ChapterObject : ScriptableObject {
+        public string id;
         public Sprite image;
         public string chapterName = "no name";
         public LevelObject[] levels = Array.Empty<LevelObject>();
+
+        private void OnValidate() {
+#if UNITY_EDITOR
+            if (string.IsNullOrEmpty(id) || !GUID.TryParse(id, out _)) {
+                id = GUID.Generate().ToString();
+            }
+#endif
+        }
 
 #if UNITY_EDITOR
         private string directory {
@@ -27,7 +36,7 @@ namespace LevelContext {
         private void FindAllLevelObjects() {
             var levelList = levels.ToList();
 
-            var allLevelPaths = AssetDatabase.FindAssets("t:LevelObject", new[] {directory});
+            var allLevelPaths = AssetDatabase.FindAssets("t:LevelObject", new[] { directory });
             foreach (var guid in allLevelPaths) {
                 var levelPath = AssetDatabase.GUIDToAssetPath(guid);
                 var lo = AssetDatabase.LoadAssetAtPath<LevelObject>(levelPath);
@@ -54,23 +63,23 @@ namespace LevelContext {
             Assert.IsTrue(worked);
 
             var obj = CreateInstance<LevelObject>();
-            obj.scene = new SceneReference {ScenePath = scenePath};
+            obj.scene = new SceneReference { ScenePath = scenePath };
             AssetDatabase.CreateAsset(obj, Path.Combine(path, $"{levelName}.asset"));
 
             FindAllLevelObjects();
         }
-        
+
         [ContextMenu("Rename Chapter")]
         public void RenameChapter() {
             var newName = chapterName.Replace('?', '-');
-            
+
             var levelObjectPath = AssetDatabase.GetAssetPath(this);
             AssetDatabase.RenameAsset(levelObjectPath, newName);
 
             var oldPath = Path.GetDirectoryName(levelObjectPath);
-            
+
             if (oldPath == null) throw new Exception("Path was null");
-            
+
             var parentPath = Directory.GetParent(oldPath)?.ToString();
             var newPath = parentPath + "\\" + newName;
             AssetDatabase.MoveAsset(oldPath, newPath);

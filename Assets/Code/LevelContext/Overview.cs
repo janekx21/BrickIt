@@ -45,7 +45,6 @@ namespace LevelContext {
                 Assert.IsNotNull(grid, "grid != null");
                 foreach (var t in Search(grid.transform)) {
                     Assert.IsNotNull(t.sprite);
-                    // Debug.Log($"found {t.sprite.name} at {t.position}");
                     var tex = TextureFromSprite(t.sprite);
                     var pos = t.position * 16 + Vector2Int.RoundToInt(grid.transform.position * 2) * 8 + edgeOffset;
                     // well then dont draw if you cant

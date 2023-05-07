@@ -12,12 +12,11 @@ public class SaveScrollPosition : MonoBehaviour {
         scrollRect = GetComponent<ScrollRect>();
     }
 
-    public void Load(int key) {
+    public void Load(string key) {
         var data = SaveData.Load();
         var dictionary = data.scrollPositions.ToDictionary(x => x.key, x => x.value);
         var pos = dictionary.TryGetValue(key, out var value) ? value : 0;
         StartCoroutine(ScrollToRoutine(pos));
-        Debug.Log($"Loading Scroll Data {key} {pos}");
     }
 
     public IEnumerator ScrollToRoutine(float position) {
@@ -26,11 +25,10 @@ public class SaveScrollPosition : MonoBehaviour {
         scrollRect.horizontalNormalizedPosition = position;
     }
 
-    public void Save(int key) {
+    public void Save(string key) {
         using var data = SaveData.Load();
         var dictionary = data.scrollPositions.ToDictionary(x => x.key, x => x.value);
         dictionary[key] = scrollRect.horizontalNormalizedPosition;
-        data.scrollPositions = dictionary.Select(x => new SaveData.KeyValuePair<int, float> {key = x.Key, value = x.Value}).ToList();
-        Debug.Log($"Saving Scroll Data {key} {JsonUtility.ToJson(data.scrollPositions)}");
+        data.scrollPositions = dictionary.Select(x => new SaveData.KeyValuePair<string, float> {key = x.Key, value = x.Value}).ToList();
     }
 }

@@ -4,21 +4,12 @@ using Util;
 
 namespace UI.Menu {
     [RequireComponent(typeof(SoundParticle))]
-    public class ButtonSoundEvent : MonoBehaviour, ISelectHandler, IPointerEnterHandler, ISubmitHandler, IPointerClickHandler {
-        [SerializeField] private AudioClip hover;
+    public class ButtonSoundEvent : MonoBehaviour, ISubmitHandler, IPointerClickHandler {
         [SerializeField] private AudioClip click;
         private SoundParticle source;
 
         private void Awake() {
             source = GetComponent<SoundParticle>();
-        }
-
-        public void OnSelect(BaseEventData eventData) {
-            source.OneShot(hover);
-        }
-        
-        public void OnPointerEnter(PointerEventData ped) {
-            source.OneShot(hover);
         }
 
         public void OnSubmit(BaseEventData eventData) {

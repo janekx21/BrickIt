@@ -12,9 +12,10 @@ namespace Util {
             public V value;
         }
         
-        public ChapterObject selectedChapter;
-        public List<KeyValuePair<int, float>> scrollPositions = new();
-        public List<LevelObject> done = new();
+        public List<KeyValuePair<string, float>> scrollPositions = new();
+        public List<string> done = new(); // id's
+        public string lastMenuView; // id
+        public string lastChapterPlayed; // id
 
         private const string saveDataKey = "save_data";
         private static SaveData cache;

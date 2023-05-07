@@ -28,7 +28,6 @@ namespace UI {
                 if (playerName == "") {
                     playerName = lastPlayerName;
                 }
-                Debug.Log(playerName);
             });
             
             // initialize lastPlayerName save

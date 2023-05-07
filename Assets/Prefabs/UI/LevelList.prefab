@@ -121,7 +121,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2967892773825255227}
   m_HandleRect: {fileID: 9213299920125937482}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5713896313639355511}
   m_HandleRect: {fileID: 6858168712989621751}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -830,7 +830,7 @@ MonoBehaviour:
     m_Right: 10
     m_Top: 10
     m_Bottom: 10
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -851,6 +851,7 @@ GameObject:
   - component: {fileID: 9173855061244435572}
   - component: {fileID: 7472203402069221059}
   - component: {fileID: 8441171637900000291}
+  - component: {fileID: 6934350153057282255}
   m_Layer: 5
   m_Name: LevelList
   m_TagString: Untagged
@@ -931,6 +932,19 @@ MonoBehaviour:
   chapterView: {fileID: 0}
   levelList: {fileID: 7013153947635156743}
   scroll: {fileID: 7920275770161436229}
+--- !u!114 &6934350153057282255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9173855061244435575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ad9f5215d640138f996691a102b2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 8d57e678bc2b1a4a19ad695176947d99
 --- !u!1001 &2482679284162827839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1198,7 +1212,7 @@ PrefabInstance:
     - target: {fileID: 6419370553499015708, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6419370553499015708, guid: 8f52d2f43e5f77448b40e218114ba31d,
         type: 3}

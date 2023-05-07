@@ -10,12 +10,12 @@ using Util;
 
 namespace LevelContext {
     public class Level : MonoBehaviour {
-        public static Level? own { get; private set; }
+        public static Level own { get; private set; }
 
         [SerializeField] private Camera levelCamera;
         [SerializeField] private int levelWidth = 17;
         [SerializeField] private int levelHeight = 10;
-        
+
         public int LevelWidth => levelWidth;
         public int LevelHeight => levelHeight;
 
@@ -23,8 +23,7 @@ namespace LevelContext {
 
         private bool cancelIsDown = true;
 
-        public class OnLevelStateChanged : UnityEvent<LevelState> {
-        }
+        public class OnLevelStateChanged : UnityEvent<LevelState> { }
 
         public readonly OnLevelStateChanged onStateChanged = new();
 
@@ -55,7 +54,7 @@ namespace LevelContext {
         private void Start() {
             Begin();
         }
-        
+
         private void OnDrawGizmos() {
             Gizmos.DrawWireCube(transform.position, new Vector3(levelWidth, levelHeight, 0));
         }
@@ -66,7 +65,7 @@ namespace LevelContext {
                 PlayerPrefs.DeleteAll();
             }
 #endif
-            
+
             switch (state) {
                 case LevelState.play:
                     if (Input.GetAxisRaw("Cancel") != 0) {
@@ -137,16 +136,14 @@ namespace LevelContext {
         }
 
         public void Win() {
-            Debug.Log("you won :>");
             ChangeState(LevelState.win);
             PauseAll();
 
             using var data = SaveData.Load();
-            data.done.Add(ownLevelObject);
+            data.done.Add(ownLevelObject.id);
         }
 
         public void Lose() {
-            Debug.Log("you lost :(");
             ChangeState(LevelState.lost);
             PauseAll();
         }
@@ -170,19 +167,43 @@ namespace LevelContext {
         }
 
         public void ToMenu() {
-            SceneManager.LoadScene("Menu");
+            var menu = FindMenuScene();
+            if (menu == null) {
+                SceneManager.LoadScene("Menu");
+            }
+            else {
+                for (var i = 0; i < SceneManager.sceneCount; i++) {
+                    var scene = SceneManager.GetSceneAt(i);
+                    if (scene == menu) continue;
+                    SceneManager.UnloadSceneAsync(scene);
+                }
+
+                SceneManager.SetActiveScene(menu.Value);
+                foreach (var rootGameObject in menu.Value.GetRootGameObjects()) {
+                    rootGameObject.SetActive(true);
+                }
+            }
         }
 
-        public void Retry() {
+        private static Scene? FindMenuScene() {
+            for (var i = 0; i < SceneManager.sceneCount; i++) {
+                var scene = SceneManager.GetSceneAt(i);
+                if (scene.name == "Menu") return scene;
+            }
+
+            return null;
+        }
+
+        public static void Retry() {
             var buildIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(buildIndex);
-            Debug.Log(buildIndex);
         }
 
         public void ApplyCombo(int combo) {
             if (combo > maxCombo) {
                 maxCombo = combo;
             }
+
             comboScore += Mathf.FloorToInt(Mathf.Pow((combo - 1) * 100, 2));
         }
     }

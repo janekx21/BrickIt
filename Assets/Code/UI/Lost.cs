@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using LevelContext;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI {
@@ -6,7 +7,7 @@ namespace UI {
         [SerializeField] private Button retry;
 
         private void Awake() {
-            retry.onClick.AddListener(() => { LevelContext.Level.own.Retry(); });
+            retry.onClick.AddListener(() => { Level.Retry(); });
         }
     }
 }
