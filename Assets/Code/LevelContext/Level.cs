@@ -110,6 +110,8 @@ namespace LevelContext {
         }
 
         public void Init(LevelObject levelObject) {
+            Debug.Log("init level object");
+            Debug.Log(levelObject);
             ownLevelObject = levelObject;
         }
 
@@ -140,6 +142,8 @@ namespace LevelContext {
             PauseAll();
 
             using var data = SaveData.Load();
+            Debug.Log(data.done);
+            Debug.Log(ownLevelObject);
             data.done.Add(ownLevelObject.id);
         }
 

@@ -17,9 +17,10 @@ namespace UI.Views {
         private void Awake() {
             backButton.onClick.AddListener(() => menu.ChangeState(mainView));
             chapterList.Render(chapterContainerObject.chapters, LoadChapter);
-            
+
+            var data = SaveData.Load();
             foreach (var chapter in chapterContainerObject.chapters) {
-                if (chapter.id == SaveData.Load().lastChapterPlayed) {
+                if (chapter.id == data.lastChapterPlayed) {
                     LoadChapter(chapter);
                 }
             }
@@ -27,6 +28,7 @@ namespace UI.Views {
 
 
         private void LoadChapter(ChapterObject chapter) {
+            Debug.Log($"load chapter {chapter.name} {chapter.id}");
             levelView.Init(chapter);
             menu.ChangeState(levelView);
             using var data = SaveData.Load();
