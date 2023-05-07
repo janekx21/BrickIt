@@ -1,7 +1,22 @@
-# BrickIt
+<p align="center">
+    <img src="img/Logo.png" alt="BrickIt Logo"/>
+</p>
 
-This is a Puzzle Game, inspired by the Game HitBlock.
+This little open source puzzle game was inspired by the game HitBlock.
+It started as a side project between Maico and Janek.
+Currently development progresses slow due to low motivation.
 
-It started as a little sideprojekt between Maico and Janek, and is now developed solely by Maico.
+## Screenshots
+![Screenshot](img/Screenshot_20230507_235150.png)
+![Screenshot](img/Screenshot_20230507_235250.png)
+![Screenshot](img/Screenshot_20230507_235934.png)
 
-Currently development progresses slowly due to less motivation on developing alone :D
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+There are no tests planed.
+
+## License
+
+Not decided yet. Maybe [MIT](https://choosealicense.com/licenses/mit/) in the future.
