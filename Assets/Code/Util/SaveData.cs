@@ -16,6 +16,7 @@ namespace Util {
         public List<string> done = new(); // id's
         public string lastMenuView; // id
         public string lastChapterPlayed; // id
+        public int version = 2; // TODO make a migration structure
 
         private const string saveDataKey = "save_data";
         private static SaveData cache;
