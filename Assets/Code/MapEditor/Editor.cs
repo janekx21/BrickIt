@@ -16,6 +16,7 @@ namespace MapEditor {
         public Transform cursor;
         public Button rotateLeft;
         public Button rotateRight;
+        public Toggle deleteToggle;
         public RectTransform panel;
         public RectTransform colorPanel;
 
@@ -30,6 +31,7 @@ namespace MapEditor {
         private TileBase currentTile;
         private Quaternion currentRotation = Quaternion.identity;
         private ColorType currentColor = ColorType.@default;
+        private bool deleteMode;
 
         private void Start() {
             foreach (var placeableTile in placeableTiles) {
@@ -50,6 +52,7 @@ namespace MapEditor {
 
             rotateLeft.onClick.AddListener(() => currentRotation *= Quaternion.AngleAxis(-90f, Vector3.back));
             rotateRight.onClick.AddListener(() => currentRotation *= Quaternion.AngleAxis(+90f, Vector3.back));
+            deleteToggle.onValueChanged.AddListener(value => deleteMode = value );
 
             currentTile = placeableTiles.First();
         }
@@ -79,8 +82,9 @@ namespace MapEditor {
             if (result.Any()) return;
 
             if (Input.GetMouseButton(0)) {
-                SetBlock(targetPosition, currentRotation, currentTile, currentColor);
+                SetBlock(targetPosition, currentRotation, deleteMode ? null : currentTile, currentColor);
             }
+            // impossible on mobile
             else if (Input.GetMouseButton(1)) {
                 SetBlock(targetPosition, Quaternion.identity, null, ColorType.@default);
             }
