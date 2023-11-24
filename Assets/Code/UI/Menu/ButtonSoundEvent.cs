@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using Util;
 
 namespace UI.Menu {
@@ -13,10 +14,12 @@ namespace UI.Menu {
         }
 
         public void OnSubmit(BaseEventData eventData) {
+            if (TryGetComponent<Button>(out var button) && !button.interactable) return;
             source.OneShot(click);
         }
 
         public void OnPointerClick(PointerEventData eventData) {
+            if (TryGetComponent<Button>(out var button) && !button.interactable) return;
             source.OneShot(click);
         }
 
