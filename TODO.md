@@ -1,27 +1,20 @@
-# BrickIt
-small open source game
+# Do (Priority High)
 
-> This Project is made by
-> Janek and Maico
-
-## TODO:
-
-### Priority 1:
-
-- level unlock
+- chapter unlock
 	- unlock chapter if chapter before is 50% completed
 	- show highscore on completed levels
 	- animation
-- level finish @janek
-	- level continues for half a second while being immortal
 - blocks
-	- speedup block sound and animation
 	- claw death block
+		- timed close
 	- one way/color block
 	- gate block
+		- key lock system
 - level, more levels @maico
+- level finish @janek
+	- level continues for half a second while being immortal
 
-### Priority 2:
+# ToDo (Prority Low)
 
 - feedback
 	- tell player on death how many blocks he hit / that he was better than before
@@ -41,8 +34,11 @@ small open source game
 	- scroll automatically with navigation when using controller or keys to navigate
 	- save chapter selection position like with levels
 
+# Ideas
+- Multiple Players
+	- you lose if all players are dead
 
-## Done
+# Done
 
 - score system
     - show
@@ -54,3 +50,5 @@ small open source game
 - level store system overhaul in editor
     - change how levels are stored and created, to allow for a more flexible setup
 	- make levels and chapters reorderable with reorderable list
+- speedup block sound
+- level unlock
