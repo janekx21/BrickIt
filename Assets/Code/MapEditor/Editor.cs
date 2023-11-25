@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Blocks;
 using GamePlay;
 using Model;
 using UnityEngine;
@@ -95,6 +96,10 @@ namespace MapEditor {
 
             if (Input.GetKeyDown(KeyCode.K)) {
                 lastSave = Save();
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Return)) {
+                FindObjectOfType<Spawner>().Spawn();
             }
         }
 
