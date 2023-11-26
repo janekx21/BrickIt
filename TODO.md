@@ -38,7 +38,6 @@
 	
 # Bugs
  - return to correct chapter after exiting game
- - no particle effects on destroying blocks
 
 # Ideas
 - Multiple Players

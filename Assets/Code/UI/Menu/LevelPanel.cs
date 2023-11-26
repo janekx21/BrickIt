@@ -28,10 +28,10 @@ namespace UI.Menu {
             image.color = done ? Color.white : image.color;
             check.SetActive(done);
         }
-        
+
         private static void LoadLevel(LevelObject levelObject) {
             var current = SceneManager.GetActiveScene();
-            var routine = SceneManager.LoadSceneAsync(levelObject.scene, LoadSceneMode.Single);
+            var routine = SceneManager.LoadSceneAsync(levelObject.scene, LoadSceneMode.Additive);
             routine.completed += _ => {
                 SceneManager.SetActiveScene(SceneManager.GetSceneByPath(levelObject.scene));
                 foreach (var rootGameObject in current.GetRootGameObjects()) {
