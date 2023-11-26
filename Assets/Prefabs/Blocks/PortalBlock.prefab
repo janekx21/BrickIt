@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 492284279688118542, guid: 83a5420b01ede9147b57feea3ea83875,
@@ -89,6 +90,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 492284279688118542, guid: 83a5420b01ede9147b57feea3ea83875,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3130859644645839489}
+    - targetCorrespondingSourceObject: {fileID: 492284279688118542, guid: 83a5420b01ede9147b57feea3ea83875,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6201705102628818438}
   m_SourcePrefab: {fileID: 100100000, guid: 83a5420b01ede9147b57feea3ea83875, type: 3}
 --- !u!1 &2273809048258293775 stripped
 GameObject:
@@ -206,37 +218,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorType: 0
+  breakParticle: {fileID: 0}
   onDestroy:
     m_PersistentCalls:
       m_Calls: []
   source: {fileID: 3130859644645839489}
+  teleportToParticle: {fileID: 823083484203336117, guid: fd7aba956c3b5fd4fb25bffd54070e62,
+    type: 3}
+  teleportFromParticle: {fileID: 823083484203336117, guid: 0281da90dbc64174aa173ec315667b0f,
+    type: 3}
   onTeleportFrom:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Spawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTeleportTo:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Spawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

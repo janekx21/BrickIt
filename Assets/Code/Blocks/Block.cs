@@ -17,13 +17,12 @@ namespace Blocks {
     [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
     public abstract class Block : Entity, IColored {
         [SerializeField] private ColorType colorType = ColorType.@default;
+        [SerializeField] private GameObject breakParticle;
 
         protected SpriteRenderer ren;
         protected BoxCollider2D boxCollider;
 
         private static readonly List<Block> AllBlocks = new();
-
-        public UnityEvent onDestroy = new();
 
         private void OnEnable() {
             AllBlocks.Add(this);
@@ -67,8 +66,15 @@ namespace Blocks {
                 Level.own.Win();
             }
 
-            onDestroy.Invoke();
+            ParticleEffect(breakParticle, GetColorType());
             Destroy(gameObject);
+        }
+
+        public void ParticleEffect(GameObject particle, ColorType color) {
+            var particles = Instantiate(particle, transform.position,
+                Quaternion.LookRotation(Vector3.forward, Vector3.up));
+            var particleModule = particles.GetComponent<ParticleSystem>().main;
+            particleModule.startColor = ColorConversion.Convert(color);
         }
 
         private void OnCollisionEnter2D(Collision2D other) {

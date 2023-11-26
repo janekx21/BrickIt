@@ -9,8 +9,8 @@ using Random = UnityEngine.Random;
 namespace Blocks {
     public class Teleporter : Block, IInteractable {
         [SerializeField] private AudioSource source;
-        [FormerlySerializedAs("onTeleport")] public UnityEvent onTeleportFrom = new();
-        public UnityEvent onTeleportTo = new();
+        [SerializeField] private GameObject teleportToParticle;
+        [SerializeField] private GameObject teleportFromParticle;
         
         public override void Enter(IActor actor) {
             base.Enter(actor);
@@ -23,8 +23,9 @@ namespace Blocks {
 
                 Assert.IsNotNull(target, "You need to place at least two teleporter");
                 actor.TeleportTo(this, target, target.transform.up);
-                onTeleportFrom.Invoke();
-                target.onTeleportTo.Invoke();
+                
+                ParticleEffect(teleportFromParticle, GetColorType());
+                target.ParticleEffect(teleportToParticle, target.GetColorType());
                 source.Play();
             }
             else {
