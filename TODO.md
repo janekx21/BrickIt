@@ -1,4 +1,6 @@
-# Do (Priority High)
+
+
+# ToDo (Priority High)
 
 - chapter unlock
 	- unlock chapter if chapter before is 50% completed
@@ -33,6 +35,10 @@
 - navigation
 	- scroll automatically with navigation when using controller or keys to navigate
 	- save chapter selection position like with levels
+	
+# Bugs
+ - return to correct chapter after exiting game
+ - no particle effects on destroying blocks
 
 # Ideas
 - Multiple Players

@@ -31,7 +31,7 @@ namespace UI.Menu {
         
         private static void LoadLevel(LevelObject levelObject) {
             var current = SceneManager.GetActiveScene();
-            var routine = SceneManager.LoadSceneAsync(levelObject.scene, LoadSceneMode.Additive);
+            var routine = SceneManager.LoadSceneAsync(levelObject.scene, LoadSceneMode.Single);
             routine.completed += _ => {
                 SceneManager.SetActiveScene(SceneManager.GetSceneByPath(levelObject.scene));
                 foreach (var rootGameObject in current.GetRootGameObjects()) {

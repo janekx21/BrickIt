@@ -15,8 +15,7 @@ namespace GamePlay {
         void TeleportTo(Blocks.Block from, Blocks.Block to, Vector2 direction);
         Vector2 GetDirection();
         Vector2 GetPosition();
-        void Combo();
-        void ComboEnds();
+        void ComboAction();
         void ChangeSpeed(ISpeedChanger speedChanger);
         /**
          * Returns the current speed normalized to default speed = 1

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Blocks;
 using GamePlay;
 using UnityEngine;
@@ -38,7 +39,12 @@ namespace LevelContext {
         // private int TimeScore => Mathf.FloorToInt(Mathf.Max(1 - Mathf.Log10(timeSinceStart * 10 / 999), 0) * 200);
         public int timeScore => Mathf.FloorToInt(timeScoreBase * Mathf.Pow(factor, -timeSinceStart));
         public int score => timeScore + comboScore;
+        
         public int maxCombo { get; private set; }
+        private int combo;
+        private float comboTimer;
+        [SerializeField] private float comboTime = 1f; 
+
 
         public bool ready { get; set; }
 
@@ -109,9 +115,17 @@ namespace LevelContext {
             }
         }
 
+        public void FixedUpdate() {
+            if (comboTimer <= 0 && combo > 0) {
+                ComboEnds();
+            }
+            
+            comboTimer = Mathf.Clamp01(comboTimer - Time.fixedDeltaTime);
+        }
+
         public void Init(LevelObject levelObject) {
             Debug.Log("init level object");
-            Debug.Log(levelObject);
+                Debug.Log(levelObject);
             ownLevelObject = levelObject;
         }
 
@@ -138,6 +152,7 @@ namespace LevelContext {
         }
 
         public void Win() {
+            ComboEnds();
             ChangeState(LevelState.win);
             PauseAll();
 
@@ -202,8 +217,21 @@ namespace LevelContext {
             var buildIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(buildIndex);
         }
+        
+        /**
+         * Gets called when some positive action takes place that keeps the combo alive
+         */
+        public void Combo() {
+            combo++;
+            comboTimer = comboTime;
+        }
 
-        public void ApplyCombo(int combo) {
+        public void ComboEnds() {
+            ApplyCombo();
+            combo = 0;
+        }
+
+        public void ApplyCombo() {
             if (combo > maxCombo) {
                 maxCombo = combo;
             }

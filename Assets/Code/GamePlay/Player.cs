@@ -36,10 +36,6 @@ namespace GamePlay {
         private bool paused;
         private bool directionChanged;
 
-        private int combo;
-        private float comboTimer;
-        [SerializeField] private float comboTime = 1f; 
-
         // private void OnDrawGizmos() {
         //     Gizmos.color = color;
         //     for (float i = .8f; i < 1f; i += .01f) {
@@ -96,11 +92,6 @@ namespace GamePlay {
             rend.color = PlayerCircleColor(colorType);
         }
 
-        public void ComboEnds() {
-            Level.own.ApplyCombo(combo);
-            combo = 0;
-        }
-
         public override void FixedUpdate() {
             base.FixedUpdate();
 
@@ -110,12 +101,6 @@ namespace GamePlay {
             if (paused) {
                 rig.velocity = Vector2.zero;
             }
-            
-            if (comboTimer <= 0 && combo > 0) {
-                ComboEnds();
-            }
-            
-            comboTimer = Mathf.Clamp01(comboTimer - Time.fixedDeltaTime);
         }
 
         private void OnCollisionEnter2D(Collision2D other) {
@@ -261,16 +246,8 @@ namespace GamePlay {
             //Handheld.Vibrate(); <-- this is fucking annoying xD
         }
 
-        /**
-         * Gets called when some positive action takes place that keeps the combo alive
-         */
-        public void Combo() {
-            combo++;
-            comboTimer = comboTime;
-
-            if (Level.own.state == LevelState.win) {
-                ComboEnds();
-            }
+        public void ComboAction() {
+            Level.own.Combo();
         }
 
         public void play() {

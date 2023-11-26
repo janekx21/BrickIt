@@ -6,8 +6,8 @@ namespace Blocks {
             base.Enter(actor);
 
             if (ColorsMatch(actor)) {
+                actor.ComboAction();
                 Break(actor);
-                actor.Combo();
             }
             else {
                 boxCollider.isTrigger = false;

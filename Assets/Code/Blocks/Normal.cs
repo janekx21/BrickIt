@@ -7,8 +7,8 @@ namespace Blocks {
 
             if (!ColorsMatch(maker)) return;
             
+            maker.ComboAction();
             Break(maker);
-            maker.Combo();
         }
     }
 }
