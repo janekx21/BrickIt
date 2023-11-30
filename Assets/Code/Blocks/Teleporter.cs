@@ -24,8 +24,8 @@ namespace Blocks {
                 Assert.IsNotNull(target, "You need to place at least two teleporter");
                 actor.TeleportTo(this, target, target.transform.up);
                 
-                ParticleEffect(teleportFromParticle, GetColorType());
-                target.ParticleEffect(teleportToParticle, target.GetColorType());
+                ParticleEffect(teleportFromParticle, actor.GetColorType());
+                target.ParticleEffect(teleportToParticle, actor.GetColorType());
                 source.Play();
             }
             else {
