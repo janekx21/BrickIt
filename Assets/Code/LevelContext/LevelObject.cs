@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using Util;
@@ -48,15 +49,18 @@ namespace LevelContext {
 
             var levelObjectPath = AssetDatabase.GetAssetPath(this);
             var overviewPath = AssetDatabase.GetAssetPath(overview);
+            var oldName = levelObjectPath.Split("/").Last().Split(".")[0];
             AssetDatabase.RenameAsset(levelObjectPath, newName);
             AssetDatabase.RenameAsset(scene.ScenePath, newName);
             AssetDatabase.RenameAsset(overviewPath, newName);
 
+            // AssetDatabase.MoveAsset($"./{newName}.scene", $"../{newName}/{newName}.scene")
             var oldPath = Path.GetDirectoryName(levelObjectPath);
             if (oldPath == null) throw new Exception("Path was null");
-            var parentPath = Directory.GetParent(oldPath)?.ToString();
-            var newPath = parentPath + "\\" + newName;
-            AssetDatabase.MoveAsset(oldPath, newPath);
+            var newPath = oldPath + "/../" + newName;
+            Directory.Move(oldPath, newPath);
+            //TODO rename meta file
+            // AssetDatabase.RenameAsset(oldPath + "/../" + oldName + ".meta", newName + ".meta");
         }
 
         [ContextMenu("Generate Overview")]

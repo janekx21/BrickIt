@@ -37,7 +37,7 @@
 	- save chapter selection position like with levels
 	
 # Bugs
- - return to correct chapter after exiting game
+- fix: renaming level files not renaming meta file accordingly
 
 # Ideas
 - Multiple Players
