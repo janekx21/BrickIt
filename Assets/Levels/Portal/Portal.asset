@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff7f2a6952475ea4e8e7509ff4fce1, type: 3}
   m_Name: Portal
   m_EditorClassIdentifier: 
+  id: b6cd2bc045c02a3479fef2ba961dff42
   image: {fileID: -1222424925600608484, guid: 5713416c4704eab42a8b466fbada8b47, type: 3}
   chapterName: Portal
   levels:
