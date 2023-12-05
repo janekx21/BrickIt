@@ -29,33 +29,54 @@ namespace MapEditor {
 
         public string lastSave = "not saved yet";
 
-        private TileBase currentTile;
-        private Quaternion currentRotation = Quaternion.identity;
-        private ColorType currentColor = ColorType.@default;
+        private class EditorTile {
+            public Button Button;
+            public TileBase Tile;
+            public ColorType Color;
+            public Quaternion Rotation;
+        }
+
+        private EditorTile currentBlock;
         private bool deleteMode;
 
         private void Start() {
-            foreach (var placeableTile in placeableTiles) {
-                var button = Instantiate(blockButtonPrefab, panel);
-                button.onClick.AddListener(() => {
-                    currentTile = placeableTile;
-                    cursor.GetComponent<SpriteRenderer>().sprite = GetSprite(placeableTile);
+            var buttons = placeableTiles.Select(placeableTile => {
+                var tile = new EditorTile {
+                    Button = Instantiate(blockButtonPrefab, panel),
+                    Tile = placeableTile,
+                    Rotation = Quaternion.identity,
+                    Color = ColorType.@default
+                };
+                
+                tile.Button.onClick.AddListener(() => {
+                    currentBlock = tile;
+                    cursor.GetComponent<SpriteRenderer>().sprite = GetSprite(currentBlock.Tile);
                 });
 
-                button.GetComponent<Image>().sprite = GetSprite(placeableTile);
-            }
+                tile.Button.GetComponent<Image>().sprite = GetSprite(placeableTile);
+                return tile;
+            }).ToList();
 
             foreach (var color in ColorConversion.allColors) {
                 var button = Instantiate(colorButtonPrefab, colorPanel);
-                button.onClick.AddListener(() => currentColor = color);
+                button.onClick.AddListener(() => {
+                    currentBlock.Button.image.color = ColorConversion.Convert(color);
+                    currentBlock.Color = color;
+                });
                 button.GetComponent<Image>().color = ColorConversion.Convert(color);
             }
 
-            rotateLeft.onClick.AddListener(() => currentRotation *= Quaternion.AngleAxis(-90f, Vector3.back));
-            rotateRight.onClick.AddListener(() => currentRotation *= Quaternion.AngleAxis(+90f, Vector3.back));
+            rotateLeft.onClick.AddListener(() => {
+                currentBlock.Button.transform.rotation *= Quaternion.AngleAxis(-90f, Vector3.back);
+                currentBlock.Rotation *= Quaternion.AngleAxis(-90f, Vector3.back);
+            });
+            rotateRight.onClick.AddListener(() => {
+                currentBlock.Button.transform.rotation *= Quaternion.AngleAxis(+90f, Vector3.back);
+                currentBlock.Rotation *= Quaternion.AngleAxis(+90f, Vector3.back);
+            });
             deleteToggle.onValueChanged.AddListener(value => deleteMode = value );
 
-            currentTile = placeableTiles.First();
+            buttons[2].Button.onClick.Invoke();
         }
 
         private static Sprite GetSprite(TileBase placeableTile) {
@@ -69,21 +90,16 @@ namespace MapEditor {
 
         private void Update() {
             cursor.position = targetPosition + Vector2.one * .5f;
-            cursor.rotation = currentRotation;
-            cursor.GetComponent<SpriteRenderer>().color = ColorConversion.Convert(currentColor);
-
-            foreach (Transform blockButton in panel) {
-                blockButton.rotation = currentRotation;
-                blockButton.GetComponent<Image>().color = ColorConversion.Convert(currentColor);
-            }
-
+            cursor.rotation = currentBlock.Rotation;
+            cursor.GetComponent<SpriteRenderer>().color = ColorConversion.Convert(currentBlock.Color);
+            
             var pointerEvent = new PointerEventData(EventSystem.current) { position = Input.mousePosition };
             var result = new List<RaycastResult>();
             EventSystem.current.RaycastAll(pointerEvent, result);
             if (result.Any()) return;
 
             if (Input.GetMouseButton(0)) {
-                SetBlock(targetPosition, currentRotation, deleteMode ? null : currentTile, currentColor);
+                SetBlock(targetPosition, currentBlock.Rotation, deleteMode ? null : currentBlock.Tile, currentBlock.Color);
             }
             // impossible on mobile
             else if (Input.GetMouseButton(1)) {
