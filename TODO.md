@@ -1,5 +1,3 @@
-
-
 # ToDo (Priority High)
 
 - chapter unlock
