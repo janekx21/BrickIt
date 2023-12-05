@@ -124,46 +124,51 @@ namespace MapEditor {
         private string Save() {
             tilemap.CompressBounds();
             var tiles = GetTiles(tilemap).ToList();
-            var level = new Level { name = "foobar", data = tiles };
+            var level = new LevelData1 { name = "foobar", data = tiles };
             return JsonUtility.ToJson(level);
         }
 
         private void Load(string data) {
-            var level = JsonUtility.FromJson<Level>(data);
+            var level = JsonUtility.FromJson<LevelData1>(data);
             SetTiles(level.data);
         }
 
-        private static IEnumerable<Model.Tile> GetTiles(Tilemap tilemap) {
+        private static IEnumerable<Model.Tile1> GetTiles(Tilemap tilemap) {
+            throw new NotImplementedException("The conversion to TileType is missing");
             foreach (var position in tilemap.cellBounds.AllPositions()) {
                 if (tilemap.HasTile(position)) {
                     var go = tilemap.GetInstantiatedObject(position);
+                    var name = tilemap.GetTile(position).name;
                     if (go) {
-                        yield return new Model.Tile {
-                            type = tilemap.GetTile(position).name,
+                        yield return new Tile1 {
+                            // TODO
+                            //type = tileType,
                             color = go.GetComponent<IColored>().GetColorType(),
                             rotation = go.transform.rotation.eulerAngles.z,
                             position = (Vector2Int)position
                         };
                     }
                     else {
-                        yield return new Model.Tile {
-                            type = tilemap.GetTile(position).name,
+                        yield return new Model.Tile1 {
+                            //type = tileType,
                             rotation = tilemap.GetTransformMatrix(position).rotation.eulerAngles.z,
                             position = (Vector2Int)position
                         };
                     }
                 }
                 else {
-                    yield return new Model.Tile { type = "empty", position = (Vector2Int)position };
+                    //yield return new Model.Tile1 { type = "empty", position = (Vector2Int)position };
                 }
             }
         }
 
 
-        private void SetTiles(IEnumerable<Model.Tile> data) {
+        private void SetTiles(IEnumerable<Model.Tile1> data) {
+            throw new NotImplementedException("The conversion to TileType is missing");
             foreach (var t in data) {
-                var tileBase = placeableTiles.Find(x => x.name == t.type);
-                SetBlock(t.position, Quaternion.Euler(0, 0, t.rotation), tileBase, t.color);
+                // TODO
+                //var tileBase = placeableTiles.Find(x => x.name == t.type);
+                //SetBlock(t.position, Quaternion.Euler(0, 0, t.rotation), tileBase, t.color);
             }
             tilemap.CompressBounds();
         }
