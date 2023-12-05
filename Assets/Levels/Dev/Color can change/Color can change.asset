@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d88ba10a1fab34a9348d06675b2fa6, type: 3}
   m_Name: Color can change
   m_EditorClassIdentifier: 
+  id: 22fac2042d6b9549ea897115db0336ad
   scene:
     sceneAsset: {fileID: 102900000, guid: 7d3a1edd71aa7d34bbec759eb865dc6c, type: 3}
     scenePath: Assets/Levels/Dev/Color can change/Color can change.unity
@@ -19,3 +20,341 @@ MonoBehaviour:
   levelAuthor: Janek
   difficulty: 3
   overview: {fileID: 2800000, guid: 736e8631a6e0f39469e5432d28e91288, type: 3}
+  levelData:
+    id: 22fac2042d6b9549ea897115db0336ad
+    name: Color can change
+    author: Janek
+    size: {x: 17, y: 10}
+    version: 1
+    timerPosition: {x: -3, y: 2}
+    data:
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -7, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -6, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -5, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -4, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -3, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -2, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -1, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 0, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 1, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 2, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 4, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: -4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 4, y: -4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -1, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 0, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 1, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 2, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 4, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: -2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -1, y: -2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 0, y: -2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 1, y: -2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 2, y: -2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: -2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -1, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: 0}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: 0}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: 1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -1, y: 1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: 1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -1, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: 3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -1, y: 3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: 3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: 4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -7, y: 4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -6, y: 4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -5, y: 4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -4, y: 4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -3, y: 4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -2, y: 4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -1, y: 4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 0, y: 4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 1, y: 4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 2, y: 4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: 4}
+      hitCount: -1
+    - type: 10
+      rotation: 0
+      color: 0
+      position: {x: 3, y: -4}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 3
+      position: {x: -1, y: 0}
+      hitCount: -1
+    - type: 4
+      rotation: 0
+      color: 3
+      position: {x: -7, y: 0}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 1
+      position: {x: -7, y: 3}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 1
+      position: {x: -6, y: 3}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 1
+      position: {x: -7, y: 2}
+      hitCount: -1
+    - type: 4
+      rotation: 0
+      color: 1
+      position: {x: -7, y: -4}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 1
+      position: {x: 1, y: -4}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 3
+      position: {x: 0, y: -4}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 1
+      position: {x: 1, y: 2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 1
+      position: {x: 1, y: 1}
+      hitCount: -1
+    - type: 12
+      rotation: 270
+      color: 1
+      position: {x: -3, y: -2}
+      hitCount: -1

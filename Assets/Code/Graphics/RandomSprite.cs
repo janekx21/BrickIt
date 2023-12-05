@@ -14,6 +14,7 @@ namespace Graphics {
 
             var position = transform.position;
             if (possibleSprites.Length > 0) {
+                // funny pseudo number generation
                 var index = Mathf.FloorToInt(position.x * 131 + position.y * 17);
                 index = Math.Abs(index);
                 ren.sprite = possibleSprites[index % possibleSprites.Length];

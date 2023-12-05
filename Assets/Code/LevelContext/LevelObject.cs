@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 using Util;
 
 namespace LevelContext {
@@ -77,8 +78,8 @@ namespace LevelContext {
         }
 
         [ContextMenu("Convert to Data Level")]
-        private void ConvertToDataLevel() {
-            var openScene = EditorSceneManager.OpenScene(this.scene.ScenePath, OpenSceneMode.Additive);
+        public void ConvertToDataLevel() {
+            var openScene = EditorSceneManager.OpenScene(scene.ScenePath, OpenSceneMode.Additive);
             Assert.IsTrue(openScene.IsValid(), "Scene is not valid");
             var grid = openScene.GetRootGameObjects().ToList().Find(o => o.GetComponent<Grid>());
             Assert.IsNotNull(grid, "grid != null, You got a level without a grid");
@@ -98,7 +99,7 @@ namespace LevelContext {
                     foreach (Transform t in tilemap.transform) {
                         var block = t.GetComponent<Block>();
                         Assert.IsNotNull(block, "block != null, There is a non block inside your tilemap");
-                        var position = Vector2Int.FloorToInt(t.position);
+                        var position = Vector2Int.FloorToInt(t.localPosition);
                         var rotation = t.rotation.eulerAngles.z;
                         var color = block.GetColorType();
                         var tile = block switch {
@@ -127,6 +128,10 @@ namespace LevelContext {
 
             var levelScript = openScene.GetRootGameObjects().ToList().Find(o => o.GetComponent<Level>())
                 .GetComponent<Level>();
+            
+            var camera = openScene.GetRootGameObjects().ToList().Find(o => o.GetComponent<Camera>());
+            var text = camera.GetComponentsInChildren<Text>().First(x => x.text == "999");
+            
             levelData = new LevelData1 {
                 id = id,
                 name = levelName,
@@ -134,6 +139,7 @@ namespace LevelContext {
                 data = tileList,
                 size = new Vector2Int(levelScript.LevelWidth, levelScript.LevelHeight),
                 version = "1",
+                timerPosition = Vector2Int.RoundToInt(text.transform.position - grid.transform.position),
             };
 
             EditorUtility.SetDirty(this);

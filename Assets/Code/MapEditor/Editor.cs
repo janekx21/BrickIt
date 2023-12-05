@@ -133,7 +133,7 @@ namespace MapEditor {
             SetTiles(level.data);
         }
 
-        private static IEnumerable<Model.Tile1> GetTiles(Tilemap tilemap) {
+        private static IEnumerable<Tile1> GetTiles(Tilemap tilemap) {
             throw new NotImplementedException("The conversion to TileType is missing");
             foreach (var position in tilemap.cellBounds.AllPositions()) {
                 if (tilemap.HasTile(position)) {

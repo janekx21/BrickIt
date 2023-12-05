@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d88ba10a1fab34a9348d06675b2fa6, type: 3}
   m_Name: A Good Start
   m_EditorClassIdentifier: 
+  id: 650b43aa72f6c1b6f9ad861c8ca03445
   scene:
     sceneAsset: {fileID: 102900000, guid: df79e51e8be941147869b163b4f9b7db, type: 3}
     scenePath: Assets/Levels/Introduction/A Good Start/A Good Start.unity
@@ -19,3 +20,201 @@ MonoBehaviour:
   levelAuthor: Maico
   difficulty: 1
   overview: {fileID: 2800000, guid: b9b97dad5b1ff2b4b957201ff7e9560d, type: 3}
+  levelData:
+    id: 650b43aa72f6c1b6f9ad861c8ca03445
+    name: A Good Start
+    author: Maico
+    size: {x: 17, y: 10}
+    version: 1
+    timerPosition: {x: -2, y: -1}
+    data:
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -7, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -6, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -5, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -4, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -3, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -2, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -1, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 0, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 1, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 2, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: -5}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -7, y: -4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: -4}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -7, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -7, y: -2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: -2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -7, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -6, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -5, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -4, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -3, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -2, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -1, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 0, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 1, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 2, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: -1}
+      hitCount: -1
+    - type: 12
+      rotation: 0
+      color: 0
+      position: {x: -2, y: -4}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -4, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -3, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -5, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -2, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -1, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -6, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 0, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 1, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 2, y: -2}
+      hitCount: -1

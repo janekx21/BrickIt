@@ -15,6 +15,7 @@ namespace Model {
         public string author;
         public Vector2Int size; // default is 17 x 10
         public string version;
+        public Vector2Int timerPosition;
         public List<Tile1> data;
 
         public LevelData1(string name, string author, IEnumerable<Tile1> data) {
@@ -28,6 +29,7 @@ namespace Model {
             // var height = data.Max(t => t.position.y) - data.Min(t => t.position.y);
             size = new Vector2Int(17, 10);
             version = "1";
+            timerPosition = Vector2Int.zero; // TODO load from level
         }
     }
 }

@@ -69,6 +69,15 @@ namespace LevelContext {
                 }
             }
         }
+        
+        [ContextMenu("Convert All Levels to Level Data")]
+        public void ConvertAllLevelData() {
+            foreach (var chapter in chapters) {
+                foreach (var level in chapter.levels) {
+                    level.ConvertToDataLevel();
+                }
+            }
+        }
 #endif
     }
 }

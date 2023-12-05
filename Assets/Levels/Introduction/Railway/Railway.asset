@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d88ba10a1fab34a9348d06675b2fa6, type: 3}
   m_Name: Railway
   m_EditorClassIdentifier: 
+  id: 7a9d35939361124d483ff44f256a4863
   scene:
     sceneAsset: {fileID: 102900000, guid: a6e5e598fbc606e4ca318874916ae6b4, type: 3}
     scenePath: Assets/Levels/Introduction/Railway/Railway.unity
@@ -19,3 +20,366 @@ MonoBehaviour:
   levelAuthor: Janek
   difficulty: 5
   overview: {fileID: 2800000, guid: 2cf6bb675195754428903dcfb5c2ba72, type: 3}
+  levelData:
+    id: 7a9d35939361124d483ff44f256a4863
+    name: Railway
+    author: Janek
+    size: {x: 17, y: 10}
+    version: 1
+    timerPosition: {x: -1, y: 2}
+    data:
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -7, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -6, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -5, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -4, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -3, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -2, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -1, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 0, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 1, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 2, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 4, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 5, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 6, y: -3}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -9, y: -2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: -2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 6, y: -2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 7, y: -2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -9, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -3, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 7, y: -1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -9, y: 0}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 2, y: 0}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 7, y: 0}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -9, y: 1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: 1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 6, y: 1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 7, y: 1}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -8, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -7, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -6, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -5, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -4, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -3, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -2, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: -1, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 0, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 1, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 2, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 3, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 4, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 5, y: 2}
+      hitCount: -1
+    - type: 1
+      rotation: 0
+      color: 0
+      position: {x: 6, y: 2}
+      hitCount: -1
+    - type: 12
+      rotation: 270
+      color: 0
+      position: {x: -7, y: 0}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -7, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -6, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -5, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -4, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -3, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -2, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -1, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 0, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 1, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 2, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 3, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 4, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 5, y: -2}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 5, y: 1}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 4, y: 1}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 3, y: 1}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 2, y: 1}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 1, y: 1}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: 0, y: 1}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -1, y: 1}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -2, y: 1}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -3, y: 1}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -4, y: 1}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -5, y: 1}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -6, y: 1}
+      hitCount: -1
+    - type: 2
+      rotation: 0
+      color: 0
+      position: {x: -7, y: 1}
+      hitCount: -1

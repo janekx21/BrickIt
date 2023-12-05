@@ -1,21 +1,36 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Blocks;
 using GamePlay;
+using Model;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 using UnityEngine.U2D;
+using UnityEngine.UI;
 using Util;
 
 namespace LevelContext {
     public class Level : MonoBehaviour {
+
+        [Serializable]
+        public struct PlaceableTile {
+            public TileType type;
+            public TileBase tile;
+        }
         public static Level own { get; private set; }
 
         [SerializeField] private Camera levelCamera;
+        [SerializeField] private Tilemap levelTilemap;
+        [SerializeField] private Text timer;
+        [SerializeField] private List<PlaceableTile> placeableTiles;
         [SerializeField] private int levelWidth = 17;
         [SerializeField] private int levelHeight = 10;
+        [Tooltip("leave this empty if you dont use this inside the editor")]
+        [SerializeField] private LevelObject forceLevel = null;
 
         public int LevelWidth => levelWidth;
         public int LevelHeight => levelHeight;
@@ -58,7 +73,34 @@ namespace LevelContext {
         }
 
         private void Start() {
+            if (forceLevel) {
+                LoadLevelData(forceLevel.levelData);
+            }
+            
             Begin();
+        }
+        
+        private void LoadLevelData(LevelData1 levelData1) {
+            foreach (var t in levelData1.data) {
+                var tileBase = placeableTiles.Find(x => x.type == t.type).tile;
+                SetBlock(t.position, Quaternion.Euler(0, 0, t.rotation), tileBase, t.color);
+            }
+
+            timer.transform.position = (Vector2)levelData1.timerPosition;
+            levelTilemap.CompressBounds();
+        }
+
+        private void SetBlock(Vector2Int position, Quaternion rotation, TileBase block, ColorType color) {
+            if (levelTilemap.GetTile((Vector3Int)position) == block) return;
+            levelTilemap.SetTile((Vector3Int)position, block);
+            var go = levelTilemap.GetInstantiatedObject((Vector3Int)position);
+            if (go) {
+                go.transform.rotation = rotation;
+                go.GetComponent<IColored>()?.SetColorType(color);
+            }
+            else {
+                levelTilemap.SetTransformMatrix((Vector3Int)position, Matrix4x4.Rotate(rotation));
+            }
         }
 
         private void OnDrawGizmos() {
