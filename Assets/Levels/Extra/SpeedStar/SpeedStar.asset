@@ -26,7 +26,7 @@ MonoBehaviour:
     author: Marvin & Maico
     size: {x: 17, y: 10}
     version: 1
-    timerPosition: {x: -7, y: 3}
+    timerPosition: {x: -8, y: 3}
     data:
     - type: 1
       rotation: 0
@@ -294,17 +294,17 @@ MonoBehaviour:
       position: {x: 7, y: 4}
       hitCount: -1
     - type: 9
-      rotation: 0
+      rotation: 270
       color: 0
       position: {x: -4, y: -4}
       hitCount: -1
     - type: 9
-      rotation: 0
+      rotation: 270
       color: 0
       position: {x: -6, y: -4}
       hitCount: -1
     - type: 9
-      rotation: 0
+      rotation: 270
       color: 0
       position: {x: -5, y: -4}
       hitCount: -1

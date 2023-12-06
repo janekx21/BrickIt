@@ -15,12 +15,12 @@ using Util;
 
 namespace LevelContext {
     public class Level : MonoBehaviour {
-
         [Serializable]
         public struct PlaceableTile {
             public TileType type;
             public TileBase tile;
         }
+
         public static Level own { get; private set; }
 
         [SerializeField] private Camera levelCamera;
@@ -29,8 +29,9 @@ namespace LevelContext {
         [SerializeField] private List<PlaceableTile> placeableTiles;
         [SerializeField] private int levelWidth = 17;
         [SerializeField] private int levelHeight = 10;
-        [Tooltip("leave this empty if you dont use this inside the editor")]
-        [SerializeField] private LevelObject forceLevel = null;
+
+        [Tooltip("leave this empty if you dont use this inside the editor")] [SerializeField]
+        private LevelObject forceLevel;
 
         public int LevelWidth => levelWidth;
         public int LevelHeight => levelHeight;
@@ -54,11 +55,11 @@ namespace LevelContext {
         // private int TimeScore => Mathf.FloorToInt(Mathf.Max(1 - Mathf.Log10(timeSinceStart * 10 / 999), 0) * 200);
         public int timeScore => Mathf.FloorToInt(timeScoreBase * Mathf.Pow(factor, -timeSinceStart));
         public int score => timeScore + comboScore;
-        
+
         public int maxCombo { get; private set; }
         private int combo;
         private float comboTimer;
-        [SerializeField] private float comboTime = 1f; 
+        [SerializeField] private float comboTime = 1f;
 
 
         public bool ready { get; set; }
@@ -76,17 +77,26 @@ namespace LevelContext {
             if (forceLevel) {
                 LoadLevelData(forceLevel.levelData);
             }
-            
+
             Begin();
         }
-        
+
         private void LoadLevelData(LevelData1 levelData1) {
+            levelTilemap.ClearAllTiles();
+
             foreach (var t in levelData1.data) {
                 var tileBase = placeableTiles.Find(x => x.type == t.type).tile;
                 SetBlock(t.position, Quaternion.Euler(0, 0, t.rotation), tileBase, t.color);
             }
+            // TODO center camera
+            //levelTilemap.boun
+            levelTilemap.CompressBounds();
 
-            timer.transform.position = (Vector2)levelData1.timerPosition;
+            levelTilemap.origin =  -(Vector3Int)levelData1.size;
+            levelTilemap.size = (Vector3Int)levelData1.size * 2;
+            levelTilemap.FloodFill(-(Vector3Int)levelData1.size, placeableTiles[0].tile);
+
+            timer.transform.position = levelData1.timerPosition + Vector2.one * .5f;
             levelTilemap.CompressBounds();
         }
 
@@ -161,14 +171,15 @@ namespace LevelContext {
             if (comboTimer <= 0 && combo > 0) {
                 ComboEnds();
             }
-            
+
             comboTimer = Mathf.Clamp01(comboTimer - Time.fixedDeltaTime);
         }
 
         public void Init(LevelObject levelObject) {
             Debug.Log("init level object");
-                Debug.Log(levelObject);
+            Debug.Log(levelObject);
             ownLevelObject = levelObject;
+            LoadLevelData(levelObject.levelData);
         }
 
         public void ChangeState(LevelState newState) {
@@ -177,6 +188,7 @@ namespace LevelContext {
         }
 
         private void Begin() {
+            timeSinceStart = 0;
             ChangeState(LevelState.begin);
 
             // Play Animation and halt until start button is pressed
@@ -255,11 +267,17 @@ namespace LevelContext {
             return null;
         }
 
-        public static void Retry() {
-            var buildIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(buildIndex);
+        public void Retry() {
+            //var buildIndex = SceneManager.GetActiveScene().buildIndex;
+            //SceneManager.LoadScene(buildIndex);
+            var player = FindObjectOfType<Player>();
+            if (player) {
+                Destroy(player.gameObject);
+            }
+            LoadLevelData(ownLevelObject.levelData);
+            Begin();
         }
-        
+
         /**
          * Gets called when some positive action takes place that keeps the combo alive
          */

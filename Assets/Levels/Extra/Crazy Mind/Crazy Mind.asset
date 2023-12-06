@@ -26,7 +26,7 @@ MonoBehaviour:
     author: Nievram
     size: {x: 17, y: 10}
     version: 1
-    timerPosition: {x: -7, y: 3}
+    timerPosition: {x: -8, y: 3}
     data:
     - type: 1
       rotation: 0
@@ -454,12 +454,12 @@ MonoBehaviour:
       position: {x: 1, y: -1}
       hitCount: -1
     - type: 11
-      rotation: 0
+      rotation: 270
       color: 0
       position: {x: 1, y: 3}
       hitCount: -1
     - type: 11
-      rotation: 0
+      rotation: 90
       color: 0
       position: {x: 5, y: -3}
       hitCount: -1
@@ -474,17 +474,17 @@ MonoBehaviour:
       position: {x: -6, y: -4}
       hitCount: -1
     - type: 11
-      rotation: 0
+      rotation: 270
       color: 1
       position: {x: -7, y: 1}
       hitCount: -1
     - type: 11
-      rotation: 0
+      rotation: 270
       color: 1
       position: {x: -3, y: -3}
       hitCount: -1
     - type: 11
-      rotation: 0
+      rotation: 270
       color: 0
       position: {x: -5, y: 3}
       hitCount: -1

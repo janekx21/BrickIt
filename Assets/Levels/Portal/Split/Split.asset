@@ -254,7 +254,7 @@ MonoBehaviour:
       position: {x: -4, y: -2}
       hitCount: -1
     - type: 11
-      rotation: 0
+      rotation: 180
       color: 0
       position: {x: 1, y: 0}
       hitCount: -1

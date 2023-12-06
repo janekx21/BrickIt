@@ -122,4 +122,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Death/Portal/Portal.unity
     guid: d61022c3d509a66428e65123c45673fe
+  - enabled: 1
+    path: Assets/Scenes/LoadableLevel.unity
+    guid: 5beff71b81cf9267a8b3b052be487b80
   m_configObjects: {}

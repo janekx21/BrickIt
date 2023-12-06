@@ -11,7 +11,7 @@ namespace UI {
         private void Awake() {
             unpause.onClick.AddListener(() => { LevelContext.Level.own.Play(); });
             toMainMenu.onClick.AddListener(() => { LevelContext.Level.own.ToMenu(); });
-            retry.onClick.AddListener(() => { Level.Retry(); });
+            retry.onClick.AddListener(() => { Level.own.Retry(); });
         }
     }
 }

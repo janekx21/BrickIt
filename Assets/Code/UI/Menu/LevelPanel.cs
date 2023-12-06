@@ -31,12 +31,13 @@ namespace UI.Menu {
 
         private static void LoadLevel(LevelObject levelObject) {
             var current = SceneManager.GetActiveScene();
-            var routine = SceneManager.LoadSceneAsync(levelObject.scene, LoadSceneMode.Additive);
+            var routine = SceneManager.LoadSceneAsync("LoadableLevel", LoadSceneMode.Additive);
             routine.completed += _ => {
-                SceneManager.SetActiveScene(SceneManager.GetSceneByPath(levelObject.scene));
                 foreach (var rootGameObject in current.GetRootGameObjects()) {
                     rootGameObject.SetActive(false);
                 }
+                
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName("LoadableLevel"));
                 var level = FindObjectOfType<Level>();
                 level.Init(levelObject);
             };

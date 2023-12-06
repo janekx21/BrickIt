@@ -7,7 +7,9 @@ namespace UI {
         [SerializeField] private Button retry;
 
         private void Awake() {
-            retry.onClick.AddListener(() => { Level.Retry(); });
+            retry.onClick.AddListener(() => {
+                Level.own.Retry();
+            });
         }
     }
 }

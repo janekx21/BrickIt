@@ -20,14 +20,13 @@ namespace UI {
         private string key = "highscoreTable";
 
         public static Highscore own { get; private set; }
-
         public UnityEvent onScoreAdded = new();
 
         private void Awake() {
             Assert.IsNull(own);
             own = this;
             
-            retry.onClick.AddListener(Level.Retry);
+            retry.onClick.AddListener(Level.own.Retry);
             menu.onClick.AddListener(() => { Level.own.ToMenu(); });
             onScoreAdded.AddListener(ShowHighscores);
 

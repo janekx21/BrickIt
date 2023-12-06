@@ -114,8 +114,8 @@ namespace LevelContext {
                                     ? TileType.directionChangerLeft
                                     : TileType.directionChangerRight, 0, color, position),
                             Spawner spawner => new Tile1(TileType.spawner, rotation, color, position),
-                            SpeedChanger speedChanger => new Tile1(TileType.speedChanger, 0, color, position),
-                            Teleporter teleporter => new Tile1(TileType.teleporter, 0, color, position),
+                            SpeedChanger speedChanger => new Tile1(TileType.speedChanger, rotation, color, position),
+                            Teleporter teleporter => new Tile1(TileType.teleporter, rotation, color, position),
                             _ => throw new ArgumentOutOfRangeException(nameof(block))
                         };
                         tileList.Add(tile);
@@ -139,7 +139,7 @@ namespace LevelContext {
                 data = tileList,
                 size = new Vector2Int(levelScript.LevelWidth, levelScript.LevelHeight),
                 version = "1",
-                timerPosition = Vector2Int.RoundToInt(text.transform.position - grid.transform.position),
+                timerPosition = Vector2Int.RoundToInt(text.transform.position - grid.transform.position - (Vector3)Vector2.one * .5f),
             };
 
             EditorUtility.SetDirty(this);

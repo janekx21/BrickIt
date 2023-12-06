@@ -327,8 +327,7 @@ PrefabInstance:
         type: 3}
       propertyPath: forceLevel
       value: 
-      objectReference: {fileID: 11400000, guid: 10a721080095ba642a734e03575598c7,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1094792191864280097, guid: d5f2dbc061b5b7848b4cf0d41dd37aa9,
         type: 3}
       propertyPath: levelCamera

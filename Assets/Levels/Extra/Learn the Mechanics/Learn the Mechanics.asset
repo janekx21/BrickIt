@@ -26,7 +26,7 @@ MonoBehaviour:
     author: Nievram
     size: {x: 17, y: 10}
     version: 1
-    timerPosition: {x: -1, y: -1}
+    timerPosition: {x: -2, y: -1}
     data:
     - type: 1
       rotation: 0
