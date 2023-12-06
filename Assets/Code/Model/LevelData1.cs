@@ -15,7 +15,7 @@ namespace Model {
         public string author;
         public Vector2Int size; // default is 17 x 10
         public string version;
-        public Vector2Int timerPosition;
+        public Vector2 timerPosition;
         public List<Tile1> data;
 
         public LevelData1(string name, string author, IEnumerable<Tile1> data) {

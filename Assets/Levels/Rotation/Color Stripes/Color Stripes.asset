@@ -26,7 +26,7 @@ MonoBehaviour:
     author: Maico
     size: {x: 17, y: 10}
     version: 1
-    timerPosition: {x: 2, y: 2}
+    timerPosition: {x: 2.5000002, y: 2}
     data:
     - type: 1
       rotation: 0

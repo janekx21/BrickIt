@@ -139,7 +139,7 @@ namespace LevelContext {
                 data = tileList,
                 size = new Vector2Int(levelScript.LevelWidth, levelScript.LevelHeight),
                 version = "1",
-                timerPosition = Vector2Int.RoundToInt(text.transform.position - grid.transform.position - (Vector3)Vector2.one * .5f),
+                timerPosition = text.transform.position - grid.transform.position,
             };
 
             EditorUtility.SetDirty(this);

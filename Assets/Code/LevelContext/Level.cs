@@ -96,7 +96,7 @@ namespace LevelContext {
             levelTilemap.size = (Vector3Int)levelData1.size * 2;
             levelTilemap.FloodFill(-(Vector3Int)levelData1.size, placeableTiles[0].tile);
 
-            timer.transform.position = levelData1.timerPosition + Vector2.one * .5f;
+            timer.transform.position = levelData1.timerPosition + (Vector2)levelTilemap.transform.position;
             levelTilemap.CompressBounds();
         }
 
