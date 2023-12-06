@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff7f2a6952475ea4e8e7509ff4fce1, type: 3}
   m_Name: Color
   m_EditorClassIdentifier: 
-  image: {fileID: 3752902410628473492, guid: 5713416c4704eab42a8b466fbada8b47, type: 3}
+  id: d6b73450df77c14178fae0121e48c22c
+  image: {fileID: 21300000, guid: c887397134368ef03842cc48c92956b0, type: 3}
   chapterName: Color
   levels:
   - {fileID: 11400000, guid: e7a18ec7c0414b34387cbf283e3ecaec, type: 2}
