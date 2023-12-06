@@ -11,8 +11,11 @@
 	- gate block
 		- key lock system
 - level, more levels @maico
-- level finish @janek
+- level finish
 	- level continues for half a second while being immortal
+- highscore menu
+	- highlight score of current round
+	- make last 4 names available as quick choice
 
 # ToDo (Prority Low)
 
@@ -44,7 +47,7 @@
 # Done
 
 - score system
-    - show
+    - showS
     - save
 - make tutorial in chapter 1 more clear for beginners
 - create unified colorpalatte
