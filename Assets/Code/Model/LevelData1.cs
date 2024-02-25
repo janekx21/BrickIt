@@ -19,7 +19,7 @@ namespace Model {
         public List<Tile1> data;
 
         public LevelData1(string name, string author, IEnumerable<Tile1> data) {
-            id = GUID.Generate().ToString();
+            id = Guid.NewGuid().ToString();
             this.name = name;
             this.author = author;
             this.data = data.ToList();

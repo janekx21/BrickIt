@@ -5,7 +5,9 @@ using System.Linq;
 using Blocks;
 using Model;
 using UnityEditor;
+#if UNITY_EDITOR
 using UnityEditor.SceneManagement;
+#endif
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
