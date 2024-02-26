@@ -1,0 +1,19 @@
+spin_manifest_version = 2
+
+[application]
+name = "highscore"
+version = "0.1.0"
+authors = ["Janek Winkler <janekx21@gmail.com>"]
+description = "Track player highscores"
+
+[[trigger.http]]
+route = "/highscore/..."
+component = "highscore"
+
+[component.highscore]
+source = "target/wasm32-wasi/release/highscore.wasm"
+allowed_outbound_hosts = []
+key_value_stores = ["default"]
+[component.highscore.build]
+command = "cargo build --target wasm32-wasi --release"
+watch = ["src/**/*.rs", "Cargo.toml"]

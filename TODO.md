@@ -14,10 +14,11 @@
 		- download levels
 
 - online highscores @janek
+	- backend
 
 - next level button on the win screen
 
-- chapter unlock
+- chapter unlock @janek
 	- unlock chapter if chapter before is 50% completed
 	- show highscore on completed levels
 	- animation
