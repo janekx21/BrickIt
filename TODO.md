@@ -2,7 +2,18 @@
 
 - editor
 	- frontend
-	- backend
+		- multihit block numbers
+		- limit spawn points to one
+		- only rotate some blocks
+		- output in level format
+		- input in level format
+		- load and save with unity editor integration
+	- backend @janek
+		- google games service api
+		- upload levels
+		- download levels
+
+- online highscores @janek
 
 - next level button on the win screen
 
@@ -11,16 +22,20 @@
 	- show highscore on completed levels
 	- animation
 
-- blocks
+- blocks @maico
 	- claw death block
 		- timed close
+		- has eyes that telegraph the closing
 	- one way/color block
 	- gate block
 		- key lock system
+		- color based
 
 - level, more levels @maico
+	- new chapter for claw, one way and gate block
+	- 6 per chapter
 
-- level finish
+- level finish @maico
 	- level continues for half a second while being immortal
 
 - highscore menu
@@ -28,6 +43,8 @@
 	- make last 4 names available as quick choice
 
 # ToDo (Prority Low)
+
+- alternative touchscreen controll with 4 controll quads
 
 - feedback
 	- tell player on death how many blocks he hit / that he was better than before
@@ -54,6 +71,7 @@
 	
 # Bugs
 - fix: renaming level files not renaming meta file accordingly
+- same highscore data shows in all levels
 
 # Ideas
 - Multiple Players
