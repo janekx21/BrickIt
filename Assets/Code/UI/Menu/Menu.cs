@@ -11,9 +11,8 @@ namespace UI.Menu {
         [SerializeField] private View defaultView;
 
         private void Start() {
-            var data = SaveData.Load();
-            var initialView = Id.FindById(data.lastMenuView);
-            print(initialView.name);
+            using var data = SaveData.GetHandle();
+            var initialView = Id.FindById(data.save.lastMenuView);
             ChangeState(initialView == null ? defaultView : initialView.GetComponent<View>());
             // This is already done i think: StartCoroutine(ChangeStateRoutine(views.Main));
         }
@@ -25,8 +24,8 @@ namespace UI.Menu {
         }
 
         public void ChangeState(View next) {
-            using var saveData = SaveData.Load();
-            saveData.lastMenuView = next.GetComponent<Id>().id;
+            using var saveData = SaveData.GetHandle();
+            saveData.save.lastMenuView = next.GetComponent<Id>().id;
             StartCoroutine(ChangeStateRoutine(next));
         }
 

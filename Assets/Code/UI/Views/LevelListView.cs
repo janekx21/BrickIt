@@ -23,8 +23,8 @@ namespace UI.Views {
                 // using var saveData = SaveData.Load();
                 // saveData.selectedChapter = null;
                 scroll.Save(currentChapter.id);
-                using var data = SaveData.Load();
-                data.lastChapterPlayed = "invalid chapter id";
+                using var handle = SaveData.GetHandle();
+                handle.save.lastChapterPlayed = "invalid chapter id";
             });
         }
 

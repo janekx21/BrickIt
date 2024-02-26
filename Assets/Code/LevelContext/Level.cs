@@ -4,6 +4,7 @@ using System.Linq;
 using Blocks;
 using GamePlay;
 using Model;
+using Model.V3;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
@@ -35,6 +36,7 @@ namespace LevelContext {
 
         public int LevelWidth => levelWidth;
         public int LevelHeight => levelHeight;
+        public string LevelId => ownLevelObject.id;
 
         public LevelState state { get; private set; } = LevelState.begin;
 
@@ -81,10 +83,10 @@ namespace LevelContext {
             Begin();
         }
 
-        private void LoadLevelData(LevelData1 levelData1) {
+        private void LoadLevelData(LevelData levelData) {
             levelTilemap.ClearAllTiles();
 
-            foreach (var t in levelData1.data) {
+            foreach (var t in levelData.data) {
                 var tileBase = placeableTiles.Find(x => x.type == t.type).tile;
                 SetBlock(t.position, Quaternion.Euler(0, 0, t.rotation), tileBase, t.color);
             }
@@ -92,11 +94,11 @@ namespace LevelContext {
             //levelTilemap.boun
             levelTilemap.CompressBounds();
 
-            levelTilemap.origin =  -(Vector3Int)levelData1.size;
-            levelTilemap.size = (Vector3Int)levelData1.size * 2;
-            levelTilemap.FloodFill(-(Vector3Int)levelData1.size, placeableTiles[0].tile);
+            levelTilemap.origin =  -(Vector3Int)levelData.size;
+            levelTilemap.size = (Vector3Int)levelData.size * 2;
+            levelTilemap.FloodFill(-(Vector3Int)levelData.size, placeableTiles[0].tile);
 
-            timer.transform.position = levelData1.timerPosition + (Vector2)levelTilemap.transform.position;
+            timer.transform.position = levelData.timerPosition + (Vector2)levelTilemap.transform.position;
             levelTilemap.CompressBounds();
         }
 
@@ -176,8 +178,6 @@ namespace LevelContext {
         }
 
         public void Init(LevelObject levelObject) {
-            Debug.Log("init level object");
-            Debug.Log(levelObject);
             ownLevelObject = levelObject;
             LoadLevelData(levelObject.levelData);
         }
@@ -210,10 +210,8 @@ namespace LevelContext {
             ChangeState(LevelState.win);
             PauseAll();
 
-            using var data = SaveData.Load();
-            Debug.Log(data.done);
-            Debug.Log(ownLevelObject);
-            data.done.Add(ownLevelObject.id);
+            using var handle = SaveData.GetHandle();
+            handle.save.done.Add(ownLevelObject.id);
         }
 
         public void Lose() {

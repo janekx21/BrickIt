@@ -4,6 +4,7 @@ using System.Linq;
 using Blocks;
 using GamePlay;
 using Model;
+using Model.V3;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
@@ -140,23 +141,23 @@ namespace MapEditor {
         private string Save() {
             tilemap.CompressBounds();
             var tiles = GetTiles(tilemap).ToList();
-            var level = new LevelData1 { name = "foobar", data = tiles };
+            var level = new LevelData { name = "foobar", data = tiles };
             return JsonUtility.ToJson(level);
         }
 
         private void Load(string data) {
-            var level = JsonUtility.FromJson<LevelData1>(data);
+            var level = JsonUtility.FromJson<LevelData>(data);
             SetTiles(level.data);
         }
 
-        private static IEnumerable<Tile1> GetTiles(Tilemap tilemap) {
+        private static IEnumerable<Model.V3.Tile> GetTiles(Tilemap tilemap) {
             throw new NotImplementedException("The conversion to TileType is missing");
             foreach (var position in tilemap.cellBounds.AllPositions()) {
                 if (tilemap.HasTile(position)) {
                     var go = tilemap.GetInstantiatedObject(position);
                     var name = tilemap.GetTile(position).name;
                     if (go) {
-                        yield return new Tile1 {
+                        yield return new Model.V3.Tile {
                             // TODO
                             //type = tileType,
                             color = go.GetComponent<IColored>().GetColorType(),
@@ -165,7 +166,7 @@ namespace MapEditor {
                         };
                     }
                     else {
-                        yield return new Model.Tile1 {
+                        yield return new Model.V3.Tile {
                             //type = tileType,
                             rotation = tilemap.GetTransformMatrix(position).rotation.eulerAngles.z,
                             position = (Vector2Int)position
@@ -179,7 +180,7 @@ namespace MapEditor {
         }
 
 
-        private void SetTiles(IEnumerable<Model.Tile1> data) {
+        private void SetTiles(IEnumerable<Model.V3.Tile> data) {
             throw new NotImplementedException("The conversion to TileType is missing");
             foreach (var t in data) {
                 // TODO

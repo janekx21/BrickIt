@@ -23,10 +23,10 @@ namespace UI.Menu {
 
             var levelList = levelObjects.ToList();
             levelList.Sort(CompareOnDifficulty);
-            var saveData = SaveData.Load();
+            using var saveData = SaveData.GetHandle();
             foreach (var (level, levelIndex) in levelList.Select((v, i) => (v, i))) {
-                var done = saveData.done.Contains(level.id);
-                var doneCount = levelList.Count(x => saveData.done.Contains(x.id));
+                var done = saveData.save.done.Contains(level.id);
+                var doneCount = levelList.Count(x => saveData.save.done.Contains(x.id));
 
                 // add one for buffer
                 var locked = !(doneCount + 1 >= levelIndex);

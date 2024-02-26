@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Util {
@@ -25,6 +26,14 @@ namespace Util {
             foreach (var position in bounds.allPositionsWithin) {
                 yield return position;
             }
+        }
+
+        public static Dictionary<K, V> AsDictionary<K,V>(this List<Model.KeyValuePair<K, V>> value) {
+            return value.ToDictionary(x => x.key, x => x.value);
+        }
+        
+        public static List<Model.KeyValuePair<K, V>> AsList<K,V>(this Dictionary<K, V> value) {
+            return value.Select(x => new Model.KeyValuePair<K, V> { key = x.Key, value = x.Value }).ToList();
         }
     }
 }

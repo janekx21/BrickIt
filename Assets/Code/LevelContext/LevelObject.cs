@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Blocks;
 using Model;
+using Model.V3;
 using UnityEditor;
 #if UNITY_EDITOR
 using UnityEditor.SceneManagement;
@@ -14,6 +15,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 using Util;
+using Tile = Model.V3.Tile;
 
 namespace LevelContext {
     [CreateAssetMenu]
@@ -25,7 +27,7 @@ namespace LevelContext {
         [Range(1, 20)] public int difficulty = 1;
 
         public Texture2D overview;
-        public LevelData1 levelData = new();
+        public LevelData levelData = new();
 
         private void OnValidate() {
 #if UNITY_EDITOR
@@ -86,7 +88,7 @@ namespace LevelContext {
             var grid = openScene.GetRootGameObjects().ToList().Find(o => o.GetComponent<Grid>());
             Assert.IsNotNull(grid, "grid != null, You got a level without a grid");
             
-            var tileList = new List<Tile1>();
+            var tileList = new List<Tile>();
             foreach (Transform child in grid.transform) {
                 var tilemap = child.GetComponent<Tilemap>();
 
@@ -94,7 +96,7 @@ namespace LevelContext {
                     foreach (var pos in tilemap.cellBounds.allPositionsWithin) {
                         var sprite = tilemap.GetSprite(pos);
                         if (sprite) {
-                            tileList.Add(new Tile1(TileType.wall, 0, ColorType.@default, (Vector2Int)pos));
+                            tileList.Add(new Tile(TileType.wall, 0, ColorType.@default, (Vector2Int)pos));
                         }
                     }
 
@@ -105,19 +107,19 @@ namespace LevelContext {
                         var rotation = t.rotation.eulerAngles.z;
                         var color = block.GetColorType();
                         var tile = block switch {
-                            FlyThrough flyThrough => new Tile1(TileType.flyThrough, 0, color, position),
-                            MultiHit multiHit => new Tile1(TileType.multiHit, 0, color, position,
+                            FlyThrough flyThrough => new Tile(TileType.flyThrough, 0, color, position),
+                            MultiHit multiHit => new Tile(TileType.multiHit, 0, color, position,
                                 multiHit.GetMaxHp()),
-                            Normal normal => new Tile1(TileType.normal, 0, color, position),
-                            ColorChanger colorChanger => new Tile1(TileType.colorChanger, 0, color, position),
-                            Death death => new Tile1(TileType.death, 0, color, position),
-                            DirectionChanger directionChanger => new Tile1(
+                            Normal normal => new Tile(TileType.normal, 0, color, position),
+                            ColorChanger colorChanger => new Tile(TileType.colorChanger, 0, color, position),
+                            Death death => new Tile(TileType.death, 0, color, position),
+                            DirectionChanger directionChanger => new Tile(
                                 directionChanger.GetDirection() == Direction.left
                                     ? TileType.directionChangerLeft
                                     : TileType.directionChangerRight, 0, color, position),
-                            Spawner spawner => new Tile1(TileType.spawner, rotation, color, position),
-                            SpeedChanger speedChanger => new Tile1(TileType.speedChanger, rotation, color, position),
-                            Teleporter teleporter => new Tile1(TileType.teleporter, rotation, color, position),
+                            Spawner spawner => new Tile(TileType.spawner, rotation, color, position),
+                            SpeedChanger speedChanger => new Tile(TileType.speedChanger, rotation, color, position),
+                            Teleporter teleporter => new Tile(TileType.teleporter, rotation, color, position),
                             _ => throw new ArgumentOutOfRangeException(nameof(block))
                         };
                         tileList.Add(tile);
@@ -134,13 +136,12 @@ namespace LevelContext {
             var camera = openScene.GetRootGameObjects().ToList().Find(o => o.GetComponent<Camera>());
             var text = camera.GetComponentsInChildren<Text>().First(x => x.text == "999");
             
-            levelData = new LevelData1 {
+            levelData = new LevelData {
                 id = id,
                 name = levelName,
                 author = levelAuthor,
                 data = tileList,
                 size = new Vector2Int(levelScript.LevelWidth, levelScript.LevelHeight),
-                version = "1",
                 timerPosition = text.transform.position - grid.transform.position,
             };
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Linq;
+using Model;
 using UnityEngine;
 using UnityEngine.UI;
 using Util;
@@ -13,8 +14,8 @@ public class SaveScrollPosition : MonoBehaviour {
     }
 
     public void Load(string key) {
-        var data = SaveData.Load();
-        var dictionary = data.scrollPositions.ToDictionary(x => x.key, x => x.value);
+        using var handle = SaveData.GetHandle();
+        var dictionary = handle.save.scrollPositions.ToDictionary(x => x.key, x => x.value);
         var pos = dictionary.TryGetValue(key, out var value) ? value : 0;
         StartCoroutine(ScrollToRoutine(pos));
     }
@@ -26,9 +27,9 @@ public class SaveScrollPosition : MonoBehaviour {
     }
 
     public void Save(string key) {
-        using var data = SaveData.Load();
-        var dictionary = data.scrollPositions.ToDictionary(x => x.key, x => x.value);
+        using var handle = SaveData.GetHandle();
+        var dictionary = handle.save.scrollPositions.AsDictionary();
         dictionary[key] = scrollRect.horizontalNormalizedPosition;
-        data.scrollPositions = dictionary.Select(x => new SaveData.KeyValuePair<string, float> {key = x.Key, value = x.Value}).ToList();
+        handle.save.scrollPositions = dictionary.AsList();
     }
 }

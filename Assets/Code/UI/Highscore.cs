@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using LevelContext;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Util;
 
 namespace UI {
     public class Highscore : MonoBehaviour {
@@ -15,9 +15,7 @@ namespace UI {
         [SerializeField] private GameObject entryTemplate;
         [SerializeField] private float templateHeight = 21f;
 
-        private Highscores highscores;
         private List<Transform> highscoreEntryTransformList;
-        private string key = "highscoreTable";
 
         public static Highscore own { get; private set; }
         public UnityEvent onScoreAdded = new();
@@ -26,37 +24,22 @@ namespace UI {
             Assert.IsNull(own);
             own = this;
             
-            retry.onClick.AddListener(Level.own.Retry);
+            retry.onClick.AddListener(() => Level.own.Retry());
             menu.onClick.AddListener(() => { Level.own.ToMenu(); });
             onScoreAdded.AddListener(ShowHighscores);
-
-            key = "highscoreTable" + SceneManager.GetActiveScene().buildIndex;
-
-            if (!PlayerPrefs.HasKey(key)) {
-                highscores = new Highscores { highscoreEntryList = new List<HighscoreEntry>() };
-                
-                var json = JsonUtility.ToJson(highscores);
-                PlayerPrefs.SetString(key, json);
-                PlayerPrefs.Save();
-            }
-            // PlayerPrefs.DeleteKey("highscoreTable");
-            // PlayerPrefs.DeleteAll();
-
-            // load saved Highscores
-            var jsonString = PlayerPrefs.GetString(key);
-            highscores = JsonUtility.FromJson<Highscores>(jsonString);
         }
 
         private void ShowHighscores() {
             foreach (Transform t in entryContainer.transform) {
                 Destroy(t);
             }
-            
-            highscores.highscoreEntryList.Sort((entry1, entry2) => entry2.score - entry1.score);
+
+            using var handle = SaveData.GetHandle();
+            var highscores = handle.save.highScores.Where(x => x.levelGuid == Level.own.LevelId).OrderBy(x => x.score);
             
             highscoreEntryTransformList = new List<Transform>();
             var i = 0;
-            foreach (var highscoreEntry in highscores.highscoreEntryList) {
+            foreach (var highscoreEntry in highscores) {
                 CreateHighscoreEntryTransform(highscoreEntry, entryContainer.transform, highscoreEntryTransformList);
 
                 if (++i >= 10) {
@@ -65,7 +48,7 @@ namespace UI {
             }
         }
 
-        private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container,
+        private void CreateHighscoreEntryTransform(Model.V3.HighscoreEntry highscoreEntry, Transform container,
             List<Transform> transformList) {
             // instantiate entry below last one
             var entryTransform = Instantiate(entryTemplate.transform, container.transform);
@@ -85,28 +68,14 @@ namespace UI {
         }
 
         public void AddHighscoreEntry(int score, string name) {
-            // create HighscoreEntry
-            var highscoreEntry = new HighscoreEntry { score = score, name = name };
+            var highscoreEntry = new Model.V3.HighscoreEntry { score = score, name = name, levelGuid = Level.own.LevelId};
 
-            // add new entry to Highscores
-            highscores.highscoreEntryList.Add(highscoreEntry);
+            using var handle = SaveData.GetHandle();
+            handle.save.highScores.Add(highscoreEntry);
             
-            // save updated Highscores
-            var json = JsonUtility.ToJson(highscores);
-            PlayerPrefs.SetString(key, json);
-            PlayerPrefs.Save();
-
             onScoreAdded?.Invoke();
         }
 
-        private class Highscores {
-            public List<HighscoreEntry> highscoreEntryList;
-        }
         
-        [Serializable]
-        private class HighscoreEntry {
-            public int score;
-            public string name;
-        }
     }
 }
