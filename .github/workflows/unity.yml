@@ -1,10 +1,10 @@
 name: Unity
 
-#on:
-  #push:
-    #branches: [ "master" ]
-  #pull_request:
-    #branches: [ "master" ]
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   unity:
@@ -13,59 +13,153 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v3
-    - run: sudo apt install libfuse2
-    - name: Setup Unity
-      uses: kuler90/setup-unity@v1
-      with:
-        unity-modules: android
-    - name: Activate Unity
-      uses: kuler90/activate-unity@v1
-      with:
-        unity-username: ${{ secrets.UNITY_USERNAME }}
-        unity-password: ${{ secrets.UNITY_PASSWORD }}
-        unity-authenticator-key: ${{ secrets.UNITY_AUTHENTICATOR_KEY }}
-    - name: Build Unity
-      uses: kuler90/build-unity@v1
-      with:
-        build-target: Android
-        build-path: ./build.apk
-        android-keystore-base64: >-
-                                  /u3+7QAAAAIAAAABAAAAAQANcGxheXN0b3JlIGtleQAAAYOZJEXlAAAFATCCBP0wDgYKKwYBBAEq
-                                  AhEBAQUABIIE6VJOXs1TFDHnBNH69C+SiQfpdqJUfapWRxX+0k+EXYqnqKiOFrp0S0UuKrCKj/Au
-                                  C2SRwWfOV+u+4p8xlOqJBb8g/3Y1IDd+pCVuUSvrge6OJS7FJiMSRvONJLT1D1TBbTtPO3kvo1Sa
-                                  sGx7lCiSJBxJ8LqpM8ivDWOYpD7UZHpM1HidcHScdb7Gc3aiJeRyjFxV3hEje/Z8ftWabEO9+ZhD
-                                  Te0HOb8aqjvpVpTRIFoGuKb7Qfbrb1SlQudPFlb5MT0C6t7n8fz1y/G1xa27pLDxXHEgIC1691d3
-                                  j5qt1DwKIXcfH94Zqo8wCOxj128ZOH00iUyFUEPkyL29tb+QAg4NHJa48lhXLTwkkvPCJvRWTTdO
-                                  SLig1L6eadAQzBcYK3LDA8tFQZ1PG2m4v37LUe4mvOPVOJFuMqOBTlNlBuizg5IbXvksCP6H9aKk
-                                  ayzXdmF/bJMRB6qOt55u5zXzn7V1X7jf1nxM0URJm12FFbhPR1T7aInrTWLWBP5pm/PI153RLBPF
-                                  oap+v9fflhPO+Rekz5y9Ym4i+Ge2wHM4jVqFIU6vk6+gw9mlPXWrUhNMrXK1wpo3sRSWQ+lXiEfi
-                                  +dVq1HQO7s+1tvJo2Q7gEtyCRh61tRIwpLlw/a6eCl8sg3+05Cyp+NQEu1Z67ds3gl07Th9AgQH+
-                                  C6BPzNhsCCBZFIrULXBrt8csmwjoalDAJepbCdow+oH1suxlC/vMf3r4DY+3xYQ1GHSR/T7xUlg8
-                                  9h8DMQnUF3E5sNj39eTb/jehjviHhF9jcJT0L0Be86Y16JLLoKigyB8WX5f/R2b8aPIG0+RGHeIM
-                                  aW4/wTedNTpYBBP6oCkMLYO3iNe6aqbcfepL97CyYsa9lL7S7hou/ROL2wNUeyKU4GOs46w+xID/
-                                  /F8ns+cycHIrD6G/oEIcMhR1deB7eLwy7y0jrzdNkksysHTJbvSIHynkJk+KRLExdXwJodVZEf8A
-                                  E2CIJdPWELQne2F27NKRveDXm7CHzxVJ37v5Kgk76tJIbYBpA/e/7RfdUB69jauWnhlZ0rkH8mhB
-                                  DzlCmuS7GpvZImuTaJc7Trf0A+YnL6BkK8ZQZoQAVU2fvQRiXNOdWEVmeIoxcF6xn5PUwzis+0ZP
-                                  U5Nz1wuqVIlqevXWBUQaPxvfM2MDTBYgVXzKsjdse4mS9Oe7UJCooREEbAH45aOMLbKb3hGq3tj0
-                                  ZCpBTB3ZzTOpqeCRgJ/XxTRxi1zVfrciUGyPCn/hqUZo02a8qKwKubWKHUKxM5lNpCBVZpcsWt3l
-                                  YRNS5RHkoQT1NNngxI5If8AZwxDnhhEqC2LO2x03zHpo9KZo+jWIHgxg/iq4PQDOG+o7yRIwo5b0
-                                  xgdEJT0aMwfU5gLsdA7vOjeBBR6p5d2DwD6ArSDC7MtGXGt1o7fZUOuYTV1JQrk0HoWNy2EZvtuj
-                                  gmYyERqkPE+jiAzgy+hVsSTPSeYuwNYoJrz0HjJXBhSvt//fzlmVtQLZncya4J5XjiEcrowHdsgF
-                                  vrWEMMcc/edEPw/brVYTq57Vg2O7mlFu2tsNsczDjmrVakbS1nCnSMmnNdjuOTN+R6H315uIvpra
-                                  2ek7GzzuHUrOv2sFfBMY+oAmu9lQ9qCQpXJf6awT8b08/Jp4RIAKUAm2yKxJ7Zng3HU1ql1gmBcT
-                                  MYURBgurKtAw/pLYagAAAAEABVguNTA5AAACpjCCAqIwggGKoAMCAQICBBR/TLMwDQYJKoZIhvcN
-                                  AQEFBQAwEjEQMA4GA1UECgwHS3Jha3VsYTAgFw0yMjEwMDIxNDQwMzRaGA8yMDcyMDkxOTE0NDAz
-                                  NFowEjEQMA4GA1UECgwHS3Jha3VsYTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM/A
-                                  tdnIQ2KXLul/BP1ooI3RS7l0qJS+0YomliqM0JjwWWtNW7obMo1NB8ePbWHLCfxGdkZacqvR1jA4
-                                  d+wuzA6F1dFJMbY92KWne+jl48K9FUO3PW7o0nV6kxNl6VZz0k5fIYSypoYJDX4VN6KKCTF2oeUv
-                                  LwJQBoud+2PqvMHmanYEM6l8P7nVSGiMou4XD6mG9L9wvn44IqyMRJvSJmMo1pf8ZzT4kgamKg6j
-                                  r1QFxoO8zzjyOPV7eXCUaeUYHkmycXixIi8FcSMQM8ZYskSpT9Sd55CAl+x5ZQkAmrI8cFsXXvkb
-                                  G+nDDE5HF/IMEzo1NjBWLavENDw859zZCVMCAwEAATANBgkqhkiG9w0BAQUFAAOCAQEANwO0Kd0Z
-                                  V2xQGrJMKnFVFrXlAxxlqGWwrHA8KnL/Id8otcv3am2HGqp+tyoDUEB7xzavi/a1d1vTChApCz3R
-                                  uZgj9wVZUMS1BfA/LNpqfGrluZOq9eDNfZUKkfTcf5wEwnAalCeac6G/wzz70W+/jfofxw0M1KwK
-                                  caEN4CnyIPoEKr7tjEYZff0k+UynznoEpu++KNbog5hW3PFZkzrbgwd+WNR+qN/6fL0zwVKh0eBQ
-                                  OlgjOXqoQe5riajKhj4O4vgC+GU52S4hlTAZPGkyiwPfM2OhfYUXB2AXtEFT+rvPGIZ1qoQEa8er
-                                  K7ff4l8UcAHyFG5oyVSOaAkk4Nxe/wc6c+OsR4/onYRSXw6IDlU4J8yu
-        android-keystore-pass: ${{ secrets.KEYSTORE_PASS }}
-        android-keyalias-name: "playstore key"
-        android-keyalias-pass: ${{ secrets.KEYALIAS_PASS }}
+                - name: Unity - Builder
+  # You may pin to the exact commit or the version.
+  # uses: game-ci/unity-builder@f4d2cceeb5831fd9dc4588d1b39d5f2dca8f28e6
+  uses: game-ci/unity-builder@v4.2.1
+  with:
+    # Platform that the build should target.
+    targetPlatform: Android
+    # Version of unity to use for building the project. Use "auto" to get from your ProjectSettings/ProjectVersion.txt
+    unityVersion: # optional, default is auto
+    # Specific docker image that should be used for building the project
+    customImage: # optional, default is 
+    # Relative path to the project to be built.
+    projectPath: # optional, default is 
+    # Name of the build. Should not include a file extension.
+    buildName: build.aab # optional, default is 
+    # Path where the builds should be stored.
+    buildsPath: # optional, default is 
+    # Path to a Namespace.Class.StaticMethod to run to perform the build.
+    buildMethod: # optional, default is 
+    # Suppresses `-quit`. Exit your build method using `EditorApplication.Exit(0)` instead.
+    manualExit: # optional, default is 
+    # Custom parameters to configure the build.
+    customParameters: # optional, default is 
+    # The versioning scheme to use when building the project
+    versioning: # optional, default is Semantic
+    # The version, when used with the "Custom" versioning scheme
+    version: # optional, default is 
+    # The android versionCode
+    androidVersionCode: # optional, default is 
+    # The android export type. Should be androidPackage for apk, androidAppBundle for aab, or androidStudioProject for an android studio project.
+    androidExportType: androidAppBundle # optional, default is androidPackage
+    # The android keystoreName
+    androidKeystoreName: user.keystore # optional, default is 
+    # The base64 contents of the android keystore file
+    androidKeystoreBase64: >-/u3+7QAAAAIAAAABAAAAAQANcGxheXN0b3JlIGtleQAAAYOZJEXlAAAFATCCBP0wDgYKKwYBBAEq
+                            AhEBAQUABIIE6VJOXs1TFDHnBNH69C+SiQfpdqJUfapWRxX+0k+EXYqnqKiOFrp0S0UuKrCKj/Au
+                            C2SRwWfOV+u+4p8xlOqJBb8g/3Y1IDd+pCVuUSvrge6OJS7FJiMSRvONJLT1D1TBbTtPO3kvo1Sa
+                            sGx7lCiSJBxJ8LqpM8ivDWOYpD7UZHpM1HidcHScdb7Gc3aiJeRyjFxV3hEje/Z8ftWabEO9+ZhD
+                            Te0HOb8aqjvpVpTRIFoGuKb7Qfbrb1SlQudPFlb5MT0C6t7n8fz1y/G1xa27pLDxXHEgIC1691d3
+                            j5qt1DwKIXcfH94Zqo8wCOxj128ZOH00iUyFUEPkyL29tb+QAg4NHJa48lhXLTwkkvPCJvRWTTdO
+                            SLig1L6eadAQzBcYK3LDA8tFQZ1PG2m4v37LUe4mvOPVOJFuMqOBTlNlBuizg5IbXvksCP6H9aKk
+                            ayzXdmF/bJMRB6qOt55u5zXzn7V1X7jf1nxM0URJm12FFbhPR1T7aInrTWLWBP5pm/PI153RLBPF
+                            oap+v9fflhPO+Rekz5y9Ym4i+Ge2wHM4jVqFIU6vk6+gw9mlPXWrUhNMrXK1wpo3sRSWQ+lXiEfi
+                            +dVq1HQO7s+1tvJo2Q7gEtyCRh61tRIwpLlw/a6eCl8sg3+05Cyp+NQEu1Z67ds3gl07Th9AgQH+
+                            C6BPzNhsCCBZFIrULXBrt8csmwjoalDAJepbCdow+oH1suxlC/vMf3r4DY+3xYQ1GHSR/T7xUlg8
+                            9h8DMQnUF3E5sNj39eTb/jehjviHhF9jcJT0L0Be86Y16JLLoKigyB8WX5f/R2b8aPIG0+RGHeIM
+                            aW4/wTedNTpYBBP6oCkMLYO3iNe6aqbcfepL97CyYsa9lL7S7hou/ROL2wNUeyKU4GOs46w+xID/
+                            /F8ns+cycHIrD6G/oEIcMhR1deB7eLwy7y0jrzdNkksysHTJbvSIHynkJk+KRLExdXwJodVZEf8A
+                            E2CIJdPWELQne2F27NKRveDXm7CHzxVJ37v5Kgk76tJIbYBpA/e/7RfdUB69jauWnhlZ0rkH8mhB
+                            DzlCmuS7GpvZImuTaJc7Trf0A+YnL6BkK8ZQZoQAVU2fvQRiXNOdWEVmeIoxcF6xn5PUwzis+0ZP
+                            U5Nz1wuqVIlqevXWBUQaPxvfM2MDTBYgVXzKsjdse4mS9Oe7UJCooREEbAH45aOMLbKb3hGq3tj0
+                            ZCpBTB3ZzTOpqeCRgJ/XxTRxi1zVfrciUGyPCn/hqUZo02a8qKwKubWKHUKxM5lNpCBVZpcsWt3l
+                            YRNS5RHkoQT1NNngxI5If8AZwxDnhhEqC2LO2x03zHpo9KZo+jWIHgxg/iq4PQDOG+o7yRIwo5b0
+                            xgdEJT0aMwfU5gLsdA7vOjeBBR6p5d2DwD6ArSDC7MtGXGt1o7fZUOuYTV1JQrk0HoWNy2EZvtuj
+                            gmYyERqkPE+jiAzgy+hVsSTPSeYuwNYoJrz0HjJXBhSvt//fzlmVtQLZncya4J5XjiEcrowHdsgF
+                            vrWEMMcc/edEPw/brVYTq57Vg2O7mlFu2tsNsczDjmrVakbS1nCnSMmnNdjuOTN+R6H315uIvpra
+                            2ek7GzzuHUrOv2sFfBMY+oAmu9lQ9qCQpXJf6awT8b08/Jp4RIAKUAm2yKxJ7Zng3HU1ql1gmBcT
+                            MYURBgurKtAw/pLYagAAAAEABVguNTA5AAACpjCCAqIwggGKoAMCAQICBBR/TLMwDQYJKoZIhvcN
+                            AQEFBQAwEjEQMA4GA1UECgwHS3Jha3VsYTAgFw0yMjEwMDIxNDQwMzRaGA8yMDcyMDkxOTE0NDAz
+                            NFowEjEQMA4GA1UECgwHS3Jha3VsYTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM/A
+                            tdnIQ2KXLul/BP1ooI3RS7l0qJS+0YomliqM0JjwWWtNW7obMo1NB8ePbWHLCfxGdkZacqvR1jA4
+                            d+wuzA6F1dFJMbY92KWne+jl48K9FUO3PW7o0nV6kxNl6VZz0k5fIYSypoYJDX4VN6KKCTF2oeUv
+                            LwJQBoud+2PqvMHmanYEM6l8P7nVSGiMou4XD6mG9L9wvn44IqyMRJvSJmMo1pf8ZzT4kgamKg6j
+                            r1QFxoO8zzjyOPV7eXCUaeUYHkmycXixIi8FcSMQM8ZYskSpT9Sd55CAl+x5ZQkAmrI8cFsXXvkb
+                            G+nDDE5HF/IMEzo1NjBWLavENDw859zZCVMCAwEAATANBgkqhkiG9w0BAQUFAAOCAQEANwO0Kd0Z
+                            V2xQGrJMKnFVFrXlAxxlqGWwrHA8KnL/Id8otcv3am2HGqp+tyoDUEB7xzavi/a1d1vTChApCz3R
+                            uZgj9wVZUMS1BfA/LNpqfGrluZOq9eDNfZUKkfTcf5wEwnAalCeac6G/wzz70W+/jfofxw0M1KwK
+                            caEN4CnyIPoEKr7tjEYZff0k+UynznoEpu++KNbog5hW3PFZkzrbgwd+WNR+qN/6fL0zwVKh0eBQ
+                            OlgjOXqoQe5riajKhj4O4vgC+GU52S4hlTAZPGkyiwPfM2OhfYUXB2AXtEFT+rvPGIZ1qoQEa8er
+                            K7ff4l8UcAHyFG5oyVSOaAkk4Nxe/wc6c+OsR4/onYRSXw6IDlU4J8yu 
+    # The android keystorePass
+    androidKeystorePass: ${{ secrets.KEYSTORE_PASS }} # optional, default is 
+    # The android keyaliasName
+    androidKeyaliasName: playstore key # optional, default is 
+    # The android keyaliasPass
+    androidKeyaliasPass: ${{ secrets.KEYALIAS_PASS }} # optional, default is 
+    # The android target API level.
+    androidTargetSdkVersion: # optional, default is 
+    # The android symbol type to export. Should be "none", "public" or "debugging".
+    androidSymbolType: # optional, default is none
+    # SSH Agent path to forward to the container
+    sshAgent: # optional, default is 
+    # Path to a directory containing SSH public keys to forward to the container.
+    sshPublicKeysDirectoryPath: # optional, default is 
+    # [CloudRunner] Github private token to pull from github
+    gitPrivateToken: # optional, default is 
+    # [CloudRunner] GitHub owner name or organization/team name
+    githubOwner: # optional, default is 
+    # Whether to run as a user that matches the host system or the default root container user. Only applicable to Linux hosts and containers. This is useful for fixing permission errors on Self-Hosted runners.
+    runAsHostUser: # optional, default is false
+    # User and optionally group (user or user:group or uid:gid) to give ownership of the resulting build artifacts
+    chownFilesTo: # optional, default is 
+    # Number of CPU cores to assign the docker container. Defaults to all available cores on all platforms.
+    dockerCpuLimit: # optional, default is 
+    # Amount of memory to assign the docker container. Defaults to 95% of total system memory rounded down to the nearest megabyte on Linux and 80% on Windows. On unrecognized platforms, defaults to 75% of total system memory. To manually specify a value, use the format <number><unit>, where unit is either m or g. ie: 512m = 512 megabytes
+    dockerMemoryLimit: # optional, default is 
+    # Isolation mode to use for the docker container. Can be one of process, hyperv, or default. Default will pick the default mode as described by Microsoft where server versions use process and desktop versions use hyperv. Only applicable on Windows
+    dockerIsolationMode: # optional, default is default
+    # Container registry and repository to pull image from. Only applicable if customImage is not set.
+    containerRegistryRepository: # optional, default is unityci/editor
+    # Container registry image version. Only applicable if customImage is not set.
+    containerRegistryImageVersion: # optional, default is 3
+    # [CloudRunner] Allows the branch of the build to be dirty, and still generate the build.
+    allowDirtyBuild: # optional, default is 
+    # [CloudRunner] run a post build job in yaml format with the keys image, secrets (name, value object array), command string
+    postBuildSteps: # optional, default is 
+    # [CloudRunner] Run a pre build job after the repository setup but before the build job (in yaml format with the keys image, secrets (name, value object array), command line string)
+    preBuildSteps: # optional, default is 
+    # [CloudRunner] Specify the names (by file name) of custom steps to run before or after cloud runner jobs, must match a yaml step file inside your repo in the folder .game-ci/steps/
+    containerHookFiles: # optional, default is 
+    # [CloudRunner] Specify the names (by file name) of custom hooks to run before or after cloud runner jobs, must match a yaml step file inside your repo in the folder .game-ci/hooks/
+    customHookFiles: # optional, default is 
+    # [CloudRunner] Specify custom commands and trigger hooks (injects commands into jobs)
+    customCommandHooks: # optional, default is 
+    # [CloudRunner] Run a custom job instead of the standard build automation for cloud runner (in yaml format with the keys image, secrets (name, value object array), command line string)
+    customJob: # optional, default is 
+    # [CloudRunner] The Cloud Formation stack name that must be setup before using this option.
+    awsStackName: # optional, default is game-ci
+    # [CloudRunner] Either local, k8s or aws can be used to run builds on a remote cluster. Additional parameters must be configured.
+    providerStrategy: # optional, default is local
+    # [CloudRunner] Amount of CPU time to assign the remote build container
+    containerCpu: # optional, default is 
+    # [CloudRunner] Amount of memory to assign the remote build container
+    containerMemory: # optional, default is 
+    # [CloudRunner] Comma separated list of input value names to read from "input override command"
+    readInputFromOverrideList: # optional, default is 
+    # [CloudRunner] Extend game ci by specifying a command to execute to pull input from external source e.g cloud provider secret managers
+    readInputOverrideCommand: # optional, default is 
+    # [CloudRunner] Supply a base64 encoded kubernetes config to run builds on kubernetes and stream logs until completion.
+    kubeConfig: # optional, default is 
+    # [CloudRunner] Supply a Persistent Volume Claim name to use for the Unity build.
+    kubeVolume: # optional, default is 
+    # [CloudRunner] Kubernetes storage class to use for cloud runner jobs, leave empty to install rook cluster.
+    kubeStorageClass: # optional, default is 
+    # [CloudRunner] Amount of disc space to assign the Kubernetes Persistent Volume
+    kubeVolumeSize: # optional, default is 5Gi
+    # [CloudRunner] Cache key to indicate bucket for cache
+    cacheKey: # optional, default is 
+    # [CloudRunner] Whether or not to watch the build to the end. Can be used for especially long running jobs e.g imports or self-hosted ephemeral runners.
+    watchToEnd: # optional, default is true
+    # Whether to cache the Unity hub and editor installation on MacOS
+    cacheUnityInstallationOnMac: # optional, default is false
+    # The version of Unity Hub to install on MacOS (e.g. 3.4.0). Defaults to latest available on brew if empty string or nothing is specified.
+    unityHubVersionOnMac: # optional, default is 
+    # The Unity licensing server address to use for activating Unity.
+    unityLicensingServer: # optional, default is 
+    # The path to mount the workspace inside the docker container. For windows, leave out the drive letter. For example c:/github/workspace should be defined as /github/workspace
+    dockerWorkspacePath: # optional, default is /github/workspace
+    # Skip the activation/deactivation of Unity. This assumes Unity is already activated.
+    skipActivation: # optional, default is false
