@@ -1,0 +1,11 @@
+platform :android do
+  desc "Upload a new Android version to the production Google Play Store"
+  lane :production do
+    upload_to_play_store(track: 'production', release_status: 'completed', aab: "#{ENV['ANDROID_BUILD_FILE_PATH']}")
+  end
+
+  desc "Upload a new Android internal version to Google Play"
+  lane :internal do
+    upload_to_play_store(track: 'internal', release_status: 'completed', aab: "#{ENV['ANDROID_BUILD_FILE_PATH']}")
+  end
+end
