@@ -7,16 +7,32 @@ on:
     branches: [ "master" ]
 
 jobs:
-  unity:
+  build:
+    name: Build the unity project 
     runs-on: ubuntu-latest
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+      with:
+        lfs: true
+
+    # Cache
+    - uses: actions/cache@v3
+      with:
+        path: Library
+        key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+        restore-keys: |
+          Library-
+
     - name: Unity - Builder
       # You may pin to the exact commit or the version.
       # uses: game-ci/unity-builder@f4d2cceeb5831fd9dc4588d1b39d5f2dca8f28e6
       uses: game-ci/unity-builder@v4.2.1
+      env:
+        UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+        UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
       with:
         # Platform that the build should target.
         targetPlatform: Android
