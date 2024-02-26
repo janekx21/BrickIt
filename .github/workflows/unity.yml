@@ -13,6 +13,7 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v3
+    - run: sudo apt install libfuse2
     - name: Setup Unity
       uses: kuler90/setup-unity@v1
       with:
