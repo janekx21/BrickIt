@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff7f2a6952475ea4e8e7509ff4fce1, type: 3}
   m_Name: Dev
   m_EditorClassIdentifier: 
-  image: {fileID: -7326330765846486680, guid: 5713416c4704eab42a8b466fbada8b47, type: 3}
+  id: b485535a8d82092b79d80114aff9cf03
+  image: {fileID: 21300000, guid: 94324bf78c18a4c1cad4c4c86d1f2e88, type: 3}
   chapterName: Dev
   levels:
   - {fileID: 11400000, guid: 42120637d772cf540aaec7704cab2818, type: 2}

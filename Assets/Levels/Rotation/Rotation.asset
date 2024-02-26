@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff7f2a6952475ea4e8e7509ff4fce1, type: 3}
   m_Name: Rotation
   m_EditorClassIdentifier: 
-  image: {fileID: -7691200463741539933, guid: 5713416c4704eab42a8b466fbada8b47, type: 3}
+  id: 3f55806153cca70d28451095211db2b6
+  image: {fileID: 21300000, guid: 58348d8af9bacf34ca47bfe397015954, type: 3}
   chapterName: Rotation
   levels:
   - {fileID: 11400000, guid: ca6fb73c9a412204087385dc52fa45db, type: 2}

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff7f2a6952475ea4e8e7509ff4fce1, type: 3}
   m_Name: Death
   m_EditorClassIdentifier: 
-  image: {fileID: 5264979163374914166, guid: 5713416c4704eab42a8b466fbada8b47, type: 3}
+  id: f1024e10afdd8b70496531e34f40da96
+  image: {fileID: 21300000, guid: 9ee2087d7480fdb94b9fb5f44f7a599a, type: 3}
   chapterName: Death
   levels:
   - {fileID: 11400000, guid: f45f5ef0b95a57f4ea0464d1c7479bf6, type: 2}

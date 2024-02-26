@@ -32,11 +32,11 @@ namespace Util {
             
             cache = new SaveData(PlayerPrefs.GetString(saveDataKey, string.Empty) switch {
                 "" =>
-                    Migrator.init(),
+                    Migrator.Init(),
                 var json =>
                     JsonUtility.FromJson<VersionedData>(json).version switch {
                         "3" => JsonUtility.FromJson<Model.V3.Save>(json),
-                        _ => Migrator.init(),
+                        _ => Migrator.Init(),
                     }
             });
 
