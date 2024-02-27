@@ -50,9 +50,10 @@ jobs:
         path: build/Android
 
   deploy:
-    name: Deploy the unity project on google play store
+    name: Deploy on google play store
     runs-on: ubuntu-latest
     needs: build
+    if: ${{ github.event_name == 'push' }}
     env:
       GOOGLE_PLAY_KEY_FILE: ${{ secrets.GOOGLE_PLAY_KEY_FILE }}
       GOOGLE_PLAY_KEY_FILE_PATH:
