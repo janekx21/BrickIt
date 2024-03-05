@@ -15,6 +15,7 @@
 
 - online highscores @janek
 	- backend
+	- frontend
 
 - next level button on the win screen
 

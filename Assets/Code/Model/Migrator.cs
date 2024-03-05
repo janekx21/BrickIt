@@ -6,11 +6,11 @@ namespace Model {
         public static V3.Save Init() {
             // there will be a reset here so lets return an empty save result
             return new V3.Save {
-                scrollPositions = null,
-                done = null,
+                scrollPositions = new(),
+                done = new(),
                 lastMenuView = null,
                 lastChapterPlayed = null,
-                highScores = null
+                highScores = new()
             };
         }
     }

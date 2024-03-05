@@ -1,4 +1,5 @@
 using Model;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Util {
@@ -13,15 +14,15 @@ namespace Util {
 
         public void Dispose() {
             Save();
-            Debug.Log("Saved: " + JsonUtility.ToJson(this, true));
+            Debug.Log("Saved: " + JsonConvert.SerializeObject(this, Formatting.Indented));
         }
 
         public void Save() {
             // no need to re-update the cache, because there is only one save data at a time
             // TODO debounce
-            var json = JsonUtility.ToJson(save, true);
+            var json = JsonConvert.SerializeObject(save, Formatting.Indented);
             PlayerPrefs.SetString(saveDataKey, json);
-            // PlayerPrefs.Save(); // Unity saves this automatically
+            // PlayerPrefs.Save(); // Unity saves this automatically when exiting
         }
 
         /**
@@ -34,8 +35,8 @@ namespace Util {
                 "" =>
                     Migrator.Init(),
                 var json =>
-                    JsonUtility.FromJson<VersionedData>(json).version switch {
-                        "3" => JsonUtility.FromJson<Model.V3.Save>(json),
+                    JsonConvert.DeserializeObject<VersionedData>(json).version switch {
+                        "3" => JsonConvert.DeserializeObject<Model.V3.Save>(json),
                         _ => Migrator.Init(),
                     }
             });
