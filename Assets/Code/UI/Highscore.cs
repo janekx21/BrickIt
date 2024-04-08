@@ -21,6 +21,7 @@ namespace UI {
 
         public static Highscore own { get; private set; }
         public UnityEvent onScoreAdded = new();
+        public string lastUsedUserId = null;
 
         private void Awake() {
             Assert.IsNull(own);
@@ -41,7 +42,8 @@ namespace UI {
                 Destroy(t.gameObject);
             }
 
-            foreach (var ((userId, score), index) in highscores.OrderByDescending(x => x.Value).Take(7).Select((pair, index) => (pair: pair, index))) { 
+            foreach (var ((userId, score), index) in highscores.OrderByDescending(x => x.Value).Take(7)
+                         .Select((pair, index) => (pair, index))) {
                 var entry = ViewHighscore(userId, score, index + 1);
                 entry.transform.SetParent(entryContainer);
                 entry.transform.localScale = Vector3.one;
@@ -50,13 +52,20 @@ namespace UI {
 
         private GameObject ViewHighscore(string userId, int score, int place) {
             var entry = Instantiate(entryTemplate);
-            entry.transform.Find("positionVar").GetComponent<Text>().text = place + "."; 
-            entry.transform.Find("scoreVar").GetComponent<Text>().text = $"{score:### ### ###}"; 
-            entry.transform.Find("nameVar").GetComponent<Text>().text = userId; 
+            var isMy = userId == lastUsedUserId;
+            var rect = entry.GetComponent<RectTransform>();
+            rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, isMy ? 40f : 30f);
+            // TODO this does not work :<
+            // rect.localScale = Vector3.one * (isMy ? 1.04f : 1);
+            entry.transform.Find("underline").gameObject.SetActive(isMy);
+            entry.transform.Find("positionVar").GetComponent<Text>().text = place + ".";
+            entry.transform.Find("scoreVar").GetComponent<Text>().text = $"{score:### ### ###}";
+            entry.transform.Find("nameVar").GetComponent<Text>().text = userId;
             return entry;
         }
 
         public void AddHighscoreEntry(int score, string name) {
+            lastUsedUserId = name;
             var levelGuid = Level.own.LevelId;
             var highscoreEntry = new Model.V3.HighscoreEntry { score = score, name = name, levelGuid = levelGuid };
 
@@ -72,7 +81,7 @@ namespace UI {
         public IEnumerator UploadRoutine(Model.Backend.Highscore highscore, string levelGuid) {
             var post = UnityWebRequest.Post($"https://highscore-gw01lfrs.fermyon.app/highscore/level/{levelGuid}",
                 JsonConvert.SerializeObject(highscore), "application/json");
-            
+
             var request = post.SendWebRequest();
             loadingSpinner.SetActive(true);
             yield return request;
@@ -95,7 +104,6 @@ namespace UI {
             }
             else {
                 var level = JsonConvert.DeserializeObject<Model.Backend.Level>(request.webRequest.downloadHandler.text);
-                Debug.Log(JsonConvert.SerializeObject(level));
                 RenderHighscores(level.highscores);
             }
         }

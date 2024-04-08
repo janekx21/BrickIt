@@ -32,6 +32,10 @@ namespace Util {
             return value.ToDictionary(x => x.key, x => x.value);
         }
         
+        public static Dictionary<V, K> AsDictionarySwapped<K,V>(this List<Model.KeyValuePair<K, V>> value) {
+            return value.ToDictionary(x => x.value, x => x.key);
+        }
+        
         public static List<Model.KeyValuePair<K, V>> AsList<K,V>(this Dictionary<K, V> value) {
             return value.Select(x => new Model.KeyValuePair<K, V> { key = x.Key, value = x.Value }).ToList();
         }

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: Bucket
+  m_Name: DirectionChangerRight
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 3752902410628473492, guid: 5713416c4704eab42a8b466fbada8b47,
+  m_DefaultSprite: {fileID: -7691200463741539933, guid: 5713416c4704eab42a8b466fbada8b47,
     type: 3}
-  m_DefaultGameObject: {fileID: 2099258498169584641, guid: b472c374d58d4fd47bff8c3521b1d915,
+  m_DefaultGameObject: {fileID: 8032116147730278327, guid: 8a87aac10723cc841aabf9ad8d125db8,
     type: 3}
   m_DefaultColliderType: 0
   m_TilingRules: []

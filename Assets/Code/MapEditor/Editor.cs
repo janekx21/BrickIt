@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Blocks;
 using GamePlay;
+using LevelContext;
 using Model;
 using Model.V3;
 using UnityEngine;
@@ -22,13 +23,18 @@ namespace MapEditor {
         public RectTransform panel;
         public RectTransform colorPanel;
 
-        public List<TileBase> placeableTiles = new();
+        public List<Model.KeyValuePair<TileType, TileBase>> placeableTiles = new();
+        public Dictionary<TileType, TileBase> placeableTilesDict => placeableTiles.AsDictionary();
+        public Dictionary<TileBase, TileType> placeableTilesDictSwapped => placeableTiles.AsDictionarySwapped();
         public Button blockButtonPrefab;
         public Button colorButtonPrefab;
 
         public GameObject spawnEffect;
 
         public string lastSave = "not saved yet";
+        
+        [Tooltip("leave this empty if you dont use this inside the editor")] [SerializeField]
+        private LevelObject forceLevel;
 
         private class EditorTile {
             public Button Button;
@@ -41,7 +47,7 @@ namespace MapEditor {
         private bool deleteMode;
 
         private void Start() {
-            var buttons = placeableTiles.Select(placeableTile => {
+            var buttons = placeableTilesDict.Values.Select(placeableTile => {
                 var tile = new EditorTile {
                     Button = Instantiate(blockButtonPrefab, panel),
                     Tile = placeableTile,
@@ -78,6 +84,8 @@ namespace MapEditor {
             deleteToggle.onValueChanged.AddListener(value => deleteMode = value );
 
             buttons[2].Button.onClick.Invoke();
+            
+            SetTiles(forceLevel.levelData.data);
         }
 
         private static Sprite GetSprite(TileBase placeableTile) {
@@ -150,42 +158,39 @@ namespace MapEditor {
             SetTiles(level.data);
         }
 
-        private static IEnumerable<Model.V3.Tile> GetTiles(Tilemap tilemap) {
-            throw new NotImplementedException("The conversion to TileType is missing");
+        private IEnumerable<Model.V3.Tile> GetTiles(Tilemap tilemap) {
             foreach (var position in tilemap.cellBounds.AllPositions()) {
                 if (tilemap.HasTile(position)) {
                     var go = tilemap.GetInstantiatedObject(position);
-                    var name = tilemap.GetTile(position).name;
+                    var tile = tilemap.GetTile(position);
                     if (go) {
                         yield return new Model.V3.Tile {
-                            // TODO
-                            //type = tileType,
-                            color = go.GetComponent<IColored>().GetColorType(),
+                            type = placeableTilesDictSwapped[tile],
                             rotation = go.transform.rotation.eulerAngles.z,
-                            position = (Vector2Int)position
+                            color = go.GetComponent<IColored>().GetColorType(),
+                            position = (Vector2Int)position,
+                            // TODO multi hit block
                         };
                     }
                     else {
                         yield return new Model.V3.Tile {
-                            //type = tileType,
+                            type = placeableTilesDictSwapped[tile],
                             rotation = tilemap.GetTransformMatrix(position).rotation.eulerAngles.z,
                             position = (Vector2Int)position
                         };
                     }
                 }
                 else {
-                    //yield return new Model.Tile1 { type = "empty", position = (Vector2Int)position };
+                    yield return new Model.V3.Tile { type = TileType.empty, position = (Vector2Int)position };
                 }
             }
         }
 
 
         private void SetTiles(IEnumerable<Model.V3.Tile> data) {
-            throw new NotImplementedException("The conversion to TileType is missing");
             foreach (var t in data) {
-                // TODO
-                //var tileBase = placeableTiles.Find(x => x.name == t.type);
-                //SetBlock(t.position, Quaternion.Euler(0, 0, t.rotation), tileBase, t.color);
+                var tileBase = t.type == TileType.empty ? null : placeableTilesDict[t.type];
+                SetBlock(t.position, Quaternion.Euler(0, 0, t.rotation), tileBase, t.color);
             }
             tilemap.CompressBounds();
         }

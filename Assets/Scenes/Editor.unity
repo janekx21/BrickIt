@@ -636,18 +636,28 @@ MonoBehaviour:
   panel: {fileID: 653208954}
   colorPanel: {fileID: 1083191581}
   placeableTiles:
-  - {fileID: 11400000, guid: c486a996d2de14b4585920d4f195b958, type: 2}
-  - {fileID: 11400000, guid: 1ef4008861c98044d9d23542ab5f5514, type: 2}
-  - {fileID: 11400000, guid: bc12fd33dec4f1949a606efc2810c72f, type: 2}
-  - {fileID: 11400000, guid: 0de85d3e4adef3046b7370517ed5e921, type: 2}
-  - {fileID: 11400000, guid: 27892bf549a1dec4fa3d689a7f511547, type: 2}
-  - {fileID: 11400000, guid: 9d16d7d02594fd74db9f357dfb36b682, type: 2}
-  - {fileID: 11400000, guid: 28f2e15102b39954eb0231a09d560bf4, type: 2}
-  - {fileID: 11400000, guid: 31cccc69e74315444b3e9eec7ed8dc32, type: 2}
-  - {fileID: 11400000, guid: b5491fe1f11d421419049dd8030fc70a, type: 2}
-  - {fileID: 11400000, guid: d0e9a121c53c6084d87927ebbf011380, type: 2}
-  - {fileID: 11400000, guid: 00d595071e311b6459e6356fc7123ce0, type: 2}
-  - {fileID: 11400000, guid: ec392c00eeb0fc34fa6696713267fcf1, type: 2}
+  - key: 1
+    value: {fileID: 11400000, guid: 1ef4008861c98044d9d23542ab5f5514, type: 2}
+  - key: 2
+    value: {fileID: 11400000, guid: bc12fd33dec4f1949a606efc2810c72f, type: 2}
+  - key: 4
+    value: {fileID: 11400000, guid: 27892bf549a1dec4fa3d689a7f511547, type: 2}
+  - key: 5
+    value: {fileID: 11400000, guid: 0de85d3e4adef3046b7370517ed5e921, type: 2}
+  - key: 6
+    value: {fileID: 11400000, guid: ec392c00eeb0fc34fa6696713267fcf1, type: 2}
+  - key: 7
+    value: {fileID: 11400000, guid: b5491fe1f11d421419049dd8030fc70a, type: 2}
+  - key: 8
+    value: {fileID: 11400000, guid: 31cccc69e74315444b3e9eec7ed8dc32, type: 2}
+  - key: 9
+    value: {fileID: 11400000, guid: 00d595071e311b6459e6356fc7123ce0, type: 2}
+  - key: 10
+    value: {fileID: 11400000, guid: 28f2e15102b39954eb0231a09d560bf4, type: 2}
+  - key: 11
+    value: {fileID: 11400000, guid: d0e9a121c53c6084d87927ebbf011380, type: 2}
+  - key: 12
+    value: {fileID: 11400000, guid: c486a996d2de14b4585920d4f195b958, type: 2}
   blockButtonPrefab: {fileID: 2655639690555653787, guid: 87e73ebec4674b143b6de1d7df6ae338,
     type: 3}
   colorButtonPrefab: {fileID: 6188247265343526413, guid: 734924bb9a4748a49bf3e687340df6a1,
@@ -655,6 +665,7 @@ MonoBehaviour:
   spawnEffect: {fileID: 823083484203336117, guid: fd7aba956c3b5fd4fb25bffd54070e62,
     type: 3}
   lastSave: not saved yet
+  forceLevel: {fileID: 11400000, guid: 30c1a5e4700bb1e44aa37e14c08d3b64, type: 2}
 --- !u!4 &691625022
 Transform:
   m_ObjectHideFlags: 0
@@ -984,7 +995,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.08478, y: -310.83835}
+  m_AnchoredPosition: {x: 66.08484, y: -310.83835}
   m_SizeDelta: {x: 130, y: 363.7868}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113337895

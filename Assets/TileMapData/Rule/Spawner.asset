@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: SpeedArrow
+  m_Name: Spawner
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 2845302552105548080, guid: 5713416c4704eab42a8b466fbada8b47,
+  m_DefaultSprite: {fileID: 5011224870521691093, guid: 5713416c4704eab42a8b466fbada8b47,
     type: 3}
-  m_DefaultGameObject: {fileID: 5703661419560199920, guid: d590b2a892b25424db403659b02ec940,
+  m_DefaultGameObject: {fileID: 395748591645272162, guid: 975e788f053369845ba15c7f0183fd79,
     type: 3}
   m_DefaultColliderType: 0
   m_TilingRules: []
