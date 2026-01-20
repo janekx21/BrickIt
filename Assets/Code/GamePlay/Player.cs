@@ -99,7 +99,7 @@ namespace GamePlay {
             dash = Vector2.MoveTowards(dash, Vector2.zero, Time.fixedDeltaTime * dashAcceleration);
 
             if (paused) {
-                rig.velocity = Vector2.zero;
+                rig.linearVelocity = Vector2.zero;
             }
         }
 
@@ -161,7 +161,7 @@ namespace GamePlay {
             var pep = Vector2.one - abs;
             var adding = pep * move;
 
-            rig.velocity = speedModifier * speed * direction + adding * moveSpeed + dash * dashVelocity;
+            rig.linearVelocity = speedModifier * speed * direction + adding * moveSpeed + dash * dashVelocity;
         }
 
         public void Init(Vector2 playerDirection, ColorType type) {
